@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Amazon Fire Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/amazon fire tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Famazon%20fire%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Famazon%20fire%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Amazon Fire Tab</h1>
+
+<h2 class="studio">This section deals with the Amazon Fire tab of
+the Global Games Settings Window.</h2>
+
+<blockquote><i><b>IMPORTANT!</b> This tab will only be visible if
+you have signed up for a promotional trial of the Amazon Fire
+module and do <b>not</b> have the Android module. If you do have
+Android, then you should look at the page <a href=
+"android%20tab.html">Android Global Game Settings</a> instead.</i>
+</blockquote>
+
+<p>The Amazon Fire tab is split into various separate
+<i>sub-tabs</i> (accessible on the left of the window) to make
+changing and updating the information for your game clearer and
+less complicated. These tabs are explained in the following
+sections. The basic setup for the Amazon fire is similar to that
+used for Android, so make sure sure that you have set up the
+<a href="../preferences/android%20preferences.html">Android
+Preferences</a> correctly before using this target.</p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="a_fire_general.png"> The first thing to
+do is fill in the details about your game, including its <b>Display
+Name</b>, its <b>Package Name</b> and the <b>Version</b> info. The
+package name can only be made up of letters from A-Z and numbers
+0-9, with no symbols or other special characters at all, nor should
+it have uppercase characters. It should follow the format
+<i>“com.domain.myapp”</i>.<br>
+<br>
+Here you can also set the <b>build tools</b> version to use, along
+with the SDK values to use (<b>minimum SDK version</b>, <b>Target
+SDK version</b> and the <b>Compile SDK version</b>). In general you
+will want to leave these at their default values, but if your game
+targets a specific Android version then you can set the build tools
+and SDK values to that which you require here.<br>
+<br>
+To the right of the page, you can add a splash screen to your APK,
+for both landscape and portrait modes, which will be shown while
+the game loads on the device. This screen should be a 24bit PNG
+file, and is recommended to be the same size as the first room (or
+view) in your game. If you require that the splash screen be shown
+for a specific time then you can also set it here from 0 to 10
+seconds (the default time of 0 means that it will only show for the
+duration of the asset loading).<br>
+<br>
+On this page you can also set the following options for your final
+APK file:</p>
+
+<blockquote>
+<ul>
+<li><b>Architectures</b> - This is the CPU type that your game will
+support. The most common ones are chosen by default (99% of all
+devices use these), but you can choose those that you think
+appropriate. Bear in mind that each one will add about 1MB to the
+final apk size, don't go ticking them all unless this is not a
+problem!</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Orientation</b> - Here you can choose to lock the game to a
+specific orientation by checking either landscape, portrait,
+landscape-flipped or portrait-flipped. Note that if you have
+selected Portrait and PortraitFlipped, then this is handled as
+<i>sensorPortrait</i>, but not all devices will allow the
+PortraitFlipped orientation in this mode.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Misc</b> - This section permits you to add extra support for
+certain features:<br>
+<br>
+
+<ul>
+<li>you can set the <b>Install Location</b> for your game. This can
+either be set to <i>auto</i>, in which case the game will be
+installed to the location chosen by the user on their device, or it
+can be set to <i>Prefer External</i> which will always try to
+install the game to the external storage of the device.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>you can add support for <b>Moga Controllers</b> for your game
+here. Note that all Moga functionality is accessed via an
+extension, and when you first check the Use Moga box you will be
+prompted to download the Moga extension from the Marketplace and
+then add it into your project.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="a_fire_graphics.png"> The graphics tab
+has three sections to it - <b>Options</b>, <b>Icons</b> and
+<b>Texture Pages</b>. The first of these controls the display
+options for your game, with the first one being the <b>Interpolate
+colours Between Pixels</b> flag. This turns on interpolation, which
+basically "smooths" pixels, so for crisp pixel graphics, it should
+be off, but if you have nice alpha blends and smoothed edge
+graphics it is better left on.<br>
+<br>
+Next, you can set the <b>Screen colour Depth</b> to either
+<b>16bit</b> or <b>24bit</b>. This will affect the compatibility
+with some older devices if it is set to 24bit, and will also
+increase the <i>ashmem</i> that is needed (this is the shared
+memory on Android devices).<br>
+<br>
+The next here is the <b>Device Support</b> for your game. You can
+choose to support any device, or only those that have a GPU.
+Basically, if your game has any advanced drawing functions like
+alpha blending, additive blending, surfaces, etc... you should
+limit it to those devices that have a GPU otherwise you run the
+risk of getting negative comments and poor rating for your game due
+to graphical errors or crashes on older devices.<br>
+<br>
+Finally there is the option for scaling to the device screen. Here
+you can choose to maintain aspect ratio (so a 4:3 room, for
+example, will be "letter boxed" on a 16:9) or to scale fully
+(stretching the image to fit the full screen).</p>
+
+<blockquote><i><b>WARNING!</b> Switching off the application
+surface in your code will disable all the scaling options set in
+the Global Game Settings until it has been switched back on again.
+See <a href=
+"../../002_reference/surfaces/the%20application%20surface.html">The
+Application Surface</a> for further details.</i>
+</blockquote>
+
+<p>After these options there is the section for setting the size of
+the <b>Texture Page</b>. The default (and most compatible) size is
+1024x1024, but you can choose from anywhere between 256x256 up to
+2048x2048. There is also a button marked <b>View</b> which will
+generate the texture pages for this platform and then open a window
+so that you can see how they look. This can be very useful if you
+wish to see how the texture pages are structured and to prevent
+having texture pages larger (or smaller) than necessary.<br>
+<br>
+On the right of the page you can set the game icons. These are used
+in various situations on the Store and in your game, and should be
+created as 24bit PNG files of the appropriate sizes given.</p>
+
+<blockquote><i><b>NOTE:</b> Be aware that the larger the size of
+the texture page, the less compatible your game will be.</i>
+</blockquote>
+
+<h3 class="studio">Social</h3>
+
+<p><img class="center" src="a_fire_social.png"> This tab permits
+you to enable social functions for your Android game with either
+<b>Amazon GameCircle</b>, <b>Google Play</b>, or <b>Facebook</b> as
+well as activate <b>Push Notifications</b>.<br>
+<br>
+If you require the Facebook functions, you need to click the
+"<b>Use Facebook</b>" checkbox and then supply the Facebook <b>App
+ID</b> and <b>Facebook App Display Name</b>. Note that all Facebook
+functionality is accessed via an extension, and when you first
+check the Use Facebook box you will be prompted to download the
+Facebook extension from the Marketplace and then import it into
+your project.<br>
+<br>
+In order for your game to use <b>Push Notifications</b> they must
+be enabled here first otherwise they will not work. Local
+notifications on Android do <i>not</i> require the "<b>GCM Sender
+ID</b>", but you must add it should you wish to create remote
+notifications.<br>
+<br>
+If you want to enable achievements and leader boards from the
+Google, then you need to check the appropriate check box. Once you
+have ticked one of the services, you will be prompted to download
+and install the corresponding extension from the Marketplace and
+install it in your project, and then code the functionality into
+your game using the <a href=
+"../../002_reference/social%20gaming/achievements%20and%20leaderboards/index.html">
+Achievements and Leader boards</a> functions. Note that you will
+need to add your <i>App Id</i> from Google Play into this tab for
+the services to work (this can be found from your Google Play
+Developers dashboard).<br>
+<br>
+If you are using any <b>Amazon Services</b>, you need to tick the
+"Enable Amazon API's" check box. Once you have ticked this, you
+will be prompted to download and install the corresponding
+extension from the Marketplace. The Amazon API does not hook into
+the built in leader board functions (like the Google APIs do) but
+instead has all the functions included as part of the
+extension.<br>
+<br></p>
+
+<h3 class="studio">Permissions</h3>
+
+<p><img class="center" src="a_fire_permissions.png"> From this tab
+you can change some of the permissions that your game may request
+within the <b>Android Manifest</b>. <i>GameMaker: Studio</i>
+allocate permissions automatically as required, however you may
+find you require a permission for your game that we haven't
+assigned in which case tick the requisite permission box on the
+tab. The list below outlines those that are available:</p>
+
+<blockquote>
+<ul>
+<li><b>WRITE_EXTERNAL_STORAGE</b> - Will permit your game to write
+to external storage.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>READ_PHONE_STATE</b> - Allow read only access to the phone
+state.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>ACCESS_NETWORK_STATE</b> - Permit your game to access
+information about networks.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>INTERNET</b> - Permit your game to open network
+sockets.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>BLUETOOTH</b> - Will permit your game to connect to paired
+Bluetooth devices.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>RECORD AUDIO</b> - Will permit your game to record audio
+input from the microphone.</li>
+</ul>
+</blockquote>
+
+<blockquote><i><b>NOTE:</b> If you are not sure that you need
+these, you should probably just leave them un-checked by default
+and let GameMaker: Studio deal with the permissions for your
+game.</i>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="ios%20tab.html">The iOS
+Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

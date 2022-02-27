@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The iOS Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/ios tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fios%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fios%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The iOS Tab</h1>
+
+<h2 class="studio">This section deals with the iOS tab of the
+Global Games Settings Window.</h2>
+
+<p>This iOS tab is split into three separate <i>sub-tabs</i>
+(accessible on the left of the window) to make changing and
+updating the information for your game clearer and less
+complicated. These tabs are explained in the following
+sections.</p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="ios_general_tab.png"> The first thing
+to do is fill in the details about your game, including its
+<b>Display Name</b>, its <b>App id</b> and the <b>Version</b> info.
+Then you will need to give your game its <b>Icons</b>. The icons
+should be authored as a individual 32bit <tt>*.png</tt> files of
+varying sizes so that they are shown correctly on the store, OS
+etc...<br>
+<br>
+<i><b>NOTE:</b> The Bundle id <b>must</b> be in the correct reverse
+URL format for in app purchases to work correctly, EG:
+<b>com.[Company].[GameName]</b></i><br>
+<br>
+The last two sections on this tab are <b>Orientation</b> and
+<b>Devices</b>. The orientation section can be used to lock the
+game to a specific orientation by checking one or all of the
+following options:</p>
+
+<blockquote>
+<ol>
+<li>portrait</li>
+
+<li>portrait upside down</li>
+
+<li>Landscape left</li>
+
+<li>Landscape right</li>
+</ol>
+</blockquote>
+
+<p>The Devices section is used to target specific iOS platforms,
+either <i>iPhone or iPod Touch</i>, <i>iPad</i>, or
+<i>both</i>.<br>
+<br></p>
+
+<h3 class="studio">Splash Screens</h3>
+
+<p><img class="center" src="ios_splashscreens_tab.png"> This tab
+permits you to add separate graphics as splash screens (the image
+that will be shown briefly while your app loads) for each of the
+different iOS target devices. These images must be authored as
+individual 32bit <tt>*.png</tt> images with no transparencies and
+at the correct size for each of the devices and orientations
+required. You can also set a minimum time for showing the splash
+screens from the drop down menu on the right (from 0 to 10
+seconds).</p>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="ios_graphics_tab.png"> Once you have
+configured the game details and presentation graphics, there are
+two more available options on the Graphics tab. The first is the
+<b>Interpolate colours Between Pixels</b> option that (when
+checked) turns on interpolation, which basically "smooths" pixels.
+For crisp pixel graphics, it should be off, but if you have nice
+alpha blends and smoothed edge graphics it is better left on. Here
+you can also choose to halve texture pages when targeting the iPad1
+(which has a lower specification and may not run larger games
+otherwise).<br>
+<br>
+Next there is the option for scaling to the device screen. Here you
+can choose to maintain aspect ratio (so a 4:3 room, for example,
+will be "letter boxed" on a 16:9) or to scale fully (stretching the
+image to fit the full screen).</p>
+
+<blockquote><i><b>WARNING!</b> Switching off the application
+surface in your code will disable all the scaling options set here
+in the Global Game Settings until it has been switched back on
+again. See <a href=
+"../../002_reference/surfaces/the%20application%20surface.html">The
+Application Surface</a> for further details.</i>
+</blockquote>
+
+<p>Finally there is the option to set the size of the <b>Texture
+Page</b>. The default (and most compatible) size is 1024x1024, but
+you can choose from anywhere between 256x256 up to 4096x4096. There
+is also a button marked <b>View</b> which will generate the texture
+pages for this platform and then open a window so that you can see
+how they look. This can be very useful if you wish to see how the
+texture pages are structured and to prevent having texture pages
+larger (or smaller) than necessary.</p>
+
+<blockquote><i><b>NOTE:</b> Be aware that the larger the size of
+the texture page, the less compatible your game will be.</i>
+</blockquote>
+
+<h3 class="studio">Provisioning</h3>
+
+<p><img class="center" src="ios_provisioning_tab.png"> The
+<i>Provisioning</i> tab is where you configure the Mac OS options
+to get the correct certificates for the iOS export module. You can
+do one of three things here, depending on the OS tyhat your Mac is
+running and how you want to do things:</p>
+
+<ul>
+<li>If you are running a version of OSX (like Yosemite, for
+example), then you should go to the <b>Certificate</b> section to
+fill in the details of your developer certificates, which is done
+by simply clicking on the button marked <b>Refresh From Mac</b> and
+then selecting the appropriate certificate.<br>
+<br></li>
+
+<li>If you are using macOS Sierra or above, then you need to supply
+the <b>Team Identifier</b> and Xcode will use that to get the
+correct provisioning and signing certificates for your app. To find
+your Team Identifier, sign in to your Apple Developer account and
+go <a href=
+"https://developer.apple.com/account/#/membership/9QYM8REDNA"
+target="_blank">here</a>. Note that you can set a default Team
+Identifier in the <a href=
+"../preferences/ios%20preferences.html">iOS Preferences</a>.<br>
+<br></li>
+
+<li>If you supply neither of the above, you can still build the app
+but you will be required to set the signing yourself from within
+Xcode for every build that you do (each new build will need to be
+resigned).</li>
+</ul>
+
+<blockquote><i><b>IMPORTANT!</b> Provisioning can only be completed
+successfully if you have previously signed up for an Apple
+developer account and have set up GameMaker: Studio correctly to
+communicate with your Mac computer where this information is
+stored.</i>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Social</h3>
+
+<p><img class="center" src="ios_social_tab.png"> The social tab is
+used for setting up Facebook communication in your game. If you
+require the Facebook functions, you need to click the "<b>Use
+Facebook</b>" checkbox and then supply the Facebook <b>App ID</b>
+and <b>Facebook App Display Name</b>. Note that all Facebook
+functionality is accessed via an extension, and when you first
+check the Use Facebook box you will be prompted to download and
+install the Facebook extension from the Marketplace.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="steam%20tab.html">The Steam
+Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

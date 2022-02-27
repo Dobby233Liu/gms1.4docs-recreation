@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Data Types</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/data types.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fdata%20types.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fdata%20types.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Data Types</h1>
+
+<h2 class="studio">This section covers the various different data
+types recognised by GameMaker: Studio.</h2>
+
+<p>In previous sections we have covered <a href=
+"variables/index.html">variables and their scoping rules</a> but
+little has been said about the different <b>data types</b> that a
+variable can store. Therefore this chapter explains the different
+types and what they can be used for.<br>
+<br>
+Before continuing, let's just briefly explain what we mean by "data
+types". When you create a variable it can be used to hold
+information, and when you call a <i>GML</i> function, it can also
+return information. However this information can come in various
+"flavours", like it can (for example) be a real number or it can be
+a string. These different types of values being used are called
+<b>data types</b> and when using <i>GML</i> they can be any of the
+following:<br>
+<br></p>
+
+<ul>
+<li><tt>string</tt> - A string is a series of characters placed
+within either ' or " marks. For example "The Quick Brown Fox! 123"
+is a string.</li>
+
+<li><tt>real</tt> - A real number is simply a floating point or an
+integer value.</li>
+
+<li><tt>array</tt> - An array is a variable that stores values
+using a sequence of indices.</li>
+
+<li><tt>boolean</tt> - A boolean value is one that can only ever be
+<tt>true</tt> or <tt>false</tt>.</li>
+
+<li><tt>pointer</tt> - A pointer is a data type that "points" to an
+area of memory.</li>
+
+<li><tt>enum</tt> - An enum is a collection of constants held under
+a custom variable <i>type</i>.</li>
+
+<li><tt>undefined</tt> - This is a special value that is returned
+when the value you are checking cannot be found.</li>
+</ul>
+
+<h3 class="studio">Strings</h3>
+
+<p>A string is simply any text that has been placed in quotation
+marks (either '...' or "..."). You can perform certain operations
+on strings, like add two strings together to create a longer string
+(concatenation) and you can also change the string properties and
+even extract real numbers from it. For more information on the
+string functions see: <a href="../strings/index.html">Reference -
+Strings</a>.<br>
+<br></p>
+
+<h3 class="studio">Real Numbers</h3>
+
+<p>real numbers are any value that is not a string, nor any of the
+other possible data types. So, 124, 45639.566546456, 0, -45.5
+etc... are all examples of real numbers. All real numbers are
+stored as 32bit floating point values (even integer values), so you
+may experience slight rounding errors when dealing with these. For
+more information on this and other number related functions, please
+see: <a href=
+"../maths/real%20valued%20functions/index.html">Reference - Real
+Numbers</a>.<br>
+<br>
+Note that created variables in GameMaker are all stored as
+double-precision floating point numbers, but you can use other
+formats when dealing with extensions. These can be passed into
+GameMaker: Studio from an extension and then checked using the
+appropriate <tt>is_</tt> function, listed at the bottom of this
+page.<br>
+<br></p>
+
+<h3 class="studio">Arrays</h3>
+
+<p>An array is a special data type that can be used to hold
+multiple values. You assign the array to a variable, and then "fill
+in" different indices of the array with values. This array can then
+be passed through to scripts and functions on a pass-by-reference
+basis, however should you modify the passed array, it will then
+become a copy of the original array and so will need to be returned
+back to the original variable for the array to be updated. For more
+information on arrays, please see: <a href="401_06_arrays.html">GML
+Overview - Arrays</a>.</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Booleans</h3>
+
+<p>A boolean is simply a value that can either be <tt>true</tt> or
+<tt>false</tt>. Note that currently <i>GameMaker: Studio</i> does
+not support "true" boolean values, and actually accepts any real
+number below 0.5 as a false value, and any real number equal to (or
+greater than) 0.5 as being true. This does <i>not</i> mean however
+that you should be checking 1 and 0 (or any other real number) for
+true and false, as you are also provided with the <b>constants</b>
+<tt>true</tt> and <tt>false</tt> which should always be used in
+your code to prevent any issues should real boolean data types be
+added in a future update.<br>
+<br></p>
+
+<h3 class="studio">Pointers</h3>
+
+<p>A pointer is a data type that "points" to a memory location. You
+cannot do operations on a pointer and it is used for some very
+specific functions, like getting a texture or buffer address from
+memory for another function. For examples of functions that return
+a pointer you can see <a href=
+"../buffers/buffer_get_address.html"><tt>buffer_get_address</tt></a>
+or <a href=
+"../game%20assets/sprites/sprite_get_texture.html"><tt>sprite_get_texture</tt></a>.<br>
+
+<br>
+There is also a function to check if a value is a pointer (see
+"<b>Checking Data Types</b>", below) and a function to convert a
+value into a pointer:</p>
+
+<blockquote>
+<ol>
+<li><a href="ptr.html">ptr</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>You may also use (and get returned) the following built in
+constants when using pointers:</p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>pointer_null</td>
+<td>This constant indicates that the pointer is not pointing to
+anything meaningful (the same as <tt>NULL</tt> in C++ or null in
+C#)</td>
+</tr>
+
+<tr class="alt">
+<td>pointer_invalid</td>
+<td>This constant simply means that the value is not a valid
+pointer</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio">Enums</h3>
+
+<p>An enum is an "enumerator", and it essentially permits you to
+create your own limited data type with a list of constant values.
+Enums are <a href="variables/index.html">global scope</a> variables
+(this is implicit, and they require no "<tt>global</tt>" suffix or
+<tt>globalvar</tt> declaration) and they have the following
+structure:</p>
+
+<p class="code">enum
+<i>&lt;variable&gt;</i>{<i>&lt;constant&gt;</i> [=
+<i>&lt;value&gt;</i>]}<br></p>
+
+<p>In the following example, we create an enum for the colours of
+the rainbow and assign it various constants and default values:</p>
+
+<p class="code">enum rainbowcolors {<br>
+&nbsp;&nbsp;&nbsp;red,<br>
+&nbsp;&nbsp;&nbsp;orange,<br>
+&nbsp;&nbsp;&nbsp;yellow,<br>
+&nbsp;&nbsp;&nbsp;green,<br>
+&nbsp;&nbsp;&nbsp;blue,<br>
+&nbsp;&nbsp;&nbsp;indigo,<br>
+&nbsp;&nbsp;&nbsp;violet<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The enum entries can only be <b>real numbers</b> or
+<b>expressions with previous enums</b>, and by default are numbered
+from 0 upwards, so our example given above would default to <tt>red
+= 0</tt>, <tt>orange = 1</tt>, <tt>yellow = 2</tt>, etc... You can
+also assign values to the enum variables at the time of creation,
+using real numbers or expressions:</p>
+
+<p class="code">enum rainbowcolors {<br>
+&nbsp;&nbsp;&nbsp;red = 5,<br>
+&nbsp;&nbsp;&nbsp;orange = 5 * 2,<br>
+&nbsp;&nbsp;&nbsp;yellow = 15,<br>
+&nbsp;&nbsp;&nbsp;green = 20,<br>
+&nbsp;&nbsp;&nbsp;blue = 25,<br>
+&nbsp;&nbsp;&nbsp;indigo = 30,<br>
+&nbsp;&nbsp;&nbsp;violet = 35 * enum_test.entry<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>Notice in the above example we use another enum to create an
+expression for "violet". This only works if the enum being
+referenced was created <i>before</i> the enum that is using it in
+an expression, but it will not work for variables or functions,
+since the enum value must be able to be evaluated as a constant on
+compile.<br>
+<br>
+To later access the value within a given enum type, you can use the
+point <tt>"."</tt> method, like this:</p>
+
+<p class="code">var value = rainbowcolours.green;</p>
+
+<p>Note that you cannot modify the values for any enum constant
+after it has been created.<br>
+<br></p>
+
+<h3 class="studio">Undefined</h3>
+
+<p>An undefined value (also known as a "null" value") is one where
+an expression doesn't have a correct value, although it is
+syntactically correct, and so must return <i>something</i>. For
+example, say you have a <tt>ds_map</tt> and use the function
+<tt>ds_map_find_value()</tt>. Now, what happens when the map does
+not have the value being looked for? Well, since the function is
+correctly formatted, and the issue is that the no such value
+exists, then it would return the <b>constant</b>
+<tt>undefined</tt>, and you can check for this constant as you
+would check for <tt>true</tt> or any other value.<br>
+<br></p>
+
+<h3 class="studio">Checking Data Types</h3>
+
+<p><i>GameMaker: Studio</i> permits you to check the data type of a
+given variable using the following functions:</p>
+
+<blockquote>
+<ol>
+<li><a href="is_string.html">is_string</a><br>
+</li>
+
+<li><a href="is_real.html">is_real</a><br>
+</li>
+
+<li><a href="is_bool.html">is_bool</a><br>
+</li>
+
+<li><a href="is_array.html">is_array</a><br>
+</li>
+
+<li><a href="is_ptr.html">is_ptr</a><br>
+</li>
+
+<li><a href="is_int32.html">is_int32</a><br>
+</li>
+
+<li><a href="is_int64.html">is_int64</a><br>
+</li>
+
+<li><a href="is_vec3.html">is_vec3</a><br>
+</li>
+
+<li><a href="is_vec4.html">is_vec4</a><br>
+</li>
+
+<li><a href="is_matrix.html">is_matrix</a><br>
+</li>
+
+<li><a href="is_undefined.html">is_undefined</a><br>
+</li>
+
+<li><a href="typeof.html">typeof</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">GML
+Overview</a></div>
+
+<div style="float:right">Next: <a href=
+"401_06_arrays.html">Arrays</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

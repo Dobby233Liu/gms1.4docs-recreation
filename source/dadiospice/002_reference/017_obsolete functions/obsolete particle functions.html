@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete Particle Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete particle functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20particle%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20particle%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete Particle Functions</h1>
+
+<h2 class="studio">These functions deal with the manipulation of
+particles.</h2>
+
+<p>The following functions for particle attractors have been
+removed:</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>part_attractor_create</td>
+<td>Creates a new attractor in the given particle system. It
+returns the index of the attractor. This index must be used in all
+calls below to set the properties of the attractor.</td>
+</tr>
+
+<tr class="alt">
+<td>part_attractor_destroy</td>
+<td>Destroys attractor ind in the particle system. Call this if you
+don't need it anymore to save space.</td>
+</tr>
+
+<tr>
+<td>part_attractor_destroy_all</td>
+<td>Destroys all attractors in the particle system that have been
+created.</td>
+</tr>
+
+<tr class="alt">
+<td>part_attractor_exists</td>
+<td>Returns whether the indicated attractor exists in the particle
+system.</td>
+</tr>
+
+<tr>
+<td>part_attractor_clear</td>
+<td>Clears the attractor ind to its default settings.</td>
+</tr>
+
+<tr class="alt">
+<td>part_attractor_position</td>
+<td>Sets the position of attractor ind to (x,y).</td>
+</tr>
+
+<tr>
+<td>part_attractor_force</td>
+<td>Sets the force parameters of attractor ind.</td>
+</tr>
+</table>
+</div>
+
+<p>The following functions for particle changers have been
+removed:</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>part_changer_create</td>
+<td>Creates a new changer in the given particle system. It returns
+the index of the changer. This index must be used in all calls
+below to set the properties of the changer.</td>
+</tr>
+
+<tr class="alt">
+<td>part_changer_destroy</td>
+<td>Destroys changer ind in the particle system. Call this if you
+don't need it anymore to save space.</td>
+</tr>
+
+<tr>
+<td>part_changer_destroy_all</td>
+<td>Destroys all changers in the particle system that have been
+created.</td>
+</tr>
+
+<tr class="alt">
+<td>part_changer_exists</td>
+<td>Returns whether the indicated changer exists in the particle
+system.</td>
+</tr>
+
+<tr>
+<td>part_changer_clear</td>
+<td>Clears the changer ind to its default settings.</td>
+</tr>
+
+<tr class="alt">
+<td>part_changer_region</td>
+<td>Sets the region for the changer.</td>
+</tr>
+
+<tr>
+<td>part_changer_types</td>
+<td>Sets which particle type the changer must change into what
+other type.</td>
+</tr>
+
+<tr class="alt">
+<td>part_changer_kind</td>
+<td>Sets the kind for the changer.</td>
+</tr>
+</table>
+</div>
+
+<p>The following functions for particle deflectors have been
+removed:</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>part_deflector_create</td>
+<td>Creates a new deflector in the given particle system. It
+returns the index of the deflector. This index must be used in all
+calls below to set the properties of the deflector.</td>
+</tr>
+
+<tr class="alt">
+<td>part_deflector_destroy</td>
+<td>Destroys deflector ind in the particle system. Call this if you
+don't need it anymore to save space.</td>
+</tr>
+
+<tr>
+<td>part_deflector_destroy_all</td>
+<td>Destroys all deflectors in the particle system that have been
+created.</td>
+</tr>
+
+<tr class="alt">
+<td>part_deflector_exists</td>
+<td>Returns whether the indicated deflector exists in the particle
+system.</td>
+</tr>
+
+<tr>
+<td>part_deflector_clear</td>
+<td>Clears the deflector ind to its default settings.</td>
+</tr>
+
+<tr class="alt">
+<td>part_deflector_region</td>
+<td>Sets the region for the deflector.</td>
+</tr>
+
+<tr>
+<td>part_deflector_kind</td>
+<td>Sets the kind for the deflector.</td>
+</tr>
+
+<tr class="alt">
+<td>part_deflector_friction</td>
+<td>Sets the friction for the deflector.</td>
+</tr>
+</table>
+</div>
+
+<p>The following functions for particle destroyers have been
+removed:</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>part_destroyer_create</td>
+<td>Creates a new destroyer in the given particle system. It
+returns the index of the destroyer. This index must be used in all
+calls below to set the properties of the destroyer.</td>
+</tr>
+
+<tr class="alt">
+<td>part_destroyer_destroy</td>
+<td>Destroys destroyer ind in the particle system. Call this if you
+don't need it anymore to save space.</td>
+</tr>
+
+<tr>
+<td>part_destroyer_destroy_all</td>
+<td>Destroys all destroyers in the particle system that have been
+created.</td>
+</tr>
+
+<tr class="alt">
+<td>part_destroyer_exists</td>
+<td>Returns whether the indicated destroyer exists in the particle
+system.</td>
+</tr>
+
+<tr>
+<td>part_destroyer_clear</td>
+<td>Clears the destroyer ind to its default settings.</td>
+</tr>
+
+<tr class="alt">
+<td>part_destroyer_region</td>
+<td>Sets the region for the destroyer.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>Particles are normally very fast to process due to the fact that
+they are normally just graphical effects which, once fired off, are
+left to do their own thing based on the parameters set for them
+when you created the system. These routines, however, could be used
+to change particle properties <i>after</i> they have been created
+in a game, which means that each particle has to be tracked and
+dealt with in an individual manner. As this is horribly slow and
+defeats the purpose of particles (as they are meant to be used for
+fast graphical effects)<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20sound%20functions.html">Sound Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

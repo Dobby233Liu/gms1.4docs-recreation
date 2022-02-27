@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>sound_volume</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/sounds/legacy sound/sound_volume.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsounds%2Flegacy%20sound%2Fsound_volume.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsounds%2Flegacy%20sound%2Fsound_volume.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">sound_volume</h1>
+
+<h2 class="studio">Sets the volume of a given sound.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">sound_volume(index, value);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>index</td>
+<td>The index of the sound to change the volume of.</td>
+</tr>
+
+<tr>
+<td>value</td>
+<td>The new volume from 0 to 1.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can change the volume of the given sound.
+This will change the volume for all further instances where the
+indexed sound is played and the volume can be set to a value
+between 0 (silent) and 1 (full volume), with a value of 1 being the
+default volume for the sound unless it has been previously changed
+in the <a href=
+"../../../../000_using%20gamemaker/006_sounds%20and%20music.html">sound
+resource</a>. The volume scale is logarithmic in nature, so a
+volume of 0.5 is <i>not</i> half volume, as illustrated by the
+image below:<br>
+<br>
+<img class="center" src="sound_volume.png"><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if keyboard_check_pressed(vk_add)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if vol &lt; 1 vol += 0.1;<br>
+&nbsp;&nbsp;&nbsp;sound_volume(global.Music, vol);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code checks for a key press and when it detects one it
+raises the volume (to a maximum of 1) of the sound indexed in the
+global variable "Music".</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Legacy
+Sound</a></div>
+
+<div style="float:right">Next: <a href=
+"sound_fade.html">sound_fade</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

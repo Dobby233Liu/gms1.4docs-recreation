@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Timelines</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/005_time lines.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F005_time%20lines.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F005_time%20lines.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Timelines</h1>
+
+<h2 class="studio">Timelines offer you a way to create and control
+instances and actions over a set time period.</h2>
+
+<p>In most games you will want certain things to happen at certain
+moments in time. Now, you can try to achieve this by using the
+alarm events but when things get too complicated this won't work
+any more, especially as you are limited to only twelve alarms.
+That's why we have the <b>time line</b> resource.<br>
+<br>
+In a time line you specify which actions must happen at certain
+moments in game time, and you can use all the actions that are also
+available for an object in its different events. Once you create a
+time line you can then assign it to an object, and the instance of
+that object will then execute the actions at the indicated moments
+of time when placed or created within a room. Let us explain this
+with an example:<br>
+<br>
+Assume you want to make a guard and that this guard should move 20
+time steps to the left, then 10 upwards, then 20 to the right, then
+10 downwards and then finally stop. To achieve this you can make a
+time line where you start with setting a motion to the left. You
+would then create moment 20 (a "moment" is just another way of
+saying "step") and set a motion upward, then at moment 30 a motion
+to the right, at moment 50 a motion downwards and finally at moment
+60 you would stop the motion. Once that is done, you can assign
+this time line to the guard and the guard will do exactly what you
+planned. You could even set an alarm in the time line so that it is
+repeated after a certain length of time and in this way your guard
+can patrol an area!<br>
+<br>
+You can also use a time line to control your game more globally.
+Create an invisible controller object, create a time line that at
+certain moments creates enemies, and then assign it to the
+controller object. Once you start to work with it you will find out
+it is a very powerful tool indeed!<br>
+<br></p>
+
+<h3 class="studio">Creating A Timeline</h3>
+
+<p>To create a time line, choose <b>Create Time Line</b> from the
+<b>Resources</b> menu, or right click on the time line resource in
+the resource tree and select <b>Create Time Line</b> or you can
+just click on the create a time line icon found on the resource
+toolbar at the top of the main screen. Whatever method you choose
+will open the following window:</p>
+
+<p><img class="center" src="../images/form_timeline.png">
+</p>
+
+<p>It's very similar to the object properties window as you can
+specify a name for your time line (like all resources, this should
+be specific and unique), and with an action list and actions on the
+right, and there is even a <b>Show Information</b> button that can
+be used to get an overview of all actions within the time line.
+However, on the left, instead of an event list we have a
+<b>moment</b> list. In a time line a moment is the same as a step,
+so ten moments on your time line are the same as ten steps in your
+game, and you can insert any number of actions and/or code into one
+moment and the object that has the time line assigned to it will
+carry out these actions at the required time. Note that the time
+line can be started at any time in-game, so moment 0 is just the
+moment in which the time line starts and <i>not</i> the moment the
+game or room starts.<br>
+<br>
+The following buttons are available in this window to enable you to
+add, remove and change moments within the time line resource that
+you have created:</p>
+
+<blockquote>
+<ul>
+<li><b>Add</b>. Use this to add a moment to the time line. You must
+indicate the moment, which is the number of steps since the time
+line was started. Now you can drag actions to the list as for
+object events. If you are adding in <b>code</b> actions then these
+can also be named, as explained in the section on <a href=
+"006_scripts.html">Scripts - Adding Comments and Naming Code
+Blocks</a>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Change</b>. Use this button to change the time steps for the
+currently selected moment.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Delete</b>. Use this button to delete a moment or a range of
+moments. You must indicate the time step of the first moment to
+delete and the last one. All moments in between will be
+deleted.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Clear</b>. Use this button to clear the entire list of
+moments.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Shift</b>. Use this button to shift a range of moment to a
+new moment. You must indicate the start of the range, the end of
+the range, and the new time step to which the start of the range
+must be shifted. When different moments become the same their
+action lists will be merged.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Duplicate</b>. This is almost the same as the shift button
+but in this case a copy of the moments are made.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Spread</b>. Use this button to spread out a range of moments
+by adding time between them or put them closer together by removing
+time between them. You specify the start and the end of the range
+and the percentage for the spread. A percentage of 100 means
+nothing changes. For values smaller than 100 the moments are moved
+closer together and for values larger than 100 they are moved
+further apart. For example if you have moments at timesteps 5, 8,
+and 12 and you indicate as range 5:12 and a percentage 200, the
+moments will move to time steps 5, 11, and 19 (the intervals
+between them have doubled.) When different moments become the same
+their action lists will be merged.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Merge</b>. Use this button to merge a number of moments into
+a single one. You specify the start and the end of the range and
+they will all be merged into the start moment.</li>
+</ul>
+</blockquote>
+
+<p>Please note, that although it is possible to create
+<i>negative</i> time moments, it is pointless to do so as they will
+never be executed!</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advanced Use
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"006_scripts.html">Scripts</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

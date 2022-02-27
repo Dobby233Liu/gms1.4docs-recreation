@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>cloud_string_save</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/cloud services/cloud_string_save.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fcloud%20services%2Fcloud_string_save.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fcloud%20services%2Fcloud_string_save.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">cloud_string_save</h1>
+
+<h2 class="studio">Save a string to the chosen cloud service.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">cloud_string_save(string, description);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>string</td>
+<td>The data string to be uploaded.</td>
+</tr>
+
+<tr class="alt">
+<td>description</td>
+<td>A brief description of the data being stored.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will commit a string to the chosen cloud service
+for storage. The function will return a unique <b>id</b> value that
+should then be used in the appropriate asynchronous event to
+identify the ds_map that is returned as a "call back" from the
+cloud service. The string should contain <i>all</i> the information
+that you need to save for your game as you can only store one
+single "data blob" to the cloud, and running this function again
+will overwrite any previously stored values (as will using the
+<a href="cloud_file_save.html"><tt>cloud_file_save</tt></a>
+function). The description should be a short string of information
+that describes the save, eg: "Level2, Stage2".<br>
+<br>
+For further information on the returned asynchronous data, please
+see the function <a href=
+"cloud_synchronise.html"><tt>cloud_synchronise</tt></a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var t_str = "";<br>
+for (var i = 0; i &lt; 10; i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;t_str += string(global.Highscore[i]) + "|"<br>
+&nbsp;&nbsp;&nbsp;}<br>
+save_check = cloud_string_save(t_str, "Current Highscores");<br>
+var file = file_text_open_write("Highscores.txt");<br>
+file_text_write_string(file, t_str);<br>
+file_text_close(file);<br></p>
+
+<p>The above code creates a string from the values stored in the
+global array "Highscores" and then writes this string to the cloud
+service for storage, as well as writing it to a file for local
+storage.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Cloud
+Services</a></div>
+
+<div style="float:right">Next: <a href=
+"cloud_file_save.html">cloud_file_save</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

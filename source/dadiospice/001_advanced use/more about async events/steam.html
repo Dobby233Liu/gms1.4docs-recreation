@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Steam Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/steam.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fsteam.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fsteam.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Steam Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any Steam API call-backs received.</h2>
+
+<p>This event can only be triggered by the <a href=
+"../../002_reference/steam%20api/index.html">Steam API</a>
+functions and will return a <a href=
+"../../002_reference/data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+stored in the variable <tt>async_load</tt>, containing different
+key/value pairs depending on the call-back from the function that
+has triggered the event. The map will always contain the key
+"<b>event_type</b>" which can then be parsed to find the type of
+function that triggered the event and change the code required to
+suit.<br>
+<br>
+<i><b>NOTE:</b> The variable <tt>async_load</tt> is only valid in
+the asynchronous events, as the <tt>ds_map</tt> that is points to
+is created at the start of the event, then deleted again at the
+end, with this variable being reset to a value of -1. However, all
+further data-structures created from the event <b>must be cleaned
+up using the appropriate functions</b>.</i><br>
+<br>
+When calling any function to that triggers this event, it will
+generate a unique async ID value which should be stored in a
+variable and checked, as the <tt>async_load</tt> map will always
+contain an ID key which you can then parse and ensure that you are
+responding to the correct event. In fact, the map will
+<i>always</i> hold the following keys, regardless of the Steam
+function used to generate the async response:</p>
+
+<blockquote>
+<ol>
+<li>"<b>id</b>" - The async ID returned by the function that
+triggered the event</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>result</b>" - The result of the operation (a real value).
+This will either be the GML constant <tt>ugc_result_success</tt> or
+some other real number. So you should check for this constant to
+ensure that the call was successful, and if otherwise somthing has
+not worked correctly. The rest of the possible values returned are
+shown as the result of the Steam "EResult" value and you should see
+<tt>steamclientpublic.h</tt> in the SDK headers for all 89 possible
+values.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>event_type</b>" - A string denoting the type of event (see
+below for the details)</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Uploading</h3>
+
+<p>When using the Steam functions for uploading a leaderboard
+(either <a href=
+"../../002_reference/steam%20api/steam_upload_score.html"><tt>steam_upload_score()</tt></a>
+or <a href=
+"../../002_reference/steam%20api/steam_upload_score_buffer.html"><tt>
+steam_upload_score_buffer()</tt></a>) the returned <tt>ds_map</tt>
+will have the following key/value pairs:</p>
+
+<blockquote>
+<ol>
+<li>"<b>event_type</b>" - This key will hold the value
+"<b>leaderboard_upload</b>"</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>post_id</b>" - This key should match the ID value returned
+by the upload calling function</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>lb_name</b>" - This key holds the name of the leaderboard
+which was posted to</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>success</b>" - Will be 1 if the post succeeded, 0
+failed</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>updated</b>" - Will be 1 if the leaderboard score was
+actually updated (ie: the new score was better) or 0 otherwise</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>score</b>" - This key holds the score which was posted</li>
+</ol>
+</blockquote>
+
+<p>You can see examples of this on the pages for the score upload
+functions.<br>
+<br></p>
+
+<h3 class="studio">Downloading Leaderboards</h3>
+
+<p>When using the Steam functions for downloading a leaderboard
+(<a href=
+"../../002_reference/steam%20api/steam_download_scores.html"><tt>steam_download_scores()</tt></a>,
+<a href=
+"../../002_reference/steam%20api/steam_download_scores_around_user.html">
+<tt>steam_download_scores_around_user()</tt></a> or <a href=
+"../../002_reference/steam%20api/steam_download_friends_scores.html">
+<tt>steam_download_friends_scores()</tt></a>) the returned
+<tt>ds_map</tt> will have the following key/value pairs:</p>
+
+<blockquote>
+<ol>
+<li>"<b>event_type</b>" - This key will hold the value
+"<b>leaderboard_download</b>"</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>id</b>" - This key should match the ID value returned by
+the download calling function</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>status</b>" - The status of the callback, where -1 equals a
+failure or that no results were returned, and 0 equals a
+success.</li>
+
+<li>"<b>lb_name</b>" - This key holds the name of the leaderboard
+which was posted to</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>numEntries</b>" - The number of "rows" of leaderboard data
+that is being returned.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>entries</b>" - A JSON object string that contains another
+ds_map, which will either contain the key "default" (signifying
+that no results are contained within) or the key "entries", which
+you can then get the value of. this returned value for "entries"
+will be a <a href=
+"../../002_reference/data%20structures/ds%20lists/index.html"><tt>ds_list</tt></a>
+containing each of the ranks from the leaderboard, where each entry
+in the list will itself reference another <tt>ds_map</tt> which
+will contain the keys "name", "score" and "rank", and it may also
+contain a "data" key depending on the function used to upload.</li>
+</ol>
+</blockquote>
+
+<h4 class="studio">Example of Use</h4>
+
+<p>In this example we will show how downloading score data works by
+requesting the top ten ranking for the given leaderboard and
+parsing its results in the <b>Steam Async Event</b> (for uploading
+examples, please see the appropriate function pages). To start with
+we need to request the scores with the following code:</p>
+
+<p class="code">score_get = steam_download_scores("Game Scores", 1,
+10);<br></p>
+
+<p>This will send off a request to the Steam Server for the scores
+from the leaderboard "Game Scores", storing the <b>async ID</b> of
+the request in the variable "score_get". This will then be handled
+in the <b>Steam Async Event</b> in the following way:</p>
+
+<p class="code">var async_id = ds_map_find_value(async_load,
+"id");<br>
+if async_id == score_get<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var entries = ds_map_find_value(async_load,
+"entries");<br>
+&nbsp;&nbsp;&nbsp;var map = json_decode(entries);<br>
+&nbsp;&nbsp;&nbsp;if ds_map_exists(map, "default")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds_map_destroy(map);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exit;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var list =
+ds_map_find_value(map, "entries");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var len =
+ds_list_size(list);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var entry;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var i = 0; i &lt; len;
+i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry =
+ds_list_find_value(list, i );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steam_name[i]
+= ds_map_find_value(entry, "name");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steam_score[i]
+= ds_map_find_value(entry, "score");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;steam_rank[i]
+= ds_map_find_value(entry, "rank");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if
+(ds_map_exists(entry, "data"))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var
+data = ds_map_find_value(entry, "data");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var
+buffId = buffer_base64_decode(data);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var
+message = buffer_read(buffId, buffer_string);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;show_debug_message(
+" -- attached message: " + string(message));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer_delete(buffId);<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds_map_destroy(entry);<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ds_list_destroy(list)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;ds_map_destroy(map)<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>What we do here is first check the "id" key of the special
+<tt>async_load</tt> map. If this value is the same as the value of
+the original call-back function (stored in the "score_get"
+variable) we then continue to process the data. The first thing we
+do is parse the <tt>async_load</tt> ds_map for the key "entries"
+which will contain a JSON object containing the leaderboard data.
+This JSON object is then decoded (see <a href=
+"../../002_reference/file%20handling/json_decode.html"><tt>json_decode</tt></a>)
+as another ds_map, and this new map id is stored in the variable
+"map".<br>
+<br>
+This map is checked for the key "default" and if that is found then
+the map is destroyed and the event is exited. If no "default" key
+is found, the code will then parse the map to extract the necessary
+information about the leaderboard, by first extracting a ds_list
+from the "entries" key of the ds_map, and then looping through each
+entry of the list to get <i>another</i> ds_map with the name, score
+and rank of each entry. These values are then stored in arrays and
+then we check to see if there is an additional "data" key. If there
+is (ie: the score was uploaded with an additional data package)
+then we also parse that and send it to the compiler console for
+debugging, before destroying the buffer and then continuing on to
+destroy the map. Note that if the "data" key is included, it needs
+to be decoded using the <a href=
+"../../002_reference/buffers/buffer_base64_decode.html"><tt>buffer_base64_decode()</tt></a>
+before it can be correctly read.<br>
+<br>
+Once the loop has finished, the entries list is destroyed as is the
+map that it was taken from. There is no need to destroy the
+<tt>async_load</tt> ds_map as this is handled for you by
+<i>GameMaker: Studio</i>.</p>
+
+<h3 class="studio">Downloading UGC</h3>
+
+<p>When using the Steam functions for downloading <a href=
+"../../002_reference/steam%20api/user%20generated%20content/index.html">
+User Generated Content (UGC)</a>, a number of them will trigger
+this event. However, each function will generate an
+<tt>async_load</tt> ds_map with differeing key/value pairs
+(although they will always contain the general "id", "result" and
+"event_type" keys), so please see the page specific to the function
+being used for details and examples.<br>
+<br></p>
+
+<h3 class="studio">Unique UGC Events</h3>
+
+<p>The Steam Async event can also be triggered when a user
+subscribes to an item outside of the game - for example, they tab
+away to a browser and subscribe to a new item then tab back to the
+game. In these cases the <tt>async_load</tt> map will <b>only</b>
+contain the following details (and none of the default values
+listed at the top of this page):</p>
+
+<blockquote>
+<ol>
+<li>"<b>event_type</b>" - This key will hold the value
+"<b>ugc_item_installed</b>"</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>published_file_id</b>" - the ID of the newly installed UGC
+item (you can use the function <a href=
+"../../002_reference/steam%20api/user%20generated%20content/steam_ugc_get_item_install_info.html">
+<tt>steam_ugc_get_item_install_info()</tt></a> to get the path to
+the installed item)</li>
+
+<li style="list-style: none"><br>
+</li>
+</ol>
+</blockquote>
+
+<p>The Steam Async event can also be triggered when a workshop item
+is subscribed to - either from within the app, or externally from a
+workshop browser - and in these cases the <tt>async_load</tt> map
+will contain the following key/value pairs:</p>
+
+<blockquote>
+<ol>
+<li>"<b>event_type</b>" - This key will hold the value
+"<b>ugc_item_subscribed"</b>"</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>published_file_id</b>" : This key has the published file ID
+of the newly subscribed item</li>
+
+<li style="list-style: none"><br>
+</li>
+</ol>
+</blockquote>
+
+<p>The event will be triggered should any item be un-subscribed
+too, with the DS map holding the following:</p>
+
+<blockquote>
+<ol>
+<li>"<b>event_type</b>" - This key will hold the value
+"<b>ugc_item_unsubscribed"</b>"</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>"<b>published_file_id</b>" : This key has the published file ID
+of the un-subscribed item</li>
+
+<li style="list-style: none"><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="social.html">Social
+Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

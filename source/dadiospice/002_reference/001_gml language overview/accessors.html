@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Accessors</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/accessors.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Faccessors.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Faccessors.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Accessors</h1>
+
+<h2 class="studio">This section shows how to use accessors to get
+and set data within Data Structures and Buffers.</h2>
+
+<p>The GameMaker Language (GML) also permits you to access certain
+<a href="../data%20structures/index.html">Data Structures</a>
+through the use of logical expressions called <b>accessors</b>.
+This is done in a similar way as you would for working with
+<a href="401_06_arrays.html">arrays</a> only we use an identifier
+symbol before the first argument to tell <i>GameMaker: Studio</i>
+that you are working on a (previously created) data structure.<br>
+<br></p>
+
+<h3 class="studio">Data Structures</h3>
+
+<p>You can add, replace and get values and keys for the following
+data structure types: <a href=
+"../data%20structures/ds%20maps/index.html">ds_maps</a>, <a href=
+"../data%20structures/ds%20lists/index.html">ds_lists</a>, and
+<a href="../data%20structures/ds%20grids/index.html">ds_grids</a>.
+Each one has been given its own symbol and method for accessing,
+changing or setting values, as shown below.<br>
+<br></p>
+
+<h4 class="studio">ds_list [| ]</h4>
+
+<p>The syntax for lists is:</p>
+
+<p class="code">list_index[| index]</p>
+
+<p>So when you have used <tt>ds_list_create()</tt> to create your
+list, you would use the list index (that you have stored in a
+variable) to reference it, with the "index" value being the
+position in the list to set or add. For example, the following code
+creates a list and then adds 10 entries, setting each entry to
+random number from 0 to 9:</p>
+
+<p class="code">ds = ds_list_create();<br>
+var index = 0;<br>
+repeat(10)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;ds[| index++] = irandom(9);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>Once you have created your list structure and filled it with
+data, to get values from the list you would have something
+like:</p>
+
+<p class="code">value = ds[| 5];</p>
+
+<p>The above will get the value from position 5 (the sixth index,
+since lists start at 0) and store it in a variable. Note that if
+you are using an expression to add a reference to an index that
+already has a value, the previous value will be replaced rather
+than have a further index added to the list. To add further entries
+you would need to know the ds_list size and add them to the end. It
+is also worth noting that you can set a list index that is
+<i>greater</i> than the size of the list being referenced, and this
+will set that value, expanding the list at the same time, as well
+as initialise all the positions in the list up to the given index
+as 0.</p>
+
+<blockquote>
+<hr>
+</blockquote>
+
+<h4 class="studio">ds_map [? ]</h4>
+
+<p>The syntax for maps is:</p>
+
+<p class="code">map_index[? key]</p>
+
+<p>After creating your map with <tt>ds_map_create()</tt>, you would
+use the map index that you have stored in a variable to reference
+it, with the "key" value being the map key to set or get. For
+example, the following code creates a map and then adds a few
+entries to it using this syntax:</p>
+
+<p class="code">ds = ds_map_create();<br>
+ds[? "Name"] = "Hamish";<br>
+ds[? "Company"] = "MacSeweeny Games";<br>
+ds[? "Game"] = "Catch The Haggis";<br></p>
+
+<p>Once you have created your map structure and filled it with
+data, to get values from a specific map key you would have
+something like:</p>
+
+<p class="code">value = ds[? "Name"];</p>
+
+<p>The above will get the value from the key "Name" and store it in
+a variable. Note that if the map already contains the same key
+value as you are trying to add, it will not create a duplicate key
+with the new value, but rather the previous value will be
+replaced.</p>
+
+<blockquote>
+<hr>
+</blockquote>
+
+<h4 class="studio">ds_grid [# ]</h4>
+
+<p>The syntax for grids is:</p>
+
+<p class="code">grid_index[# xpos, ypos]</p>
+
+<p>After creating your grid with the <tt>ds_grid_create()</tt>
+function, you would use the grid index that you have stored in a
+variable to reference it, with the "xpos" and "ypos" being the
+position within the grid to get or set a value. For example, the
+following code creates a grid, clears it to 0, then and then adds a
+few entries to it:</p>
+
+<p class="code">ds = ds_grid_create();<br>
+ds_grid_clear(ds, 0);<br>
+var gw = ds_grid_width(ds) - 1;<br>
+var gh = ds_grid_height(ds) - 1;<br>
+repeat(10)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var xx = irandom(gw);<br>
+&nbsp;&nbsp;&nbsp;var yy = irandom(gh);<br>
+&nbsp;&nbsp;&nbsp;if ds[# xx, yy] == 0 ds[# xx, yy] = 1;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>Once you have created your grid structure and filled it with
+data, to get values from a specific grid position you would have
+something like:</p>
+
+<p class="code">value = ds[# mouse_x div 16, mouse_y div 16];</p>
+
+<p>The above will get the value from the given ds_grid based on the
+mouse position (divided by the "cell" width in the room to get the
+correct location).</p>
+
+<blockquote>
+<hr>
+</blockquote>
+
+<h3 class="studio">Arrays</h3>
+
+<p>Arrays also have their own accessors which works in a similar
+way as those listed above for data structures. however array
+accessors have an interesting property and that is to permit you to
+modify an array from a script without having to copy it. When you
+pass an array into a script, it is <i>passed by reference</i>,
+meaning that the array itself isn't being copied into the script
+but rather it is simply being referenced to get the data. Normally
+if you then need to change the array, it would be copied to the
+script and then you would need to pass back the copied array for
+the original array to be updated. This can have costly processing
+overheads, and you can use the accessor instead, as that will
+change the original array directly without the need for it to be
+copied. You can see how this works in the examples below.<br>
+<br>
+The syntax for arrays is:</p>
+
+<p class="code">array[@ xpos]<br>
+array[@ xpos, ypos]<br></p>
+
+<p>After you have created your array in an instance, you can then
+pass it to a script by reference and use the accessor <tt>@</tt> to
+change it directly. For example you would create the array and call
+the script like this:</p>
+
+<p class="code">array[99] = 0;<br>
+scr_Array_Populate(array);<br></p>
+
+<p>The script itself would have something like this:</p>
+
+<p class="code">var a = argument0; var i = 0; repeat(25)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;i = irandom(99);<br>
+&nbsp;&nbsp;&nbsp;while (a[i] != 0)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i = irandom(99);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;a[@ i] = 100;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>All this script is doing is selecting 25 random positions in the
+array and setting the value of the chosen array position to
+100.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"401_04_expressions.html">Expressions</a></div>
+
+<div style="float:right">Next: <a href="401_07_if.html">The "If"
+Statement</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

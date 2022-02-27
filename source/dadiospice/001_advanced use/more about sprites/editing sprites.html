@@ -1,0 +1,298 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Editing Sprites</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about sprites/editing sprites.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fediting%20sprites.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fediting%20sprites.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Editing Sprites</h1>
+
+<h2 class="studio">This section explains the functions associated
+with the <i>GameMaker: Studio</i> sprite editor.</h2>
+
+<p>In previous sections of the manual we have seen how to load
+simple sprites from files, but it is also possible to create and
+modify them within <i>GameMaker: Studio</i>. To do this, open the
+sprite property window by double clicking on one of your sprites
+(or by creating a new one) and pressing the button labeled <b>Edit
+Sprite</b>, which will open up the following window:<br>
+<img class="center" src="../../images/form_sprite_editor.png"> The
+main area of the sprite editor is taken up by the various
+sub-images that make up the sprite. These sub-images all have the
+same over-all size, with any smaller image having generally
+transparent pixels around to make it "fit" the maximal size,
+although this will depend on whether you are importing images from
+a file or not (see the "File Menu" section below) and the choices
+you make when doing so. The other sections are explained in more
+detail below.<br>
+<br></p>
+
+<h3 class="studio">Preview</h3>
+
+<p>To get a preview of the sprite you must tick the check-box
+labelled "Show Preview". This will cause the area beneath to show
+an animated preview of the current sprite as well as a number of
+options that affect how this preview looks, all with the aim of
+getting a good idea of how a finished sprite will look when placed
+in the game world. You can change the speed at which the animation
+is displayed by changing the corresponding value in the box, and
+you can also choose a colour for the background of the sprite (this
+only affects the preview, not the actual game). Should you wish,
+you can also specify a background image from your resource tree by
+clicking on the "Background" menu and so get a more realistic idea
+of how the sprite will look in the game, with the option of
+stretching the background to fit the size of the sprite available
+beneath that too. Note that these options will only be visible if
+you have transparent areas in your sprite!<br>
+<br></p>
+
+<h3 class="studio">Infobar</h3>
+
+<p>This bar at the bottom gives you some very basic information
+about the current sprite you are working with:</p>
+
+<blockquote>
+<ul>
+<li><b>Frames:</b> The number of sub-images that the sprite
+has.<br></li>
+
+<li><b>Size:</b> The width and height of the sprite.<br></li>
+
+<li><b>Memory:</b> This is the approximate texture memory that the
+finished sprite will take up on any device, and is calculated as:
+<code>image_number * width * height * 4</code>.<br></li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Toolbar</h3>
+
+<p>The toolbar contains a number buttons that allow you to change
+and manipulate the position and the actual sub-images that make up
+your sprite:<br></p>
+
+<blockquote>
+<div style="float:left"><img src="confirm.png">
+</div>
+<br>
+<b>Confirm</b><br>
+<br>
+This will close the sprite editor and save any changes you have
+made. Be aware that there are no confirmation messages asking if
+you want to save.<br>
+<br>
+
+<div style="float:left"><img src="new_sprite.png">
+</div>
+<br>
+<b>New Sprite</b><br>
+<br>
+Click on this to create a new sprite. You will be prompted to input
+a base width and height. <i>Note</i>: This will delete all previous
+sprite information!<br>
+<br>
+
+<div style="float:left"><img src="sprite_from_file.png">
+</div>
+<br>
+<b>Create A Sprite From A File</b><br>
+<br>
+This will open the standard window for loading a sprite (see
+<a href=
+"../../000_using%20gamemaker/005_loading%20sprites.html">Defining
+Sprites</a>) . This will <i>replace</i> any existing sprite images
+with the loaded one.<br>
+<br>
+
+<div style="float:left"><img src="add_from_file.png">
+</div>
+<br>
+<b>Add A Sprite From A File</b><br>
+<br>
+This will open the standard window for loading a sprite (see
+<a href=
+"../../000_using%20gamemaker/005_loading%20sprites.html">Defining
+Sprites</a>) , which is then <i>added</i> to the current sprite. If
+the dimensions of the new sprite do not match up with the current
+sprite you will be shown these options: <img class="center" src=
+"insert_image_options.png"><br>
+<br>
+
+<div style="float:left"><img src="save.png">
+</div>
+<br>
+<b>Save Strip</b><br>
+<br>
+This will save your current sprite as a *.png strip, ready to be
+used in another game or some other animation program. Below you can
+see an example of an animated sprite along with the strip that
+<i>GameMaker: Studio</i> would produce when saved using this
+option:<br>
+<br>
+<img class="center" src="animation.gif"><br>
+<br>
+<img class="center" src="animation_strip.png"><br>
+<br>
+
+<div style="float:left"><img src="insert_empty.png">
+</div>
+<br>
+<b>Insert Empty Frame</b><br>
+<br>
+This command simply inserts an empty frame into the list of
+sub-images. This frame will always be inserted <i>before</i> the
+currently selected sub-image.<br>
+<br>
+
+<div style="float:left"><img src="add_empty.png">
+</div>
+<br>
+<b>Add Empty Frame</b><br>
+<br>
+This command adds an empty frame onto the end of the current
+sub-images.<br>
+<br>
+
+<div style="float:left"><img src="undo.png">
+</div>
+<br>
+<b>Undo</b><br>
+<br>
+This will undo the last action, and you can repeatedly undo
+consecutive actions with this button, but note that the number of
+undos that can be performed is limited to 16.<br>
+<br>
+
+<div style="float:left"><img src="redo.png">
+</div>
+<br>
+<b>Redo</b><br>
+<br>
+If you have used the undo function, you can use this to go back to
+the state that you undid. This is limited to the number of undos
+that you have done previously.<br>
+<br>
+
+<div style="float:left"><img src="cut.png">
+</div>
+<br>
+<b>Cut</b><br>
+<br>
+You can use this to "cut" a sub image out of the list of
+sub-images. This cut image is stored to the clipboard and can then
+be pasted into another part of the same sprite, another sprite
+resource or even into some other program, independent of
+<i>GameMaker: Studio</i>. Please note that the transparencies may
+not be the same when pasted into another program.<br>
+<br>
+
+<div style="float:left"><img src="copy.png">
+</div>
+<br>
+<b>Copy</b><br>
+<br>
+This button will copy the currently selected sub-image into the
+clipboard for use in another place, either the same sprite, another
+sprite or even an alternate program.<br>
+<br>
+
+<div style="float:left"><img src="paste.png">
+</div>
+<br>
+<b>Paste</b><br>
+<br>
+You can use this button to paste whatever image you have previously
+stored in the clipboard (with cut, or copy) into the current sprite
+as a new sub-image. If the pasted image is larger or smaller than
+the current sprite, you will be shown the "Inserting Image" window
+(see "Add A Sprite From A File", above).<br>
+<br>
+
+<div style="float:left"><img src="shift_left.png"><img src=
+"shift_right.png">
+</div>
+<br>
+<b>Shift Image</b><br>
+<br>
+These buttons will move the currently selected sub-image left or
+right in the image order for animation.<br>
+<br>
+
+<div style="float:left"><img src="edit.png">
+</div>
+<br>
+<b>Edit Sub-image</b><br>
+<br>
+This button will open the <i>GameMaker: Studio</i> <b>Image
+Editor</b> where you can edit on a per-pixel basis the selected
+sub-image. More on this in the section <a href=
+"editing%20subimages.html">Editing Sub-images</a>.<br>
+<br>
+
+<div style="float:left"><img src="premultiply.png">
+</div>
+<br>
+<b>Pre-Multiply Alpha</b><br>
+<br>
+This button will pre-multiply the alpha of all sub-images of the
+chosen sprite. This is normally only necessary when dealing with
+surfaces and drawing sprites to them, or for some specific special
+effects and for normal sprite use you should not see any noticeable
+difference between the normal sprite and the pre-multiplied one.
+Note that this <b>cannot be undone</b>..<br>
+<br></blockquote>
+
+<h3 class="studio">Menus</h3>
+
+<p>For information relating to the different menu options, please
+refer to the following pages:<br>
+<br>
+<a href="edit%20menus/file%20menu.html">File Menu</a><br>
+<a href="edit%20menus/edit%20menu.html">Edit Menu</a><br>
+<a href="edit%20menus/transform%20menu.html">Transform Menu</a><br>
+<a href="edit%20menus/images%20menu.html">Images Menu</a><br>
+<a href="edit%20menus/animation%20menu.html">Animation
+Menu</a><br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Sprites</a></div>
+
+<div style="float:right">Next: <a href=
+"editing%20subimages.html">Editing Subimages</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

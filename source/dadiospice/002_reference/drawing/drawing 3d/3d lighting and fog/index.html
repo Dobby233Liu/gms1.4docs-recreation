@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>3D Lighting and Fog</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d lighting and fog/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20lighting%20and%20fog%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20lighting%20and%20fog%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">3D Lighting and Fog</h1>
+
+<h2 class="studio">This section details all the functions available
+to you for lighting the 3D scene.</h2>
+
+<p>Scenes you draw with the <i>GameMaker: Studio</i> functions may
+look rather flat because there is no lighting to give them realism
+and life, meaning that the colour of the faces is equal all over,
+independent of their orientation or position. Therefore, to create
+more realistically looking scenes you must enable lighting and
+place lights at the correct places within the 3D world, and this
+section outlines the functions available to help you achieve
+that:</p>
+
+<blockquote>
+<ol>
+<li><a href="d3d_set_fog.html">d3d_set_fog</a>
+</li>
+
+<li><a href="d3d_set_lighting.html">d3d_set_lighting</a>
+</li>
+
+<li><a href="d3d_set_shading.html">d3d_set_shading</a>
+</li>
+
+<li><a href=
+"d3d_light_define_direction.html">d3d_light_define_direction</a>
+</li>
+
+<li><a href=
+"d3d_light_define_point.html">d3d_light_define_point</a>
+</li>
+
+<li><a href="d3d_light_enable.html">d3d_light_enable</a>
+</li>
+
+<li><a href=
+"d3d_light_define_ambient.html">d3d_light_define_ambient</a>
+</li>
+</ol>
+</blockquote>
+
+<p>It is worth noting that all targets <i>except <b>Android</b></i>
+use smooth shading for lighting, but on Android this is hard
+shading. On the <b>Windows</b> platform this can be changed using
+the <tt>d3d_set_shading()</tt> function, but for all other
+platforms you should use a shader to create different lighting
+types.<br>
+<br></p>
+
+<h3 class="studio">Vertex Normal Functions</h3>
+
+<p>The way an object reflects light depends on the angle between
+the light direction and the <i>normal</i> of the surface, that is,
+the vector pointing away from the surface. Hence, to create lit
+objects you need not only provide the position of the vertices but
+also their normals. For this four additional functions are
+available to define the vertices of primitives (for the basic
+shapes that you can draw the normals are automatically set
+correctly):</p>
+
+<blockquote>
+<ol>
+<li><a href="d3d_vertex_normal.html">d3d_vertex_normal</a>
+</li>
+
+<li><a href=
+"d3d_vertex_normal_colour.html">d3d_vertex_normal_colour</a>
+</li>
+
+<li><a href=
+"d3d_vertex_normal_texture.html">d3d_vertex_normal_texture</a>
+</li>
+
+<li><a href=
+"d3d_vertex_normal_texture_colour.html">d3d_vertex_normal_texture_colour</a>
+</li>
+</ol>
+</blockquote>
+
+<p>The above functions are used to define a primitive in the same
+was as that outlined in the section <a href=
+"../3d%20drawing/index.html">3D Drawing</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Working With
+3D</a></div>
+
+<div style="float:right">Next: <a href=
+"../3d%20models/index.html">3D Models</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

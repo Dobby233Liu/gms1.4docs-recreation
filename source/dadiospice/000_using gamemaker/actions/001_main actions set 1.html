@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Main Actions - Set 1</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/actions/001_main actions set 1.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2F001_main%20actions%20set%201.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2F001_main%20actions%20set%201.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Main Actions - Set 1</h1>
+
+<h2 class="studio">This section deals with some of the main actions
+you will use when working with <i>GameMaker: Studio</i>.</h2>
+
+<p>The main action sets are full of the most important actions that
+you will need when working with <i>GameMaker: Studio</i>, and the
+first set, marked "main1" in the object properties tab, deals with
+instances, sprites, sounds and moving from room to room.<br>
+<br></p>
+
+<h3 class="studio">Instances</h3>
+
+<p><img src="../../images/createinstance.png" align=
+"left"><b>Create Instance</b><br>
+With this action you can create an instance of an object. You
+specify which object to create and the position for the new
+instance. If you check the <b>Relative</b> box, the position is
+relative to the position of the current instance. Creating
+instances during the game is extremely useful. A space ship can
+create bullets; a bomb can create an explosion, etc. In many games
+you will have some controller object that from time to time creates
+monsters or other objects. For the newly created instance the
+creation event is executed.<br>
+<br>
+<img src="../../images/create_motion.png" align="left"><b>Create
+Moving</b><br>
+This action works the same as the action above but with two
+additional fields. You can now also specify the speed and direction
+of the newly created instance. Note that if you check the
+<b>Relative</b> box, only the position is relative, not the speed
+and direction. For example, to make a bullet move in the direction
+of the person shooting you have to use a little trick. As position
+use 0,0 and check <b>Relative</b>. As direction we need the current
+direction of the instance. This can be obtained by typing in the
+word <tt>direction</tt>. (This actually is a variable that always
+indicates the current direction in which the instance is
+moving.)<br>
+<br>
+<img src="../../images/create_multiple.png" align="left"><b>Create
+Random</b><br>
+This action lets you create an instance of one out of four objects.
+You specify the four objects and the position. An instance of one
+of these four objects is created at the given position. If you
+check the <b>Relative</b> box, the position is relative to the
+position of the current instance. If you need a choice out of less
+than four objects you can use No Object for some of them. This is
+for example useful to generate a random enemy at a location.<br>
+<br>
+<img src="../../images/change.png" align="left"><b>Change
+Instance</b><br>
+With this action you can change the current instance into an
+instance of another object. So for example, you can change an
+instance of a bomb into an explosion. All settings, such as the
+motion and the value of variables, will stay the same. You can
+indicate whether or not to perform the destroy event for the
+current object and the creation event for the new object.<br>
+<br>
+<img src="../../images/destroy.png" align="left"><b>Destroy
+Instance</b><br>
+With this action you destroy the current instance. The destroy
+event for the instance is executed.<br>
+<br>
+<img src="../../images/destroy_at.png" align="left"><b>Destroy at
+Position</b><br>
+With this action you destroy all instances whose bounding box
+contains a given position. This is useful, for example, when you
+use an exploding bomb. When you check the <b>Relative</b> box the
+position is taken relative to the position of the current
+instance.<br>
+<br></p>
+
+<h3 class="studio">Sprites</h3>
+
+<p><img src="../../images/set_sprite.png" align="left"><b>Change
+Sprite</b><br>
+Use this action to change the sprite for the instance. You indicate
+which new sprite. You can also indicate with subimage must be
+shown. Normally you would use 0 for this (the first subimage)
+unless you want to see a particular subimage. Use -1 if you do not
+want to change the current subimage shown. Finally you change the
+speed of the animation of the subimages. If you only want to see a
+particular subimage, set the speed to 0. If the speed is larger
+than one subimages will be skipped. If it is smaller than 1
+subimages will be shown multiple times. Don't use a negative speed.
+Changing sprites is an important feature. For example, often you
+want to change the sprite of a character depending on the direction
+in which it walks. This can be achieved by making different sprites
+for each of the (four) directions. Within the keyboard events for
+the arrow keys you set the direction of motion and the sprite.<br>
+<br>
+<img src="../../images/set_sprite_scale.png" align=
+"left"><b>Transform Sprite</b><br>
+Use this action to change the size and orientation of the sprite
+for the instance. Use the scale factors to make it larger or
+smaller. The angle gives the counter-clockwise orientation of the
+sprite. For example, to make the sprite oriented in the direction
+of motion use as a value <tt>direction</tt>. For example, this is
+useful for a car. You can also indicate whether the sprite should
+be mirrored horizontally and/or flipped vertically.<br>
+<br>
+<img src="../../images/set_sprite_colour.png" align=
+"left"><b>colour Sprite</b><br>
+Normally the sprite is drawn as it is defined. Using this action
+you can change the colour of the sprite. This colour is blended
+with the sprite, that is, it is combined with the colours of the
+sprite. If you want to draw a sprite in different colours you
+better define the sprite in black and white and use the blend
+colour to set the actual colour. You can also indicate an alpha
+transparency. With a value of 1 the sprite is opaque. With a value
+of 0 it is completely transparent. With a value in between you will
+partially see the background shine through it. This is great for
+making explosions.<br>
+<br></p>
+
+<h3 class="studio">Sounds</h3>
+
+<p><img src="../../images/sound_play.png" align="left"><b>Play
+Sound</b><br>
+With this action you play one of the sound resources you added to
+your game. You can select the sound you want to play and choose
+whether it should play only once (the default) or loop
+continuously. Multiple sounds can play at once.<br>
+<br>
+<img src="../../images/sound_stop.png" align="left"><b>Stop
+Sound</b><br>
+This action stops the indicated sound. If multiple instances of
+this sound are playing all are stopped.<br>
+<br>
+<img src="../../images/if_sound.png" align="left"><b>Check
+Sound</b><br>
+If the indicated sound is playing the next action is performed.
+Otherwise it is skipped. You can select <b>Not</b> to indicate that
+the next action should be performed if the indicated sound is not
+playing. For example, you can check whether some background music
+is playing and, if not, start some new background music. Note that
+this action returns true when the sound actually plays through the
+speakers. After you call the action to play a sound it does not
+immediately reach the speakers so the action might still return
+false for a while. Similar, when the sound is stopped you still
+hear it for a while (e.g. because of echo) and the action will
+still return true.<br>
+<br></p>
+
+<h3 class="studio">Rooms</h3>
+
+<p><img src="../../images/previous_room.png" align=
+"left"><b>Previous Room</b><br>
+Move to the previous room, as defined by the order of the room
+assets in the resource tree. If you are in the first room of the
+game and call this function you will get an error.<br>
+<br>
+<img src="../../images/next_room.png" align="left"><b>Next
+Room</b><br>
+Move to the next room, as defined by the order of the room assets
+in the resource tree. If you are in the last room of the game and
+call this function you will get an error.<br>
+<br>
+<img src="../../images/current_room.png" align="left"><b>Restart
+Room</b><br>
+This will restart the current room.<br>
+<br>
+<img src="../../images/goto_room.png" align="left"><b>Different
+Room</b><br>
+With this action you can go to a particular room, selecting the
+room to go to from the drop-down list.<br>
+<br>
+<img src="../../images/previous_room.png" align="left"> <b>Check
+Previous</b><br>
+This action tests whether the previous room exists. If so, the next
+action is executed.<br>
+<br>
+<img src="../../images/if_next_room.png" align="left"><b>Check
+Next</b><br>
+This action tests whether the next room exists. If so, the next
+action is executed.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Actions</a></div>
+
+<div style="float:right">Next: <a href=
+"002_main%20actions%20set%202.html">Main Actions - Set 2</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

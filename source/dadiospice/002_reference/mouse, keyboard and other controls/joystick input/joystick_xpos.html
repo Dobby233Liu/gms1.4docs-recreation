@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>joystick_xpos</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/mouse, keyboard and other controls/joystick input/joystick_xpos.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmouse,%20keyboard%20and%20other%20controls%2Fjoystick%20input%2Fjoystick_xpos.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmouse,%20keyboard%20and%20other%20controls%2Fjoystick%20input%2Fjoystick_xpos.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">joystick_xpos</h1>
+
+<h2 class="studio">Returns the position of the x-axis of
+joystick.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">joystick_xpos(id);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>id</td>
+<td>The id of the joystick (1 or 2).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will return the position of the x-axis of the
+joystick/gamepad with the given id, with the value being somewhere
+between -1 and 1. See the image below for the relationship between
+the different axes of rotation that are accepted. The id can be
+either 1 or 2 as <i>GameMaker: Studio</i> only accepts input from a
+maximum of two joysticks/gamepads.<br>
+<br>
+<i><b>NOTE:</b> This function is only available for
+Windows.</i><br>
+<br>
+<img class="center" src="js_axis.png"></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">xx += spd * joystick_xpos(1);</p>
+
+<p>The above code uses the returned value of the
+<tt>joystick_xpos</tt> function to set a variable within the
+instance.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Joystick
+Input</a></div>
+
+<div style="float:right">Next: <a href=
+"joystick_ypos.html">joystick_ypos</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

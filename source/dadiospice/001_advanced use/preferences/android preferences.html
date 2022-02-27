@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Android Preferences</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/preferences/android preferences.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fandroid%20preferences.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fandroid%20preferences.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Android Preferences</h1>
+
+<h2 class="studio">The section details the Android device
+preferences tab.</h2>
+
+<p><img class="center" src="android_prefs.png"> For <i>GameMaker:
+Studio</i> to work with Android device, a number of things need to
+be set up. First, you <b>must</b> have installed the <b>Android
+SDK</b> along with the API packages required for your game to run
+(as well as a test device with Android installed), the <b>Android
+NDK</b>, and you must also have installed the <b>Java SE
+Development Kit (JDK)</b>. Once you have them installed and updated
+you should set up your <a href="server%20preferences.html">Web
+Server Preferences</a> before continuing with the configuration of
+this tab. You can get up-to-date information on whgat version of
+the SDK and NDK is currently required from this helpdesk article:
+<a href="http://help.yoyogames.com/entries/91625158" target=
+"_blank">SDK Version Support</a>.</p>
+
+<h3 class="studio">Keystore</h3>
+
+<p>The KeyStore is a file that will be used to "sign" all your
+Android apps - <b>including those created for the <i>Amazon
+Fire</i> target platform</b> - so please fill in all the details
+correctly:</p>
+
+<blockquote>
+<ul>
+<li><b>Name</b>: This is the name of the KeyStore file.
+<i><b>Note:</b> This is not your name or the company name, but the
+name of the file to be generated!</i></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Password</b>: Your security password for the KeyStore file
+which <i>must be at least six characters long</i>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Alias</b>: This is another name that can be used for the
+KeyStore file and should be different to the name entered
+above.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Password</b>: The password for the alias file. Should be the
+same as the <b>Name</b> password.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Common Name</b>: This would normally be your name.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Organisational Unit</b>: The department within the company
+that you are a part of.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Organisation</b>: The name of your company.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Location</b>: The name of the town or city where you are
+based.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Country</b>: The standard two letter code for the country
+where you are based.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>Once this information is filled in and you are happy with it,
+press the button marked <b>Generate</b> for <i>GameMaker:
+Studio</i> to create the necessary KeyStore file. This may take a
+moment but once it is finished, you will see that the section
+marked Private KeyStore File will have been updated to reflect the
+new name that you have given it. Once this is done it normally will
+not need to be changed again.<br>
+<br>
+There is a further option here marked <b>Show Key Hash</b>.
+Pressing this will generate two special security hash keys directly
+linked to your Keystore file that some web sites require for
+correct functionality (for example, Facebook, or Google Play for
+the Sha1 hash). Should you need this, simply press the button, then
+copy and paste the hash keys that are generated.<br>
+<br></p>
+
+<h3 class="studio">SDK</h3>
+
+<p><img class="center" src="android_prefs_sdk.png"> The <b>SDK
+Tab</b> is where you supply details of the installed components
+that <i>GameMaker: Studio</i> needs to compile Android
+<tt>*.apk</tt> files.</p>
+
+<blockquote>
+<ul>
+<li><b>Android SDK Location</b>: The location where you have
+installed the Android SDK. This should have been filled in
+automatically, but if not then you can use the button on the right
+to open a file browser and select the appropriate file
+location.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Android NDK Location</b>: The location where you have
+installed the Android NDK. As with the SDK, this should be filled
+in automatically but if not you can browse to the file location
+manually.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Java JDK Location</b>: The Location where you have installed
+the JDK. This should been filled in automatically, but if not then
+you can use the button on the right to open a file browser and
+select the appropriate file.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>You should click the button marked <b>Check Android SDK</b>, as
+this will validate all the information and inform you of any errors
+(in which case you should revise all the information to make sure
+it is correct). When everything checks out you should receive the
+message "SDK + JDK + KeyStore OK".<br>
+<br>
+There are a few final options at the bottom of the tab:</p>
+
+<blockquote>
+<ul>
+<li><b>Always do full install of APK</b>: Flagging this will make
+<i>GameMaker: Studio</i> remove any previous runners of your game
+from your device, as well as all associated files (for example,
+<tt>*.ini</tt> files) from your test device before installing a new
+version of the game.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Install on "Create Application"</b>: When this option is
+flagged, compiling a complete <tt>*.apk</tt> will install it
+automatically on any devices that are connected.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use Mac for ADB connection</b>: Should you wish to connect
+your Android device to a Mac, you can click this option to have
+<i>GameMaker: Studio</i> connect to your Mac and test your games
+that way. Note that you must have set up the <a href=
+"mac%20preferences.html">Mac Preferences</a> correctly, have the
+Android SDK installed on the Mac and given the correct ADB
+directory (see below).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>ADB Directory on Mac</b>: When you have the above option,
+<b>Use Mac for ADB connection</b>, enabled you can set the
+directory for ADB here.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>ADB IP Address</b>: By default this is blank, but you can
+input a specific device IP and use this to force ADB to connect to
+that over Wifi rather than over USB for testing (useful for the
+Amazon Fire target platform, for example).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Java Max Heap Size</b>: Set the size of the Java Memory Heap
+for the Android JDK</li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Preferences</a></div>
+
+<div style="float:right">Next: <a href="ios%20preferences.html">iOS
+Preferences</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

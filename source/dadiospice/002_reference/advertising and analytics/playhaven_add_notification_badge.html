@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>playhaven_add_notification_badge</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/advertising and analytics/playhaven_add_notification_badge.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fadvertising%20and%20analytics%2Fplayhaven_add_notification_badge.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fadvertising%20and%20analytics%2Fplayhaven_add_notification_badge.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">playhaven_add_notification_badge</h1>
+
+<h2 class="studio">Add a PlayHaven notification to the game.</h2>
+
+<h3><b>Syntax:</b>
+</h3>
+
+<p class="code">playhaven_add_notification_badge(x, y, w, h,
+ident)</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>x</td>
+<td>The new x position in the room.</td>
+</tr>
+
+<tr class="alt">
+<td>y</td>
+<td>The new y position in the room.</td>
+</tr>
+
+<tr>
+<td>w</td>
+<td>The width of the badge.</td>
+</tr>
+
+<tr class="alt">
+<td>h</td>
+<td>The height of the badge</td>
+</tr>
+
+<tr>
+<td>ident</td>
+<td>The PlayHaven content name that identifies the widget being
+used.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>When using the PlayHaven <b>More Games Widget</b> (see <a href=
+"http://help.yoyogames.com/entries/24654681" target=
+"_blank">here</a> for more details) you can add a notification
+badge to the game that will show the number of games added to the
+network since the last update. Normally you would have a button
+object (for example) which would request the More Games widget be
+displayed in your game when the user clicks on it, and you can use
+this function to entice the player into clicking by showing
+whenever there are new games available on the button object
+itself.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">playhaven_add_notification_badge(x- 16, y - 16, 32,
+32, "games_widget");</p>
+
+<p>The above code will set a badge to be displayed on the current
+object that will show when new games have been added to the More
+Games content that you defined with the name "games_widget".</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advertising and
+Analytics</a></div>
+
+<div style="float:right">Next: <a href=
+"playhaven_hide_notification_badge.html">playhaven_hide_notification_badge</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

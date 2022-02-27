@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Sprite Editor Animation Menu</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about sprites/edit menus/animation menu.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fedit%20menus%2Fanimation%20menu.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fedit%20menus%2Fanimation%20menu.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Sprite Editor Animation Menu</h1>
+
+<h2 class="studio">This section explains the actions available from
+the animations menu.</h2>
+
+<p><img class="center" src="images_menu.png"> Under the animation
+menu you can create new animated sprites out of the current
+sub-images. There are many options and you should experiment a bit
+with them to create the effects you want, as most of them work well
+when used together, rather than as individual effects. Also, don't
+forget that you can always save an animated sprite and later add it
+to the current one to create a single, larger animation. The
+following options exist for you to edit animations:<br>
+<br></p>
+
+<ul>
+<li><b>Set Length:</b> Here you can change the length of your
+animation. To achieve this, <i>GameMaker: Studio</i> duplicates the
+sub-images from the beginning to end, repeating them again and
+again until the required number of sub-images has been
+reached.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Stretch:</b> As above, this command will also change the
+length of the animation, but this time sub-images are duplicated or
+removed to get the right number. So if you increase the number of
+frames the animation goes slower as more sub-images are generated
+between the current ones, and if you decrease the number it goes
+faster.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Reverse:</b> This reverses all the sub-images so the
+animation of the sprite plays backwards.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Add Reverse:</b> This option will duplicate all the
+sub-images, then add them on at the end of the animation in
+reverse, doubling the number of sub-images. You may want to remove
+the double first and middle frame that occur with this to maintain
+a smooth animation.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Translation Sequence:</b> With this command you can create
+an animation in which the image slightly translates (moves) in each
+frame. You must provide the number of frames and the total amount
+to move horizontally and vertically, and <i>GameMaker: Studio</i>
+will do the rest.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Rotation Sequence:</b> This creates an animation in which
+the image rotates. You can either choose clockwise or
+counterclockwise rotation, and you have to specify the number of
+frames and the total angle in degrees (360 is a complete turn) that
+should be completed in within those frames. You might need to
+resize the canvas <i>first</i> to make sure the total image remains
+visible during the rotation.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>colourize:</b> Creates an animation that turns the image
+into a particular colour, as shown below:<br>
+<br>
+<img class="center" src="colourize_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Fade to colour:</b> Creates an animation that fades the
+image to a particular colour, as seen below:<br>
+<br>
+<img class="center" src="fade_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Disappear:</b> Makes the image disappear by making it more
+transparent in each step. An example is provided below:<br>
+<br>
+<img class="center" src="transparency_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Shrink:</b> Shrinks the image to nothing in the direction
+indicated (center, left, right, top or bottom). Below is a shrink
+towards the center:<br>
+<br>
+<img class="center" src="shrink_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Grow:</b> Grows the image from nothing in the direction
+indicated (center, left, right, top or bottom). Below is a grow
+towards the center:<br>
+<br>
+<img class="center" src="grow_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Flatten:</b> "Flattens" the image to nothing in a given
+direction (left, right, up or down) ie: gives the sub-images a
+perspective effect that looks like it's being laid flat, as shown
+below:<br>
+<br>
+<img class="center" src="flatten_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Raise:</b> Similar to the above command, this "raises" the
+sub-images from a given direction (left, right, up or down):<br>
+<br>
+<img class="center" src="raise_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Overlay:</b> This command will ask you to select a file for
+overlaying with the currently selected sprite. The file can be a
+single image (in which case it is repeated over every frame) or a
+strip (in which case it <i>must</i> have a file name that ends in
+<tt>_stripXX</tt> or <i>GameMaker: Studio</i> will treat it as a
+single image). When the image from the file has a different size it
+is stretched to the maximal size of the sprite being overlaid.<br>
+<br>
+<img class="center" src="overlay_strip.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Morph:</b> Morphs the animation to an animation or image
+from a file. Note that morphing works best if the two animations
+cover the same area of the image, otherwise, halfway certain pixels
+disappear and others suddenly appear. This is due to it not really
+being a "true" morph, but rather a fade in/out of alpha
+(transparencies).<br>
+<br>
+<img class="center" src="morph_strip.png"><br></li>
+</ul>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../editing%20sprites.html">Editing Sprites</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

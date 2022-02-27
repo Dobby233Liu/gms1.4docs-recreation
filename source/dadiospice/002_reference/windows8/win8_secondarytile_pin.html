@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_secondarytile_pin</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_secondarytile_pin.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_secondarytile_pin.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_secondarytile_pin.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_secondarytile_pin</h1>
+
+<h2 class="studio">Pin a secondary Live Tile for your game to the
+Windows 8 UI.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_secondarytile_pin(tile_id, short_name,
+display_name, cmd_line_args, ds_list_options, image, wide_image,
+text_col);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>tile_id</td>
+<td>A string that will uniquely identify the tile.</td>
+</tr>
+
+<tr class="alt">
+<td>short_name</td>
+<td>A short name to display directly on the tile (a string).</td>
+</tr>
+
+<tr>
+<td>display_name</td>
+<td>A name that is displayed in the tile's tooltip and when showing
+small tiles (a string).</td>
+</tr>
+
+<tr class="alt">
+<td>cmd_line_args</td>
+<td>The command line arguments that will be added to the tile (as a
+string).</td>
+</tr>
+
+<tr>
+<td>ds_list_options</td>
+<td>A ds_list that controls whether to show the game name or not on
+different sized tiles.</td>
+</tr>
+
+<tr class="alt">
+<td>image</td>
+<td>An image for the normal (square) Live Tile.</td>
+</tr>
+
+<tr>
+<td>wide_image</td>
+<td>An image for the wide Live Tile.</td>
+</tr>
+
+<tr class="alt">
+<td>text_col</td>
+<td>the text colour (either "dark" or "light").</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will pin a secondary tile to the start menu of the
+Windows 8 UI associated with your game. These secondary tiles are
+designed to start your game from a certain point, like a save game
+or a store page. you must give the tile a <b>tile_id</b> string
+(which will then be used in the other secondary tile functions) and
+two names, the <b>display name</b> and the <b>short name</b>. The
+<b>short name</b> is a short string to be displayed directly on the
+tile (if chosen to do so from the ds_list options, explained
+below), and the <b>display name</b> is a generally longer
+descriptive string that will be shown as a "tooltip" when your Live
+Tile is set to small by the user.<br>
+<br>
+The <b>command line arguments</b> are used to tell the game where
+to start when launched from the secondary tile, and follow the http
+format of "value&amp;value". These values will then be parsed using
+the GML <a href=
+"../miscellaneous/parameter_count.html"><tt>parameter_count</tt></a>
+and <a href=
+"../miscellaneous/parameter_string.html"><tt>parameter_string</tt></a>
+functions.<br>
+<br>
+The options to use when pinning a secondary tile must be added
+first into a <a href=
+"../data%20structures/ds%20lists/index.html"><tt>ds_list</tt></a>
+and the index for the ds_list passed through to the function. These
+options control whether to show the game name on the tile or not
+and can only be "None" (for no text on either tile), or
+"ShowNameOnLogo" <i>and</i> "ShowNameOnWideLogo" to show the name
+on both tiles (you cannot show on one and not the other). These
+strings are added to the ds_list and the list index used in the
+function (as shown below).<br>
+<br>
+Finally you need to add in the images that are going to be used for
+the tile notification, with one image for each of the two sizes
+(square and wide). These images can be either from a local source
+(in which case the directory to get the file from <i>must</i> be
+preceded by <tt>ms-appx:///</tt>. See the example given below) or
+from a URL. You can also define the text colour, although the
+Windows 8 UI limits this to simply "light" or "dark" for the text,
+with the colour itself being chosen by Windows based on the user
+settings.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Extended Example:</h3>
+
+<p>This extended example provides a brief overview of how you would
+detect the command line parameters for the pinned secondary tile
+and make your game react accordingly. The first thing you would
+need to do is create and pin the Live Tile to the Windows 8 UI
+using the following code (note that the function arguments are
+spread over several lines - this is done to make the example
+legible but it <i>will</i> work fine in <i>GameMaker: Studio</i>,
+although normally you would have all the arguments on one
+line):</p>
+
+<p class="code">var optionsList = ds_list_create();<br>
+ds_list_add(optionsList, "None");<br>
+win8_secondarytile_pin(<br>
+&nbsp;&nbsp;&nbsp;"Store.Tile",<br>
+&nbsp;&nbsp;&nbsp;"MacSweeney Store",<br>
+&nbsp;&nbsp;&nbsp;"The MacSweeney Game Store",<br>
+&nbsp;&nbsp;&nbsp;"store=true&amp;appBar=true",<br>
+&nbsp;&nbsp;&nbsp;optionsList,<br>
+&nbsp;&nbsp;&nbsp;"ms-appx:///" + working_directory +
+"MacSweeneyStoreTile.png",<br>
+&nbsp;&nbsp;&nbsp;"ms-appx:///" + working_directory +
+"MacSweeneyStoreWideTile.png",<br>
+&nbsp;&nbsp;&nbsp;"dark");<br></p>
+
+<p>This code defines and pins a secondary Live Tile, with the
+parameters "store" and "appbar" set to true. When the user opens
+your game using this secondary tile, it will use the command line
+parameters that you have set, which means that you will need to
+have an instance in the first room of the game (on loading) to
+parse the parameters and setup the game accordingly. The following
+code in an example of how this can be achieved:</p>
+
+<p class="code">for (var i = 0; i &lt; parameter_count(); i
+++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var param = parameter_string(i);<br>
+&nbsp;&nbsp;&nbsp;if param == "appBar=enable")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win8_appbar_enable(true);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;if (param == "store=true")<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;room_goto(rm_Store);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will loop through all the available parameters
+and setup your game accordingly, in this case by activating the
+Windows 8 app bar and going to the specified room.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_secondarytile_badge_notification.html">win8_secondarytile_badge_notification</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

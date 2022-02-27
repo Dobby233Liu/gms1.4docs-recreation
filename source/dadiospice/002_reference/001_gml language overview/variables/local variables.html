@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Local Variables</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/variables/local variables.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Flocal%20variables.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Flocal%20variables.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Local Variables</h1>
+
+<h2 class="studio">A local variable is one that we declare first,
+then use, and then discard.</h2>
+
+<p>A local variable is one that we create for a specific event
+<i>only</i> and then discard when the <b>event</b> has finished
+(the only exception to this is in the script resources, where a var
+declared variable is local to the script and then discarded). Why
+would we need them? Well, variables take up space in memory and it
+may be that we are only going to use them for one operation or
+function in which case we only need to have it in memory for that
+short time that it's used. This keeps your code base clean and tidy
+as well as keeping memory space optimised for the things that
+really need it. To declare a local variable we use the function
+<tt>var</tt> like this:<br>
+<br></p>
+
+<p class="code">var i, num, str;<br>
+i = 0;<br>
+num = 24.5;<br>
+str = "Hi there!";<br></p>
+
+<p><br>
+All of the variables created above will be "forgotten" (ie: removed
+from memory) at the end of the event (or script) in which they were
+created. You must be careful that the name you give var declared
+variables does not coincide with another instance variable within
+the object running the code, and also make sure that you have no
+intention of using the value stored in that variable outside of the
+event declare it in. These variables are used a lot in programs,
+especially in loops for counting iterations, or when using a value
+several times in one operation that is not going to be repeated
+again. Here are another couple of examples:<br>
+<br></p>
+
+<p class="code">var i = 0;<br>
+repeat (10)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;inventory[i] = 0;<br>
+&nbsp;&nbsp;&nbsp;i+=1;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p><br>
+The above code creates a local variable called "i" and sets it to
+0, all in the same line. Note that in previous versions of
+<i>GameMaker</i> you had to declare your local variables first and
+<i>then</i> assign them values, but in this version you can declare
+<i>and</i> assign them a value at the same time. The above code
+then uses this variable to initialize an array. As the variable "i"
+is not going to be used for any further functions in the instance
+other than this, it can be local in scope. Here is one more
+example:<br>
+<br></p>
+
+<p class="code">var xx,yy;<br>
+xx = x - 32 +irandom(64);<br>
+yy = y - 32 +irandom(64);<br>
+instance_create(xx, yy, obj_blood);<br></p>
+
+<p><br>
+Here we have used the local variables to store some random
+coordinates that we then use to create an instance. In this example
+you can see that it is not strictly necessary that we use these
+variables but for the sake of readability and ease of use, we do.
+It is MUCH clearer and obvious what we are doing there than if we
+used this code:<br>
+<br></p>
+
+<p class="code">instance_create(x - 32 + irandom(64), y - 32 +
+irandom(64), obj_guts);</p>
+
+<p><br>
+One other thing about var declared variables should be noted... As
+they are unique to the event that runs them, they can be used in
+any other instances through code too! This means that we can use
+these variables to set and change things in other instances using
+the "with()" construct (there is a section on this in the <b>GML
+Overview</b> section of the manual). The actual code itself would
+look something like this:<br>
+<br></p>
+
+<p class="code">var num = instance_number(obj_Enemy);<br>
+with (obj_Enemy)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if num&gt;10 instance_destroy();<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p><br>
+The above code works because the var declared variable is local to
+the <i>event</i> (or script) it is contained in, not the instance,
+nor the game world, and so can be used in any function in any
+object as long as it is in the same code block.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../variables/index.html">Variables And Variable Scope</a></div>
+
+<div style="float:right">Next: <a href=
+"global%20variables.html">Global Variables</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

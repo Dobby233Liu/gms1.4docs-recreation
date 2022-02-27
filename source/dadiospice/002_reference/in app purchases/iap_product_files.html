@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>iap_product_files</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/in app purchases/iap_product_files.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Fiap_product_files.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Fiap_product_files.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">iap_product_files</h1>
+
+<h2 class="studio">Add product files to a ds_list.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">iap_product_files(purchase_id, ds_list);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>purchase_id</td>
+<td>This can either be the Apple Store/Google Play id string, an
+URL id, or an index into the available purchases ds_list.</td>
+</tr>
+
+<tr class="alt">
+<td>ds_list</td>
+<td>The ds_list that will store the product information.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p><i><b>WARNING!</b> This function has been deprecated.</i><br>
+<br>
+With this function you can generate a <a href=
+"../data%20structures/ds%20lists/index.html"><tt>ds_list</tt></a>
+containing all the files associated with the given product id.<br>
+<br>
+<i><b>NOTE:</b> The <tt>ds_list</tt> used is <b>not</b> created by
+the function, meaning that you must create it previously and remove
+it again from memory when not in use using the appropriate
+function.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if iap_product_status(p_id) == "Purchased"<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var list, i;<br>
+&nbsp;&nbsp;&nbsp;list = ds_list_create();<br>
+&nbsp;&nbsp;&nbsp;iap_product_files(p_id, list);<br>
+&nbsp;&nbsp;&nbsp;for (i = 0; i &lt; ds_list_size(list); i +=
+1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_text(x, y + (i * 32),
+ds_list_find_value(list, i));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;ds_list_destroy(list);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code checks the previously stored product id to see if
+it has been purchased, and if it has it then creates and displays a
+list of product files that have been downloaded.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">In App
+Purchases</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

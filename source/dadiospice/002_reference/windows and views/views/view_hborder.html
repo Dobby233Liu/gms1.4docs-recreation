@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>view_hborder</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows and views/views/view_hborder.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fviews%2Fview_hborder.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fviews%2Fview_hborder.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">view_hborder</h1>
+
+<h2 class="studio">Size of horizontal border for view
+following.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">view_hborder[0...7]</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This variable sets the horizontal border width for view
+following. You can set the view to follow a specific instance using
+the <a href="view_object.html"><tt>view_object</tt></a> variable
+(or in the <a href=
+"../../../001_advanced%20use/more%20about%20rooms/views.html">room
+editor</a>) and by setting this value you can control how near or
+far from the edge of the view the instance needs to be before the
+view will move. For example, if you have a view width of 320 and
+set the horizontal view border to 160, the object that the view
+must follow will always be in the middle of the view. However, make
+the horizontal view border 0 and the instance must be right on the
+edge of the view before it will move.<br>
+<br>
+<img class="center" src="view_hvbor.png"><br>
+<br>
+<i><b>NOTE:</b> if you are not setting the x and y position of the
+view manually, the view never leaves the boundaries of the room.
+This means that when the view reaches the edge of a room, the
+horizontal and vertical borders are ignored and the instance will
+move freely within the view.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">view_hborder[0] = view_wview[0] / 2;<br>
+view_vborder[0] = view_hview[0] / 2;<br></p>
+
+<p>The above code will set the view follow borders to half the
+width and height of the view, effectively forcing the view to
+always be centered on the follow object.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Views</a></div>
+
+<div style="float:right">Next: <a href=
+"view_vborder.html">view_vborder</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

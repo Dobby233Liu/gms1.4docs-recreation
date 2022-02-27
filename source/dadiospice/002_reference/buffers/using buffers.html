@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Using Buffers</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/buffers/using buffers.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fbuffers%2Fusing%20buffers.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fbuffers%2Fusing%20buffers.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Using Buffers</h1>
+
+<h2 class="studio">Here you can get an overview of how buffers work
+and how to use them in your games.</h2>
+
+<p><i>GameMaker: Studio</i> has introduced a series of functions to
+the GameMaker Language (GML) to deal with <b>buffers</b>. Most
+people should be familiar with this term as it is used all the time
+when dealing with computers and programming, but knowing the word
+doesn't mean you actually know what it means. So this page aims to
+explain what a buffer is and how to use them within the context of
+<i>GameMaker: Studio</i> programming, although the general way they
+work is the same no matter the language or the technology, which is
+one of the reasons why they are so important.<br>
+<br></p>
+
+<h3 class="studio">What Is A Buffer?</h3>
+
+<p>A buffer (in programming) is basically a space within the system
+memory that is used to store small <i>packets</i> of data for just
+about anything (for example data transfer, collisions, colour data
+etc...). Since it is held in system memory it is very fast to
+access, and a buffer would generally be used for very short-term
+storage, like receiving network information before processing it,
+or for storing a checkpoint in your game (this is explained in the
+example given further down the page). <img class="center" src=
+"buffer_memory.png"> Buffers are created by allocating a space in
+the system memory, calculated in <b>bytes</b>, which is then
+reserved for your game as long as your game is running or until you
+delete the buffer using the appropriate function. This means that
+even when your game is not in focus (for example, on a mobile
+device when you take a call the game will be put into the
+background) the buffer will still exist, however if the game is
+closed or re-started the buffer will be lost.<br>
+<br>
+<i><b>NOTE:</b> Restarting the game will not clear or delete the
+buffer! But it will prevent any further access to the previously
+created buffer as the id <b>handle</b> will have been lost, causing
+a memory leak which will crash your game eventually. So, when
+re-starting a game, remember to delete the buffer first.</i></p>
+
+<h3 class="studio">Buffer Types</h3>
+
+<p><i>GameMaker: Studio</i> permits the creation of four different
+buffer types. The reason for this is that buffers are designed to
+be a highly optimised temporary storage medium, and as such you
+should create a buffer that is appropriate to the type of data that
+you wish it to store, otherwise you could get errors or cause a
+<i>bottleneck</i> in your code. Before explaining this further,
+let's look at the four available buffer types (defined as
+<b>constants</b> in GML):<br>
+<br></p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Constant</th>
+<th>description</th>
+</tr>
+
+<tr>
+<td>buffer_fixed</td>
+<td><br>
+A buffer of a fixed size in bytes. The size is set when the buffer
+is created and cannot be changed again.<br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_grow</td>
+<td><br>
+A buffer that will <i>grow</i> dynamically as data is added. You
+create it with an initial size (which should be an approximation of
+the size of the data expected to be stored), and then it will
+expand to accept further data that overflows this initial size.<br>
+<br></td>
+</tr>
+
+<tr>
+<td>buffer_wrap</td>
+<td><br>
+A buffer where the data will <i>wrap</i>. When the data being added
+reaches the limit of the buffer size, the overwrite will be placed
+back at the start of the buffer, and further writing will continue
+from that point.<br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_fast</td>
+<td><br>
+This is a special "stripped down" buffer that is extremely fast to
+read/write to. However it can only be used with <tt>buffer_u8</tt>
+data types, and must be 1 byte aligned. (Information on <b>data
+types</b> and <b>byte alignment</b> can be found further down this
+page).<br>
+<br></td>
+</tr>
+</table>
+</div>
+
+<p><br>
+Those are the buffer types available to you when using
+<i>GameMaker: Studio</i>, and which one you choose will greatly
+depend on the use you wish to put it to. For example, a <b>grow</b>
+buffer would be used for storing a "snapshot" of data to create a
+save game since you do not know the actual amount of data that is
+going to be placed in it, or a <b>fast</b> buffer would be used
+when you know that the values you are working with are all between
+0 and 255 or -128 and 127, for example when processing RGB data
+from an image.<br>
+<br>
+<img class="center" src="buffer_types.png"> When creating a buffer,
+you should always try to create it to a size that is appropriate to
+the type, with the general rule being that it should be created to
+accommodate the maximum size of data that it is to store, and if in
+doubt, use a <b>grow</b> buffer to prevent overwrite errors.<br>
+<br>
+The actual code to create a buffer would look something like
+this:</p>
+
+<p class="code">player_buffer = buffer_create(16384, buffer_fixed,
+2);</p>
+
+<p>That would create a fixed buffer of 16384 bytes and <b>byte
+aligned</b> to 2, with the function returning a unique <b>id</b>
+value that is stored in a variable for later referencing of this
+buffer. Now we have the basic concept of a buffer explained you
+should learn about <b>data types</b> and the previously mentioned
+<b>byte alignment</b>.<br>
+<br></p>
+
+<h3 class="studio">Data Types</h3>
+
+<p>When reading and writing data to a buffer, you do it in
+''chunks'' of data defined by their '''data type'''. The '''data
+type''' sets the number of bytes allocated within the buffer for
+the value being written, and it is essential that you get this
+correct otherwise you will get some very strange results (or even
+errors) for your code.<br>
+<br>
+Buffers are written to (and read from) <i>sequentially</i>, in that
+one piece of data is written after another, with each piece of data
+being of a set type. This means that you should ideally be aware of
+what data you are writing to the buffer at all times. These <b>data
+types</b> are defined in GML by the following <i>constants</i>:</p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Data Type Constant</th>
+<th>Bytes</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>buffer_u8</td>
+<td>1</td>
+<td><br>
+An unsigned, 8bit integer. This is a positive value from 0 to
+255.<br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_s8</td>
+<td>1</td>
+<td><br>
+A signed, 8bit integer. This can be a positive or negative value
+from -128 to 127 (0 is classed as positive).<br>
+<br></td>
+</tr>
+
+<tr>
+<td>buffer_u16</td>
+<td>2</td>
+<td><br>
+An unsigned, 16bit integer. This is a positive value from 0 -
+65,535.<br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_s16</td>
+<td>2</td>
+<td><br>
+A signed, 16bit integer. This can be a positive or negative value
+from -32,768 to 32,767 (0 is classed as positive).<br>
+<br></td>
+</tr>
+
+<tr>
+<td>buffer_u32</td>
+<td>4</td>
+<td><br>
+An unsigned, 32bit integer. This is a positive value from 0 to
+4,294,967,295.<br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_s32</td>
+<td>4</td>
+<td><br>
+A signed, 32bit integer. This can be a positive or negative value
+from -2,147,483,648 to 2,147,483,647 (0 is classed as
+positive).<br>
+<br></td>
+</tr>
+
+<tr>
+<td>buffer_f16</td>
+<td>2</td>
+<td><br>
+A 16bit floating point number. This can be a positive or negative
+value within the range of +/- 65504. <b>(Not currently
+supported!)</b><br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_f32</td>
+<td>4</td>
+<td><br>
+A 32bit floating point number. This can be a positive or negative
+value within the range of +/-16777216.<br>
+<br></td>
+</tr>
+
+<tr>
+<td>buffer_f64</td>
+<td>8</td>
+<td><br>
+A 64bit floating point number. This can be a positive or negative
+value from -(2<sup>52</sup>) to 2<sup>52</sup> - 1.<br>
+<br></td>
+</tr>
+
+<tr class="alt">
+<td>buffer_bool</td>
+<td>1</td>
+<td><br>
+A boolean value. Can only be either 1 or 0 (<tt>true</tt> or
+<tt>false</tt>)<br>
+<br></td>
+</tr>
+
+<tr>
+<td>buffer_string</td>
+<td>N/A</td>
+<td><br>
+This is a UTF-8 null terminated (0x00) string. Basically a
+GameMaker string is dumped in the buffer, and a 0 is put at the
+end.<br>
+<br></td>
+</tr>
+</table>
+</div>
+
+<p><br>
+So, say you have created a buffer and you want to write information
+to it, then you would use something like the following code:</p>
+
+<p class="code">buffer_write(buff, buffer_bool, global.Sound);<br>
+buffer_write(buff, buffer_bool, global.Music);<br>
+buffer_write(buff, buffer_s16, obj_Player.x);<br>
+buffer_write(buff, buffer_s16, obj_Player.y);<br>
+buffer_write(buff, buffer_string, global.Player_Name);<br></p>
+
+<p>looking at the example above you can see that you can write
+different types of data to a buffer (you are only limited to a
+specific data type when using the <b>fast</b> buffer type), and
+this data will be added into the buffer consecutively (although its
+actual position in the buffer will depend on its <b>byte
+alignment</b>, explained below). This is the same for reading
+information from the buffer too, and in the case of the example
+given above, you would read from the buffer in the same order that
+you wrote the data, checking for the same data type, eg:</p>
+
+<p class="code">global.Sound = buffer_read(buff, buffer_bool);<br>
+global.Music = buffer_read(buff, buffer_bool);<br>
+obj_Player.x = buffer_read(buff, buffer_s16);<br>
+obj_Player.y = buffer_read(buff, buffer_s16);<br>
+global.Player_Name = buffer_read(buff, buffer_string);<br></p>
+
+<p>As you can see, you read out information in the same order that
+you read it into the buffer. For further information on how to add
+and remove data from the buffer please see the <b>Examples</b>
+section below.<br>
+<br></p>
+
+<h3 class="studio">Byte Alignment</h3>
+
+<p>If you have been reading through this page you will have seen
+references to the <b>byte alignment</b> of a buffer. This basically
+refers to the <i>position</i> that new data will stored at within a
+given buffer. How does this work? Well, for a single byte aligned
+buffer, each piece of data is written to the buffer sequentially,
+with each new data piece being added directly after the previous.
+However a 2 byte aligned buffer will write each piece of data to
+intervals of 2 bytes, so that even if your initial write is 1 byte
+of data, the <i>next</i> write will be moved to align to two bytes.
+<img class="center" src="buffer_byte_alignment.png"> So, if your
+byte alignment is set to, say, 4 bytes and you write a single piece
+of data which is 1 byte in size then do a <i>buffer tell</i> (a
+<b>tell</b> gets the current position for reading/writing for the
+buffer), you'll get an <i>offset</i> of 1 (the offset in this case
+is the number of bytes from the start of the buffer to the current
+read/write position).<br>
+<br>
+However, if you write another piece of data, also 1 byte in size,
+<i>then</i> do a buffer tell, you'll get an offset of 5 bytes (even
+though you have only written 2 bytes of data) as the alignment has
+<i>padded</i> the data to align it with the 4 byte buffer
+alignment.<br>
+<br>
+Basically, what this means is that alignment will only affect
+<i>where things are written to</i>, so if you do a buffer tell
+after you write something, it'll return the current write position
+which immediately follows the data you've previously written. Note,
+however, that if you then write another piece of data, internally
+the buffer will move the write position along to the next multiple
+of the alignment size before actually writing the piece of
+data.<br>
+<br></p>
+
+<h3 class="studio">Examples</h3>
+
+<p>You can find two examples of using buffers on the following
+page:</p>
+
+<blockquote>
+<ol>
+<li><a href="buffer%20examples.html">Buffer Examples</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Buffers</a></div>
+
+<div style="float:right">Next: <a href=
+"buffer%20examples.html">Buffer Examples</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

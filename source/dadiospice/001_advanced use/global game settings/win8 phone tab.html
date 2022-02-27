@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Windows Phone 8 Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/win8 phone tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fwin8%20phone%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fwin8%20phone%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Windows Phone 8 Tab</h1>
+
+<h2 class="studio">This section deals with the Windows Phone 8 tab
+of the Global Games Settings Window.</h2>
+
+<p>This Windows Phone 8 tab is split into three separate
+<i>sub-tabs</i> (accessible on the left of the window) to make
+changing and updating the information for your game clearer and
+less complicated. These tabs are explained in the following
+sections.</p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="win8_phone_general.png"> The first
+thing to do is fill in the details about your game, including its
+<b>Display Name</b>, its <b>Description</b> (which should be a
+short text), the <b>Author</b> name, the <b>Publisher</b> and the
+<b>Publisher ID</b>, and finally the <b>Version</b> info.<br>
+<br>
+The next two sections on this tab are <b>Orientation</b> and
+<b>Supported Resolutions</b>. The orientation section can be used
+to lock the game to a specific orientation by checking either
+<i>landscape</i> or <i>portrait</i>, or <i>landscape-flipped</i>,
+while the resolution section is used to target specific displays.
+The following table shows the resolutions and ratios supported:</p>
+
+<div class="compat">
+<table class="compat">
+<tr>
+<th>Name</th>
+<th>Resolution</th>
+<th>Aspect Ratio</th>
+<th>Scaled resolution</th>
+</tr>
+
+<tr>
+<td>WVGA</td>
+<td>480 × 800</td>
+<td>15:9</td>
+<td>480 × 800</td>
+</tr>
+
+<tr class="alt">
+<td>WXGA</td>
+<td>768 × 1280</td>
+<td>15:9</td>
+<td>480 × 800</td>
+</tr>
+
+<tr>
+<td>720p</td>
+<td>720 × 1280</td>
+<td>16:9</td>
+<td>480 × 853</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+Finally for this tab, you should indicate the <b>Genre</b> of the
+final product, which can be either <b>Game</b> or
+<b>Application</b>, and you can also flag the game as having access
+to the microphone for recording audio.<br>
+<br></p>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="win8_phone_graphics.png"> Here you can
+give your game an <b>Icon</b> and different <b>Splash Screens</b>.
+The icon should be authored as an individual <tt>*.png</tt> file
+with a size of 99x99px. The splash screens should be made to the
+sizes of each of the available Windows phone resolutions in
+<tt>*.png</tt> format, and it will briefly be shown while the game
+assets are being loaded.<br>
+<br>
+At the bottom there is the option to set the size of the <b>Texture
+Page</b>. The default (and most compatible) size is 1024x1024, but
+you can choose from anywhere between 256x256 up to 2048x2048. There
+is also a button marked <b>Preview</b> which will generate the
+texture pages for this platform and then open a window so that you
+can see how they look. This can be very useful if you wish to see
+how the texture pages are structured and to prevent having texture
+pages larger (or smaller) than necessary.<br>
+<br>
+<i><b>NOTE:</b> Be aware that the larger the size of the texture
+page, the less compatible your game will be.</i><br>
+<br>
+Finally there is the option for interpolation and for scaling.
+Checking <b>Interpolate colours between pixels</b> turns on
+interpolation, which basically "smooths" pixels. For crisp pixel
+graphics, it should be off, but if you have nice alpha blends and
+smoothed edge graphics it is better left on. For scaling to the
+device screen, here you can choose to maintain aspect ratio (so a
+4:3 room, for example, will be "letter boxed" on a 16:9) or to
+scale fully (stretching the image to fit the full screen).<br>
+<br>
+<i><b>WARNING!</b> Switching off the application surface will
+disable all the scaling options set in the Global Game Settings
+until it has been switched back on again. See <a href=
+"../../002_reference/surfaces/the%20application%20surface.html">The
+Application Surface</a> for further details.</i><br>
+<br></p>
+
+<h3 class="studio">Tiles</h3>
+
+<p>The Tiles sub-tab is further split into three separate groups,
+of which you should choose one to represent how the Live Tile that
+represents your game or app will be shown on the device.<br>
+<br></p>
+
+<h4 class="studio">Flip</h4>
+
+<p><img class="center" src="win8_phone_tiles_1.png"> Flip tiles are
+ones that will change from one "side" to another every few seconds,
+and here you can add the different images that you wish each "side"
+to show. Note that the smallest possible tile size does <i>not</i>
+flip and so you only need to supply one 159x159px image for that,
+while the other two sizes (medium 336x336px and wide 691x336px)
+will. Beneath the images you can also supply to <b>Content</b>
+strings. These will be shown on the <i>back</i> tile only, with the
+first string being for the medium size and the second one being for
+the wide size.<br>
+<br></p>
+
+<h4 class="studio">Iconic</h4>
+
+<p><img class="center" src="win8_phone_tiles_2.png"> The Iconic
+tile setting uses two images (small at 110x110px and medium at
+202x202px) and a series of different text messages to display
+information about your game. If the user has reduced the tile size
+to the smallest or the medium size, then the respective images will
+be shown only, however when the user has a wide tile size selected,
+then the image will be displayed as an icon in the lower right of
+the tile and various lines of text will be displayed starting at
+the top right of the tile. The image below illustrates this:
+<img class="center" src="win8_phone_iconic_tile.png"><br>
+<br>
+Note that an Iconic Tile image will only ever be <i>white</i>, so
+the image chosen should be a single "silhouette" with alpha. No
+matter what your image, it will only ever be shown on an Iconic
+tile as a white image over a transparent background.<br>
+<br></p>
+
+<h4 class="studio">Cycle</h4>
+
+<p><img class="center" src="win8_phone_tiles_3.png"> The final tile
+type is the Cyclic one. This permits you to specify a small image
+(159x159px for the small and medium sizes) and a series of 9
+different wide tile images (691 x 336px) that will be cycled using
+various different transitions.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="windows%20tab.html">The
+Windows Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

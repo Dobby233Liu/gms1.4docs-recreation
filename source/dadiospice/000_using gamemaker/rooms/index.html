@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Creating Rooms</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/rooms/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Frooms%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Frooms%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Creating Rooms</h1>
+
+<h2 class="studio">Rooms are where everything in your game happens,
+and this section outlines how you create them and add instances to
+them.</h2>
+
+<p>All games that you make in <i>GameMaker: Studio</i> need at
+least one room to run (but can have many, many more) , and a room
+is just a space where you place instances of the objects that make
+up your game. When you first create a room in your resource tree
+you will be presented with a new window with which to edit its
+properties, something like this:<br>
+<br>
+<img class="center" src="../../images/form_room.png"><br>
+<br>
+As you can see, most of the room editor is taken up with the a
+visual representation of the room itself, where you place the
+objects, tiles and backgrounds for your game, but around the edges
+there are a number of buttons, tabs and information bars that help
+you to create your game.<br>
+<br></p>
+
+<h3 class="studio">The Toolbar</h3>
+
+<p>At the top of the form there is the tool bar, which has a number
+of buttons that refer to different actions in the room editor.
+<img class="center" src="../../images/room_editor_toolbar.png"></p>
+
+<blockquote>
+<ul>
+<li><b>Confirm</b>: Clicking this button will close the room editor
+and save any changes you have made. Beware, as this will <i>not</i>
+warn you that the room has changed, as clicking the close button
+would do, but will just save directly any changes you have made.
+However, depending on the <i>GameMaker: Studio</i> preferences, you
+may be asked if you want to remove any instances that have been
+placed outside the room or not.<br>
+<br></li>
+
+<li><b>Undo</b>: This is a simple, one level, undo button. By one
+level, we mean that only the last action performed will be
+undone.<br>
+<br></li>
+
+<li><b>Instance Actions</b>: These buttons allow you to change
+certain properties of the instances (and tiles if you are in the
+"Tile" tab) in the room, specifically: clearing all instances from
+the room, shifting all instances a set amount along the x and/or y
+axis of the room, locking instances (so they cannot be moved or
+edited) and unlocking instances.<br>
+<br></li>
+
+<li><b>Grid Snap</b>: These values can be changed to make instances
+snap to a different grid resolution. A value of 0 will switch
+snapping off.<br>
+<br></li>
+
+<li><b>Visualisation</b>: By clicking this you will open a
+drop-down menu where you can switch on or off the visualisation of
+many room elements, like instances, tiles, views etc... Here you
+can also change the grid type from being the regular square grid to
+a diamond "isometric" grid. You can enable/disable the grid overlay
+by clicking the grid icon.<br>
+<br></li>
+
+<li><b>Zoom Controls</b>: The main view of the room editor can be
+zoomed in and out to show more or less detail either using these
+controls or by scrolling the mouse wheel (if you have one).<br>
+<br></li>
+
+<li><b>Instance Order and Shortcuts</b>: Both these buttons will
+bring up separate windows, with the first giving you the option to
+change the order in which instances are created at room start (see
+the <a href="settings%20tab.html">Room Settings</a> page for more
+information), and the second shows the available keyboard shortcuts
+that you can use when editing rooms.</li>
+</ul>
+</blockquote>
+
+<h3 class="studio">The MiniMap</h3>
+
+<p>As you can imagine, this is a miniature representation of the
+whole room. you can click and drag the current area around on the
+minimap and the main view will scroll and pan to match, or you can
+just click on the minimap to have the main view jump to that
+position.<br>
+<br></p>
+
+<h3 class="studio">The Info Bar</h3>
+
+<p>While placing tiles and instances within a room, you often need
+extra information about them at a glance. For that you have the
+Info Bar which shows the current mouse position within the room,
+the id and object_index of the instance that the mouse is currently
+over, and further context sensitive information like whether the
+instance has code or not in its room create event.<br>
+<br></p>
+
+<h3 class="studio">The Tabs</h3>
+
+<p>At the left you will see six tabs that open separate sub-pages
+in the area on the left, but in this section we will only deal with
+the three most important ones: The settings tab, the backgrounds
+tab and the objects tabs. Further information on these tabs can be
+found in the sections below:</p>
+
+<blockquote>
+<ol>
+<li><a href="settings%20tab.html">Settings</a><br>
+</li>
+
+<li><a href="backgrounds%20tab.html">Backgrounds</a><br>
+</li>
+
+<li><a href="objects%20tab.html">Objects</a>
+</li>
+</ol>
+</blockquote>
+
+<p>For information on the other tabs as well as the advanced
+functions available to you in the room editor please see the
+section - <a href=
+"../../001_advanced%20use/more%20about%20rooms/index.html">Advanced
+Use: More About Rooms</a>.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Using
+GameMaker: Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"../game%20information.html">Game Information</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Right Click Menus</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/right click menus.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fright%20click%20menus.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fright%20click%20menus.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Right Click Menus</h1>
+
+<h2 class="studio">This page lists each of the different
+right-click sub-menus for each section of the resource tree.</h2>
+
+<p><img class="center" src="rightclickmenu.png">
+</p>
+
+<p>The above image shows the sub-menu that opens when you
+<i>right-click</i> one of the resources in the resource tree. All
+resources have the same menu with the same items except the
+<b>Extensions</b> resource which has an extended sub-menu (see the
+section on <a href=
+"../001_advanced%20use/extensions/creating%20extensions.html">Creating
+Extensions</a>). The options available to you from this menu
+are:</p>
+
+<blockquote>
+<ul>
+<li><b>Insert <i>Resource</i>:</b> Insert a new resource in the
+resource tree and open the editor associated with it.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Add Existing <i>Resource</i>:</b> This will open the file
+explorer so you can add a resource from another project file. You
+can then select any <tt>*.gmx</tt> format file and it will be added
+as another resource to the tree with the same properties and name
+as it had in the previous project. <b>NOTE</b>: Adding an existing
+resource does <i>not</i> add any extra resources associated with
+it. For example, adding a room resource will not also add the
+objects that were present within the room - although it may
+reference them which will cause an error when the game is run - or
+if you add an object resource it will not also add the sprite that
+was assigned to it. therefore when adding existing resources you
+should be sure to follow the hierarchy of resources and add the
+sprites first, the backgrounds next, then the objects, etc... until
+you finally add the rooms.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Duplicate</b>: This will make a duplicate of the selected
+resource in the resource tree, which you can then re-name and
+use.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Sort By Name</b>: This will sort the resources in the
+section (or group) selected in alphabetical order.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Delete</b>: This will delete the resource from the resource
+tree. before this happens you will be prompted to check if you are
+sure, and <i>GameMaker: Studio</i> will perform a resource check to
+see if the resource is referenced in the project anywhere still. If
+the item being deleted is referenced - for example, you delete a
+sprite which is used in an object - then you will be alerted and
+asked if you want to continue.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Rename</b>: You can rename the selected resource from this
+option.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Check References:</b> You can use this option to check and
+see if any <i>hard</i> references to the resource exist. A hard
+reference is when the resource is used as part of another resource
+or has been called in a DnD action - for example, checking the
+references for a sprite will show all the objects that have that
+sprite assigned, but will <i>not</i> show any scripts that call the
+sprite in code.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Properties</b>: This will open the context specific
+properties window for the given resource, ie: the sprite editor for
+sprites, the path editor for paths, etc...</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Open In Explorer</b>: Clicking this will open Windows
+Explorer at the folder where the <tt>*.gmx</tt> file for the
+resource is stored.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Open In External Editor</b>: Clicking this will launch any
+external editors associated with the resource, loading the resource
+in them ready for editing. You can set which editors are assigned
+to which resource from the <a href=
+"../001_advanced%20use/preferences/editor%20preferences.html">Preferences
+Window</a></li>
+</ul>
+</blockquote>
+
+<p><br>
+<br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"004_the%20graphical%20user%20interface.html">The Graphical user
+Interface</a></div>
+
+<div style="float:right">
+</div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

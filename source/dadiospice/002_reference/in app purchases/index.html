@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>In App Purchases</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/in app purchases/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">In App Purchases</h1>
+
+<h2 class="studio">This section deals with setting up in app
+purchases for your game.</h2>
+
+<p>In App Purchases are an important part of modern, cross platform
+games, permitting you to have "freemium" content where your game is
+free, but certain content is only available through a purchase from
+within the game itself. For example, your puzzle game is free, but
+the extra levels are going to cost the user 0.99$. This app model
+is very common and can be set up with a minimum amount of work from
+within <i>GameMaker: Studio</i>, and this section of the manual has
+details of all the available functions that enable you to do just
+that, as well as some advice for setting up and information on how
+to test on the different platforms.<br>
+<br>
+<i><b>NOTE:</b> This functionality is limited to the <a href=
+"../../000_using%20gamemaker/versions.html">Professional
+Version</a> of</i> GameMaker: Studio, and only those versions that
+have the Mac, iOS, or Android target modules. For Android you will
+have to have downloaded and installed the Google Play Services
+extension along with the Google Play In App Purchases extension
+from the YoYo Games Marketplace. Once you have added the extensions
+to the project you can go to the <a href=
+"../../001_advanced%20use/global%20game%20settings/android%20tab.html">
+Android Global Game options</a> and select the <b>Social</b> tab,
+then check the appropriate check-boxes.<br>
+<br></p>
+
+<h3 class="studio">Getting Started</h3>
+
+<p>Setting up in app purchases within your game is relatively
+simple with <i>GameMaker: Studio</i>, but it still requires some
+amount of knowledge of the target platform setup as well as careful
+planning before starting to create your game, so it is not
+recommended that you use this functionality if you are just
+starting with <i>GameMaker: Studio</i> or if you are not sure how
+the different stores for each target platform are set up.<br>
+<br>
+Before doing anything else you will have to make sure that in app
+purchases are enabled in the <b>Global Game Settings</b> before
+they will be functional in your game (more information can be found
+on the page <a href=
+"../../001_advanced%20use/global%20game%20settings/in%20app%20purchases%20tab.html">
+Global Game Settings - In App Purchases Tab</a>). You will also
+need to have set up the purchase details on the target store for
+each platform that you wish to support, taking careful note of each
+of the <b>Product IDs</b> that you define, as these ID strings are
+how GameMaker: Studio identifies each product and purchase.<br>
+<br></p>
+
+<p>To help those of you that have never worked with any type if IAP
+services and to explain the different ways that IAP can be tested
+on different devices, please see the following pages:</p>
+
+<blockquote>
+<ol>
+<li><a href="http://help.yoyogames.com/entries/29734673.html"
+target="_blank">IAP Example</a><br>
+</li>
+
+<li><a href="http://help.yoyogames.com/entries/29736883" target=
+"_blank">IAP Testing</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><i><b>NOTE:</b> GameMaker: Studio currently permits up to 128
+purchases per title, except if you are using the Amazon Store (for
+Android) where it is limited to 100.</i><br>
+<br>
+<i><b>WARNING:</b> You will not be able to make purchases when
+debugging titles using the GameMaker IDE. Instead you will need to
+create final executables to ensure the title can correctly
+communicate with the respective store servers.</i><br>
+<br>
+</p>
+
+<h3 class="studio">GameMaker: Studio Functions</h3>
+
+<p>Below are listed the functions that are integrated in
+<i>GameMaker: Studio</i> to enable in app purchases on iOS and
+Android target devices (this is the ability to buy extra credits,
+items, levels and other things from within the game itself). Many
+of these functions will trigger an asynchronous <a href=
+"../../001_advanced%20use/more%20about%20async%20events/iap.html"><b>
+IAP Event</b></a>, which contains a special <tt>ds_map</tt> with an
+initial key "type". This can then be queried to get the type of IAP
+event that has been triggered, which will then permit you to get
+further data from the map.<br>
+<br>
+The available in app purchase functions are:</p>
+
+<blockquote>
+<ol>
+<li><a href="iap_activate.html">iap_activate</a><br>
+</li>
+
+<li><a href="iap_status.html">iap_status</a><br>
+</li>
+
+<li><a href=
+"iap_enumerate_products.html">iap_enumerate_products</a><br>
+</li>
+
+<li><a href="iap_restore_all.html">iap_restore_all</a><br>
+</li>
+
+<li><a href="iap_acquire.html">iap_acquire</a><br>
+</li>
+
+<li><a href="iap_consume.html">iap_consume</a><br>
+</li>
+
+<li><a href="iap_product_details.html">iap_product_details</a><br>
+</li>
+
+<li><a href=
+"iap_purchase_details.html">iap_purchase_details</a><br>
+</li>
+
+<li><a href="iap_is_purchased.html">iap_is_purchased</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>You should also be aware that GameMaker: Studio does
+<i><b>not</b></i> persist active purchase state across multiple
+plays of the game (and thus <tt>iap_is_purchased()</tt> is
+unreliable if a store has not successfully loaded). This means that
+you will have to store this information yourself and retrieve it
+again on each start-up of your game. You can use the special
+"secure" save and load functions provided for ds_maps for this
+purpose:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"../data%20structures/ds%20maps/ds_map_secure_save.html">ds_map_secure_save</a><br>
+
+</li>
+
+<li><a href=
+"../data%20structures/ds%20maps/ds_map_secure_load.html">ds_map_secure_load</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p>GameMaker: Studio does not persist purchase state across
+multiple plays of the game because it is not appropriate for us to
+provide a secure method of verifying whether or not an individual
+purchase is valid and therefore any automatically stored purchase
+state would be presumptuous. On most platforms "receipt" data will
+be available through <a href=
+"iap_purchase_details.html"><tt>iap_purchase_details()</tt></a>
+which users can use to verify a purchase, although Google Play uses
+"token" data instead.<br>
+<br>
+GameMaker: Studio requires the <b>Google Play Public Key</b> for
+simple local purchase verification and you may check that the
+"payload" data returned with a purchase result matches that used
+with the matching call to <tt>iap_acquire()</tt>.<br>
+<br></p>
+
+<h3 class="studio">Deprecated Functions</h3>
+
+<p>With the update to version 1.3, the In App Purchasing routines
+were made more secure and also simplified somewhat, meaning that
+some functions have been made obsolete and will no longer do
+anything. These functions are listed below <i>for reference
+only</i> and should <b>not</b> be used. Any games created with
+these that you wish to update on a store will need to be re-written
+using the newer system.</p>
+
+<blockquote>
+<ol>
+<li><a href="iap_store_status.html">iap_store_status</a><br>
+</li>
+
+<li><a href="iap_event_queue.html">iap_event_queue</a><br>
+</li>
+
+<li><a href="iap_product_status.html">iap_product_status</a><br>
+</li>
+
+<li><a href="iap_is_downloaded.html">iap_is_downloaded</a><br>
+</li>
+
+<li><a href="iap_product_files.html">iap_product_files</a><br>
+</li>
+
+<li><a href="iap_files_purchased.html">iap_files_purchased</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Reference</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>gravity_direction</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/movement and collisions/movement/gravity_direction.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fmovement%2Fgravity_direction.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fmovement%2Fgravity_direction.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">gravity_direction</h1>
+
+<h2 class="studio">The direction of gravity for the instance.</h2>
+
+<h3 class="studio"><b>Syntax:</b>
+</h3>
+
+<p class="code">gravity_direction;</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>All instances in <i>GameMaker: Studio</i> have certain "built
+in" properties that you can use and set to govern how they look and
+behave. <tt>Gravity_direction</tt> is one of those properties and
+can be used to set the direction of movement when the instances
+<a href="gravity.html"><tt>gravity</tt></a> is greater than 0. Note
+that directions in <i>GameMaker: Studio</i> are usually calculated
+as 0° being right, 90° being up, 180° being left and 270° being
+down.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if place_meeting(x, y, obj_switch)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;gravity_direction += 180;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will change the gravity_direction if the player
+object meets an instance of "obj_switch".</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Moving
+Around</a></div>
+
+<div style="float:right">Next: <a href=
+"hspeed.html">hspeed</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

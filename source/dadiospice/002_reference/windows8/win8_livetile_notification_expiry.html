@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_livetile_notification_expiry</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_livetile_notification_expiry.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_notification_expiry.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_notification_expiry.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_livetile_notification_expiry</h1>
+
+<h2 class="studio">Set the expiry time for the notification push on
+the live (or Secondary) Tile.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_livetile_notification_expiry(expiry_time);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>expiry_time</td>
+<td>Sets the time at which the notification should be
+cancelled.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>Use this function after calling <a href=
+"win8_livetile_notification_begin.html"><tt>win8_livetile_notification_begin</tt></a>
+to give the Windows 8 Live Tile an expiry time. This time is that
+at which the notification should be removed and is best calculated
+using the <i>GameMaker: Studio</i> <a href=
+"../date%20and%20time/index.html">Date and Time functions</a>, as
+shown in the example below (setting this to -1 will show the
+notification indefinitely until you use the <a href=
+"win8_livetile_tile_clear.html"><tt>win8_livetile_tile_clear</tt></a>.<br>
+
+<br>
+<i><b>NOTE:</b> This function can also apply to Secondary tiles
+when used along with <a href=
+"win8_livetile_notification_secondary_begin.html"><tt>win8_livetile_notification_secondary_begin</tt></a>.</i><br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var expiryTime;<br>
+expiryTime = date_current_datetime();<br>
+expiryTime = date_inc_minute(expiryTime, 5);<br>
+win8_livetile_notification_begin("TileSquarePeekImageAndText01");<br>
+
+win8_livetile_notification_expiry(expiryTime);<br>
+win8_livetile_notification_tag("tag0");<br>
+win8_livetile_notification_text_add("Current Score = " +
+string(score));<br>
+win8_livetile_notification_image_add("ms-appx:///" +
+working_directory + "ScoreTile.png");<br>
+win8_livetile_notification_end();<br></p>
+
+<p>The above code will push a new Live Tile notification through to
+Windows 8, with some text and an image, and the tile will be shown
+for 5 minutes.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_livetile_notification_tag.html">win8_livetile_notification_tag</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

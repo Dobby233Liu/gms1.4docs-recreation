@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>choose</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/maths/real valued functions/choose.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmaths%2Freal%20valued%20functions%2Fchoose.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmaths%2Freal%20valued%20functions%2Fchoose.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">choose</h1>
+
+<h2 class="studio">Randomly chooses one of of a set of
+arguments.</h2>
+
+<h3><b>Syntax:</b>
+</h3>
+
+<p class="code">choose(val0, val1, val2... max_val);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>val0... max_val</td>
+<td>An input value that can be string, integer, variable or
+constant.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> One of the given arguments.</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>Sometimes you want to specify something other than numbers for a
+random selection, or the numbers you want are not in any real order
+or within any set range. In these cases you would use
+<tt>choose()</tt> to generate a random result. For example, say you
+want to create an object with a random sprite at the start, then
+you could use this function to set the sprite index to one of a set
+of sprites. Note that you can have as many as you require (more
+arguments will mean that the function will be slower to parse).<br>
+<br>
+<i><b>NOTE:</b> This function will return the same value every time
+the game is run afresh due to the fact that GameMaker: Studio
+generates the same initial random seed every time to make debugging
+code a far easier task. To avoid this behaviour use <a href=
+"randomize.html"><tt>randomize</tt></a> at the start of your
+game.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3><b>Example:</b>
+</h3>
+
+<p class="code">sprite_index = choose(spr_Cactus, spr_Flower,
+spr_Tree, spr_Shrub);<br>
+hp = choose(5, 8, 15, 32, 40); name = choose("John", "Steven",
+"Graham", "Jack", "Emily", "Tina", "Jill", "Helen");</p>
+
+<p>The above code uses choose to set a number of properties for the
+instance.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Real Number
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"random.html">random</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

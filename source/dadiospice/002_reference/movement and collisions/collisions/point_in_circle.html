@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>point_in_circle</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/movement and collisions/collisions/point_in_circle.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fcollisions%2Fpoint_in_circle.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fcollisions%2Fpoint_in_circle.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">point_in_circle</h1>
+
+<h2 class="studio">Checks to see whether a given point falls within
+the defined circular area.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">point_in_circle(px, py, x1, y1, r);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>px</td>
+<td>The x coordinate of the point to check.</td>
+</tr>
+
+<tr>
+<td>py</td>
+<td>The y coordinate of the point to check.</td>
+</tr>
+
+<tr>
+<td>x1</td>
+<td>The x coordinate of the circle centre.</td>
+</tr>
+
+<tr>
+<td>y1</td>
+<td>The y coordinate of the circle centre.</td>
+</tr>
+
+<tr class="alt">
+<td>r</td>
+<td>The radius of the circle.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Boolean</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>When using this function, you define a circular area and
+GameMaker: Studio will work out whether the given point falls
+within its bounds or not. If the point falls within the defined
+circle the function will return <tt>true</tt> otherwise the
+function will return <tt>false</tt>.<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if point_in_circle(mouse_x, mouse_y, x, y, 16)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;over = true;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;over = false;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code uses the <tt>point_in_circle</tt> function to
+check if the mouse position falls within the defined circular area,
+setting the variable "over" to <tt>true</tt> if it does, or
+<tt>false</tt> otherwise.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Collision
+Checking</a></div>
+
+<div style="float:right">Next: <a href=
+"rectangle_in_rectangle.html">rectangle_in_rectangle</a></div>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

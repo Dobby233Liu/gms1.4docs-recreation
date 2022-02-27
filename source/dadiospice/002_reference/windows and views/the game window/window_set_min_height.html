@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>window_set_min_height</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows and views/the game window/window_set_min_height.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fthe%20game%20window%2Fwindow_set_min_height.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fthe%20game%20window%2Fwindow_set_min_height.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">window_set_min_height</h1>
+
+<h2 class="studio">Sets a minimum height for the game window.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">window_set_min_height(height);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>height</td>
+<td>The minimum height in pixels for the game window.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b>N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio"><b>Description</b>
+</h3>
+
+<p>This function can be used to set a minimum window height for
+your game. If you enable the window resize option in the Global
+Game Settings for the target platform, then the player can resize
+the game window to any size they wish, however by using this
+function you can limit the minimum height to the size you specify.
+If you wish to go back to the default behaviour (ie: no mimimum),
+then use a value of -1.<br>
+<br>
+<i><b>NOTE:</b> This function is only available on the
+<b>Windows</b>, <b>Mac OSX</b> and <b>Linux</b> platforms.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">window_set_min_width(640);<br>
+window_set_min_height(480);<br>
+window_set_max_width(1280);<br>
+window_set_max_height(960);<br></p>
+
+<p>The above code will set the minimum and maximum width and height
+for the game window.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">The Game
+Window</a></div>
+
+<div style="float:right">Next: <a href=
+"window_set_max_height.html">window_set_max_height</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

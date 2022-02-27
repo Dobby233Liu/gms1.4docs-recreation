@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Drawing Sprites And Backgrounds</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing sprites and backgrounds/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%20sprites%20and%20backgrounds%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%20sprites%20and%20backgrounds%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Drawing Sprites And Backgrounds</h1>
+
+<h2 class="studio">This section contains all the functions
+available for drawing the graphics assets.</h2>
+
+<p>Even though you can set up backgrounds in the room editor and
+you can assign sprites to instances, often this is not flexible
+enough for the game you are making. For example, if you have an
+instance that has to draw a menu, you may want to display various
+button sprites at a time, or if you have a game with scrolling
+parallax backgrounds you will need to be able to set them through
+code in a controller instance of some type. In these situations you
+should be using the following functions which can draw sprite and
+background assets anywhere in the room with some of the functions
+also permitting you to manipulate the shape, size, colour and alpha
+of the sprite to achieve special effects.<br>
+<br></p>
+
+<h3 class="studio">Sprites</h3>
+
+<p>You can assign a sprite to an instance and by default
+<i>GameMaker: Studio</i> will draw it with the properties given by
+the various <a href=
+"../../objects%20and%20instances/instances/instance%20properties/index.html">
+sprite variables</a>, however if you add anything into the draw
+event, you are "taking control" and must tell <i>GameMaker:
+Studio</i> exactly what to draw. This means that if you must use
+the following functions to define exactly what it is the instance
+is to draw and where about in the room it is to draw it:</p>
+
+<blockquote>
+<ol>
+<li><a href="draw_self.html">draw_self</a><br>
+</li>
+
+<li><a href="draw_sprite.html">draw_sprite</a><br>
+</li>
+
+<li><a href="draw_sprite_ext.html">draw_sprite_ext</a><br>
+</li>
+
+<li><a href="draw_sprite_general.html">draw_sprite_general</a><br>
+</li>
+
+<li><a href="draw_sprite_part.html">draw_sprite_part</a><br>
+</li>
+
+<li><a href=
+"draw_sprite_part_ext.html">draw_sprite_part_ext</a><br>
+</li>
+
+<li><a href=
+"draw_sprite_stretched.html">draw_sprite_stretched</a><br>
+</li>
+
+<li><a href=
+"draw_sprite_stretched_ext.html">draw_sprite_stretched_ext</a><br>
+</li>
+
+<li><a href="draw_sprite_pos.html">draw_sprite_pos</a><br>
+</li>
+
+<li><a href="draw_sprite_tiled.html">draw_sprite_tiled</a><br>
+</li>
+
+<li><a href=
+"draw_sprite_tiled_ext.html">draw_sprite_tiled_ext</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>If you are using SWF format sprites, then there are also
+additional options for controlling the anti-aliasing used when
+drawing (see <a href=
+"../../../001_advanced%20use/more%20about%20sprites/importing%20vector%20images.html">
+Importing Vector Images</a> for more information on these types of
+sprites). Note that these functions work on a <i>global</i> level
+and will set the AA on all vector SWF sprites drawn after they have
+been called.</p>
+
+<blockquote>
+<ol>
+<li><a href="draw_enable_swf_aa.html">draw_enable_swf_aa</a><br>
+</li>
+
+<li><a href=
+"draw_set_swf_aa_level.html">draw_set_swf_aa_level</a><br>
+</li>
+
+<li><a href=
+"draw_get_swf_aa_level.html">draw_get_swf_aa_level</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>Apart from those functions listed above, there are also two
+special functions designed for use with skeletal animations (see
+<a href=
+"../../../001_advanced%20use/more%20about%20sprites/importing%20skeletal%20animations.html">
+Importing Skeletal Animations</a> for more information on these
+types of sprites, and the section <a href=
+"../../game%20assets/sprites/skeletal%20animations/index.html">Skeletal
+Animations</a> for specific functions related to these types of
+sprites):</p>
+
+<blockquote>
+<ol>
+<li><a href="draw_skeleton.html">draw_skeleton</a><br>
+</li>
+
+<li><a href=
+"draw_skeleton_collision.html">draw_skeleton_collision</a><br>
+</li>
+
+<li><a href="draw_skeleton_time.html">draw_skeleton_time</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Backgrounds</h3>
+
+<p>Although the <a href=
+"../../../000_using%20gamemaker/rooms/backgrounds%20tab.html">Room
+Editor Backgrounds Tab</a> has a number of options for setting up
+backgrounds, it is often more useful to draw them using code. To
+that end, <i>GameMaker: Studio</i> has the following functions that
+permit you to draw background assets in a number of different
+ways:<br>
+<br>
+<i><b>NOTE:</b> Don't forget that adding any code into the draw
+event of an instance will switch off the automatic drawing of the
+sprite for that instance, so if you need to draw the sprite and a
+background you should use the functions above in combination with
+those listed here.</i></p>
+
+<blockquote>
+<ol>
+<li><a href="draw_background.html">draw_background</a><br>
+</li>
+
+<li><a href="draw_background_ext.html">draw_background_ext</a><br>
+</li>
+
+<li><a href=
+"draw_background_part.html">draw_background_part</a><br>
+</li>
+
+<li><a href=
+"draw_background_part_ext.html">draw_background_part_ext</a><br>
+</li>
+
+<li><a href=
+"draw_background_stretched.html">draw_background_stretched</a><br>
+</li>
+
+<li><a href=
+"draw_background_stretched_ext.html">draw_background_stretched_ext</a><br>
+
+</li>
+
+<li><a href=
+"draw_background_tiled.html">draw_background_tiled</a><br>
+</li>
+
+<li><a href=
+"draw_background_tiled_ext.html">draw_background_tiled_ext</a><br>
+</li>
+
+<li><a href=
+"draw_background_general.html">draw_background_general</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Drawing</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

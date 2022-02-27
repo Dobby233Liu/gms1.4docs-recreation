@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>move_towards_point</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/movement and collisions/movement/move_towards_point.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fmovement%2Fmove_towards_point.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fmovement%2Fmove_towards_point.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">move_towards_point</h1>
+
+<h2 class="studio">Moves the instance towards a given point at a
+given speed.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">move_towards_point( x, y, sp );</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>x</td>
+<td>The x position of the point to move towards.</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>The y position of the point to move towards.</td>
+</tr>
+
+<tr>
+<td>sp</td>
+<td>The speed to move at in pixels per second.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function simply tells the instance running the code to move
+towards a set point at a set speed. Bear in mind that it is up to
+you to tell it what to do once it gets there, as it won't just stop
+by itself. This means that you can get a "vibrating" instance as it
+moves (for example) 3 pixels forward, overshoots the x/y target
+position by 2, then moves 3 pixels back again, overshooting the
+target point by one and so on... There are a number of ways that
+this can be avoided, for example using <a href=
+"distance_to_point.html"><tt>distance_to_point</tt></a> to see how
+far from the specified location the instance is before moving.<br>
+<br>
+<i><b>Note:</b> this function sets the speed of the instance, so
+even if you stop using this code, the instance will keep moving in
+the previous direction, so it is necessary to set the instance
+<a href="speed.html"><tt>speed</tt></a> to 0 if you wish it to
+stop. See the code example below.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if point_distance(x, y, target.x, target.y) &gt;
+5<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;move_towards_point(target.x, target.y, 5);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else speed = 0;<br></p>
+
+<p>The above code will move the instance towards the position of
+the instance indexed in the variable "target" at a speed of 5
+pixels per step. Once it reaches that position the speed is set to
+0.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Moving
+Around</a></div>
+
+<div style="float:right">Next: <a href=
+"move_bounce_all.html">move_bounce_all</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

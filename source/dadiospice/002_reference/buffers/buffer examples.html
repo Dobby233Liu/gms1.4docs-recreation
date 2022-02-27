@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Buffer Examples</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/buffers/buffer examples.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fbuffers%2Fbuffer%20examples.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fbuffers%2Fbuffer%20examples.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Buffer Examples</h1>
+
+<h2 class="studio">This page has two examples of using buffers to
+help understand how to use them.</h2>
+
+<h3 class="studio">Making Checkpoints With A Buffer</h3>
+
+<p>A simple example of how a buffer can be used in any
+<i>GameMaker: Studio</i> game for any platform, is the function
+<a href=
+"../miscellaneous/game_save_buffer.html"><tt>game_save_buffer</tt></a>.
+This function will take a "snapshot" of the current game state and
+save it to a pre-defined buffer, which can then be read from to
+load the game at that point again.<br>
+<br>
+<i><b>NOTE:</b> This function is very limited and it is designed
+for the beginner to get a checkpoint system up and running quickly,
+but more advanced users may prefer to code their own system using
+the <a href="../file%20handling/index.html">File functions</a>, due
+to the fact that the game will not save any of the dynamic
+resources that you can create at run-time like data structures,
+surfaces, added backgrounds and sprites etc...</i><br>
+<br>
+The first thing we need to do is create a new object to control the
+saving and loading, so you would make one and give it a <b>Create
+Event</b>. In this event, you could place the following code:</p>
+
+<p class="code">SaveBuffer = buffer_create(1024, buffer_grow,
+1);<br>
+StateSaved = false;<br></p>
+
+<p>The first line creates a <b>grow</b> buffer (since we don't know
+the final size of the saved data) of 1024 bytes and aligned to 1
+byte. A variable is then created to check against and see if the
+game has been saved or not (this will be used for loading).<br>
+<br>
+Next we would add a <b>Keypress Event</b> (for example) in which we
+will save the current game state to the created buffer:</p>
+
+<p class="code">StateSaved = true;<br>
+buffer_seek(SaveBuffer, buffer_seek_start, 0);<br>
+game_save_buffer(SaveBuffer);<br></p>
+
+<p>The above will first set the control variable to true (so that
+this is saved when we save the game to the buffer) and then
+<i>seek</i> to the start of the buffer before writing the current
+save state into it. Why do we use <a href=
+"buffer_seek.html"><tt>buffer_seek</tt></a>? Well, as mentioned on
+the <a href="using%20buffers.html">Using Buffers</a> page, you read
+and write to a buffer from the last position that data was added
+to. This means that if you don't set the buffer <i>tell</i> back to
+the start then when you save you will be adding the data into the
+buffer at the current buffer read/write position, so we use the
+function <tt>buffer_seek</tt> to move the <i>tell</i> to the buffer
+start.<br>
+<br>
+We have now saved the current game state to a buffer. The next step
+would be to code how to load it, probably in another <b>Keypress
+Event</b>:</p>
+
+<p class="code">if StateSaved<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;buffer_seek(SaveBuffer, buffer_seek_start,
+0);<br>
+&nbsp;&nbsp;&nbsp;game_load_buffer(SaveBuffer);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The game will then be loaded at the end of the event in which
+you place the above code.<br>
+<br>
+<i><b>NOTE:</b> This is only for use in the same room, and not for
+generating complete saved games for after your game has been closed
+or restarted!</i><br>
+<br>
+The final thing to add to the controller object is a "clean up"
+code. Buffers are stored in memory and as such if you do not clean
+up when you are finished with them, you can get memory leaks that
+will eventually lag and crash your game. So you would probably add
+a <b>Room End Event</b> (from the <b>Other</b> event category)
+with:</p>
+
+<p class="code">buffer_delete(SaveBuffer);</p>
+
+<p>This object can now be placed into a room and on a key press
+save and load the room state from a buffer.<br>
+<br></p>
+
+<h3 class="studio">Networking Buffers</h3>
+
+<p>When working with the <i>GameMaker: Studio</i> networking
+functions, you have to use buffers to create the data<i>packet</i>
+that is being sent over the network connection. This example
+intends to show how this is done, but due to the scope of the
+networking possibilities, it is only designed to show how to use
+the buffers themselves, and not the full networking system (there
+is a Demo file included with <i>GameMaker: Studio</i> that shows
+this).<br>
+<br>
+The first thing we will show is the creation and use of a buffer
+for the client side of the network connection. This buffer will be
+used to create small data packets that can then be sent to the
+server, so in the <b>Create Event</b> of an instance we would
+assign a buffer like this:</p>
+
+<p class="code">send_buff = buffer_create(256, buffer_grow, 1);</p>
+
+<p>We make the buffer small (256bytes) as it is not intended for
+holding large amounts of data, we make it a <i>grow</i> buffer to
+ensure no errors should we need to add more data to be sent at any
+time, and the alignment is set to one for convenience.<br>
+<br>
+Now, let's say that we want our client to send data to the server.
+For that we need to create a buffer "packet", and in this example
+we are going to send a <b>Key Press Event</b>, like when the player
+presses <b>Left Arrow</b> to move around the game. To do this we
+write the necessary data to the buffer first then send it off:</p>
+
+<p class="code">buffer_seek(buff, buffer_seek_start, 0);<br>
+buffer_write(buff, buffer_u8, 1);<br>
+buffer_write(buff, buffer_s16, vk_left);<br>
+buffer_write(buff, buffer_bool, true);<br>
+network_send_packet(client, buff, buffer_tell(buff));<br></p>
+
+<p>Before writing to the buffer we have set the "tell" to the start
+of the buffer as networking <i>always</i> takes the data from the
+<b>start</b> of a buffer. We then write the <i>check</i> value
+(this will be used by the server to determine the type of event to
+be processed), then the key being used, and then the state of the
+key (in this case <tt>true</tt> for pressed). This buffer is then
+sent as a data packet by the network function. Note that we do
+<i>not</i> send the whole buffer! We only send the data written,
+using the <a href="buffer_tell.html"><tt>buffer_tell</tt></a>
+function to return the current read/write position of the buffer
+(remember that writing to the buffer moves the "tell" to the end of
+what has been written).<br>
+<br>
+What about receiving the data on the server? The received data
+packet that must be written into the buffer on the server and then
+used to update the game. For that we would use the <a href=
+"../../001_advanced%20use/more%20about%20async%20events/networking.html">
+Networking Asynchronous Event</a> in the network controller object
+of the server, as this simplified code below shows:</p>
+
+<p class="code">var buff = ds_map_find_value(async_load,
+"buffer");<br>
+if cmd == buffer_read(buff, buffer_u8);<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;key = buffer_read(buff, buffer_s16 );<br>
+&nbsp;&nbsp;&nbsp;key_state = buffer_read(buff, buffer_bool);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The asynchronous event will contain a special temporary
+<tt>ds_map</tt> (it is removed at the end of the event
+automatically) which contains different information depending on
+the type of incoming data from the network. In this case, we are
+assuming that the map has been checked and found to be a buffer
+data packet sent from a client. We now check the first piece of
+data that is in the buffer to see what kind of event has been sent
+- in this case the value "1" represents a <i>key</i> event, however
+when coding these things you should define <b>constants</b> to hold
+these values to simplify things - and then store the key being
+pressed and its state (<tt>true</tt> = pressed, <tt>false</tt> =
+released). This information would then be used to update all the
+clients with the new status of the sending client player.<br>
+<br>
+<i><b>NOTE:</b> The buffer that is created from the ds_map is
+automatically removed at the end of the Network Asynchronous Event
+so there is no need to use <a href=
+"buffer_delete.html"><tt>buffer_delete</tt></a> here.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Buffers</a></div>
+
+<div style="float:right">Next: <a href="using%20buffers.html">Using
+Buffers</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

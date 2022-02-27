@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete Registry Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete registry functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20registry%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20registry%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete Registry Functions</h1>
+
+<h2 class="studio">These functions are for dealing with the Windows
+registry</h2>
+
+<h3 class="studio"><b>Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>registry_write_string</td>
+<td>Creates an entry in the registry with the given name and string
+value.</td>
+</tr>
+
+<tr class="alt">
+<td>registry_write_real</td>
+<td>Creates an entry in the registry with the given name and real
+value.</td>
+</tr>
+
+<tr>
+<td>registry_write_string_ext</td>
+<td>Creates an entry in the key in the registry with the given name
+and string value.</td>
+</tr>
+
+<tr class="alt">
+<td>registry_write_real_ext</td>
+<td>Creates an entry in the key in the registry with the given name
+and real value.</td>
+</tr>
+
+<tr>
+<td>registry_read_string</td>
+<td>Returns the string that the given name holds. The name must
+exist, otherwise an empty string is returned.</td>
+</tr>
+
+<tr class="alt">
+<td>registry_read_real</td>
+<td>Returns the real value that the given name holds. The name must
+exist, otherwise the number 0 is returned.</td>
+</tr>
+
+<tr>
+<td>registry_read_string_ext</td>
+<td>Returns the string that the given name in the indicated key
+holds. The name must exist, otherwise an empty string is
+returned.</td>
+</tr>
+
+<tr class="alt">
+<td>registry_read_real_ext</td>
+<td>Returns the real value that the given name in the indicated key
+holds. The name must exist, otherwise the number 0 is
+returned.</td>
+</tr>
+
+<tr>
+<td>registry_exists</td>
+<td>Returns whether the given name exists.</td>
+</tr>
+
+<tr class="alt">
+<td>registry_exists_ext</td>
+<td>Returns whether the given name exists in the given key.</td>
+</tr>
+
+<tr>
+<td>registry_set_root</td>
+<td>Sets the root for the other routines, where: 0 =
+HKEY_CURRENT_USER, 1 = HKEY_LOCAL_MACHINE, 2 = HKEY_CLASSES_ROOT
+and 3 = HKEY_USERS.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>Apart from these being Windows only functions and so
+incompatible with all other devices, these functions can also be
+considered a security problem as their misuse can cause serious
+issues with Windows based computers.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20cd%20functions.html">CD Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

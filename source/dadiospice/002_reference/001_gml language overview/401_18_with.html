@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The "With" Construction</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/401_18_with.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_18_with.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_18_with.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The "With" Construction</h1>
+
+<h2 class="studio">This section explains the various uses for
+"with" in <i>GameMaker: Studio</i>.</h2>
+
+<p>As indicated in the section <a hreff=
+"401_05_addressing.html">Addressing Variables in Other
+Instances</a>, it is possible to read and change the value of
+variables in other instances. But in a number of cases you want to
+do a lot more than just change a single variable with those other
+instances. For example, imagine that you want to move all the ball
+objects in your game 8 pixels. You may think that this is achieved
+simply by the following piece of code:<br>
+<br></p>
+
+<p class="code">obj_ball.y = obj_ball.y + 8;</p>
+
+<p><br>
+But this is not correct, as the right side of the assignment gets
+the value of the y-coordinate of the first ball and adds 8 to it.
+Next this new value is set as y-coordinate of all balls, so the
+result is that all balls get the same y-coordinate, and even if you
+use the following:<br>
+<br></p>
+
+<p class="code">obj_ball.y += 8;</p>
+
+<p><br>
+it will have exactly the same effect because it is simply an
+abbreviation of the first statement. So how <i>do</i> we achieve
+this? For this purpose there exists the <b>with</b> statement in
+GML. Its global form is:<br>
+<br></p>
+
+<p class="code">with (&lt;expression&gt;) &lt;statement&gt;</p>
+
+<p><br>
+&lt;Expression&gt; indicates one or more instances, and for this
+you can use an instance id, the name of an object (which indicates
+<i>all instances</i> of this object are to run the code block) or
+one of the special <i>keywords</i> (<b>all</b>, <b>self</b>,
+<b>other</b>). &lt;Statement&gt; is now executed for each of the
+indicated instances, as if that instance is the current (self)
+instance. So, to move all instances of the ball object 8 pixels
+down, you can type:<br>
+<br></p>
+
+<p class="code">with (obj_ball) y += 8;</p>
+
+<p><br>
+If you want to execute multiple statements, put curly brackets
+around them, the same as you would around any other program. So for
+example, to move all balls to a random position, you can use:<br>
+<br></p>
+
+<p class="code">with (obj_ball)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;x = random(room_width);<br>
+&nbsp;&nbsp;&nbsp;y = random(room_height);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p><br>
+Note that, within the statement(s), the indicated instance has
+become the target (self) instance that runs the code block, which
+means that the statements the original instance (that contains the
+"with" and the code block) has become the <b>other</b> instance. So
+for example, to move all balls to the position of the current
+instance, you can type this:<br>
+<br></p>
+
+<p class="code">with (obj_ball) { x = other.x; y = other.y; }</p>
+
+<p><br>
+The with statement is an extremely powerful tool and is useful in
+many, many circumstances so it is important that you understand
+fully how it can be used. To help there are a few more examples of
+use below:<br>
+<br></p>
+
+<p class="code">with (instance_create(x, y, obj_Ball))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;speed = other.speed;<br>
+&nbsp;&nbsp;&nbsp;direction = other.direction;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p><br>
+The above code will create an instance of obj_Ball and assign it
+the speed and direction of the instance that runs the whole code
+block.<br>
+<br></p>
+
+<p class="code">with (instance_nearest(x, y, obj_Ball))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;instance_destroy();<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p><br>
+The above code will destroy the instance of obj_Ball nearest to the
+instance running the code.<br>
+<br></p>
+
+<p class="code">var inst;<br>
+inst = noone;<br>
+with (obj_ball)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if str &gt; other.str inst = id;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+if inst != noone target = inst;<br></p>
+
+<p><br>
+The above code is slightly more complex than previous ones due to
+it using a local variable. This variable is local to the
+<i>script</i> and not to the instance and so can be used and
+accessed by all instances that are referenced within the code
+block. So, in the code we have set it to the special <i>keyword</i>
+<b>noone</b> and then use the "with" construction to have every
+instance of obj_Ball check their "str" variable against that of the
+instance running the code block. If the value of the variable is
+larger, then they store their unique id in the "inst" local
+variable, meaning that at the end of the code, only the instance
+with a value greater than the calling instance (or the
+<i>keyword</i> <b>noone</b> if none are larger) will be stored in
+the local variable inst. For more information on local variables
+see the section <a href="variables/index.html">Variables And
+variable Scope</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">GML
+Overview</a></div>
+
+<div style="float:right">Next: <a href=
+"401_17_scripts.html">Scripts</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

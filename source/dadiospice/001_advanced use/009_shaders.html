@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Shaders</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/009_shaders.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F009_shaders.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F009_shaders.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Shaders</h1>
+
+<h2 class="studio">A shader is a set of two short scripts that
+permit you to tap directly into the graphics pipeline and change
+how things are drawn.</h2>
+
+<p>Shaders are a very powerful tool that can be used to manipulate
+the graphics that your game renders to the screen, permitting
+incredibly fast effects that can range from, for example, adding a
+subtle colour hue to a sprite, right up to full screen distortion
+effects.<br>
+<br></p>
+
+<h3 class="studio">What Is A Shader?</h3>
+
+<p>A shader is basically a two-part program that runs directly on
+the graphics card itself, making it very fast since the GPU is
+doing all the work and freeing up CPU cycles for your game
+code.<br>
+<br>
+The full shader is comprised of a <b>vertex shader</b> program, and
+a <b>fragment shader</b> program (also known as a <b>pixel
+shader</b>). Both of these tiny programs work together in order to
+manipulate what the graphics card renders to the screen. This then
+permits you to manipulate in real time, the position, colour and
+alpha values that are actually rendered into the display
+buffer.<br>
+<br>
+A complete overview of how shaders really work and what place they
+have in the graphics pipeline is outside the scope of this manual,
+but <i>YoYo Games</i> have produced a number of <b>Tech Blog</b>
+articles which give an excellent base to start from:</p>
+
+<blockquote>
+<ol>
+<li><a href="http://www.yoyogames.com/tech_blog/20" target=
+"_blank"><b>Shaders Part 1</b></a><br>
+</li>
+
+<li><a href="http://www.yoyogames.com/tech_blog/22" target=
+"_blank"><b>Shaders Part 2</b></a><br>
+</li>
+
+<li><a href="http://www.yoyogames.com/tech_blog/23" target=
+"_blank"><b>Shaders Part 3</b></a><br>
+</li>
+
+<li><a href="http://www.yoyogames.com/tech_blog/24" target=
+"_blank"><b>Shaders Part 4</b></a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">The Shader Editor</h3>
+
+<p>The shader editor has the exact same functionality as the
+<a href="006_scripts.html">Script Editor</a>, with auto-complete,
+search, print, etc... as well as all the same keyboard shortcuts.
+However, please note that there is no syntax checking, due to the
+code being written using the specific shader language and
+<i>not</i> GML. <img class="center" src=
+"../images/form_shaders.png"> The code editor itself is split into
+two sections, with each one being available from tabs at the top.
+This is because you <i>cannot</i> create a shader without both
+parts. Even if you wish to only use the fragment shader you will
+have to have created a "pass through" vertex shader (by default any
+new shader being created will have a vertex and fragment pass
+through shader already coded for you).<br>
+<br>
+The shader program itself is written in a <i>shader language</i>
+with the default, cross platform choice being <b>GLSL ES</b>. Using
+this language guarantees that your game will work correctly on all
+platforms that shaders are available on, but you can also choose to
+use one of three other languages if you are only targeting a
+specific platform. The available languages and their respective
+targets are shown in the table below:</p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Shader Language</th>
+<th>Target Platform</th>
+</tr>
+
+<tr>
+<td>GLSL ES</td>
+<td>All targets</td>
+</tr>
+
+<tr>
+<td>HLSL9</td>
+<td>Windows 32 bit</td>
+</tr>
+
+<tr>
+<td>HLSL11</td>
+<td>UWP, XboxOne</td>
+</tr>
+
+<tr>
+<td>GLSL</td>
+<td>Mac and Ubuntu (Linux)</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+It is worth noting that you can use GLSL ES shaders on the
+<b>HTML5</b> target platform but you <i>must</i> have enabled
+<b>WebGL</b> in the <a href=
+"global%20game%20settings/html5%20tab.html">HTML5 Global Game
+Settings</a> otherwise it will not work.<br>
+<br>
+For further details on the shader functions and how they can be
+used in <i>GameMaker: Studio</i> please see the section <a href=
+"../002_reference/shaders/index.html">Reference: Shaders</a>.<br>
+<br>
+<i><b>NOTE:</b> This manual will <b>not</b> cover any of the Open
+GL shader functions and variables, unless they are special ones
+that exist <b>ONLY</b> in</i> GameMaker: Studio (which can be found
+<a href=
+"../002_reference/shaders/shader%20constants/index.html">here</a>.
+For a complete overview of the available GLSL ES functions and
+variables please see the <a href=
+"http://www.khronos.org/registry/gles/specs/2.0/GLSL_ES_Specification_1.0.17.pdf"
+target="_blank">OpenGL ES Shading Language (GLSL ES) Reference
+Pages</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advanced Use
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"010_macros.html">Constants</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

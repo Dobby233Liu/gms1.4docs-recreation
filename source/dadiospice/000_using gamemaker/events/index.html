@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Events</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/events/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Events</h1>
+
+<h2><i>GameMaker: Studio</i> uses what is called an event driven
+approach, and this section of the manual outlines how that
+works.</h2>
+
+<p>So, what are events? Basically, these are discreet moments in
+the game loop where things are made to happen based on what you
+have programmed for them. You see <i>GameMaker: Studio</i> works
+with cycles of these events - from the moment a room is started to
+the moment it is finished there is a <i>game loop</i> running where
+every <i>step</i> (a step is a moment in game time, governed by the
+room speed setting) a series of events are run, and you can choose
+to place code or DnD actions in your instances that respond to
+these events. Let's look at a typical object setup with events and
+actions:<br>
+<br>
+<img class="center" src="../../images/form_event_panel.png"></p>
+
+<p>As you can see in our example object there are a number of
+events listed that it should respond to, but initially when you
+create an object this list is empty and you must decide which
+events you need and what instances of that object should do when
+those events are triggered. To add events into the object, you
+press the <b>Add Event</b> button found at the bottom of the events
+list which will bring up the following window:<br>
+<br>
+<img class="center" src="../../images/form_event_selector.png"></p>
+
+<p>That is the list of all the basic events which an object can
+respond to, although some of those events also have <i>sub</i>
+events to further define behaviours. For example, if you add a
+<b>Key Press</b> event you will then get a further window popping
+up with the sub events that allow you to select <i>which</i> key
+the object should respond to. Once you have selected your event,
+you can then add your DnD actions or code into the <b>Actions</b>
+section on the right of the event list, which means that you are
+telling <i>GameMaker: Studio</i> that when this event is triggered,
+these actions should be performed. here is an example image to
+illustrate this:<br>
+<br>
+<img class="center" src="../../images/add_action.png"></p>
+
+<p>You can change the order of the actions in the list by pressing
+and holding the left mouse button and then dragging to move the
+selected DnD action icon. Note that if you hold the &lt;Alt&gt; key
+while dragging, you can make a copy of the action. You can even use
+drag-and-drop between action lists for different objects, either by
+having them both open and literally dragging the DnD action icons
+between them, or you can click with the right mouse button on an
+action which will open a menu where you can edit, cut, copy, paste
+and even delete actions (deleting can also be done by using the
+&lt;Del&gt; key). You can select multiple actions for cutting,
+copying, or deleting by holding the &lt;Shift&gt; key or
+&lt;Ctrl&gt; key and clicking on a series of action icons, and
+pressing &lt;Ctrl&gt;&lt;A&gt; will select all actions. Finally,
+when you hold your mouse at rest above an action, a longer
+description is given of the action in a pop up window so that you
+can see what it does without actually having to open it.<br>
+<br>
+There are two further buttons available at the bottom of the events
+list, <b>Delete</b> and <b>Change</b>. As you may well imagine, the
+<b>Delete</b> button will permanently remove the currently selected
+event and all its associated actions from the object (Events
+without any actions assigned to them will automatically be deleted
+when you close the form so there is no need to delete them
+manually). The <b>Change</b> button can be used to change the
+current event into another one, and in this way transfer all the
+associated actions to the new event (if the event you try to change
+to has already been defined then nothing will happen). These
+actions can also be accomplished by simply right clicking on the
+event and selecting the appropriate choice from the pop up menu
+that will open.<br>
+<br>
+In this way you can "build" behaviours that are triggered by
+specific events in your game by just adding in more actions or more
+code (you are not limited to the amount you can add for each
+event). If you wish to know more about all the available actions
+then you can go to the <a href="../actions/index.html">Actions</a>
+section of the manual, and the <a href=
+"../../002_reference/index.html">Reference</a> section has all the
+information you need on the available code functions.</p>
+
+<h3 class="studio">Event Order</h3>
+
+<p>It should also be noted that the exact order that the events are
+going to occur in each step cannot be clearly stated, simply
+because it depends on the internal workings of <i>GameMaker:
+Studio</i>, which is subject to change as the software develops.
+However there <i>are</i> certain events that always run in the same
+order. The first set of events that will always happen the same way
+are those that occur when a room is first entered and the order of
+events for that is:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b><a href="create%20event.html">Create Event</a></b> of each
+instance, followed by the</li>
+
+<li><b><a href=
+"../../001_advanced%20use/more%20about%20rooms/index.html">Instance
+Creation Code</a></b> of each instance</li>
+
+<li><b><a href="other%20event.html">Game Start Event</a></b> (this
+will only be run in the very first room of the game)</li>
+
+<li><b><a href="../rooms/settings%20tab.html">Room Creation
+Code</a></b>
+</li>
+
+<li><b><a href="other%20event.html">Room Start Event</a></b> of all
+instances</li>
+</ul>
+</blockquote>
+
+<p>It is also worth noting that you can also set the order in which
+specific instances are created within the room editor itself. See
+the section on <b>Instance Order</b> in the <a href=
+"../rooms/settings%20tab.html">Rooms - The Settings Tab</a> for
+further details.<br>
+<br>
+Other than those specific events, the only known order that will
+always occur in the same way no matter what belongs to the three
+step events and the two draw events. These will always remain
+consistent, so if you have code that relies on specific timing
+during each step of your game, you should use:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Begin Step Event</b>
+</li>
+
+<li><b>Step Event</b> - The step event is executed just
+<i>before</i> instances are put in their new positions.</li>
+
+<li><b>End Step Event</b>
+</li>
+</ul>
+</blockquote>
+
+<p>All of the sub events for drawing are also always dealt with in
+the same order as follows (except for the <b>Resize event</b>,
+which is triggered differently):<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Pre Draw Event</b>
+</li>
+
+<li><b>Draw Begin Event</b>
+</li>
+
+<li><b>Draw Event</b>
+</li>
+
+<li><b>Draw End Event</b>
+</li>
+
+<li><b>Post Draw Event</b>
+</li>
+
+<li><b>Draw GUI Begin Event</b>
+</li>
+
+<li><b>Draw GUI Event</b>
+</li>
+
+<li><b>Draw GUI End Event</b>
+</li>
+</ul>
+</blockquote>
+
+<p>The sections below deal with each available event:<br>
+<br></p>
+
+<p><img src="../../images/event_create.png" align="left"><a href=
+"create%20event.html">Create Event</a><br>
+<br>
+<img src="../../images/event_destroy.png" align="left"><a href=
+"destroy%20event.html">Destroy Event</a><br>
+<br>
+<img src="../../images/event_timer.png" align="left"><a href=
+"alarm%20event.html">Alarm Events</a><br>
+<br>
+<img src="../../images/event_step.png" align="left"><a href=
+"step%20event.html">Step Events</a><br>
+<br>
+<img src="../../images/event_collision.png" align="left"><a href=
+"collision%20event.html">Collision Event</a><br>
+<br>
+<img src="../../images/event_keyboard.png" align="left"> <img src=
+"../../images/event_keypress.png" align="left"> <img src=
+"../../images/event_keyrelease.png" align="left"><a href=
+"keyboard%20event.html">Keyboard Events</a><br>
+<br>
+<img src="../../images/event_mouse.png" align="left"><a href=
+"mouse%20event.html">Mouse Event</a><br>
+<br>
+<img src="../../images/event_other.png" align="left"><a href=
+"other%20event.html">Other Events</a><br>
+<br>
+<img src="../../images/event_draw.png" align="left"><a href=
+"draw%20event.html">Draw Events</a><br>
+<br>
+<img src="../../images/event_web.png" align="left"><a href=
+"async%20event.html">Asynchronous Events</a><br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Using
+GameMaker: Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"../actions/index.html">Actions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

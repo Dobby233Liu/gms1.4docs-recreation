@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Instance Variables</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/variables/instance variables.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Finstance%20variables.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Finstance%20variables.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Instance Variables</h1>
+
+<h2 class="studio">An instance variable is one that's scope is
+limited to the instance that creates it.</h2>
+
+<p>An instance variable is created within an instance of an object
+and is considered unique to that instance - ie: many instances of
+the same object can have the same variable, but each variable can
+hold a different value as they are unique to each instance. But
+<i>how</i> is an instance variable created? Well, you create new
+variables simply by assigning a value to them as shown in this
+small example:<br>
+<br></p>
+
+<p class="code">potions = 12;<br>
+life = 100;<br>
+name = "Jock MacSweeney";<br>
+strength = 5.5;<br>
+armour = -2;<br></p>
+
+<p><br>
+As you can see you just have to give the name and then a value
+(either numeric or a string) to set that variable and have it ready
+for use within an instance of the object you are coding for. These
+variables can then be used and modified in a number of ways from
+within the instance, for example this code could be in a collision
+event and used to take an amount off of the variable "life":<br>
+<br></p>
+
+<p class="code">life -= 5 + armour;<br></p>
+
+<p><br>
+If "life" is at 100 it will now have a value of 97 (100 - (5 + -2)
+= 97). Now, that's a simple example, and you <i>could</i> replace
+"armour" for the actual value of -2, but what happens if you use
+that value in multiple places and then decide to change it? You
+would have to go through ALL your code and change every -2 to
+whatever the new value is, which is time consuming and very error
+prone! But if you use a variable, all you have to do is reassign it
+a new value and the code will automatically use that new value from
+then onwards, making things far more flexible and far easier to fix
+should there be a problem. It should also be noted that even if a
+value is not going to change it is far easier to remember what a
+variable called "life" means rather than just looking at a
+number!<br>
+<br>
+<i>GameMaker: Studio</i> has a collection of "built in" instance
+variables too, so you should be aware of them as you may name one
+of your own instance variables the same or wish to have your own
+global variable with the same name and wonder why you are getting
+errors! They are easy to spot, however, as they are shown in a
+different colour in the code editor and also come up in the
+auto-complete bar at the bottom.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../variables/index.html">Variables And Variable Scope</a></div>
+
+<div style="float:right">Next: <a href=
+"local%20variables.html">Local Variables</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

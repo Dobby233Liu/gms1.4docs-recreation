@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Using Source Control Management With GameMaker:
+Studio</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/source control/using source control.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fsource%20control%2Fusing%20source%20control.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fsource%20control%2Fusing%20source%20control.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Using Source Control Management with
+<i>GameMaker: Studio</i></h1>
+
+<h2 class="studio">Once you have everything setup correctly,
+<i>GameMaker: Studio</i> has its own set of tools for working with
+Source Control.</h2>
+
+<p>When working with your game in a source controlled setup, it is
+important that you follow the same steps all the time when
+creating, committing or reverting files in your game. To make
+things easier, below you can find a brief overview for the three
+main procedures that you will need to work with.<br>
+<br></p>
+
+<h3 class="studio">Adding New Files</h3>
+
+<p>When creating a new resource for your game (whether it be a
+room, a sprite or a time line), there are a couple of steps that
+you should always take to ensure that it is correctly versioned in
+your source control repository:</p>
+
+<blockquote>
+<ul>
+<li>Create the resources by adding the scripts, objects, sprites
+etc...</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Save the project as the resources do not exist outside of the
+IDE and this will add them to the SCM repository for
+committing.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>OR run/test the project which will also add the resources to
+the SCM project repository for committing.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>Now that you have added your resources to the repository, you
+can continue working on them as before, with each save or test run
+of the game updating the files to be added to the repository.
+however, just adding them does not actually <i>commit</i> the
+changes. This is explained in the following section.<br>
+<br></p>
+
+<h3 class="studio">Committing Files</h3>
+
+<p>Adding files (as explained above) only marks the files as "to be
+added" to your source control repository but doesn't actually save
+them there. So we must now <i>commit</i> the files in order for the
+repository to hold these files. This step is very important as
+without it, your repository will not be up to date and you cannot
+use any of the source control features.<br>
+<br>
+To commit files to the repository, follow these simple steps:</p>
+
+<blockquote>
+<ul>
+<li>Right click on the resource in the resource tree and select
+<i>Source Control -&gt; Commit All</i> (you can also select
+<i>Commit</i> directly from the menu but that is for individual
+files and also we have a lot more than just your new files to
+commit, as you will see).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You will now get a commit dialog. <img class="center" src=
+"sc_commitdialogue.png"> At the top you can add a message which
+will be logged along with your commit so that others can get a
+general idea of what you committed, and below this you will see all
+files that you are going to commit.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You will see that there are a lot of files in there, with most
+of them being the config files and images. You can choose just what
+to commit here by deselecting items in this dialog. The left panel
+shows file names and the check-boxes for deselecting and selecting
+them, while the right panel shows you the status of the file
+(<b>A</b>=added, <b>M</b>=modified, <b>D</b>=deleted,
+<b>?</b>=un-versioned, <b>C</b>=Conflicted and
+<b>!</b>=Missing).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>For this first commit, it is recommended that you do <i>not</i>
+deselect anything and commit everything, adding in as a message log
+something like "initial commit". Now press "<b>Ok</b>".</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You will now see in the compile messages it is adding and
+committing to the repository. This can take a while depending on
+your connection and the amount of files. The first commit can be
+quite lengthy but you are looking for the message "<b>Refreshing
+SVN Status...finished</b>" which tells you that everything has been
+done and you can continue to work on the game.</li>
+</ul>
+</blockquote>
+
+<p>Now that you have done your initial commit, the process should
+be more or less the same from now onwards, with you editing
+something, saving the project and then committing the change(s) to
+the repository, either using the <i>commit all</i> or simple
+<i>commit</i> commands from the right click menu of the resource
+tree. Note that you can right click on files in the list and
+revert, if need be. This is useful when files become missing
+because of conflicts, or even just accidental modifications. Also
+note that the actual status information is dependent on the SCM
+system being used. The ones mentioned above are specific to SVN but
+may not match up with Git or Mercurial.<br>
+<br></p>
+
+<h3 class="studio">Reverting Changes</h3>
+
+<p>One of the principal uses for source control is the ability to
+"roll back" your game to a previous state and undo any changes that
+have been made. This can be of particular importance when you have
+added something that breaks the game or have made some design
+changes that you want to go back and add in. in situations like
+this you will need to use the <b>Revert</b> option.<br>
+<br>
+The following steps outline how to revert to the last committed
+version of a file stored in the repository:</p>
+
+<blockquote>
+<ul>
+<li>Right click on a resource you wish to revert and click
+"<i>Source Control -&gt; Revert</i>".</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You will see a message appear in the compiler form at the
+bottom of the IDE saying "Reverted 'xxxxx.gmx'".</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Your resource is now back to the previously committed
+version.</li>
+</ul>
+</blockquote>
+
+<p>Please note that this is not reversible, unless you are
+reverting from an already committed change. If you make some
+changes without doing a commit and then revert, once you have
+reverted there is no going back to your non-committed version.</p>
+
+<h3 class="studio">The GameMaker: Studio Interface</h3>
+
+<p>Once your game file has been added to your source control
+repository you will see that a new set of icons have been added to
+each resource on your resource tree. These are the <i>GameMaker:
+Studio</i> source control indicators and are used to give you a
+graphic representation of the versions of each of your resources
+and while working on your project will look a bit like this:<br>
+<br>
+<img class="center" src="sc_icons_resourcetree.png"> Obviously the
+exact icons you see will depend on your project and what you have
+been working on, but you still need to know what they all mean! The
+list below shows each one and explains their significance:<br>
+<br>
+&nbsp;&nbsp;&nbsp;<img src="sc_icon_1.png">&nbsp;&nbsp;&nbsp;
+<b>Updated</b>: This shows that the resource is updated to the
+current version as stored in the repository.<br>
+<br>
+&nbsp;&nbsp;&nbsp;<img src="sc_icon_2.png">&nbsp;&nbsp;&nbsp;
+<b>Added</b>: This icon means that you have created a new resource
+and it has to be added into the repository. This will happen
+automatically when you save your progress.<br>
+<br>
+&nbsp;&nbsp;&nbsp;<img src="sc_icon_3.png">&nbsp;&nbsp;&nbsp;
+<b>Modified</b>: When you change a resource in any way this icon
+will appear beside it to let you know that it is now different to
+the last version in the repository.<br>
+<br>
+&nbsp;&nbsp;&nbsp;<img src="sc_icon_4.png">&nbsp;&nbsp;&nbsp;
+<b>Not Versioned</b>: If you see this icon it means that the
+resource is not recognised by the SCM solution and should therefore
+be added to the repository. There is an "add" command provided for
+this in the right-click menu from the resource tree.<br>
+<br>
+&nbsp;&nbsp;&nbsp;<img src="sc_icon_5.png">&nbsp;&nbsp;&nbsp;
+<b>Conflict</b>: If you get this icon it means there is a conflict
+between two resources. This can only usually happen when two or
+more people work on the same source and cannot be resolved through
+<i>GameMaker: Studio</i>. For that you will have to use your
+windows SVN Client to merge the two files or manually edit the
+*.gmx files.<br>
+<br></p>
+
+<p>You can work on your game as normal, creating, changing and
+adding resources as necessary knowing that these changes are only
+being done to your <i>local</i> copy of the game, not the versioned
+copy stored in the repository. As mentioned in the sections above,
+a game with source control active also has an extra set of commands
+available from the right click menu of the resource tree. These new
+options deal with source control and look like this:<br>
+<br>
+<img class="center" src="resourcetree_options.png"> As you can see
+there are two most common actions that need to be performed:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Add To Source Control</b>: This will add a resource to the
+repository. When you see the <img src="sc_icon_4.png"> "Not
+Versioned" icon showing you will need to use this action.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Commit To Source Control</b>: This will commit the selected
+resource to the source control repository. If you have a folder
+selected then everything in that folder will be committed,
+otherwise it will only commit the selected resource. When you
+commit something you will also be prompted to add a comment where
+you can briefly explain what you have added or changed, and this
+will then be stored along with the updated version of your
+project.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Update from Source Control</b>: This will update the
+selected resource (or resources if you have a folder selected) in
+your local copy of the project from the repository. Any changes,
+additions or conflicts will now show up in <i>GameMaker:
+Studio</i></li>
+</ul>
+</blockquote>
+
+<p>Below those actions, you also have a further sub-menu titled
+"Source Control". There are further actions that you can perform
+listed here:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Edit Conflicts</b>: Edit any conflicts that have been found
+using the SCM interface set in the <a href=
+"../preferences/source%20control%20preferences.html">SCM
+Preferences</a>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show Log</b>: This will show the log file for your SCM
+solution so you can see recent activity.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show Status</b>: Shows a status window for your SCM
+solution.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Commit All</b>: Commits <i>everything</i> into the
+repository. You will be prompted to save your work to the local
+copy before committing.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Refresh</b>: This simply refreshes the source control icons
+beside the resource (or resources if you have a folder selected) to
+reflect the current versioned status.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Refresh All</b>: This simply refreshes the status icons
+beside all the resources.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Revert</b>: With this action you revert the selected
+resource, or resources if you have a folder selected, to the
+<i>last version you have updated to</i> from the repository.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Revert All</b>: Use this to revert all changes that you have
+done back to the <i>last version you have updated to</i> from the
+repository.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Update All</b>: This will update all resources in your local
+copy of the project from the repository. Any changes, additions or
+conflicts will now show up in <i>GameMaker: Studio</i>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Add All</b>: Adds all resources in the resource tree that
+have not yet be versioned to the repository.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Cleanup</b>: Cleans up your SCM files, refreshing status and
+icons and checking for conflicts etc...</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>It should be noted that there is no option to rename any
+resource as this is handled internally. So, when you have source
+control enabled and you rename (for example) a sprite,
+<i>GameMaker: Studio</i> will automatically change and update your
+local copy of the project without any need for your intervention.
+these changes will then be added to the repository on the next
+commit.<br>
+<br>
+Also note that you can add your own commands to this menu at any
+time through the <a href=
+"../preferences/source%20control%20preferences.html">Source Control
+Preferences</a>.<br>
+<br></p>
+
+<h3 class="studio">Conflicts</h3>
+
+<p>If you have any conflicts when committing your added files, you
+can select the <b>Edit Conflicts</b> option from the context menu
+(see the section above). This will open up the <b>Conflicts
+Editor</b>, where you can decide what to do. <img class="center"
+src="sc_conflicts.png"> This editor will list the conflicting files
+on the left and present you with a number of options for what to
+do, available from the buttons on the right:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Edit Conflict</b>: Edit any conflicts that have been found
+using the SCM interface set in the <a href=
+"../preferences/source%20control%20preferences.html">SCM
+Preferences</a>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Resolved</b>: Mark the conflict as resolved.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use Theirs</b>: Update the conflicted file to use the other
+version.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use Mine</b>: Update the conflicted file to use the version
+being committed.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Refresh</b>: This simply refreshes the current versioned
+status.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>When finished you can close the Conflict Editor and then
+re-commit the conflicted files as normal.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Source Control
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"getting%20started%20with%20source%20control.html">Getting Started
+With Source Control</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

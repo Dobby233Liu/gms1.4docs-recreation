@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Fonts</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/003_fonts.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F003_fonts.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F003_fonts.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Fonts</h1>
+
+<h2 class="studio">This section deals with the font resource.</h2>
+
+<p>When you want to draw text in your game this text is drawn in a
+standard Arial 12 points font, but to make more interesting or
+unique looking texts you will probably want to use different fonts,
+however. So, to use different fonts that you have on your computer
+you must create a font resource in <i>GameMaker: Studio</i>. For
+each font resource you specify a particular type of font from your
+computer which can then be used in your game using the <a href=
+"../000_using%20gamemaker/actions/006_draw%20actions.html">action</a>
+or <a href=
+"../002_reference/drawing/drawing%20text/draw_set_font.html">code</a>
+to set a font for drawing to the screen.<br>
+<br>
+To create a font resource in your game, use the item <b>Create
+Font</b> in the <b>Resources</b> menu or use the corresponding
+button on the toolbar, which will cause the following window to pop
+up: <img class="center" src="../images/form_font.png"> As with all
+resources, you should give your font resource a unique name so that
+you (and <i>GameMaker: Studio</i>) can identify it while writing
+your game. Next you should start selecting the fonts to preview
+using the drop-down menu "Font" on the left. Beneath this section
+you can set other things like the size and whether the font should
+be drawn as <b>bold</b> or <i>italic</i> or have anti-aliasing
+(edge smoothing) applied, and you also have the option to use
+<b>High Quality fonts</b>, which will use a different rendering
+technique for the font glyphs, giving a better, sharper look.
+However it should be noted that some fonts may not look better, and
+you should experiment with this option to see which you prefer.<br>
+<br>
+The preview window on the right will show you different text ranges
+you have selected as they will look with the size and transforms
+you have specified, <i>except</i> the anti-aliasing which is not
+visible in the preview but will be in your game. Please note that
+font scaling (especially from small to large) can give artifacts
+when drawn, so try to avoid this where possible. There is also a
+check-box labelled "<b>Include In Asset Package</b>. If you are
+creating a package of fonts to upload to the Marketplace or to
+distribute as part of an extension, then you should tick this
+option otherwise the base font files will <i>not</i> be distributed
+with the package.</p>
+
+<blockquote><i><b>WARNING!:</b> If you include a base font file in
+this way it <b>must be licensed for distribution</b>.</i><br>
+<br>
+</blockquote>
+
+<p>One final option that you have available to you is the ability
+to assign your font resource to a <b>texture group</b>. this can be
+very useful when it comes to optimising the way your game runs and
+the amount of texture swaps that must be done while the game is
+being played. for more information on texture groups please see the
+section <a href=
+"more%20about%20backgrounds/texture%20pages.html">Advanced Use -
+Texture Pages</a>.</p>
+
+<blockquote><i><b>NOTE:</b> Due to licensing issues,</i> GameMaker:
+Studio does not store the fonts with the project file (when the
+game is finally finished the font is rendered to a texture page, so
+finished games will draw the text as designed). This means that if
+you wish to share the <tt>*.gmx</tt> or a zipped <tt>*.gmz</tt>
+file, you <i>must</i> include the font resource that you have used
+yourself, as not everyone will have the same fonts as you installed
+on their computer. The only exception to this is when creating
+asset packages (see above).<br>
+<br></blockquote>
+
+<h3 class="studio">Font Range</h3>
+
+<p>A font typically consist of 256 characters, numbered from 0 to
+255, but in general you use only a small portion of these. This is
+why <i>GameMaker: Studio</i> defaults to using only the characters
+from 32 till 127 are stored in the font. You can, however, change
+the character range used to help optimise your games ie: If you
+only need the numbers from a specific font, then <i>only</i> select
+the numbers. To do this, you should first click the <b>Clear</b>
+button to clear the current range and then click on the "+" button
+to add a new range. This will open the following window:
+<img class="center" src="../images/form_font_2.png"> This window
+has some buttons to help you establish a standard range for your
+font -</p>
+
+<blockquote>
+<ul>
+<li>The <b>Normal</b> range from 32 till 127</li>
+
+<li>The <b>All</b> range from 0 till 255</li>
+
+<li>The <b>Digits</b> range that only contains the 10 digits</li>
+
+<li>The <b>Letters</b>range that contains all uppercase and
+lowercase letters only</li>
+</ul>
+</blockquote>
+
+<p>Other ranges can be used by typing in the first and last
+character index of the range you wish to set in the <b>Character
+Range</b> input boxes (If a character does not lie in the range it
+is replaced by a space). Apart from these buttons and input boxes,
+you also have two further options there especially useful.<br>
+<br>
+The first is the button marked <b>From Code</b>. If you click on
+this button and then click OK, <i>GameMaker: Studio</i> will
+automatically parse your game code for strings and then create
+different character ranges to cover all the text in your game. Note
+that it looks for <i>all</i> strings (either within "" or '') and
+so may also include file names in the character ranges. However you
+can remove any ranges from your font resource using the "-" button
+at the bottom of the window and so remove those unwanted
+characters.<br>
+<br>
+The second button in this window is marked <b>From File</b> and it
+works similarly to that explained above. If you click on it, you
+will be asked to supply a file, and then once that is done you
+should click on OK. <i>GameMaker: Studio</i> will then parse the
+file and create character ranges for the text found within.<br>
+<br>
+It is worth noting is that if you add a font to your game that
+doesn't have the glyphs required by the text you wish to write,
+then the unicode character 9647 (▯) is used to substitute those
+missing glyphs when rendering it in the draw event. So if your font
+doesn't have, for example, the ° symbol, then writing 90° will
+actually produce 90▯.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advanced Use
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"004_paths.html">Paths</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Scripts</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/006_scripts.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F006_scripts.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F006_scripts.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Scripts</h1>
+
+<h2 class="studio">Scripts are the way in which <i>GameMaker:
+Studio</i> permits you to design your own functions.</h2>
+
+<p>You can use code in a number of places within <i>GameMaker:
+Studio</i>, from objects, to rooms and instances, and there are a
+number of built in functions that make your life easier when
+programming, however it is often necessary for you to create your
+<i>own</i> functions to do a specific task, or to condense a large
+section of code into a more manageable chunk, or even to be able to
+re-use a particular code block in many different places. That is
+why <i>GameMaker: Studio</i> gives you the ability to create
+<b>scripts</b>.<br>
+<br></p>
+
+<h3 class="studio">What Is A Script?</h3>
+
+<p>Scripts are written using <b>GML</b> (the <b>G</b>ame
+<b>M</b>aker <b>L</b>anguage, covered in the <a href=
+"../002_reference/index.html">Reference</a> section), which is the
+built-in programming language that <i>GameMaker: Studio</i> uses.
+Once you become more familiar with <i>GameMaker: Studio</i> and
+want to use it to its fullest extent, it is advisable to start
+learning to use this language, as it greatly expands your
+possibilities when creating games.<br>
+<br>
+A script (like any built-in function) can take different input
+variables, with real, string, boolean and special values like
+<tt>all</tt> or <tt>noone</tt> being accepted, and these input
+variables are generally called <b>arguments</b>, although they are
+also referred to as <b>parameters</b>. To execute a script from an
+object or a time line you can use the <a href=
+"../000_using%20gamemaker/actions/003_control%20actions.html">Execute
+Script</a> action , but you can also call it in a code box using
+the actual script name as if it were a function or even by using
+the GML function <a href=
+"../002_reference/miscellaneous/script_execute.html">script_execute</a>.
+If you use the script action you can specify the script you want to
+execute, together with the up to five arguments, but if you are
+using the code editor to call a script, you can pass up to sixteen
+arguments.<br>
+<br></p>
+
+<h3 class="studio">Using Scripts</h3>
+
+<p>As mentioned above, you can pass a number of arguments to a
+script, and it will use these to perform the task you have written
+it for. To understand this better, take, for example, an action (or
+a code in GML) and think about how it works... you place it in an
+event and specify a number of parameters and it will make your
+instance do something. Scripts are exactly the same, with the only
+difference being that you write them! Not only can you pass
+arguments into a script, but you can also ask a script to
+<b>return</b> a value too (using the <tt>return</tt> keyword), so
+you can use them to build calculating methods (mathematical
+methods) or give back an instance id after a complex collision
+detection or any number of things. Please note, however, that using
+<tt>return</tt> effectively ends the script, and so <i>no code
+after it has been used will be executed</i>, and this means that a
+certain amount of thought has to go into how your scripts are
+structured.<br>
+<br></p>
+
+<h3 class="studio">Saving and Loading Scripts</h3>
+
+<p>You can save and load scripts from <tt>*.txt</tt> files into
+<i>GameMaker: Studio</i> and in this way you can create collections
+of scripts and store them for use in multiple projects. To load a
+script (or a collection of scripts) into <i>GameMaker: Studio</i>,
+simply right-click on the scripts resource folder (or any
+sub-folder that you have created in that section) and select <b>Add
+Existing Script</b>. This will open the file browser and you can
+select either a script *.gmx, <i>or</i> a *.txt file. They will
+then be loaded in to <i>GameMaker: Studio</i>.<br>
+<br>
+For saving scripts it's a similar process, where you right-click on
+a script (or a script folder) and select <b>Export Selected
+Script</b>. This will open up a window asking you where to export
+to, and when you click on "Okay", the script will be saved as a
+*.txt file, with the name of the file being the same as the name of
+the script. If you have selected multiple scripts in a folder, they
+will all be saved, each with the name of the script they correspond
+to.<br>
+<br></p>
+
+<h3 class="studio">Creating A Script</h3>
+
+<p>To create a script in your game, choose <b>Create Script</b>
+from the <b>Resources</b> menu, or right click on the scripts
+resource in the resource tree and select <b>Create Script</b>, or
+just click the create script button on the toolbar at the top of
+the main <i>GameMaker: Studio</i> screen. Whatever method you
+choose will open the following window: <img class="center" src=
+"../images/form_script.png"> <i><b>Note:</b> The script editor
+window and the code editor window for objects have exactly the same
+functionality. The only difference between them is that the script
+editor has a <b>name</b> box whereas the code editor has the choice
+of which instance is to run the code (self, other or object), just
+like the D'n'D actions.</i><br>
+<br></p>
+
+<h3 class="studio">The Script Editor</h3>
+
+<p>When you open the script editor, you should first give your new
+script a name. This should be something sensible and easy to
+remember and recognise, and must <i>not</i> start with a number or
+have any symbols (except the under-bar "_" symbol). The name you
+give the script is the one you will use later as a function in
+code. It is also a good idea to write some comments at the start of
+the script (see the above image) to outline the script arguments
+and how it should be used, especially if you are going to work as
+part of a team, or plan on using many scripts in your game.<br>
+<br>
+Once you have done that you can start to write your script using
+standard GML functions and variables, using the many options along
+the Toolbar at the top to help you in this process. Here is a brief
+explanation of what each of the toolbar buttons does: <img class=
+"center" src="../images/script_toolbar.png"></p>
+
+<blockquote>
+<div style="float:left"><img src=
+"more%20about%20sprites/confirm.png">
+</div>
+<br>
+<b>Confirm</b><br>
+<br>
+This will close the script editor and save any changes you have
+made. Be aware that there are no confirmation messages asking if
+you want to save.<br>
+<br>
+
+<div style="float:left"><img src=
+"more%20about%20sprites/sprite_from_file.png">
+</div>
+<br>
+<b>Load A Script From A File</b><br>
+<br>
+This will open the standard window for loading a script that has
+previously been saved as a text file. This will <i>replace</i> the
+existing script with the loaded one.<br>
+<br>
+
+<div style="float:left"><img src="more%20about%20sprites/save.png">
+</div>
+<br>
+<b>Save Script</b><br>
+<br>
+This will save your current script as a *.txt file, ready to be
+used in another game.<br>
+<br>
+
+<div style="float:left"><img src="../images/print.png">
+</div>
+<br>
+<b>Print Script</b><br>
+<br>
+This will open a standard windows dialogue where you can select a
+printer and print out your current script on paper.<br>
+<br>
+
+<div style="float:left"><img src="more%20about%20sprites/undo.png">
+</div>
+<br>
+<b>Undo</b><br>
+<br>
+This will undo the last action, and you can repeatedly undo
+consecutive actions with this button, but note that the number of
+undos that can be performed is limited to 16.<br>
+<br>
+
+<div style="float:left"><img src="more%20about%20sprites/redo.png">
+</div>
+<br>
+<b>Redo</b><br>
+<br>
+If you have used the undo function, you can use this to go back to
+the state that you undid. This is limited to the number of undos
+that you have done previously.<br>
+<br>
+
+<div style="float:left"><img src="more%20about%20sprites/cut.png">
+</div>
+<br>
+<b>Cut</b><br>
+<br>
+You can use this to "cut" a section of your code out of the script.
+This code is stored to the clipboard and can then be pasted into
+another part of the same script, another script resource or even
+into some other program, independent of <i>GameMaker:
+Studio</i>.<br>
+<br>
+
+<div style="float:left"><img src="more%20about%20sprites/copy.png">
+</div>
+<br>
+<b>Copy</b><br>
+<br>
+This button will copy the currently selected code into the
+clipboard for use in another place, either the same script, another
+script or even an alternate program.<br>
+<br>
+
+<div style="float:left"><img src=
+"more%20about%20sprites/paste.png">
+</div>
+<br>
+<b>Paste</b><br>
+<br>
+You can use this button to paste whatever text you have previously
+stored in the clipboard (with cut, or copy) into the current
+script.<br>
+<br>
+
+<div style="float:left"><img src="../images/search.png">
+</div>
+<br>
+<b>Search And Replace</b><br>
+<br>
+Clicking this button will open the search/find and replace tab in
+the script editor. See below for more details.<br>
+<br>
+
+<div style="float:left"><img src="../images/debug_script.png">
+</div>
+<br>
+<b>Check Syntax</b><br>
+<br>
+This button will toggle on and off the syntax checker of the script
+editor. When on, any errors in the code syntax will be highlighted
+in red (default) and a message will be displayed at the bottom of
+the editor explaining briefly what the problem is. Note that not
+all aspects can be tested at this stage but the syntax of your
+script will be tested, together with the existence of functions
+used.<br>
+<br>
+
+<div style="float:left"><img src="../images/autocomplete.png">
+</div>
+<br>
+<b>Auto Complete</b><br>
+<br>
+When this is switched on, if you pause when typing something an
+auto-complete window will pop up and you can then use the cursor
+keys or mouse to navigate to the function that you are looking for.
+The image below illustrates this:<br>
+<br>
+<img class="center" src="../images/autocomplete_image.png"><br>
+<br></blockquote>
+
+<h3 class="studio">Keyboard Shortcuts</h3>
+
+<p>There are a number of keyboard shortcuts to help you navigate
+around the script editor, and each one is designed to help you get
+the most from this powerful tool:</p>
+
+<blockquote>
+<ul>
+<li>By pressing <b>f2</b> you get the <b>code snippet</b> pop-up,
+which permits you to select one of the commonly used code methods.
+You can define your own code snippets if you want to, saving them
+to the Local App Data directory (ie:
+<i>C:\Users\MyUserName\AppData\Local\GameMaker-Studio</i>) for
+future use using the name "<tt>snippets.txt</tt>". If there are no
+snippets defined then GameMaker: Studio will copy the defaults from
+the Roaming directory (ie:
+<i>C:\Users\MyUserName\AppData\Roaming\GameMaker-Studio</i>). You
+can edit this file with any text editor, and each snippet is on a
+separate line (there should be no blank lines). It starts with the
+name of the snippet (which is what is shown in the menu) followed
+by the colon (:) followed by the actual snippet of code. Use # for
+a newline and put the text that needs to be selected first between
+| symbols. See the examples that are already in the file in the
+Roaming directory to see how it is set up, and it is strongly
+recommended that you make a backup of it before you start changing
+anything, although the base file will be re-installed when you
+update GameMaker: Studio (but the Local App Data version will
+remain).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can use <b>f7</b> and <b>f8</b> to change the size of the
+font within the editor.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>If you press <b>f10</b> you can toggle on or off the colour
+coding for your code.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Press <b>&lt;CTRL&gt; + F</b> to call up the <b>search, find
+and replace</b> options (see below).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>If you are using multiple scripts, then you can press
+<b>f12</b> (or click the Middle Mouse Button) when the mouse is
+over any of the other script names to have it opened in a new
+window, ready for editing. If no script is selected, then the
+manual will be opened.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can press <b>&lt;Shift&gt;</b> + <b>f12</b> (or
+<b>&lt;Shift&gt;</b> and the Middle Mouse Button) when the mouse is
+over any selected text to have it open the <a href=
+"../000_using%20gamemaker/drop%20down%20menus/the%20scripts%20menu.html">
+Search In Scripts</a> window, already populated with the selected
+text. You can also do this on a function (without selecting it) and
+the function will be used to populate the search feild of the
+window.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can use <b>&lt;Ctrl&gt; + Z</b> for undo and
+<b>&lt;Ctrl&gt;</b> + <b>&lt;Shift&gt; + Z</b> for redo.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>The <b>arrow keys</b> move you around in the text, and you can
+use <b>&lt;Ctrl&gt;</b> with the left and right arrow key to move
+to the beginning of the previous or next word. If you use
+<b>&lt;Ctrl&gt;</b> with the up and down arrows you also scroll the
+text.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can hold the <b>&lt;Shift&gt;</b> key and move with the
+arrow keys to select text.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>The <b>&lt;Home&gt;</b> key moves the cursor to the beginning
+of the line and the <b>&lt;End&gt;</b> key to the end of the line,
+and if you also hold <b>&lt;Ctrl&gt;</b> they move to the start and
+end of the script. Holding the <b>&lt;Shift&gt;</b> key you can
+select the text too.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Use <b>&lt;TAB&gt;</b> to indent <i>selected</i> lines and
+<b>&lt;Shift&gt; + &lt;TAB&gt;</b> to unindent <i>selected</i>
+lines.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Hold <b>&lt;Ctrl&gt;</b> with the <b>&lt;Backspace&gt;</b> or
+<b>&lt;Delete&gt;</b> key to delete until the beginning of the
+previous or next word.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can force the auto-complete window to appear if you have it
+switched off in the <a href=
+"preferences/scripts%20preferences.html">Scripts Preferences</a> by
+pressing <b>&lt;Ctrl&gt; + &lt;Space&gt;</b>, and you can cancel it
+at anytime by pressing <b>&lt;ESC&gt;</b>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can drag a selection with the mouse. (Use
+<b>&lt;Ctrl&gt;</b> to copy it.) The new location is immediately
+shown.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You can scroll through the text with the mouse wheel and with
+<b>&lt;Ctrl&gt;</b> pressed the cursor scrolls with the text. As
+with previous shortcuts, holding the <b>&lt;Shift&gt;</b> key
+selects text.</li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Adding Comments and Naming Code Blocks</h3>
+
+<p>Commenting your code is very important for maintaining
+productivity as it keeps things clear and separates sections of
+code in such a way that it is obvious what each part does and why
+it is there. It also means that if you are working in a team then
+you can leave notes for other members and that they will know
+exactly what you have done or what a specific section of code is
+for. Even if you are a solo developer, leaving comments for your
+code is important, especially if you have to leave the project and
+come back to it at a later date.<br>
+<br>
+Commenting your code is simple, as you just have to use
+"<tt>//</tt>" before any line of text or you can comment out whole
+paragraphs by using "<tt>/* text here */</tt>". The following image
+illustrates a script using both these methods: <img class="center"
+src="../images/form_codecomments.png"> If you are in the
+<b>code</b> editor, then you can also give your code box a title by
+making a comment for the first line using the following format:<br>
+<br></p>
+
+<p class="code">///Your Comment Here!</p>
+
+<p><br>
+This comment will then be used for the "name" of that codebox (this
+works for codeboxes added to <a href=
+"005_time%20lines.html">Timelines</a> too) as illustrated by the
+following image: <img class="center" src=
+"../images/form_codeboxname.png"> If you use make a comment in this
+way in the <b>script</b> editor, then the comment text will be used
+as the auto-complete text in the code editor when you type the
+script. So, in the example script image above above we have the
+script "MovePlayer", and it starts with a "///" comment, which
+would then show in the code editor like this: <img class="center"
+src="../images/form_scriptcomments.png"></p>
+
+<h3 class="studio">Script Tabs</h3>
+
+<p>When creating larger games, you will often require many, many
+scripts and this can cause a certain amount of "clutter" in the
+resource tree, and it can be hard to keep track or organise the
+scripts in a coherent fashion. To help with this, the <b>Script
+Editor</b> has child scripts available to you in the form of tabs.
+So, say you have a player object with a create script, a movement
+script, a collision script and a draw script. Instead of placing
+them all in the resource tree, you would have a <i>parent</i>
+script, with its name being the one shown in the resource tree, and
+various <i>child</i> scripts. These child scripts are no different
+to any other scripts in your game, and will work as they should.
+However they will <i>not</i> appear in the resource tree, and to
+access them you must first open the parent script. <img class=
+"center" src="../images/form_scriptstabs.png"> To create a new
+child script you simply click on the empty tab that is always to
+the right of the current tab (if you can't see this, then try
+scrolling the rest of the tabs using the arrows in the top right
+corner). This will create the new script which you should name, and
+it will be stored within the parent script when you close and save
+the script editor. You can also delete these scripts easily by
+clicking on the "cross" icon that you can see on all the script
+tabs.<br>
+<br></p>
+
+<h3 class="studio">Colour Coding</h3>
+
+<p>As you might have noticed, parts of the script text are
+coloured. The script editor "knows" about existing objects,
+built-in variables and functions, etc. and colour codes them
+accordingly. colour-coding helps a lot in avoiding mistakes, in
+particular, you see immediately if you have misspelled some name or
+use a keyword as a variable, or have a syntax error. However, if
+you don't like the colour coding, in the <a href=
+"../001_advanced%20use/preferences/index.html">Preferences</a> you
+can switch it on and off (you can also use <b>F10</b>) as well as
+customise the colours that are used.<br>
+<br></p>
+
+<h3 class="studio">Search, Find And Replace</h3>
+
+<p>When working with code, it is common that you will want to find
+some piece you have written in a large section and then replace it
+something different, or simply see at a glance where a line of code
+lies within the function. To this end, the <i>GameMaker: Studio</i>
+script editor has a search, find and replace function that can be
+accessed by pressing the Search button in the toolbar. This will
+open up a panel on the right of the code window which looks as
+follows: <img class="center" src="../images/form_script2.png"> You
+can type the find string at the top (note that in the code all
+occurrences of the find string are immediately shown with a yellow
+background), and you can indicate whether the search must be case
+sensitive, which is normally what you want as variable and function
+names in GML are also case sensitive, and whether you want to only
+search for whole words. Note that the editor remembers your most
+recent searches, and you can click on the drop down button to call
+them up and re-select them. With the buttons underneath the search
+string input you can now move to the previous, next, first, and
+last occurrence of the find string, and this string will be
+selected in the text so that you can edit it.<br>
+<br>
+You can also use this panel to replace anything that you have
+previously searched for by simply typing in the new code that is to
+be used and pressing one of the buttons that are highlighted
+underneath. Now you can use the buttons to replace the previously
+selected, the next one to be selected, the first, the last or all
+occurrences of the code searched for. Note that since your scripts
+can be spread over multiple tabs in the same category, you are also
+provided with a <b>Replace in all tabs</b> option which, when
+checked, will use the search and replace terms to parse all the
+scripts in all tabs for that category, rather only the one
+currently selected.<br>
+<br></p>
+
+<h3 class="studio">Bookmarks</h3>
+
+<p>The script editor permits you to bookmark a script so that you
+can open it directly from the IDE using a key combination rather
+than having to click through multiple windows and icons. This is a
+very handy way to track script changes while testing your game, and
+is activated simply by moving the cursor to the line of the script
+you want to bookmark and the holding <i>&lt;Shift&gt; +
+&lt;Control&gt; + &lt;NUM&gt;</i>, where <i>&lt;NUM&gt;</i> is a
+number from 1 to 9 on the keyboard. The script editor will now show
+your bookmark beside the code in the editor. <img class="center"
+src="../images/form_script3.png"> To open the bookmarked script
+again at any time, you should use the keyboard combination
+<i>&lt;Control&gt; + &lt;NUM&gt;</i>, where <i>&lt;NUM&gt;</i> is
+the number key of the bookmark.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advanced Use
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"009_shaders.html">Shaders</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

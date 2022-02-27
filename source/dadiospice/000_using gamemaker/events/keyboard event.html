@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Keyboard Events</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/events/keyboard event.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fkeyboard%20event.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fkeyboard%20event.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Keyboard Events</h1>
+
+<h2 class="studio">The keyboard events are three of the many events
+that can be triggered in an instance and may contain code or
+actions.</h2>
+
+<p><b><img src="../../images/event_keyboard.png" align="left">The
+Keyboard Events</b><br>
+Obviously when creating a game, letting the player control the
+different aspects is very important. To that end <i>GameMaker:
+Studio</i> provides you with a very comprehensive list of keyboard
+<i>sub</i> events that can be used in any of the three main
+keyboard events. As these are all the same for each of the three
+events they will all be covered together in this section of the
+manual.<br>
+<br>
+Before looking at the sub events, let's look at the three keyboard
+events themselves:<br></p>
+
+<ul>
+<li><img src="../../images/event_keypress.png" align=
+"left"><b>Keyboard Pressed Event</b>: This event is only triggered
+<i>once</i> whenever the selected key is pressed down</li>
+
+<li><img src="../../images/event_keyboard.png" align=
+"left"><b>Keyboard Event</b>: This event is triggered continuously,
+every step, for as long as the selected key is pressed down</li>
+
+<li><img src="../../images/event_keyrelease.png" align=
+"left"><b>Keyboard Released Event</b>: This event is only triggered
+<i>once</i> whenever the selected key is released</li>
+</ul>
+
+<p>As you can see, each of these events does a very different thing
+and knowing the distinction between them can help you solve many a
+problem or do things in your game in a much more efficient way. It
+should be noted that keyboard events are actually triggered in
+<i>all</i> active instances in a room whenever a key is pressed,
+but only those that have an event defined for that particular key
+will respond and you can create multiple keyboard events in any
+object and the instances of that object will respond to all of them
+while the game is running.<br>
+<br>
+When you add any keyboard event to an object, you will be presented
+with the keyboard sub event menu where you can specify the key you
+are to be checking for: <img class="center" src=
+"keyboard_menu.png"><br>
+<br>
+Now, most of them are fairly obvious, but let's just go through the
+sections briefly - at the top we have the arrow keys, followed by
+the most used modifier keys, then the rest of the keyboard (split
+into sub sections as you can see) and finally two very special sub
+events, <b>No Key</b> and <b>Any Key</b>. As their names imply,
+these are sub events that check for when <i>no</i> key is pressed
+or for when <i>any</i> key is pressed. Please note that the keys on
+the numeric keypad only produce the corresponding events when
+&lt;NumLock&gt; is pressed.<br>
+<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Events</a></div>
+
+<div style="float:right">Next: <a href="mouse%20event.html">The
+Mouse Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

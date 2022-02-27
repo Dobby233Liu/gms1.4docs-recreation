@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>d3d_model_vertex</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d models/d3d_model_vertex.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20models%2Fd3d_model_vertex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20models%2Fd3d_model_vertex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">d3d_model_vertex</h1>
+
+<h2 class="studio">Add vertex (x,y,z) to the model.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">d3d_model_vertex(ind, x, y, z)</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>ind</td>
+<td>The index of the model to add the primitive to.</td>
+</tr>
+
+<tr class="alt">
+<td>x</td>
+<td>The x coordinate of the vertex.</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>The y coordinate of the vertex.</td>
+</tr>
+
+<tr class="alt">
+<td>z</td>
+<td>The z coordinate of the vertex.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function defines the position of a vertex of a primitive
+which is part of a model. The final look of the primitive will
+depend on the primitive type chosen to draw and the order with
+which you add the vertexes to it. See <a href=
+"d3d_model_primitive_begin.html"><tt>d3d_model_primitive_begin</tt></a>
+for more information. To end and draw the primitive you must call
+<a href=
+"d3d_model_primitive_end.html"><tt>d3d_model_primitive_end</tt></a>.<br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">model[2] = d3d_model_create();<br>
+d3d_model_primitive_begin(model[2], pr_trianglestrip);<br>
+d3d_model_vertex(model[2], 100, 100, 0);<br>
+d3d_model_vertex(model[2], 100, 200, 0);<br>
+d3d_model_vertex(model[2], 150, 150, 200);<br>
+d3d_model_vertex(model[2], 100, 200, 0);<br>
+d3d_model_vertex(model[2], 200, 200, 0);<br>
+d3d_model_vertex(model[2], 150, 150, 200);<br>
+d3d_model_vertex(model[2], 200, 200, 0);<br>
+d3d_model_vertex(model[2], 100, 100, 0);<br>
+d3d_model_vertex(model[2], 150, 150, 200);<br>
+d3d_model_vertex(model[2], 100, 100, 0);<br>
+d3d_model_vertex(model[2], 100, 200, 0);<br>
+d3d_model_vertex(model[2], 200, 200, 0);<br>
+d3d_model_primitive_end();<br></p>
+
+<p>The above code will define a tetrahedron and add it to the
+model.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">3D
+Models</a></div>
+
+<div style="float:right">Next: <a href=
+"d3d_model_vertex_colour.html">d3d_model_vertex_colour</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

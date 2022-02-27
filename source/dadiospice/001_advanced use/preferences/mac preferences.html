@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Mac OS Preferences</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/preferences/mac preferences.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fmac%20preferences.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fmac%20preferences.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Mac OS Preferences</h1>
+
+<h2 class="studio">The section details the Mac OS preferences
+tab.</h2>
+
+<p><img class="center" src="mac_prefs.png"> For <i>GameMaker:
+Studio</i> to work with an Apple Mac, a few things need to be set
+up first in the preferences. Once you open this tab you will see
+the following sections that need to be filled in for <i>GameMaker:
+Studio</i> to be able to communicate properly with your Mac and for
+you to test your games:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Mac Host Name</b> - This is the name (or IP address) of the
+Mac on the local network that you are going to use.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Mac User Name</b> - This is the name of the user account
+that will be active for testing your games.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Mac Password</b> - The password for the user account
+specified in the section above.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Mac Install Directory</b> - This is where the Application
+Oven/Xcode build output files go - the <tt>*.app.zip</tt> backup
+copy, plus any intermediate build files, splash screen images,
+configuration files, etc...</li>
+</ul>
+</blockquote>
+
+<p>Below these inputs is the option to <b>Suppress build and
+run</b>. If this is enabled, <i>GameMaker: Studio</i> will not try
+to build and run your game on the target Mac device, but instead
+simply push the files to xCode.<br>
+<br>
+Next is the button labelled <b>Check Mac Connection</b> which you
+can use to test the information you have supplied to make sure that
+the connection to your Mac is correct and working. Please note that
+you <i>must</i> have enabled <b>Remote Login</b> on the target mac.
+This can be done by going to <i>Preferences</i> -&gt;
+<i>Sharing</i> and <i>enable Remote Login</i> for the user you want
+to be able to login.<br>
+<br>
+Underneath the Check Connection button there is another button
+marked <b>Clear SSH Keys</b> which is used to clear the <i>Secure
+Shell Hash</i>. This is provided as an option for those users that
+have changed Mac, or re-installed the OS on their current one, and
+need to re-configure their secure keys.<br>
+<br>
+Finally you have the <b>Default Team Id</b> field. Here you can
+supply a default Apple <i>Team Identifier</i> which will then be
+used for all Mac OS builds. If you leave this blank or you wish to
+override this ID, you will need to supply one in the <a href=
+"../global game settings/mac os tab.html">Mac OS Global Game
+Settings</a>, otherwise your game will not build.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Preferences</a></div>
+
+<div style="float:right">Next: <a href=
+"uwp%20preferences.html">Windows UWP Preferences</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

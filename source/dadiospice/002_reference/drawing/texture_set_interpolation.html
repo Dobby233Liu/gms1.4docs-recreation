@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>texture_set_interpolation</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/texture_set_interpolation.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Ftexture_set_interpolation.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Ftexture_set_interpolation.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">texture_set_interpolation</h1>
+
+<h2 class="studio">Indicates whether to use linear interpolation or
+not.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">texture_set_interpolation(linear);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>linear</td>
+<td>Turn linear interpolation on (<tt>true</tt>) or off
+(<tt>false</tt>).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function can be used to set the linear interpolation of all
+images drawn on the game screen with <i>GameMaker: Studio</i>. When
+this is set to on (<tt>true</tt>) all textures will be smoothed
+when drawn (this includes sprites as they too are considered
+textures), meaning that when scaled or moved if there is not a 1:1
+pixel ratio then there will be a "smudging" across various pixels
+which may make images appear blurry depending on the art style
+used. If this is switch off (<tt>false</tt>) then images will be
+drawn based on the nearest pixel when scaled or moving which may
+lead to "blocky" images. The default value is false, and this can
+also be changed in the <a href=
+"../../001_advanced%20use/global%20game%20settings/index.html">Global
+Game Settings</a> for individual target platforms.<br>
+<br>
+<i><b>NOTE:</b> This setting will over-ride any texture stage
+interpolation set for shaders using the function <a href=
+"texture_set_interpolation_ext.html"><tt>texture_set_interpolation_ext</tt></a></i>.<br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if global.Smoothing<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;texture_set_interpolation(true);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;texture_set_interpolation(false);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will turn interpolation on or off depending on
+the value of a global variable.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Drawing</a></div>
+
+<div style="float:right">Next: <a href=
+"texture_set_interpolation_ext.html">texture_set_interpolation_ext</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

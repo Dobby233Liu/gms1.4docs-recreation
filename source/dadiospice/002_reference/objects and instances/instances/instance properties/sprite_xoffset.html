@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>sprite_xoffset</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/objects and instances/instances/instance properties/sprite_xoffset.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20properties%2Fsprite_xoffset.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20properties%2Fsprite_xoffset.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">sprite_xoffset</h1>
+
+<h2 class="studio">Returns the x component of the sprite
+origin.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">sprite_xoffset</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This <b>read only</b> variable returns the local xoffset (the x
+component of the origin as defined in the sprite editor) of the
+sprite that has been assigned to the instance. This xoffset is
+returned in pixels and will be dependant on the <a href=
+"image_xscale.html"><tt>image_xscale</tt></a>, so that (for
+example) if a square 32x32 sprite is defined as having the x origin
+at 16, when that sprite is scaled by 2 this variable will return
+32. If you need the un-scaled xoffset you should use <a href=
+"../../../game%20assets/sprites/sprite_get_xoffset.html"><tt>sprite_get_xoffset</tt></a>.<br>
+
+<br>
+<img class="center" src="xoffset_image.png"></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if x - sprite_xoffset &lt; 0<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;x = sprite_xoffset;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code checks to see if the left edge of the sprite of
+the instance is outside the room and if it is it moves the instance
+so that the whole sprite is visible.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Instance
+Properties</a></div>
+
+<div style="float:right">Next: <a href=
+"sprite_yoffset.html">sprite_yoffset</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Working With 3D</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Working With 3D</h1>
+
+<h2 class="studio">This section details all the functions available
+to you to create 3D games.</h2>
+
+<p><i>GameMaker: Studio</i> is a primarily a program meant for
+making 2D (2-dimensional) and isometric games but there is the
+functionality to create 3D (3-dimensional) graphics and use 3D
+effects if you wish. Before you start with this though there are a
+few things you should understand:</p>
+
+<blockquote>
+<ul>
+<li>The 3D functionality in GameMaker is limited to the graphics
+part. There is no support for other 3D functionality. Once you
+start using 3D graphics you might get problems with other aspects
+of GameMaker if you are not used to working with 3D. Things like
+views, depth ordering, etc... require you to have sound
+understanding of how <i>GameMaker: Studio</i> works as well as how
+to code 3D in general.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>When you use the 3D functionality, there are a number of other
+things that can no longer be used:<br>
+
+<blockquote>
+<ol>
+<li>You cannot use background and foregrounds in your rooms anymore
+as they are tiled to fill the image but with perspective
+projections this no longer work correctly.</li>
+
+<li>You cannot use the mouse position as normal anymore either,
+because the mouse coordinates will not be transformed into 3D
+coordinates. You can, however, still get the position of the mouse
+on the screen (in the view) but you will have to do positional
+calculations yourself for 3D (or not use the mouse at all).</li>
+
+<li>You should not use tiles anymore as most tiles will likely no
+longer match up correctly. Collision checking still uses the 2-d
+positions of the instances in the room, so there is no collision
+detection in 3D. Sometimes you can still use this however, if you
+use the room as a representation of a flat world (e.g. for racing
+or FPS games) but in other situations you will have to do things
+yourself.</li>
+</ol>
+</blockquote></li>
+
+<li>All 3D functionality is through code, so you must have a sound
+understanding of GML (the GameMaker language).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>You must have some basic knowledge about 3D graphics, in things
+like perspective projections, hidden surface removal, lighting, and
+fog as this manual will not give much explanation and takes for
+granted that you are familiar with such terms.</li>
+</ul>
+</blockquote>
+
+<p><i><b>NOTE:</b> These functions do not work with the HTML5
+module unless you have enabled WebGL in the <a href=
+"../../../001_advanced%20use/global%20game%20settings/html5%20tab.html">
+Global Game Settings.</a></i><br>
+<br>
+Information on 3d graphics can be found in the following pages:</p>
+
+<blockquote>
+<ol>
+<li><a href="3d%20setup/index.html">3D Setup</a>
+</li>
+
+<li><a href="3d%20drawing/index.html">3D Drawing</a>
+</li>
+
+<li><a href="3d%20projections/index.html">3D Projections</a>
+</li>
+
+<li><a href="3d%20transformations/index.html">3D
+Transformations</a>
+</li>
+
+<li><a href="3d%20lighting%20and%20fog/index.html">3D Lighting and
+Fog</a>
+</li>
+
+<li><a href="3d%20models/index.html">3D Models</a>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Game
+Graphics</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>GameMaker: Studio Overview</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/003_gamemaker studio overview.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F003_gamemaker%20studio%20overview.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F003_gamemaker%20studio%20overview.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">GameMaker: Studio Overview</h1>
+
+<h2 class="studio">This section explains some of the some of the
+core concepts of how <i>GameMaker: Studio</i> works so you can
+start making games as quick as possible.</h2>
+
+<h3 class="studio">The Global idea</h3>
+
+<p>Before delving into the possibilities of <i>GameMaker:
+Studio</i> it is good to get a feeling for the idea behind the
+program. Games created with <i>GameMaker: Studio</i> take place in
+one or more <i>rooms</i>. Now, these Rooms are flat 2 dimensional
+spaces but they can contain 3D-looking graphics as well depending
+on how you use them. In these rooms you place <i>objects</i>, which
+you can define within the program. Typical objects can be walls,
+moving balls, the main player controlled character, enemies, and
+anything else you can think of from games that you have played!
+Some objects, like walls, just sit there and don’t do anything,
+while other objects, like the main player controlled character,
+will move around and react to the input received from the player
+using keyboard, mouse, or joystick. For example, when the main
+character meets an enemy he might die or he might fight the enemy
+and score points. As you can see, objects are the most important
+ingredients of games made with <i>GameMaker: Studio</i>, so let us
+talk a bit more about them.<br>
+<br></p>
+
+<h3 class="studio">An Overview of Objects and Rooms</h3>
+
+<p>First of all, most objects, when placed as instances within a
+room, need some image to make them visible on the screen. Such
+images are called <i>sprites</i>. A sprite is often not a single
+image but a set of images that are shown one after the other to
+create an animation and in this way it can look like a character is
+walking, or a ball is rotating, or an enemy is exploding, etc...
+During the game, the sprite of a particular instance of any object
+can be changed, so a character can look different when it walks to
+the left or to the right, for example. You can create your own
+sprites in <i>GameMaker: Studio</i> or load them from files and use
+them "as is" or edit them yourself with the powerful <i>GameMaker:
+Studio</i> sprite editor. Here is an example of how a typical
+object looks: <img class="center" src=
+"../images/form_object.png"><br>
+<br>
+For an object to actually <i>do</i> something, we need to give it
+actions, but we also need to tell it when to complete these
+actions. To do that we use <i>EVENTS</i>. An <i>EVENT</i> is a
+special moment in which we can place certain <i>actions</i> and be
+sure that those actions will only happen when that <i>EVENT</i> is
+triggered. There are a large number of different events that can
+take place and a large number of different actions that you can let
+your objects take too. For example, there is a <i>Create Event</i>
+that is performed only when the object gets created. Actually,
+that's not quite true! Objects are <i>never</i> created, rather
+they are used to create <b>instances</b>... An instance is a copy
+of the base object, complete with all the same events and actions,
+and it's these that are used in your games. Think of an object as
+the blueprint, and the instance as a manifestation of that
+blueprint. For example, to add motion to a ball object when we
+create an instance of it in a room, we would add a motion action to
+the create event of the object.<br>
+<br>
+Another example of an event is the <i>Collision Event</i>. This is
+triggered when two instances of any objects collide in the game
+room. In such a case you can make the instance stop or reverse
+direction or any number of other actions, like play a sound effect
+or add points to a score. Further events include the <i>Keyboard
+Event</i> (for when the player presses a key), <i>Mouse Event</i>
+to detect mouse buttons, and the <i>Draw Event</i> which is where
+we can tell each instance of an object to draw whatever we want.
+There are still more events for each object and these are covered
+further along in the manual.<br>
+<br>
+Once you have defined your objects it is time to define the
+<i>rooms</i> in which they will be placed. Rooms can be used for
+levels in your game or to show information or even to hold a start
+menu. There are actions to go from room to room so that you can
+create button objects that, when pressed, will move the player from
+one room of the game to another. It should also be noted that if
+you do not have any rooms in your game then <i>GameMaker:
+Studio</i> will not run your game. But how do you create a room?
+<i>GameMaker: Studio</i> has a complete editor for creating these
+areas and in the editor you can add and change many aspects of how
+the room will look and play. For example, you can add
+<i>backgrounds</i> in that can be either a simple colour or an
+actual image. Such background images can be created in
+<i>GameMaker: Studio</i> with its own editor, or you can load them
+into the resources from files. Backgrounds can actually be made to
+do a lot of things but for the time being, just consider it as
+something that makes the rooms look nice. Next, you can place one
+(or multiple!) instances of any objects you have created into the
+room. For example, you want to have a large walled area in your
+game, so you would define one wall object and then place multiple
+instances of that object in your room to create large, complex
+walled areas. The same can be done for enemy objects too! Just make
+one enemy object, and then place multiple instances within your
+room to get a whole level created from only a few base objects.
+Here is an example of how the room editor typically looks:
+<img class="center" src=
+"../images/getting_started_room_image.png"><br>
+<br>
+Once you have completed the design of your rooms, you are ready to
+run the game. The first room to be shown is always the first room
+in the main list of rooms and it will be run at the start. Now the
+instances you have placed will come to life because of the actions
+defined in their object create events and they will start reacting
+to each other due to actions placed in the object collision events.
+They will also react to the player using the actions placed in any
+keyboard or mouse events.<br>
+<br>
+That covers the two most important things in <i>GameMaker:
+Studio</i>, but there are a few more! All together they are called
+<b>resources</b> and <b>assets</b>, and in the main screen of
+<i>GameMaker: Studio</i> you can find them on the left-hand side in
+a space called the <b>resource tree</b>. Here is a list of them and
+you should know that they will all play a crucial role in creating
+your game:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><i><b>Sprites</b></i>: images (often animated) that are used to
+represent the objects<br>
+<br></li>
+
+<li><i><b>Sounds</b></i>: can be used in games as either background
+music or as sound effects<br>
+<br></li>
+
+<li><i><b>Backgrounds</b></i>: still images used as background for
+the rooms<br>
+<br></li>
+
+<li><i><b>Paths</b></i>: these can be used to make instances move
+along a pre-defined path<br>
+<br></li>
+
+<li><i><b>Scripts</b></i>: a script is a piece of code to which you
+give a name and use like a GML function<br>
+<br></li>
+
+<li><i><b>Shaders</b></i>: a shader is a combination of two
+"programs" written in a <i>shader language</i> to create graphical
+effects<br>
+<br></li>
+
+<li><i><b>Fonts</b></i>: to draw text in the game you can add fonts
+of many different styles<br>
+<br></li>
+
+<li><i><b>Time lines</b></i>: can be used to control the precise
+moment in a game that things should happen<br>
+<br></li>
+
+<li><i><b>Objects</b></i>: which are the building blocks on which
+your game is built<br>
+<br></li>
+
+<li><i><b>Rooms</b></i>: the space (levels) in which the objects
+are placed<br>
+<br></li>
+
+<li><i><b>Included Files</b></i>: files that your game will export
+to the chosen target for use<br>
+<br></li>
+
+<li><i><b>Extensions</b></i>: the extensions included with your
+game to expand functionality<br>
+<br></li>
+
+<li><i><b>Constants</b></i>: a per-configuration list of the
+constants that you define for your game<br>
+<br></li>
+</ul>
+</blockquote>
+
+<p><br>
+<br>
+<i><b>Note:</b> To help you get familiar with</i> GameMaker:
+Studio, it is strongly recommended that you follow some of the
+beginner tutorials that come bundled with the program. These can be
+found from the <b>Tutorials</b> tab on the start-up splash screen,
+and cover all basic functionality.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Using GameMaker:
+Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"004_the%20graphical%20user%20interface.html">The Graphical User
+Interface</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

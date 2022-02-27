@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Macros</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/010_macros.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F010_macros.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F010_macros.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Macros</h1>
+
+<h2 class="studio">This section outlines how to define macros that
+you can then use in actions, scripts and code.</h2>
+
+<p>A <b>macro</b> is, as the name implies, something that can hold
+a constant value (real, or boolean) or a string, or an expression.
+This is different to a variable in that it can't be changed once
+defined, although it is global in scope as all instances in all
+rooms can use it, and it will <i>always</i> be the same value
+unless you use a GML function as the value. There are a number of
+built-in constants within <i>GameMaker: Studio</i>, like the
+<tt>vk_</tt> ones for the keyboard or the <tt>c_</tt> ones that
+hold different colours, but you can also define your own constants
+and function macros to be used in your games too.<br>
+<br>
+To define macros you chose <b>Define Macro</b> from the drop down
+<b>Resources</b> menu at the top of the main window (or click on
+the resource tree icons, as explained below) and the following
+window will open: <img class="center" src=
+"../images/form_constants.png"> The main part of this window is
+take up with the list of macros, and will start off empty, ready
+for you to create your own. To do this you would click on the
+button marked <b>Add</b> at the bottom left of the window, which
+will then create a new, empty, macro with the <b>Name</b> section
+highlighted. You must give all your macros a name, and as with all
+things in <i>GameMaker: Studio</i> this name must be unique and it
+is recommended that you distinguish it in some way from other
+variables, for example, by using all capitals, or by using a suffix
+or prefix. Note, that you cannot use any symbols except the
+under-bar (_) and the macro cannot start with a number.<br>
+<br>
+Once you have named your new macro you must give it a value. This
+value can be numeric, a function or a string. For a string it
+<i>must</i> be wrapped in quotes ("") and if it is a function, it
+cannot make reference to anything in the game (the current room,
+instances, or scripts etc...) as the macros are initialised
+<i>before</i> everything else, but it can however use resources
+like sprites and objects.<br>
+<br>
+When you have defined a few macros you can use the buttons at the
+bottom of the window to change them around and add, insert or
+delete them. <b>Add</b> will add one at the end of the list,
+<b>Insert</b> will insert the next macro above the current one, and
+delete will delete the current one. You may also press <b>Clear</b>
+to clear the whole list of macros, which will open a prompt to ask
+if you are sure you really want to do that before deleting the
+whole list. beside these button are two labelled <b>Up</b> and
+<b>Down</b> which simply move the macros up and down the list, and
+beside those is the <b>sort</b> button which will put the macros
+into alphabetical order, with the ones starting with "A" at the
+top.<br>
+<br>
+Finally, there are two buttons marked <b>Load</b> and <b>Save</b>.
+With these, you can load into your project macros that you have
+previously defined in an external editor, or that you have saved
+from a previous game. If you have already defined macros when you
+load some from a file, the new ones will be appended on at the end
+of the list. A saved macro list is stored in a simple
+<tt>*.txt</tt> file and can easily be edited and added to by any
+application that reads these files (Notepad++, for example). You
+can even pre-define your own text file with a set of macros to be
+loaded into <i>GameMaker: Studio</i> as the format is simply:
+<b><code>NAME = VALUE</code></b>.<br>
+<br></p>
+
+<h3 class="studio">Expressions</h3>
+
+<p>It is worth noting that when using an expression in a macro, if
+this contains a function then no constant value can be created for
+it, and it will be evaluated every time the macro is called. For
+example, you could have the following macro:</p>
+
+<p class="code">myran : irandom(100)<br></p>
+
+<p>Now every time you call the macro <tt>myran</tt> it will return
+a different random number. If the expression can be evaluated to a
+single value or string, then the macro will function like a
+constant, for example:</p>
+
+<p class="code">mynumb : "10"<br>
+myname : "Hamish"<br>
+myconst : mynumb + myname<br></p>
+
+<p>As you can see in the above example the last macro is an
+expression using the previously created two macros. This will be
+evaluated once on startup and a constant value returned for it.<br>
+<br></p>
+
+<h3 class="studio">The Resource Tree</h3>
+
+<p>Macro are included as part of the <b>resource tree</b> on the
+left of the <i>GameMaker: Studio</i> IDE. When you create a new
+game, you will have two sets of macros - <b>All Configurations</b>
+and <b>Default</b>. Macro created in "All Configurations" will be
+available to you no matter what configuration you have chosen (see
+the section on <a href="007_configurations.html">Configurations</a>
+for more information), and you can then add configuration-specific
+ones to any other lists that you will have, with each new
+configuration creating a new macros list.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advanced Use
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"002_including%20files.html">Including Files</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

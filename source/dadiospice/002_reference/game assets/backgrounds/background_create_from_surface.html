@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>background_create_from_surface</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/backgrounds/background_create_from_surface.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fbackgrounds%2Fbackground_create_from_surface.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fbackgrounds%2Fbackground_create_from_surface.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">background_create_from_surface</h1>
+
+<h2 class="studio">Creates a background by copying an area from a
+surface.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">background_create_from_surface(index, x, y, w, h,
+removeback, smooth);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>index</td>
+<td>The index of the surface to create from.</td>
+</tr>
+
+<tr class="alt">
+<td>x</td>
+<td>The x position to copy from.</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>The y position to copy from.</td>
+</tr>
+
+<tr class="alt">
+<td>w</td>
+<td>The width of the area to be copied (from the x position).</td>
+</tr>
+
+<tr>
+<td>h</td>
+<td>The height of the area to be copied (from the y position).</td>
+</tr>
+
+<tr class="alt">
+<td>removeback</td>
+<td>Indicates whether to make all pixels with the same colour
+(left-bottom pixel) transparent.</td>
+</tr>
+
+<tr>
+<td>smooth</td>
+<td>Indicates whether to smooth the edges.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can create a background from a previously
+initialised surface. The x and y coordinates that you input are
+relative to the (0,0) position of the <i>surface</i> (the top left
+corner) and not the game window, nor the view if you have one
+active. The width and height arguments are in pixels and define the
+width and height of the part of the surface to use.<br>
+<br>
+Setting the "removeback" argument to <tt>true</tt> will remove a
+colour from the background, by checking the <i>bottom left</i>
+pixel of the defined area for the colour there and then using that
+as the colour to be removed.<br>
+<br>
+If you choose the "removeback" option, you may also want
+<i>GameMaker: Studio</i> to smooth the edges of the background by
+setting the "smooth" argument to <tt>true</tt>. All this does is
+create a semi-transparent border around the edges of the background
+after it has had its background removed.<br>
+<br>
+<i><b>NOTE:</b> When you create a background in GameMaker: Studio
+with this method you must remember to remove it again (with
+<a href="background_delete.html"><tt>background_delete</tt></a>)
+when no longer needed, otherwise there is risk of a memory leak
+which will slow down and eventually crash your game.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var surf;<br>
+surf = surface_create(32, 32);<br>
+surface_set_target(surf);<br>
+draw_clear_alpha(c_black, 0);<br>
+draw_background(bck_Sky, 0, 0, 0);<br>
+draw_background(bck_Mountains, 0, 0);<br>
+bck_custom = background_create_from_surface(surf, 0, 0, 32, 32,
+true, true);<br>
+surface_reset_target();<br>
+surface_free(surf);<br></p>
+
+<p>The above code creates a surface and stores its index in the
+local variable "surf". It then targets that surface, clears it and
+draws two background on top of each other. Finally it creates a new
+background from the composite image drawn on the surface and
+assigns its index to "bck_Custom" before freeing up the memory used
+by the surface.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Backgrounds</a></div>
+
+<div style="float:right">Next: <a href=
+"background_set_alpha_from_background.html">background_set_alpha_from_background</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

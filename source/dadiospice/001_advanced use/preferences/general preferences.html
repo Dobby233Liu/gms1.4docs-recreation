@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>General Preferences</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/preferences/general preferences.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fgeneral%20preferences.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fgeneral%20preferences.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">General Preferences</h1>
+
+<h2 class="studio">The section details the general preferences
+tab.</h2>
+
+<p><img class="center" src="general_prefs.png"> The <b>General
+Preferences</b> tab deals with the visual aspect of <i>GameMaker:
+Studio</i> as well as certain general behaviours. The following
+options are available:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Show recently edited games in the file menu</b>: If checked
+the eight most recently edited games are shown under the recent
+files in the file menu.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Close compile form after execution</b>: When you run your
+game, it is compiled by <i>GameMaker: Studio</i> to run on the
+target platform, and this process is shown in the <b>compile
+window</b>. Normally this window is always open (and can be docked
+at the bottom of the main window), but you may wish to only see it
+when only when compiling, in which case you should tick this option
+as it will automatically close the compile window when
+finished.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Delete from resource tree deletes from disk</b>: If this
+option is checked, when you remove a resource from the resource
+tree, it will also be removed from the computer. <b><i>Use with
+caution!</i> This may lead to the accidental loss of
+resources.</b></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Do not launch game in fullscreen</b>: When checked, this
+option will override any other fullscreen functions when you launch
+your game and force it to start windowed. This is provided as a
+debug tool.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show commands in compile window</b>: When you create a new
+final app or are testing the current one (normally or in debug
+mode) the compile window will show the currently running commands.
+Un checking this flag will switch off most of them and prevent the
+compile form from showing what is being done. The default (and
+recommended) value is to have this switched on.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show commands with verbose flag</b>: This check-box is used
+to switch on (or off) verbose messages in the compile window. When
+switched on, the default command messages that are shown in the
+compile window (when the above "<b>Show commands in compile
+window</b>" is checked too) will contain far more information about
+the current status of the app being compiled. This may slow down
+the app as it runs and is flagged as off by default.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show compile form on startup</b>: Flagging this will open
+the compile form automatically when you start <i>GameMaker:
+Studio</i>. If it is not flagged, then the compile form will only
+appear when you first test your game or when you create the final
+executable.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Enable backup on save</b>: This option can be used to switch
+on the automatic backups that GameMaker: Studio can make of your
+project. When this is enabled, you can select a <b>Backup
+Directory</b> to save a full backup copy of the current project
+too, as well as the <b>Number of backups</b> that you wish to keep.
+Once this is enabled, every time you save the current project you
+will also have a backup copy saved to the chosen directory. These
+backups are numbered concurrently, starting at 0. Please note that
+the current (newest) backup is always the first! Each time you
+save, previous backups are re-numbered with an increment of one
+(removing those that are numbered larger than the specified number
+of backups) and the latest save is numbered as 0.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Enable backup on run/debug/create</b>: As above, only this
+will enable or disable the creation of backups when you run the
+game normally or in debug mode, or when you create a final
+executable.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Toggle resource scoping on resource tree</b>: When you use
+F12 (or the middle mouse button) on a resource in your code, it
+will jump to that resource in the editor and then open its
+properties window. However if you don't want the currently selected
+resource to change when you use this action, you can disable this
+option, and only the properties window will open for the selected
+resource while the scopewill not change in the resource tree.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Directories</b>: You can set the different directories that
+GameMaker: Studio will use to save the asset cache, the temp files
+and any backups of your projects. Note that each of the given
+directories also has a "<i>Clear...</i>" button which will wipe all
+the accumulated data from the given folder.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show news on startup</b>: Sets whether to show the
+<i>GameMaker: Studio</i> news when you start the program.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show news in default browser</b>: Sets whether to display
+the <i>GameMaker: Studio</i> news in your default Internet browser,
+rather than in the program itself.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Always reload changed files</b>: This option is to permit
+<i>GameMaker: Studio</i> to reload files that are changed on the
+disc automatically. If this is flagged, then any images, sounds or
+scripts that are changed from the project <tt>*.gmx</tt> file
+itself will be silently re-loaded into your game. if it is not
+flagged, you will get a message prompt asking you if you wish to
+change the files.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Automatically increase build number</b>: When checked the
+build number will increase automatically.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Automatically add build number and date constants</b>: When
+checked, the internal constants for build number and version (
+<a href=
+"../../002_reference/miscellaneous/gm_build_date.html"><tt>GM_build_date</tt></a>
+and <a href=
+"../../002_reference/miscellaneous/gm_version.html"><tt>GM_version</tt></a>)
+will be increased automatically. This option will switch these off
+as they may interfere with any SVN solutions that you are
+using.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Add config and version to filename on create executable</b>:
+Flagging this will generate a build number (including config name,
+if configs are used) automatically when you create an executable of
+your game.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Do not show YoYo Games Logo in the main window</b>: When
+checked the image and link to the YoYo Games website in the main
+window are not shown.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Do not show prompt on closing code editor</b>: Flagging this
+option will prevent the code or script editor asking you if you
+wish to save any changes and instead will silently save on close
+always. The default (and recommended) setting for this is to have
+it switched off.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Big resource tree icons</b>: Checking this will make all the
+resource tree icons larger (<i>GameMaker: Studio</i> must be
+restarted for this to show).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Enable Pop Out Windows</b>: Checking this will permit you to
+drag the component windows out of the main IDE and position them
+elsewhere (useful if you have more than one monitor).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Automatically Clean Temp Data On Shutdown</b>: Checking this
+will force <i>GameMaker: Studio</i> to automatically clean any temp
+folders when the IDE is closed.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Automatically clear Temp Data on shutdown</b>: This option
+will clear the Temp Data folder every time you close <i>GameMaker:
+Studio</i>. The Temp Data folder can quickly fill up with
+unnecessary files, especially if you have been working on different
+projects, so this option will help to keep things tidy.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Open properties on Duplicate</b>: This option will enable or
+disable the opening of the resource properties window when you use
+the Duplicate option from the right click menu.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Disable Thumbnail Icon Generation</b>: This option will
+enable or disable the generation of resource thumbnails. This is
+general best disabled, but when working with larger projects,
+enabling it can help maintain a smoother IDE response time.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Show filter tree option on main form</b>: With this option
+you can enable or disable the resource tree filter options in the
+bottom left of the IDE.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Home directory</b>: Here you can set the directory that you
+want GameMaker: Studio to use for projects by default.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Select Skin</b>: Check to use a different skin for the
+<i>GameMaker: Studio</i> GUI (<i>GameMaker: Studio</i> must be
+restarted for this to show). It should be noted that custom skins
+must placed in the <b>Local</b> app data folder
+(<tt>%localappdata%</tt>) otherwise they may be overwritten or
+removed when <i>GameMaker: Studio</i> updates.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Preferences</a></div>
+
+<div style="float:right">Next: <a href=
+"form%20preferences.html">Form Preferences</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

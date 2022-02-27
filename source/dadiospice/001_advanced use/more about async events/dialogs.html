@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Dialogues Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/dialogs.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fdialogs.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fdialogs.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Dialogues Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any user event function call-backs received.</h2>
+
+<p>Like the above events, the <b>Dialogues</b> event is only
+triggered when it gets a call back from one of the special
+asynchronous user functions, like <a href=
+"../../002_reference/asynchronous%20functions/get_login_async.html">
+<tt>get_login_async()</tt></a> (please see this function for an
+extended code example of how this event is used). These events are
+the ones that ask for some type of user input, which can be a name,
+login details, a number or a colour etc... As most devices do not
+like sitting in a loop waiting for a reply, they have to be
+asynchronous and <i>GameMaker: Studio</i> will continue to run in
+the background while these functions have a dialogue open and until
+they get the required user input which triggers this event.<br>
+<br>
+Again, a <a href=
+"../../002_reference/data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+is returned with the id held in the special variable
+<b>async_load</b>. The values held in this map will depend on the
+function used, and you should consult the individual entries for
+each function in this manual for more details.<br>
+<br></p>
+
+<p><i><b>NOTE:</b> The map held in the <tt>async_load</tt> variable
+is only valid in these events, as the ds_map that is points to is
+created at the start of the event, then deleted again at the end,
+with this variable being reset to a value of -1 in all other
+events.</i><br>
+<br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="iap.html">IAP (In App
+Purchases) Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Audio Playback</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/audio playback.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Faudio%20playback.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Faudio%20playback.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Audio Playback Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any buffered audio queues being played back.</h2>
+
+<p>This event can only be triggered by the <a href=
+"../../002_reference/game%20assets/sounds/index.html">audio play
+functions</a> and will return a <a href=
+"../../002_reference/data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+stored in the variable <tt>async_load</tt>, containing different
+key/value pairs relating to the audio queue that has triggered the
+event. The event is triggered when you have selected an audio queue
+to playback and a buffer in that audio queue is finished
+playing.<br>
+<br>
+The following keys will be available in the ds_map:</p>
+
+<blockquote>
+<ol>
+<li>"<b>queue_id</b>" - the queue index for the queue that has
+finished playing, as returned by the function <a href=
+"../../002_reference/game%20assets/sounds/audio_create_play_queue.html">
+<tt>audio_create_play_queue()</tt></a>.</li>
+
+<li>"<b>buffer_id</b>" - the buffer ID for the buffer that is no
+longer being played from</li>
+
+<li>"<b>queue_shutdown</b>" - this is set to 0 during normal
+playback and 1 when the event is received because <a href=
+"../../002_reference/game%20assets/sounds/audio_free_play_queue.html">
+<tt>audio_free_play_queue</tt></a> has been called. When this is
+set to 1, you don't want to queue up any further data.</li>
+</ol>
+</blockquote>
+
+<p>Since an audio queue can be created from multiple buffers, this
+event can be triggered multiple times for one queue as the end of
+each section of buffered audio is reached, hence the "buffer_id"
+key.<br>
+<br>
+<i><b>NOTE:</b> The variable <tt>async_load</tt> is only valid in
+the asynchronous events, as the <tt>ds_map</tt> that is points to
+is created at the start of the event, then deleted again at the
+end, with this variable being reset to a value of -1. However, all
+further data-structures created from the event <b>must be cleaned
+up using the appropriate functions</b>.</i><br>
+<br></p>
+
+<h3 class="studio">Example of Use</h3>
+
+<p>In this example we will create an audio queue with 10 buffered
+audio sounds added to it and then play the queue:</p>
+
+<p class="code">audio_queue = audio_create_play_queue(buffer_s16,
+11052, audio_mono);<br>
+for (var i = 0; i &lt; 10; i++;)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;audio_queue_sound(audio_queue, audio_buffer[i],
+0, buffer_get_size(audio_buffer[i]));<br>
+&nbsp;&nbsp;&nbsp;}<br>
+audio_play_sound(audio_queue, 0, true);<br></p>
+
+<p>Every game step now that the recording is detected will trigger
+an asynchronous Audio Recording event where you can deal with the
+recorded input something like this:</p>
+
+<p class="code">var queue = async_load[? "queue_id"];<br>
+var num = 0;<br>
+if queue = audio_queue<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;for (var i = 0; i &lt; 10; i++;)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if async_load[? "buffer_id"] ==
+audio_buffer[i]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer_seek(audio_buffer[i],
+buffer_seek_start, 0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num = i;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;if num == 9<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio_stop_sound(audio_queue);<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio_free_play_queue(audio_queue);<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>Here we check the queue ID and if it's the one we want, we then
+check the buffer ID to see which buffer has finished being played.
+We also then set a local var to that index value for checking later
+and set the buffer back to the start for that sound. Once our local
+variable reaches 9, indicating that the queue has finished, we stop
+the sound playing and free the queue.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="system%20event.html">Audio
+Playback Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

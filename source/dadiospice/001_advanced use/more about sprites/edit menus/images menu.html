@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Sprite Editor Images Menu</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about sprites/edit menus/images menu.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fedit%20menus%2Fimages%20menu.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fedit%20menus%2Fimages%20menu.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Sprite Editor Images Menu</h1>
+
+<h2 class="studio">This section explains the functions associated
+with the <i>GameMaker: Studio</i> sprite editor "Image" drop down
+menu.</h2>
+
+<p><img class="center" src="images_menu.png"> The "Images" drop
+down menu offers a number of handy options to change the colours,
+transparencies and other details of the sub-images of your sprite.
+If you use these commands from the actual sub-image editor then the
+options chosen will only be applied to the currently selected
+sub-image, however if you use these commands from the sprite editor
+they can be applied to all sub-images by ticking the appropriate
+check-box.<br>
+<br></p>
+
+<ul>
+<li><b>Cycle Left and Cycle Right:</b> Cycles all images one place
+to the left or to the right, so that the order of the sprite
+animation is changed.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Greyscale:</b> Converts the image (or images) into
+greyscale. <img class="center" src="greyscale_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>colourize:</b> Here you can change the colour (hue) of the
+image(s). There is a slider which you can use as well as an input
+box to directly input a new value. The normal effect is to
+colourize the image(s) with the selected hue, but when you mark the
+"shift hue" check-box, the original colours are shifted over the
+amount indicated giving some rather interesting effects.
+<img class="center" src="colourize_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>colourize Partial:</b> Here you can change the colour (hue)
+of part of the image(s). You use the top slider (or the input box)
+to select the new colour you wish, then change the second slider
+(or input box) to select the colour you wish to change (or click
+the left image on the colour). The tolerance slider changes the
+dynamic range to be changed, from a very narrow selection to a very
+broad selection, meaning that you can single out specific colours
+or whole ranges to change. <img class="center" src=
+"colourizepartial_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Intensity:</b> Here you can change the intensity
+(luminosity) and saturation (amount of colour) in the selected
+image(s). <img class="center" src="intensity_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Invert:</b> Inverts the colours in the image(s). <img class=
+"center" src="invert_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Make Opaque:</b> Remove all transparency information from
+the image(s), making them opaque. <img class="center" src=
+"makeopaque_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Erase a colour:</b> You can select a colour to erase with
+this either by clicking on the colour box or by clicking somewhere
+in the left image. You then specify the tolerance with a slider to
+set the "range" of pixels to be included in the action. All pixels
+with a colour close the selected colour and within the tolerance
+level will be made transparent. <img class="center" src=
+"erasecolour_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Smooth Edges:</b> This will smooth the edges around the
+opaque part of the image(s) to make them look nicer. Should you
+require a stronger effect, this can be achieved using Blur (see
+below) but only selecting to blur the transparency. <img class=
+"center" src="smooth_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Opacity:</b> Here you can change the opacity (transparency)
+for the whole image (or images). You can either set it relative to
+the current opacity, meaning that it will be added/subtracted from
+the existing transparency values, or absolute so that the existing
+transparencies are overwritten by the new value. Note that fully
+transparent pixels always stay fully transparent. <img class=
+"center" src="transparency_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Set Alpha from File:</b> This is a very interesting function
+that takes the luminosity values from a file and applies them to
+the alpha channel (transparency) of the image. These values are
+calculated based on how light or dark each pixel is, with white
+being fully opaque, black being fully transparent and everything
+else somewhere in the middle. The ideal images to use are those
+that have no colour information and are purely greyscale, and it
+should be the same size as the target sub-image(s) of the sprite
+(however, if it is larger or smaller it will be scaled to fit). The
+image below illustrates how it works:<br>
+<br>
+<img class="center" src="alpha_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Fade:</b> Here you specify a colour and an amount and the
+pixels in the image(s) are now faded towards this colour with the
+given amount. <img class="center" src="fade_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Blur:</b> This option can be used to blur the image(s).
+There are options to choose the quantity of blur to be used as well
+as to select whether you wish to blur just the colour information,
+the transparencies or both. Only blurring the transparency values
+can be a nice way to smooth the boundary of the image(s).
+<img class="center" src="blur_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Sharpen:</b> This option can be used to sharpen certain
+details within an image (or images). This is sort of the reverse of
+blurring as sharpening enhances the edges of the image, with you
+choosing how subtle or strong you wish the effect to be and whether
+to sharpen the transparent edges only, the coloured edges only or
+both. The special sharpening puts additional emphasis on details
+and can leading to an interesting effect. <img class="center" src=
+"sharpen_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Outline:</b> You can use this command to create an outline
+around the image(s). You are asked for the colour and a thickness
+of the outline, as well as whether to position it inside the image
+or not. You can also indicate that you wish to remove the image(s)
+as well, leaving only the outline itself. Finally, there is an
+option to smooth the outline, which lightly blurs the edges to give
+it a more rounded feel. <img class="center" src=
+"outline_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Shadow:</b> This command will create a "drop" shadow below
+the image(s). The available options permit you to select the colour
+of the shadow and the position, as well as the alpha (transparency)
+and whether you wish the edges of the shadow to be hard or soft
+(blurred or not). <img class="center" src=
+"shadow_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Glow:</b> Create a coloured glow around the image, where you
+can indicate the colour of the glow, the opacity and the thickness.
+You can also indicate to place the glow inside the image.
+<img class="center" src="glow_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Buttonize:</b> Turn the image(s) into a button. You specify
+the colour of the button and the opacity of the effect. You must
+also indicate the thickness of the button boundary and whether it
+should be smooth or not, with a smooth button having a much more
+rounded look to it. <img class="center" src=
+"button_image.png"><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Gradient Fill:</b> Adds a gradient fill to the image(s). You
+can specify the two colours to create the gradient between, the
+overall opacity and the type of gradient to use. Default the image
+is replace by the gradient although the transparency is maintained,
+but by un-checking the "Replace" box the gradient is blended onto
+the image. By checking the "Change Transparency" box the alpha
+value of the original image is changed as well. <img class="center"
+src="gradient_image.png"><br></li>
+</ul>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../editing%20sprites.html">Editing Sprites</a></div>
+
+<div style="float:right">Next: <a href="animation%20menu.html">The
+Sprite Editor Animation Menu</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Push Notifications</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/push notifications/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fpush%20notifications%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fpush%20notifications%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Push Notifications</h1>
+
+<h2 class="studio">This section deals with the functions for
+pushing notifications to devices.</h2>
+
+<p>On mobile devices, normally only one application can be active
+in the foreground at any time, but many games and applications
+operate in a time-based or interconnected environment where events
+of interest to users can occur when the application is <i>not</i>
+in the foreground. In these cases, <b>Local</b> and <b>Remote</b>
+push notifications can allow these games to notify their users when
+events occur.<br>
+<br>
+When the operating system delivers a local or remote push
+notification and the target application is not running in the
+foreground, it presents the notification to the user in the form of
+a banner. If there is a notification alert and the user taps on it,
+then the game is launched and an <a href=
+"../../001_advanced%20use/more%20about%20async%20events/push.html">Asynchronous
+Push Event</a> is called where you can check the callback string
+that you specify and resolve the push based on its value. If the
+application is running in the foreground when the notification is
+delivered, the application will still receive an Asynchronous Push
+Event, but the user will get no message displayed unless you create
+it yourself.<br>
+<br>
+There are a few differences to note between supported
+platforms:<br>
+<br></p>
+
+<ul>
+<li>On Android, you will need to download and install the <a href=
+"https://marketplace.yoyogames.com/assets/2008/google-play-services"
+target="_blank">Google Play Services Extension</a> before you can
+use local notifications and also have enabled push notifications in
+the <a href=
+"../../001_advanced%20use/global%20game%20settings/android%20tab.html">
+Android Social Global Game Settings</a>. Also note that <i>all</i>
+notifications received when the app is not running/in background,
+will be stored, and the data delivered by the async event the next
+time the app runs.<br>
+<br></li>
+
+<li>On iOS, data for a particular notification will only be
+delivered when the notification is selected (or if the app is
+running in foreground when the notification is received).<br>
+<br></li>
+</ul>
+
+<h3 class="studio">Local Notifications</h3>
+
+<p>A local push notification is local to the device that the game
+is installed on, and requires no backend server. You simply set the
+date and time for the notification and it will be displayed to the
+user if the game is not currently running. This type of
+notification is useful to set "reminders" for the user to play your
+game again, or to offer a daily reward for playing, etc... and when
+the user taps the notification it will launch the game and pass in
+a data string which can then be parsed by the game to give a reward
+or whatever.<br>
+<br>
+The following functions are available for local notifications:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"push_local_notification.html">push_local_notification</a><br>
+</li>
+
+<li><a href=
+"push_get_first_local_notification.html">push_get_first_local_notification</a><br>
+
+</li>
+
+<li><a href=
+"push_get_next_local_notification.html">push_get_next_local_notification</a><br>
+
+</li>
+
+<li><a href=
+"push_cancel_local_notification.html">push_cancel_local_notification</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p><i><b>NOTE</b>: This function is limited to the <b>iOS</b> and
+<b>Android</b> target modules. on <b>Android</b> you will need to
+have installed the <a href=
+"https://marketplace.yoyogames.com/assets/2008/google-play-services"
+target="_blank">Google Play Services Extension</a> and have enabled
+push notifications in the <a href=
+"../../001_advanced%20use/global%20game%20settings/android%20tab.html">
+Android Social Global Game Settings</a>.</i>
+</p>
+
+<h3 class="studio">Remote Notifications</h3>
+
+<p>Remote notification messages are sent by a server to a service
+provided by the device platform App Store, and this then forwards
+those messages onto all the devices on which your application is
+installed. This is supported by <i>GameMaker: Studio</i> on the iOS
+and Android target modules.<br>
+<br>
+There are no functions in <i>GameMaker: Studio</i> to deal with
+remote notifications, as they must all be generated by your server
+and handled by the respective App Stores. However, once set up
+correctly, <i>GameMaker: Studio</i> games will receive these
+notifications, which can then be dealt with in the <a href=
+"../../001_advanced%20use/more%20about%20async%20events/push.html">Asynchronous
+Push Event</a>, as you would a local notification.<br>
+<br>
+For all available platforms, once you have done the necessary
+set-up, when the game is run on a device it will <b>register</b>
+that device with the platforms push notification service. This will
+trigger an <b>Asynchronous Push Notification Event</b>, and the
+<tt>ds_map</tt> key "<i>type</i>" will have the value
+"<i>register</i>" as well as a new key, "<i>reg_id</i>", containing
+the <b>registration id</b> (or an error message in the
+"<i>error</i>" key, if "<i>status</i>" is 0). You must then send
+this registration id to your server, and every device that your
+game is installed on will have a different registration id. Your
+server <i>must maintain a list of ids for registered devices</i>,
+as when when you send a push notification message from your server,
+you use the registration ids to send the message to the registered
+devices.<br>
+<br>
+Please note that there is no guarantee that remote push
+notifications will be delivered, and that the allowed data payload
+is fairly small. This varies between platforms, but iOS is
+particularly limited - the apple service only delivers the most
+recent notification, which must be selected by the recipient for
+the payload data to be delivered to your async event, and these
+notifications have a mximum payload size of 256bytes. Typically a
+remote push notification would just indicate that new data is
+available from your server for example.</p>
+
+<blockquote><i><b>NOTE</b>: Android requires that you add the
+<b>GCM Sender ID</b> into the <a href=
+"../../001_advanced%20use/global%20game%20settings/android%20tab.html">
+Global Game Settings</a> for the platform. This is the <b>Project
+Number</b> that is assigned when you create your Google Play API
+Project.</i>
+</blockquote>
+
+<p>For further details on how to go about setting up a server, as
+well as information specific to the available platforms, please see
+the following pages on the <a href=
+"http://help.yoyogames.com/forums" target="_blank">YoYo Games
+Knowledge Base</a>:<br>
+<br></p>
+
+<ul>
+<li><a href="http://help.yoyogames.com/entries/28184776" target=
+"_blank">Push Notifications - Android</a>
+</li>
+
+<li><a href="http://help.yoyogames.com/entries/27695268" target=
+"_blank">Push Notifications - iOS</a>
+</li>
+</ul>
+
+<blockquote><i><b>NOTE</b>: Implementing the server-side is
+entirely up to the end user, and YoYo Games do not provide any
+support for that side of things, other than basic set-up
+information available from their Knowledge Base.</i>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Reference</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

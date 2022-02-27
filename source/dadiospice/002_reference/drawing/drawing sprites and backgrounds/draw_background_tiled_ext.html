@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>draw_background_tiled_ext</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing sprites and backgrounds/draw_background_tiled_ext.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%20sprites%20and%20backgrounds%2Fdraw_background_tiled_ext.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%20sprites%20and%20backgrounds%2Fdraw_background_tiled_ext.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">draw_background_tiled_ext</h1>
+
+<h2 class="studio">Draws a background at a given position with
+scaling, blending and alpha, and tiles it to fill the entire
+view.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">draw_background_tiled_ext(back, x, y, xscale,
+yscale, colour, alpha);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>back</td>
+<td>The index of the background to draw.</td>
+</tr>
+
+<tr class="alt">
+<td>x</td>
+<td>The x coordinate of where to draw the background.</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>The y coordinate of where to draw the background.</td>
+</tr>
+
+<tr class="alt">
+<td>xscale</td>
+<td>The horizontal scaling of the background.</td>
+</tr>
+
+<tr>
+<td>yscale</td>
+<td>The vertical scaling of the background.</td>
+</tr>
+
+<tr class="alt">
+<td>colour</td>
+<td>The colour with which to blend the background (use -1 or
+c_white to display it normally).</td>
+</tr>
+
+<tr>
+<td>alpha</td>
+<td>The alpha of the background (from 0 to 1 where 0 is transparent
+and 1 opaque).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will take a background and then repeatedly tile it
+across the whole view (or room if no view is defined), starting
+from the coordinates that you give in the function and with each
+tile scaled, colour blended and with the alpha that you define
+(these properties are the same as those used in <a href=
+"draw_background_ext.html"><tt>draw_background_ext</tt></a>).<br>
+<br>
+<i><b>NOTE:</b> Colour blending is only recommended for the HTML5
+target when WebGL is enabled, although you can still set the
+blending colour if it is not enabled and it will blend the sprite
+as normal. However all blending in this way creates a duplicate
+sprite which is then stored in the cache and used when required.
+This is far from optimal and if you use multiple colour changes it
+will slow down your games performance unless you activate WebGL. If
+you do not wish to use WebGL, and still require blended images,
+then you should consider using sprites and setting the sprite cache
+to help limit performance issues - see <a href=
+"../../game%20assets/sprites/sprite_set_cache_size.html"><tt>sprite_set_cache_size</tt></a>.</i><br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">draw_background_tiled_ext(bck_Sky, x, y, 2, 2,
+c_red, 0.5);</p>
+
+<p>This will draw the background indexed in "bck_Sky" at the
+instances own x and y position, double its stored size and tiled in
+every direction in the room, as well as blended with the colour red
+and partially transparent.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Drawing Sprites
+And Backgrounds</a></div>
+
+<div style="float:right">Next: <a href=
+"draw_background_general.html">draw_background_general</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

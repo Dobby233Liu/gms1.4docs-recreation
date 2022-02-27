@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>tile_set_region</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/backgrounds/background tiles/tile_set_region.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fbackgrounds%2Fbackground%20tiles%2Ftile_set_region.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fbackgrounds%2Fbackground%20tiles%2Ftile_set_region.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">tile_set_region</h1>
+
+<h2 class="studio">Sets the region of its background a tile is
+taken from.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">tile_set_region(index, left, top, width,
+height);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>index</td>
+<td>The index of the tile to set.</td>
+</tr>
+
+<tr>
+<td>left</td>
+<td>The tile's left position relative to the background's top left
+corner.</td>
+</tr>
+
+<tr>
+<td>top</td>
+<td>The tile's top position relative to the background's top left
+corner.</td>
+</tr>
+
+<tr>
+<td>width</td>
+<td>The tile's width.</td>
+</tr>
+
+<tr>
+<td>height</td>
+<td>The tile's height.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can resize the tile indexed. For example,
+if you have a tile that is a 16x16 square taken from a background
+image asset and then use this function to set the region to 16x32,
+the tile will now be a rectangular section of the background. this
+function does not scale the image in anyway, it changes the shape
+of the area used to create the tile. This is not permanent and if
+the player leaves the room and returns to it again, the tile will
+have its original shape (if it was placed in the room editor and
+the room is not persistent).<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var tile;<br>
+tile = tile_layer_find(-1000, mouse_x, mouse_y);<br>
+tile_set_region(tile, 0, 0, 32, 64);<br></p>
+
+<p>The above code will check the mouse position for a tile and
+store its index in a variable. This is then used to set the region
+of the tile to a different part of the background asset it
+uses.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Background
+Tiles</a></div>
+
+<div style="float:right">Next: <a href=
+"tile_set_scale.html">tile_set_scale</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

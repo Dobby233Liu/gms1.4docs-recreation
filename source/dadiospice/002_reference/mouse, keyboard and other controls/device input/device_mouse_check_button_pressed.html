@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>device_mouse_check_button_pressed</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/mouse, keyboard and other controls/device input/device_mouse_check_button_pressed.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmouse,%20keyboard%20and%20other%20controls%2Fdevice%20input%2Fdevice_mouse_check_button_pressed.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmouse,%20keyboard%20and%20other%20controls%2Fdevice%20input%2Fdevice_mouse_check_button_pressed.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">device_mouse_check_button_pressed</h1>
+
+<h2 class="studio">Returns whether a given device button has been
+pressed.</h2>
+
+<h3><b>Syntax:</b>
+</h3>
+
+<p class="code">device_mouse_check_button_pressed(device,
+button);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>device</td>
+<td>The device (from 0 - 4) that is being checked.</td>
+</tr>
+
+<tr class="alt">
+<td>button</td>
+<td>The button of the device that is being checked.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Boolean</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function returns <tt>true</tt> (1) or <tt>false</tt> (0)
+depending on whether the device that you specify has been pressed
+or not. Now, the <i>device</i> refers to the mouse number, which
+can be from 0 to 4 and this event is triggered when the touch
+screen of a mobile device is touched, so in this way you can test
+for up to 5 different screen touches. This function is only
+triggered <i>once</i> by the actual pressing action, and the
+standard constants of <tt>mb_left</tt> and <tt>mb_right</tt> can be
+used to check for either button.<br>
+<br></p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if device_mouse_check_button_pressed(0, mb_left)
+press=true;</p>
+
+<p>The above code checks to see if the device has been pressed and
+sets a variable to true if it has.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Device
+Input</a></div>
+
+<div style="float:right">Next: <a href=
+"device_mouse_check_button_released.html">device_mouse_check_button_released</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

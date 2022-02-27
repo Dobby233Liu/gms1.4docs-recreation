@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Draw GUI Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/events/draw gui event.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fdraw%20gui%20event.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fdraw%20gui%20event.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Draw GUI Event</h1>
+
+<h2 class="studio">The Draw GUI Events are some of the many events
+that can be triggered in an instance and may contain code or
+actions.</h2>
+
+<p><b><img src="../../images/event_draw.png" align="left">Draw GUI
+Event</b><br>
+The Draw Gui event type falls under the <a href=
+"draw%20event.html">Draw Event</a> category and are specifically
+designed for drawing GUI (Graphical User Interface) elements that
+are not affected by the view scale or rotation. This means that you
+can have an instance draw all the elements for your HUD without
+having to base all the positioning on the position within the room
+of the instance and the position of the current view either.<br>
+<br>
+When drawing in these event it is important that you understand
+that the draw coordinates do not change <i>even when views are
+active</i> and 0,0 is always the top left hand corner of either the
+application surface or the display (see the note at the bottom of
+this section), and the default width and height are 1:1 with the
+application surface. Depth ordering is still maintained between
+different instances (so an instance at a low depth will draw over
+one at a higher depth) and also within the events themselves, as
+the <b>Draw GUI Begin</b> event will draw for all instances first,
+then the standard <b>Draw GUI</b> will draw for all instances over
+that, and finally the <b>Draw Gui End</b> event is triggered.<br>
+<br>
+In this way, you can draw things or set draw properties in the Draw
+GUI Begin step in one instance and be sure that all instances with
+a standard Draw GUI event or Draw GUI End event will use these
+properties or draw over what the first instance has drawn.
+Basically its a sure fire way to guarantee that certain things are
+drawn at certain times, much like the <b>Begin Step</b> and End
+Step events do.<br>
+<br>
+These events can also be used in conjunction with the normal Draw
+events (which <i>will</i> be affected by the view position, scale
+and rotation as normal). If you have no Draw Event but you
+<i>do</i> have a Draw GUI Event, then <i>GameMaker: Studio</i> will
+still default draw the sprite for the instance (if it has one) as
+normal.<br>
+<br>
+You may notice depth issues when using this event due to the fact
+that it is <i>not</i> dealt with the same was as the traditional
+draw event. What happens is that the normal draw events for all
+instances are resolved first, once each for each active view, and
+<i>then</i> the draw GUI events for all instances are resolved. So
+the depth order between instances with draw GUI events is always
+respected, as is the depth order between instances with normal draw
+events, <b>but</b> the draw GUI events will always draw over
+anything drawn in the normal draw event, even if the instance doing
+the drawing it is at a higher depth than other instances.<br>
+<br></p>
+
+<blockquote><i><b>NOTE:</b> This event will, by default, draw 1:1
+with the <b>application surface</b> size, which is normally the
+size of the room or the view port. This means that when you have
+Aspect Ratio Correction on in the</i> Global Game Settings the GUI
+is not going to be drawn over the black bars that "letterbox" the
+game. This behaviour can be switched off using the <a href=
+"../../002_reference/windows%20and%20views/display_set_gui_maximise.html">
+<tt>display_set_gui_maximise</tt></a> function, and you can also
+lock the GUI event to a specific size which will then be scaled to
+fit the display or application surface dimensions automatically by
+using the function <a href=
+"../../002_reference/windows%20and%20views/display_set_gui_size.html">
+<tt>display_set_gui_size</tt></a>.</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Events</a></div>
+
+<div style="float:right">Next: <a href=
+"pre%20and%20post%20draw%20event.html">The Pre And Post Draw
+Events</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>texture_global_scale</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/texture_global_scale.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Ftexture_global_scale.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Ftexture_global_scale.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">texture_global_scale</h1>
+
+<h2 class="studio">Used to control the scaling of the texture pages
+on load from the WAD file.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">texture_global_scale(pow2integer);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>pow2integer</td>
+<td>The scale factor to use (1, no scale, 2, half scale, 4, quarter
+scale, etc...)</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function allows you to control the scaling of the texture
+pages on load from the WAD file that is part of your final game
+executable. The input value must be a power of two value and will
+work such that:</p>
+
+<ul>
+<li>To set the texture pages to be 1:1 use
+<tt>texture_global_scale(1)</tt></li>
+
+<li>To half textures all the time use
+<tt>texture_global_scale(2)</tt></li>
+
+<li>To quarter them use <tt>texture_global_scale(4)</tt>,
+etc...</li>
+</ul>
+
+<p>In this way you can better control texture page memory usage on
+platforms with low memory issues, although note that for Windows,
+you will need to have checked the <b>Create Textures On Demand</b>
+option in the <a href=
+"../../001_advanced%20use/global%20game%20settings/windows%20tab.html">
+Global Game Settings - Graphics</a> and then call the function
+<a href="draw_texture_flush.html"><tt>draw_texture_flush</tt></a>
+before loading any scaled textures.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">draw_texture_flush();<br>
+texture_global_scale(2);<br>
+sprite_prefetch(spr_Trees);<br></p>
+
+<p>The above code will flush all textures from memory, then set the
+texture scaling to 2 (so texture pages are half size) and then
+finally pre-fetch the texture page that the sprite "spr_Trees" is
+contained within.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Drawing</a></div>
+
+<div style="float:right">Next: <a href=
+"draw_texture_flush.html">draw_texture_flush</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

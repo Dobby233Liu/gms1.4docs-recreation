@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Using Expressions And Variables In Actions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/actions/007_using expressions and variables.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2F007_using%20expressions%20and%20variables.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2F007_using%20expressions%20and%20variables.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Using Expressions And Variables In Actions</h1>
+
+<h2 class="studio">This section covers how to use expressions and
+the in-built instance variables in actions.</h2>
+
+<p>When using many of the actions in <i>GameMaker: Studio</i> you
+are expected to input a value as one of the parameters, but
+sometimes that is not enough and you may find it necessary to input
+a formula or an expression to get the required result from the
+action. this is perfectly valid and <i>GameMaker: Studio</i>
+permits the use of any of the in-built instance variables,
+constants or global variables as well as the use of your own
+(previously defined) variables and even mathematical formula! The
+image below shows how this can work: <img class="center" src=
+"../../images/action_expression.png"> As mentioned before,
+<i>GameMaker: Studio</i> also has a great number of in-built
+variables that are unique to each and every instance created in a
+room. These instance variables are created for you automatically
+when you create an object and can be used, set and changed just as
+you would any other variable. Below is a list of all these
+variables:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"../../002_reference/movement%20and%20collisions/movement/x.html"><b>
+x</b></a>: the x-coordinate of the instance in the room. Changing
+this will position the instance elsewhere in the room along the
+x-axis.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/movement%20and%20collisions/movement/y.html"><b>
+y</b></a>: the y-coordinate of the instance in the room. Changing
+this will position the instance elsewhere in the room along the
+y-axis.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/movement%20and%20collisions/movement/hspeed.html">
+<b>hspeed</b></a>: the horizontal speed (in pixels per step) at
+which the instance is moving. A positive value means movement to
+the right and a negative value means movement to the left.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/movement%20and%20collisions/movement/vspeed.html">
+<b>vspeed</b></a>: the vertical speed (in pixels per step) at which
+the instance is moving. A positive value means movement to the
+bottom and a negative value means movement to the top.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/movement%20and%20collisions/movement/direction.html">
+<b>direction</b></a>: the current direction of motion in degrees
+(0-360), where 0° is right, 90° is up, 180° is left and 270° is
+down.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/movement%20and%20collisions/movement/speed.html">
+<b>speed</b></a>: the current speed of motion in the current
+direction. For a "forward" motion (ie: facing the direction) this
+is a positive value, and for a "backwards" motion it should be
+negative.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/visible.html">
+<b>visible</b></a>: this is the flag that sets an object as being
+visible (the draw event is performed) or invisible (the draw event
+is skipped).<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/image_index.html">
+<b>image_index</b></a>: this variable indicates which subimage in
+the current sprite is currently shown. When the animation speed
+(image_speed, see below) is set to a value greater than 0, this
+variable changes each step to reflect the sub-image being shown of
+the animation .<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/image_speed.html">
+<b>image_speed</b></a> this variable indicates the speed with which
+the subimages are shown, with the default value being 1 (meaning 1
+frame per step). If you make this value larger than 1 some
+subimages are skipped to make the animation faster, and conversely,
+if you make it lower than 1, then some sub-images are repeated over
+various steps to make it animate slower.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/id.html">
+<b>id</b></a>: the unique identifier (an integer) of the instance.
+This value is assigned to the instance when it is created and
+cannot be changed.<br>
+<br></li>
+
+<li><a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/object_index.html">
+<b>object_index</b></a>: this is the <i>index</i> (not the name) of
+the object that the instance has been created from. This value is
+assigned to the instance when it is created and cannot be
+changed.<br></li>
+</ol>
+</blockquote>
+
+<p>Further information on in-built <i>instance</i> variables can be
+found in the following sections:<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li>Reference: <a href=
+"../../002_reference/movement%20and%20collisions/movement/index.html">
+Movement Variables</a><br></li>
+
+<li>Reference: <a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/index.html">
+Instance Variables</a><br></li>
+
+<li>Reference: <a href=
+"../../002_reference/physics/physics%20variables/index.html">Physics
+Variables</a><br></li>
+</ol>
+</blockquote>
+
+<p>Apart from the in-built instance variables, we also have a
+number of <i>global</i> variables that can be used in actions too
+(see <a href=
+"../../002_reference/001_gml%20language%20overview/variables/index.html">
+Variables And Variable Scope</a> for more information on global
+variables). Here are a few of those available:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"../../002_reference/001_gml%20language%20overview/variables/score.html">
+<b>score</b></a>: the current value of the score<br></li>
+
+<li><a href=
+"../../002_reference/001_gml%20language%20overview/variables/lives.html">
+<b>lives</b></a>: the current number of lives<br></li>
+
+<li><a href=
+"../../002_reference/001_gml%20language%20overview/variables/health.html">
+<b>health</b></a>: the current health (0-100)<br></li>
+
+<li><a href=
+"../../002_reference/mouse,%20keyboard%20and%20other%20controls/mouse%20input/mouse_x.html">
+<b>mouse_x</b></a>: x-position of the mouse<br></li>
+
+<li><a href=
+"../../002_reference/mouse,%20keyboard%20and%20other%20controls/mouse%20input/mouse_y.html">
+<b>mouse_y</b></a>: y-position of the mouse<br></li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Actions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

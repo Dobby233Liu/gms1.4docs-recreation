@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The General Options Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/general tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fgeneral%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fgeneral%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The General Options Tab</h1>
+
+<h2 class="studio">This section deals with the general options of
+the Global Games Settings Window.</h2>
+
+<p><img class="center" src="general_tab.png"> This tab deals with a
+few of the general aspects of how GameMaker: Studio 1.4 will run
+your game.<br>
+<br>
+To start with you are shown the <b>Game Identifier</b> value -
+which can be edited if required - along with the <b>Game GUID</b>
+which is the unique identifier that is used to identify the game
+project. Underneath these fields you have a button that can be used
+to generate a new Game Identifier (which can be accessed in your
+game by using the constant <a href=
+"../../002_reference/miscellaneous/game_id.html"><tt>game_id</tt></a>)
+and . The button to generate this id also re-creates the <b>Game
+GUID</b> hash which can then be copied to the clipboard with the
+help of the button below for use in your applications and
+games.<br>
+<br>
+Underneath the Game ID data, you can choose the <b>colour outside
+the room region</b> (which is the colour used to draw the
+background when the view goes outside of the room region). The
+default value is black. Beside this you also have the following
+options:<br></p>
+
+<ul>
+<li><b>Use New Audio Engine</b>: Checking this will enable the
+"new" audio system (which uses the <tt>audio_*</tt> functions)
+while unchecking it will enable the legacy audio engine (that uses
+the <tt>sound_</tt> and <tt>music_</tt> functions). Due to
+incompatibilities you cannot have both the new audio engine
+<i>and</i> the legacy sound engine active at the same time. For old
+games created with other versions of <i>GameMaker</i> or for those
+games started before the new audio engine was added, the Legacy
+Audio will be used as default, while for all new games
+<i>GameMaker: Studio</i> will default to the new audio system.
+However, you can change this at any time by flagging (or
+un-flagging) this option. For more information on the new Audio
+Engine, please see the section on <a href=
+"../../002_reference/game%20assets/sounds/index.html">Game Assets -
+Sound</a>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Short-Circuit Evaluation</b>: The default behavior for
+<i>GameMaker: Studio</i> is to have short-circuit evaluation on,
+meaning that when performing any boolean check with multiple
+expressions, if any of them fail then the rest will be "skipped",
+giving a very minor boost to your game logic. However, older
+versions of <i>GameMaker: Studio</i> evaluated <b>both</b>
+arguments to a boolean operation, even when the first argument
+already determined the outcome, so disabling this option will
+return <i>GameMaker: Studio</i> to using the previous method.
+Generally you would want this on, but in certain cases
+(particularly if you are importing old projects) you may need to
+switch this off to prevent any undesired effects.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use fast Collision System</b>: This is checked by default
+and tells <i>GameMaker: Studio</i> to use the "fast" collision
+system over the legacy one. The fast system is a tree based
+spatially collision system that can make massive speed ups in
+collision testing. However it may not be entirely compatible with
+old or imported projects and so you can disable it here (although
+you might want to try Compatibility Mode first, see below). It is
+on by default for new projects.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Fast Collision System Compatibility Mode</b>: When this is
+enabled, <i>GameMaker: Studio</i> will still use the fast collision
+system, but it will be modified to work more like the legacy
+collision system. If you are having issues with collisions in your
+project (especially if the project is an older one) then you may
+benefit from enabling this (note that this will affect the
+performance of the fast collision system, but not as adversely as
+switching off fast collisions all together).</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href=
+"texture%20groups%20tab.html">The Texture Groups Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

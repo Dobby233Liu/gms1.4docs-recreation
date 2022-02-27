@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Global Variables</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/variables/global variables.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Fglobal%20variables.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Fglobal%20variables.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Global Variables</h1>
+
+<h2 class="studio">This section explains what global variables are
+and how to use them.</h2>
+
+<p>A basic description of a global variable is one that, once
+declared, belongs to no instance in particular and yet can be
+accessed by all. Just like local variables, global variables must
+be declared, but unlike a local variable, a global variable remains
+in memory until the end of the game. So, you can create a global
+variable to keep track of (for example) the number of bullets that
+the player has and then just update this variable at different
+points in the game. A global variable does not belong to any
+specific instance and can be accessed, changed and used by all
+instances at any time, but any change made to the variable are
+"global", in that all instances using the variable will be affected
+by the change. Let's have a look at an example:<br>
+<br></p>
+
+<p class="code">global.food = 5;<br></p>
+
+<p><br>
+We declare the "food" variable by first writing "global" and then a
+"." to tell GameMaker that this variable is now global scope. We
+will need to use this method from now on any time we are required
+to access or to change this variable in any way. So, we have
+created a new variable called "food" and we have declared it as
+global. Now, any instance can use and change this variable in any
+way and all other instances will "see" this. For example we could
+have a different food object that the player collides with and in
+the collision event we have:<br>
+<br></p>
+
+<p class="code">global.food +=1;<br></p>
+
+<p><br>
+We also have another object that draws this value like this:<br>
+<br></p>
+
+<p class="code">draw_text(32, 32, "food = " +
+string(global.food));<br></p>
+
+<p><br>
+With global variables we can change values and see those changes
+reflected in all instances of the objects that reference this
+variable. As with <i>local</i> variables you have to take care not
+to name your global variables the same as any instance variables as
+that will cause you problems and make bugs creep into your games
+due to variable overlap, which can be a difficult issue to debug
+sometimes. In general you should have a single script or object
+that declares all your global variables at the very start of the
+game (for example, in the Room Start Event), so that they are
+initialised and ready for any instance to use, and this also gives
+you a handy place to go back and reference should you need to check
+a variable name.<br>
+<br>
+<i>GameMaker: Studio</i> has a collection of "built in" global
+variables too, so you should be aware of them as you may name one
+of your instance variables the same or wish to have your own global
+variable with the same name and wonder why you are getting errors!
+They are easy to spot, however, as they are shown in a different
+colour in the code editor and also come up in the auto-complete bar
+at the bottom. the majority of built in global variables are very
+specific and will only be used on rare occasions, but there are
+three in particular which are very useful and you can find out more
+about them from the pages listed below:<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href="score.html">score</a>
+</li>
+
+<li><a href="health.html">health</a>
+</li>
+
+<li><a href="lives.html">lives</a>
+</li>
+
+<li><a href="async_load.html">async_load</a>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">globalvar</h3>
+
+<p>The following method can also be used to declare global
+variables, but it is <i><b>only included for backwards
+compatibility</b></i>, and it is not recommended that you use this
+method for new projects as future versions of <i>GameMaker:
+Studio</i> may not support it.<br>
+<br>
+The second method for creating global variables is to declare them
+as such using the <tt>globalvar</tt> declaration, much as you would
+a local variable using the <tt>var</tt> declaration. For
+example:<br>
+<br></p>
+
+<p class="code">globalvar food;<br>
+food = 5;<br></p>
+
+<p><br>
+Once declared in this way that variable is now considered global
+and requires no "global." prefix - which also means that it's a lot
+harder to identify global variables in your code and it's also much
+easier to get variable overlap as you use the same variable name in
+different objects - and the variable is accessed as follows:<br>
+<br></p>
+
+<p class="code">food += 2;<br></p>
+
+<p><br>
+or:<br>
+<br></p>
+
+<p class="code">draw_text(32, 32, "food = " +
+string(food));<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../variables/index.html">Variables And Variable Scope</a></div>
+
+<div style="float:right">Next: <a href=
+"instance%20variables.html">Instance Variables</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

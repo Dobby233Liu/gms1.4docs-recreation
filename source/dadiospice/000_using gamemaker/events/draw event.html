@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Draw Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/events/draw event.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fdraw%20event.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fdraw%20event.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Draw Event</h1>
+
+<h2 class="studio">The Draw Events are some of the many events that
+can be triggered in an instance and may contain code or
+actions.</h2>
+
+<p><b><img src="../../images/event_draw.png" align="left">Draw
+Event</b><br>
+This event is the one that governs what you see on the screen when
+you run your game, and is split into various separate
+"sub-events":<br>
+<br>
+<img class="center" src="draw_menu.png"><br>
+<br>
+As you can see, the draw event category has multiple different
+event types, and here we will deal with the standard Draw Events:
+draw Begin, Draw and Draw End. You can get information on the other
+event types from the following pages:</p>
+
+<blockquote>
+<ol>
+<li><a href="draw%20gui%20event.html">Draw GUI Event</a><br>
+</li>
+
+<li><a href="pre%20and%20post%20draw%20event.html">Pre And Post
+Draw Event</a><br>
+</li>
+
+<li><a href="resize%20event.html">Resize Event</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>The standard draw events are the ones covered on this page and
+they run <i>before</i> the <b>Draw GUI</b> events and between the
+<b>Pre Draw</b> and <b>Post Draw</b> events, meaning that
+everything that is drawn in this event is drawn beneath that of the
+Draw GUI event, regardless of depth (ie: anything drawn in the Draw
+GUI event will <i>always</i> be drawn over anything drawn in the
+normal draw event, regardless of depth). The image below
+illustrates the order in which each event is performed: <img class=
+"center" src="draw_event_flow.png"><br>
+<br></p>
+
+<h3 class="studio">The Standard Draw Event</h3>
+
+<p>The normal Draw Events fall into three types: The <b>Draw
+begin</b>, the standard <b>Draw</b> and the <b>Draw End</b> events.
+In general, you will only need to use the standard <b>Draw</b>
+event and you should be aware that <i>all</i> instances in a room
+will have this standard draw event triggered each step of the game.
+So, this event will <i>always</i> be called as long as the instance
+has the <i>visible</i> flag set to true. Even if you have defined
+<i>nothing</i> for this event in the object properties (ie: no code
+nor actions), if the object has a sprite assigned it will still
+have a draw event which will be triggered! You see, <i>GameMaker:
+Studio</i> has two ways to draw things in the standard <b>Draw</b>
+event:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>the default draw</b>, which is when you define the sprite in
+the object properties and place no actions or code in the normal
+draw event, in which case <i>GameMaker: Studio</i> will draw that
+sprite, but note that any transforms you perform in other events to
+change the image scale, index, blending etc... will be reflected
+too as long as the draw event is empty.<br>
+<br></li>
+
+<li><b>the custom draw</b>, which is when you place code or actions
+in the draw event. This is telling <i>GameMaker: Studio</i> "I want
+to control what you draw for instances of this object" and it
+completely over-rides the default draw. This means that you can
+have an object with a sprite assigned, then set the draw event to
+draw text and the sprite <i>will not be drawn</i> as you have not
+told <i>GameMaker: Studio</i> to draw it.</li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Draw Begin and Draw End Events</h3>
+
+<p>Apart from the main draw Event, you also have a <b>Draw
+Begin</b> and a <b>Draw End</b> event. These act exactly the same
+as a standard Draw event (ie: they will draw whatever you put in
+them every step of the game and for all views), but they do not
+"default draw" anything if not added to an instance, and they will
+always run before/after the standard Draw event. So, you would have
+the <b>Draw Begin</b> step for <i>all</i> instances, then the Draw
+Event for all instances, then finally the <b>Draw End</b> step for
+all instances.<br>
+<br>
+In this way, you can draw things or set draw properties in the Draw
+Begin step in one instance and be sure that all instances with a
+standard Draw event or Draw End event will use these properties or
+draw over what the first instance has drawn. Basically its a sure
+fire way to guarantee that certain things are drawn at certain
+times, much like the <b>Begin Step</b> and End Step events do.<br>
+<br></p>
+
+<h3 class="studio">Things to Note</h3>
+
+<p>There are a few things to note when drawing things in
+<i>GameMaker: Studio</i>, whether it's a sprite you are drawing or
+a shader, or 3D:</p>
+
+<blockquote>
+<ol>
+<li>The draw event is a very intensive event, in that it's one of
+the events that takes up most time and resources... to that end it
+is <i>never</i> a good idea to do anything in the draw event other
+than drawing. So save your large code or complex actions for the
+Step event or Alarms or whatever other event fits, but leave the
+draw event clear for the drawing as that's what it does best.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>If your object has had the <b>visible</b> parameter set to off
+(so that the instances of the object are not drawn) then <b>all</b>
+draw events are skipped (except for the <b>Resize</b> event. This
+means that making an instance invisible will stop all code placed
+in any of these events not to run, so don't put essential code in
+the draw events if they are not going to be visible.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>What you draw has nothing to do with the collision engine you
+choose (traditional or physics) as that is defined by the object
+properties and the sprite or mask that the object has been
+given.</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Events</a></div>
+
+<div style="float:right">Next: <a href=
+"draw%20gui%20event.html">The Draw GUI Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

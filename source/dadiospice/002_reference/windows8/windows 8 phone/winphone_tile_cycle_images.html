@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>winphone_tile_cycle_images</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/windows 8 phone/winphone_tile_cycle_images.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwindows%208%20phone%2Fwinphone_tile_cycle_images.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwindows%208%20phone%2Fwinphone_tile_cycle_images.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">winphone_tile_cycle_images</h1>
+
+<h2 class="studio">Add an image to the games <b>Cyclic</b> Live
+Tile "front".</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">winphone_tile_cycle_images(fname0, fname1, ...
+fname8);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>fname0 ... 9</td>
+<td>The local path to the images to display. You can supply up to 9
+arguments (one for each image).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will add the images you supply into the
+<b>Cyclic</b> Live Tile list, and they will then be shown one after
+another when your game is in wide Live Tile. Note that you do not
+have to supply all nine arguments, you can supply four or two for
+example, as the tile will cycle between the ones you supply.
+However, if you have defined more tiles in the Global game Settings
+these will be omitted and only the new ones supplied by this
+function will be used.<br>
+<br>
+The images supplied <i>must</i> be included files with your game
+and cannot be either a sprite or a background. If they are too
+small or too big for the tile they will be stretched or cropped to
+fit.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var image1 = choose("Screen_1.png",
+"Screen_2.png");<br>
+var image2 = choose("Screen_3.png", "Screen_4.png");<br>
+var image3 = choose("Screen_5.png", "Screen_6.png");<br>
+winphone_tile_cycle_images(image1, image2, image3);<br></p>
+
+<p>The above code will choose three images from the included files
+and set the cyclic live tile to display them.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows 8
+Phone</a></div>
+
+<div style="float:right">Next: <a href=
+"winphone_tile_small_background_image.html">winphone_tile_small_background_image</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

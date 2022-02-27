@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>zip_unzip</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/file handling/zip_unzip.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Ffile%20handling%2Fzip_unzip.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Ffile%20handling%2Fzip_unzip.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">zip_unzip</h1>
+
+<h2 class="studio">Unzip a given zip file to a specific
+location.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">zip_unzip(zip_file, target_directory)</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>zip_file</td>
+<td>The zip file to open</td>
+</tr>
+
+<tr class="alt">
+<td>target_directory</td>
+<td>The target directory to extract the files to</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will open a stored zip file and extract its
+contents to the given directory. Note that if you do not supply a
+full path to the ZIP directory then the current drive <i>root</i>
+will be used, and if you want to place it in a relative path to the
+game bundle working directory then you should use the <a href=
+"working_directory.html"><tt>working_directory</tt></a> variable as
+part of the path (relative paths using "." or ".." will not work as
+expected so should be avoided). Note too that the zip must be
+either part of the game bundle (ie: an <a href=
+"../../001_advanced%20use/002_including%20files.html">Included
+File</a>) or have been downloaded to the storage area using
+<a href="../asynchronous%20functions/http_get_file.html">http_get_file</a>.<br>
+
+<br>
+The function will return a value indicating the number of files
+extracted, or it will return 0 or less if the extraction has
+failed.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var num = zip_unzip("/downloads/level_data.zip",
+working_directory + "extracted/");<br>
+if num &lt;= 0<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;show_debug_message("Extraction Failed!");<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will open the zip file stored in the directory
+"downloads" and extract its contents to the directory "extracted"
+(creating that directory if it doesn't already exist) and then
+check to see that the extraction has been correct, showing a debug
+message should it fail.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">File
+Handling</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

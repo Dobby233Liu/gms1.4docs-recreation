@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>audio_get_recorder_info</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/sounds/audio_get_recorder_info.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsounds%2Faudio_get_recorder_info.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsounds%2Faudio_get_recorder_info.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">audio_get_recorder_info</h1>
+
+<h2 class="studio">Returns a <tt>ds_map</tt> containing information
+about the indexed recording device.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">audio_get_recorder_info(recorder_index);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>recorder_index</td>
+<td>The index of the recorder source to get the information
+from.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> ds_map</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will return a <tt>ds_map</tt> with information
+about the given recorder source index. You can find out how many
+recorder sources are available using the function <a href=
+"audio_get_recorder_count.html"><tt>audio_get_recorder_count</tt></a>,
+and the map returned will contain the following key/value
+pairs:</p>
+
+<ul>
+<li>"name" - a name to describe the device</li>
+
+<li>"index" - the index to be used to record</li>
+
+<li>"data_format" - the format data will be returned in (this is
+currently always <tt>buffer_s16</tt> but other formats may be
+supported in the future)</li>
+
+<li>"sample_rate" - the sample rate (in Hz) of the data returned
+(currently clamped to 16000hz but this may change in future)</li>
+
+<li>"channels" - the constant <tt>audio_mono</tt> (further
+constants for stereo and 3D may be supported in the future)</li>
+</ul>
+
+<p>note that while the function creates a <tt>ds_map</tt> for you,
+it does <i>not</i> remove it again later and so you should be
+destroying the map yourself when it is no longer needed to prevent
+any memory leaks.</p>
+
+<blockquote><i><b>NOTE:</b> Most platforms support recording audio
+in some form, but that does not mean that all devices will permit
+it, even if the platform does, so you should always check that the
+<a href=
+"audio_get_recorder_count.html"><tt>audio_get_recorder_count()</tt></a>
+function returns a value greater than 0 to verify that recording
+devices are available before using the rest of the recording
+functions.</i>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">len = async_load[? "data_len"];<br>
+audio_buff = buffer_create(len, buffer_fast, 1);<br>
+buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0);<br>
+audio_queue_sound(audio_queue, audio_buff, 0, len);<br>
+audio_play_sound(audio_queue, 10, 0);<br></p>
+
+<p>The above code would be called in the asynchronous <a href=
+"../../../001_advanced%20use/more%20about%20async%20events/audio%20recording.html">
+Audio Recording</a> event and assigns some recorded data to a
+buffer, which is then added to an audio queue. This is then
+played.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="audio%20buffers.html">Audio
+Buffers</a></div>
+
+<div style="float:right">Next: <a href=
+"audio_system.html">audio_system</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

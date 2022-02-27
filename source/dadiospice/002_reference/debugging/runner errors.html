@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Runner Errors</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/debugging/runner errors.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdebugging%2Frunner%20errors.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdebugging%2Frunner%20errors.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Runner Errors</h1>
+
+<h2 class="studio">Here you can see the possible errors that the
+Virtual Machine runner can throw.</h2>
+
+<p>Even after syntax checking in the code editor and then having
+the compiler check your code, there are still occasions when
+something can go wrong. in most cases this will throw a VM
+(<i>virtual machine</i>) error which looks like this: <img class=
+"center" src="vm_error.png"> VM errors are generally more serious
+than compile errors as it means that there is something seriously
+wrong with your code that neither the code editor nor the compiler
+have been able to detect, and as such you should pay attention to
+all such errors. When one occurs, you can use the "copy" button on
+the pop-up to copy the error to the clipboard which you can then
+paste into a text file (or wherever) for future reference.<br>
+<br>
+Certain error messages will be prefixed by a <b>negative</b> value.
+these values can be used to pinpoint the exact nature of the error
+and what it refers to with the following values possible:</p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Prefix</th>
+<th>Scope</th>
+</tr>
+
+<tr>
+<td>-1</td>
+<td>Self</td>
+</tr>
+
+<tr class="alt">
+<td>-2</td>
+<td>Other</td>
+</tr>
+
+<tr>
+<td>-3</td>
+<td>All</td>
+</tr>
+
+<tr class="alt">
+<td>-4</td>
+<td>Noone</td>
+</tr>
+
+<tr>
+<td>-5</td>
+<td>Global</td>
+</tr>
+
+<tr class="alt">
+<td>-6</td>
+<td>Not Specified</td>
+</tr>
+
+<tr>
+<td>-7</td>
+<td>Local</td>
+</tr>
+</table>
+</div>
+
+<p>The possible errors from the VM runner are as follows:<br>
+<br>
+<i><b>NOTE:</b> All runner errors will try and point you to the
+object or script that has caused the crash.</i><br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><b>Comparisons</b><br>
+
+<p class="code">DoSet ::Invalid comparison type</p>
+This denotes that the runner has tried to compare two incompatible
+data types, like a real number with a string.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Conversions</b><br>
+
+<p class="code">DoConv:: Execution Error</p>
+This denotes an error in the conversion of one data-type into
+another.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Addition</b><br>
+
+<p class="code">DoAdd:: Execution Error</p>
+Something has gone wrong when using the addition (+)
+expression.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Multiplication</b><br>
+
+<p class="code">DoMul:: Execution Error</p>
+Something has gone wrong when using the multiplication (*)
+expression.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Subtraction</b><br>
+
+<p class="code">DoSub:: Execution Error</p>
+Something has gone wrong when using the subtraction (-)
+expression.<br>
+<br>
+
+<p class="code">DoSub:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to subtract the wrong type of variables (for example
+subtract a string from a real).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Division</b><br>
+
+<p class="code">DoDiv:: Execution Error</p>
+Something has gone wrong when using the division (/ or div)
+expression.<br>
+<br>
+
+<p class="code">DoDiv:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to divide the wrong type of variables (for example
+divide a string by a real).<br>
+<br>
+
+<p class="code">DoDiv:: Divide by zero</p>
+You are attempting to divide by 0.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Remainders</b><br>
+
+<p class="code">DoMod:: Execution Error</p>
+Something has gone wrong when using the modulo (mod)
+expression.<br>
+<br>
+
+<p class="code">DoMod:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to use modulo on the wrong type of variables (for
+example mod a string by a real).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Bitwise And</b><br>
+
+<p class="code">DoAnd:: Execution Error</p>
+Something has gone wrong when using the bitwise "and" (&amp;)
+expression.<br>
+<br>
+
+<p class="code">DoAnd:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to use "and" on the wrong type of variables (for
+example trying to "and" a string with a real).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Bitwise Or</b><br>
+
+<p class="code">DoOr:: Execution Error</p>
+Something has gone wrong when using the bitwise "or" (|)
+expression.<br>
+<br>
+
+<p class="code">DoOr:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to use "or" on the wrong type of variables (for
+example trying to "or" a string with a real).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Bitwise Xor</b><br>
+
+<p class="code">DoXor:: Execution Error</p>
+Something has gone wrong when using the bitwise "xor" (^)
+expression.<br>
+<br>
+
+<p class="code">DoXor:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to use "xor" on the wrong type of variables (for
+example trying to "xor" a string with a real).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Bitshift Left</b><br>
+
+<p class="code">DoShl:: Execution Error</p>
+Something has gone wrong when bitshifting left (&lt;&lt;) a
+value.<br>
+<br>
+
+<p class="code">DoShl:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to left bitshift the wrong type of variables (for
+example trying to bitshift a string).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Bitshift Right</b><br>
+
+<p class="code">DoShr:: Execution Error</p>
+Something has gone wrong when bitshifting right (&gt;&gt;) a
+value.<br>
+<br>
+
+<p class="code">DoShr:: Execution Engine - Cannot operate on string
+type</p>
+You are trying to right bitshift the wrong type of variables (for
+example trying to bitshift a string).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Negative</b><br>
+
+<p class="code">DoNeg:: Execution Error</p>
+You are trying to turn a variable type into a negative when this
+type does not permit such an operation.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Not</b><br>
+
+<p class="code">DoNot:: Execution Error</p>
+You are trying to "not" a variable type when this type does not
+permit such an operation.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Stack Push</b><br>
+
+<p class="code">Push:: Execution Error - Variable Index out of
+range (var)</p>
+The variable being accessed is out with the established range for
+the runner.<br>
+<br>
+
+<p class="code">Push:: Execution Error - Variable Get (var)</p>
+The given variable has not been defined or is unknown.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Stack Pop</b><br>
+
+<p class="code">Pop:: Execution Error - Variable Index out of range
+(var)</p>
+The variable being accessed is out with the established range for
+the runner.<br>
+<br>
+
+<p class="code">Pop:: Execution Error - Variable Get (var)</p>
+The given variable has not been defined or is unknown.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>With</b><br>
+
+<p class="code">Cannot use global in with statement</p>
+You have tried to use "global" as a variable within a "with"
+statement, ie:<br>
+<code>with (global)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;//do something;<br>
+&nbsp;&nbsp;&nbsp;}</code><br>
+<br>
+
+<p class="code">Cannot use local in with statement</p>
+You have tried to use "local" as a variable within a "with"
+statement, ie:<br>
+<code>with (local)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;//do something;<br>
+&nbsp;&nbsp;&nbsp;}</code><br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>General</b><br>
+
+<p class="code">DoCall:: Execution Engine type error</p>
+This is an undefined error within the Virtual Machine. You should
+file a bug report should this happen (see: <a href=
+"../../000_using%20gamemaker/drop%20down%20menus/the%20help%20menu.html">
+The Help Menu</a> for details on how to do this.</li>
+
+<li style="list-style: none"><br>
+
+<p class="code">Stack Overflow...</p>
+A stack overflow occurs when too much memory is used on the call
+stack and when your game attempts to use more space than is
+available on the call stack (that is, when it attempts to access
+memory beyond the call stack's bounds, which is essentially a
+buffer overflow), the stack is said to overflow, resulting in a
+program crash. Restart your computer and <i>GameMaker: Studio</i>
+and if the error persists please get in touch with support and/or
+file a bug (as explained above).</li>
+
+<li style="list-style: none"><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Debugging</a></div>
+
+<div style="float:right">Next: <a href=
+"compile%20errors.html">Compile Errors</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Backgrounds</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/007_backgrounds.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F007_backgrounds.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F007_backgrounds.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Backgrounds</h1>
+
+<h2 class="studio">Backgrounds are another of the basic resources
+that you can use in <i>GameMaker: Studio</i>.</h2>
+
+<p>These are usually large images that are used as backgrounds (or
+foregrounds) for the rooms in which the game takes place, but they
+can also be large images composed of many smaller ones called
+<i>tiles</i> which you can then place individually in your room to
+create complex visual designs for levels with far less processing
+overhead than you would get with objects and sprites.<br>
+<br>
+To create a background resource in your game, use the <b>Create
+Background</b> option from the drop-down <b>Resources</b> menu or
+use the corresponding button on the toolbar. Either of those will
+cause the following window to open: <img class="center" src=
+"../images/form_background.png"> As with all resources, you must
+give a name to your backgrounds for reference within <i>GameMaker:
+Studio</i> and so you can identify them easily, although you should
+note that the actual name itself is really just a variable which
+holds a number that "points" to the resource, in this case a
+background. It's best to give each background a descriptive name so
+that you can identify at a glance whether a particular resource is
+a background or an object or anything else, and many people do this
+by prefixing or suffixing the resource with the letters "bck". For
+example, the above image could be called <b>bck_Horizon</b> or
+<b>Horizon_bck</b>.<br>
+<br>
+Below the "Name" section are the buttons that enable you to load,
+save or edit a background image. If you select "Load Background",
+you will get the standard file selector where you can choose
+supported image file (PNG, GIF, BMP, JPG.) and also tell GM to make
+that image opaque (remove transparency), or make it transparent
+(this takes the colour from the bottom left hand corner pixel as
+the base colour to make transparent) or to smooth the edges of the
+background (only when it is transparent). Once you have selected
+the file and the options, clicking the "Open" button will load the
+background into <i>GameMaker: Studio</i> ready to be used in your
+games. Editing the background can be done within <i>GameMaker:
+Studio</i> too, and we have a whole section in the Advanced Use
+part of the manual that deals with this <a href=
+"../001_advanced%20use/more%20about%20backgrounds/index.html">here</a>.<br>
+
+<br>
+Be careful with using large backgrounds, especially if your target
+device is HTML5 or one of the smaller mobile devices, as large
+backgrounds need more memory and this could be a problem later when
+you try to compile your game. You should also be aware that
+backgrounds in <i>GameMaker: Studio</i> are designed to tile and
+this means they have overlapping pixels on either side, so if you
+see any strange artefacts (transparent lines, extra pixels, etc.)
+then you should possibly be using sprites instead for the graphical
+effect you wish to achieve.<br>
+<br></p>
+
+<h3 class="studio">Editing Backgrounds</h3>
+
+<p>For editing backgrounds, <i>GameMaker: Studio</i> has its own
+included Image Editor which is quite powerful, although not as
+complete as many dedicated art packages available. For information
+on how to use it, please see the section <a href=
+"../001_advanced%20use/more%20about%20sprites/editing%20subimages.html">
+More About Sprites: Editing Subimages</a> as there is exactly the
+same set of tools available for backgrounds as for sprites.<br>
+<br></p>
+
+<h3 class="studio">Backgrounds as Tiles</h3>
+
+<p>Sometimes you want to have a background image broken up into a
+set of tiles, which basically means, one large image composed of
+different sub images that can all be linked together. When creating
+rooms you can then add these subimages at different places to
+create beautiful levels with graphical effects that are "cheap" in
+that they use very little processing power to draw. Please note
+that tiles are <i>purely graphical</i> and do not have most of the
+properties you would find in an object or a sprite which is why
+they are fast. To use a background as a tile set, check the box
+labelled <b>Use as tile set</b> and the background window now
+changes to look as follows: <img class="center" src=
+"../images/form_background_advanced.png"> Now you can indicate a
+number of settings for the tile set, like the width and height for
+each tile (only one size can be given, so better make sure that all
+tiles in the set have the same size. If you have different sizes,
+create two or more tile sets). You can also indicate an offset (in
+pixels) where the top left-most tile starts as well as a separation
+between the tiles (in pixels) between the tiles themselves. For
+more information on tiles see the section in the Advanced Use part
+of the manual <a href=
+"../001_advanced%20use/more%20about%20backgrounds/index.html">More
+About Backgrounds</a>, and for information on how to use tiles in
+the room editor you can go to the section <a href=
+"../001_advanced%20use/more%20about%20rooms/index.html">More About
+Rooms</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Using GameMaker:
+Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"008_defining%20objects.html">Defining Objects</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>d3d_set_zwriteenable</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d setup/d3d_set_zwriteenable.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20setup%2Fd3d_set_zwriteenable.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20setup%2Fd3d_set_zwriteenable.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">d3d_set_zwriteenable</h1>
+
+<h2 class="studio">Enables or disables the z-buffer.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">d3d_set_zwriteenable(enable)</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>enable</td>
+<td>Switches on (true) or off (false) the z-buffer.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function can be used to toggle on (<tt>true</tt>) and off
+(<tt>false</tt>) depth ordering using the z-buffer in 3D mode. The
+default value is that z-buffering is enabled.<br>
+<br>
+When drawing in 3D, you normally want things to be drawn with
+<i>depth</i> along the z axis, so that an object "close" to the
+player is drawn over an object that is "further" away. When an
+object is rendered, the depth of a generated pixel (its z
+coordinate) is stored in the z-buffer, then, if another object of
+the scene must be rendered in the same pixel, the two depths are
+compared the one closer to the observer is then saved to the
+z-buffer, replacing the old one. However, this is not always what
+you wish to happen and there are moments when you may want
+something to be drawn over everything else, no matter what its z
+value is. In those cases you can use this function to switch off
+writing to the z-buffer and so force whatever is being drawn to be
+drawn over everything else.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">d3d_set_zwriteenable(false);<br></p>
+
+<p>The above code will switch off the z-buffer for all further
+drawing.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">3D
+Setup</a></div>
+
+<div style="float:right">Next: <a href=
+"d3d_start.html">d3d_start</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

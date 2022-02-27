@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>steam_send_screenshot</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/steam api/steam_send_screenshot.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fsteam%20api%2Fsteam_send_screenshot.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fsteam%20api%2Fsteam_send_screenshot.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">steam_send_screenshot</h1>
+
+<h2 class="studio">Upload a screenshot to the users Steam Community
+profile.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">steam_send_screenshot(filename, width, height);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>filename</td>
+<td>The name of the image file to upload (a string).</td>
+</tr>
+
+<tr class="alt">
+<td>width</td>
+<td>The width of the image (an integer).</td>
+</tr>
+
+<tr>
+<td>height</td>
+<td>The height of the image (an integer).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can upload a screenshot to the Steam
+Community profile page of the currently logged in user. The
+filename you supply is the name of the local file that was created
+when you took the screenshot using the <i>GameMaker: Studio</i>
+functions <a href=
+"../windows%20and%20views/screen_save.html"><tt>screen_save</tt></a>
+or <a href=
+"../windows%20and%20views/screen_save_part.html"><tt>screen_save_part</tt></a>.
+The width and height define the image size, and the function will
+return a value of 0 if it fails for whatever reason and a value
+greater than 0 if it succeeds.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if steam_is_screenshot_requested()<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var file = "Catch_The_Haggis_" +
+string(global.scrn_num) + ".png");<br>
+&nbsp;&nbsp;&nbsp;screen_save(file)<br>
+&nbsp;&nbsp;&nbsp;steam_send_screenshot(file, window_get_width(),
+window_get_height());<br>
+&nbsp;&nbsp;&nbsp;global.scrn_num += 1;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will poll the Steam API for a screenshot request
+and if it has been, a unique name for the image file will be
+generated, a screenshot will be taken, and the file will be sent to
+the Steam Community page for the user.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Steam
+API</a></div>
+
+<div style="float:right">Next: <a href=
+"steam_user_owns_dlc.html">steam_user_owns_dlc</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

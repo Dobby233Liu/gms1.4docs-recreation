@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Sounds And Music</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/006_sounds and music.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F006_sounds%20and%20music.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F006_sounds%20and%20music.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Sounds And Music</h1>
+
+<h2 class="studio">This section explains how to add a sound
+resource to your game.</h2>
+
+<p>To add a sound resource to your game, use the <a href=
+"drop%20down%20menus/the%20resources%20menu.html">Resource</a> menu
+or right-click on the resource tree and select <b>Create Sound</b>,
+or you can use the corresponding button on the toolbar. Any of
+those will bring up the following window: <img class="center" src=
+"../images/form_sound.png"> To load a sound, press the <b>Load
+Sound</b> button to the right of the sound name. A file selector
+dialogue pops up in which you can select the sound file, which can
+<i>only</i> be either a wave file or an MP3 file. In general, Wave
+files (<tt>*.wav</tt>) are used for the short sound effects as even
+though they are generally larger files they will play
+instantaneously due to the fact that they do not need any type of
+decoding for playing. You can also have multiple wave files playing
+at once, which is why you should use these for all the sound
+effects in your game.<br>
+<br>
+MP3 (<tt>*.mp3</tt>) files should be used for background music as
+GameMaker: Studio only permits you to play <b>one</b> music track
+at a time. These files are much smaller than a wave file would be
+but have a small CPU overhead as they have to be decoded before
+being played, hence the limit of only one MP3 file being played at
+time (however, you can have multiple music tracks in your game, and
+you would just switch between them when necessary).<br>
+Once you have loaded your file you can preview the sound by using
+the play button which will loop it continuously. This is very handy
+as it means you can make changes to the volume using the slider at
+the bottom of the window and hear what the effect it will have on
+the sound. There is a stop button too, so you can stop the preview
+at any time.<br>
+<br></p>
+
+<blockquote><i><b>NOTE:</b> Previous versions of</i> GameMaker
+accepted MIDI file format but that is not the case with
+<i>GameMaker: Studio</i>. You cannot use MIDI any longer and any
+imported files from legacy versions which use these may cause the
+program to crash. These files should be removed or changed before
+testing!<br>
+<br></blockquote>
+
+<p>The sound window also has other options which are explained
+below.<br>
+<br></p>
+
+<h3 class="studio">Audio Groups</h3>
+
+<p>You can assign your audio file to a specific <b>Audio group</b>.
+These are created from the Global Game Settings <a href=
+"../001_advanced%20use/global%20game%20settings/audio%20groups%20tab.html">
+Audio Groups Tab</a> and are used to to group audio assets together
+for easier memory management and volume control. Once an audio file
+has been assigned to a group you can then use the specific audio
+group functions to change them and lo load/unload them from memory.
+See the section on <a href=
+"../002_reference/game%20assets/sounds/index.html">Audio
+Functions</a> for further information. Note that while the rest of
+the audio properties are configuration specific, the audio group
+setting is <i>not</i> and a sound will belong to the same group on
+all configurations that you use.</p>
+
+<blockquote><i><b>NOTE:</b> Audio groups can only be used when
+working with the normal audio system, but will not work with legacy
+audio.</i>
+</blockquote>
+
+<h3 class="studio">Compression</h3>
+
+<p>The above rules for file types are for the default configuration
+of <b>Uncompressed</b> audio. However, you can select to
+<b>Compressed</b> audio should you wish to use that. What this will
+do is force all your sound files (irrespective of whether they are
+<tt>*.wav</tt> or <tt>*.mp3</tt>) to be compressed down to <i>Ogg
+Vorbis</i> <tt>*.ogg</tt> format files for all platforms.<br>
+<br>
+These sounds are smaller on disc, but will have a slight CPU
+overhead due to the need to be uncompressed before being played, so
+you should keep that in mind if you wish to use compression in an
+already CPU intensive game.<br>
+<br></p>
+
+<h3 class="studio">Streaming</h3>
+
+<p>If you have chosen <b>compressed</b> audio, you can then also
+choose to have your sound as <b>streamed</b> or <b>not
+streamed</b>. A streamed sound will be one that is uncompressed and
+played in real time, streamed from the disc. Streaming is ideal for
+music as it reduces the one off overhead of uncompressing the whole
+file, which may cause a pause in the game, but is not recommended
+for simple sound effects where the hit on the CPU is much less.<br>
+<br></p>
+
+<h3 class="studio">Quality And Volume</h3>
+
+<p>If you have loaded an <tt>*.ogg</tt> file or an <tt>*.mp3</tt>
+file into the IDE, you will be presented with a "quality" slider.
+Changing this will change the encoding that is used and therefore
+reduce (or improve) the final quality of the sound. Note that the
+better the quality, the larger the file, and that increasing this
+on a low quality audio file will <i>not</i> improve the quality
+noticeably and only bloat the final game. In general the default
+value is fine for most games.<br>
+<br>
+Beside the quality bar for all file types, you can set the maximum
+volume for a sound, ie: if the slider is at 0.5 then the max volume
+for that sound when the gain is 1, will be half the recorded volume
+for the sound. Note that if you are using the legacy audio system
+to play the sound (or are working on the HTML5 target), this slider
+is simply the <i>initial</i> volume of the sound and can be changed
+by setting the volume using the appropriate legacy function.<br>
+<br></p>
+
+<h3 class="studio">Target Options</h3>
+
+<p>The <b>Target Options</b> panel is where you set the conversion
+rates for your game. These settings will affect how the sound is
+exported for the target platform, and <i>GameMaker: Studio</i> will
+automatically convert your sound files for you - you simply control
+the final quality of those sounds when converted. Generally the
+default settings of 16 bit, 44100kHz and 192kbps are perfectly
+adequate, but it may be that you wish sound effects (for example)
+to have a lower quality and music to have a higher quality, in
+which case these settings can be changed.<br>
+<br>
+You can also choose whether the conversion should be mono, stereo
+or 3D. If you plan on using the audio emitter functions to create
+3D sound effects, you should indicate this here, otherwise choose
+mono or stereo depending on the use that the sounds are going to be
+put to.<br>
+<br>
+<i><b>NOTE:</b> The higher the quality, the larger the file, and
+this should be taken into account when deciding what bitrate to
+choose.</i><br>
+<br></p>
+
+<h3 class="studio">External Editor</h3>
+
+<p><i>GameMaker: Studio</i> does not have a built-in sound editor.
+But, in the <a href=
+"../001_advanced%20use/preferences/editor%20preferences.html">Editor
+Preferences</a>, you can indicate external editors that you want to
+use for editing sounds. If you selected these you can press the
+button labelled <b>Edit Sound</b> to open the chosen editor and
+change the current sound. The <i>GameMaker: Studio</i> window will
+be hidden while you edit the sound and returns when you close the
+sound editor (you must save the sound in the editor first otherwise
+it will not be saved in <i>GameMaker: Studio</i>).<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Using GameMaker:
+Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"007_backgrounds.html">Backgrounds</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

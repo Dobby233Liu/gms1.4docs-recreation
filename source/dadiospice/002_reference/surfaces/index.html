@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Surfaces</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/surfaces/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fsurfaces%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fsurfaces%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Surfaces</h1>
+
+<h2 class="studio">This section deals with the functions related to
+creating and manipulating surfaces.</h2>
+
+<p>In the normal draw events, GameMaker: Studio doesn't actually
+draw directly to the screen, but rather draws to a <b>surface</b>
+called the <i>application surface</i>. This surface is basically a
+blank "canvas" that can then later be manipulated before being
+drawn to the screen when needed, and in most cases GameMaker:
+Studio handles this for you (although you can also manipulate it
+yourself in code for shaders, scaling and many other things -
+further details are given below).<br>
+<br>
+However, apart from this application surface, you can also create
+your own surfaces and use them to create stunning or subtle special
+effects in your game. For example, you can use surfaces to "catch"
+instances, which can then be destroyed, and in this way you can
+create a decal effect where the sprite for the instance is
+displayed on the surface as if it still existed, permitting
+graphical effects like debris, blood, etc... without any real
+processing overhead. Another thing you can do with surfaces is use
+them as textures to be manipulated, or to create sprites "on the
+fly", or to create complex overlays. in fact, the uses for surfaces
+are endless!<br>
+<br>
+Normal surfaces are quite easy to use, but there are a few basic
+rules to be followed when you use them:</p>
+
+<blockquote>
+<ul>
+<li>First, you should realise that surfaces (<i>except</i> the
+application surface) are "volatile". This means that if the device
+or window loses focus or is minimised (good examples are when a
+screensaver comes up in Windows, or on an Android device when the
+app loses focus due to a call) then the surface may be destroyed.
+This is because it is stored in the texture memory and may be
+overwritten when the target platform needs that memory for
+something else which means that you should <i><b>always</b></i>
+have some type of fail-safe code in place, usually with the
+<a href="surface_exists.html"><tt>surface_exists</tt></a>
+function.<br>
+<br></li>
+
+<li>Second, you should note that surfaces require large quantities
+of texture memory to be used, and so you should attempt to keep
+them as small as possible. Normally you would try and keep them no
+larger than the size of the view or display window.<br>
+<br></li>
+
+<li>Third, you should try to draw to surfaces in the draw event.
+This is not always possible, but due to the optimised way in which
+<i>GameMaker: Studio</i> draws to the screen, it is recommended
+that you keep all draw functions <i>within the draw event</i>.<br>
+<br></li>
+
+<li>Fourth, when drawing to a surface manually, the surface is
+<i>always</i> at the position of (0,0). This means that you may
+need to convert absolute coordinates into local coordinates for the
+surface. For example, if you have a view-sized surface and wish to
+draw something that is currently in view to that surface, you
+should subtract the view x and y coordinates from the actual x and
+y coordinates to get a relative position to the surface (0,0)
+position. So, the code would look something like this:<br>
+<br>
+
+<p class="code">if view_current = 0<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;surface_set_target(surf);<br>
+&nbsp;&nbsp;&nbsp;with (obj_Effect)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;draw_sprite(sprite_index,
+image_index, x - view_xview[1], y - view_yview[1]);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;surface_reset_target();<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;draw_surface(surf, 0, 0);<br>
+&nbsp;&nbsp;&nbsp;}<br></p></li>
+</ul>
+</blockquote>
+
+<p>The basic use of a surface would be as follows - You first
+create a surface and assign its index to a variable. You would then
+set the drawing target to the surface rather than the display and
+draw the things you wish as well as perform any other
+manipulations. Once you are done you reset the drawing target so
+that all further drawing happens on the screen again. One thing to
+note is that should you require drawing the whole display to a
+surface (including tiles, backgrounds etc...) you can simply access
+the application surface itself (see below for further details) or
+you could assign a surface to a view using the variable <a href=
+"../windows%20and%20views/views/view_surface_id.html"><tt>view_surface_id[0..7]</tt></a>as
+with this all that is visible in that view will be drawn to the
+corresponding surface.<br>
+<br>
+The following functions exist to deal with surfaces:</p>
+
+<blockquote>
+<ol>
+<li><a href="surface_exists.html">surface_exists</a><br>
+</li>
+
+<li><a href="surface_create.html">surface_create</a><br>
+</li>
+
+<li><a href="surface_create_ext.html">surface_create_ext</a><br>
+</li>
+
+<li><a href="surface_resize.html">surface_resize</a><br>
+</li>
+
+<li><a href="surface_set_target.html">surface_set_target</a><br>
+</li>
+
+<li><a href=
+"surface_set_target_ext.html">surface_set_target_ext</a><br>
+</li>
+
+<li><a href=
+"surface_reset_target.html">surface_reset_target</a><br>
+</li>
+
+<li><a href="surface_copy.html">surface_copy</a><br>
+</li>
+
+<li><a href="surface_copy_part.html">surface_copy_part</a><br>
+</li>
+
+<li><a href="surface_get_height.html">surface_get_height</a><br>
+</li>
+
+<li><a href="surface_get_width.html">surface_get_width</a><br>
+</li>
+
+<li><a href="surface_get_texture.html">surface_get_texture</a><br>
+</li>
+
+<li><a href="surface_getpixel.html">surface_getpixel</a><br>
+</li>
+
+<li><a href=
+"surface_getpixel_ext.html">surface_getpixel_ext</a><br>
+</li>
+
+<li><a href="surface_free.html">surface_free</a><br>
+</li>
+
+<li><a href="surface_save.html">surface_save</a><br>
+</li>
+
+<li><a href="surface_save_part.html">surface_save_part</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>These functions are specific for creating and manipulating
+surfaces, but to actually draw them to the screen you should be
+using the specific draw functions that can be found in the section
+on <a href="../drawing/drawing%20surfaces/index.html">Drawing
+Surfaces</a>.<br>
+<br></p>
+
+<h3 class="studio">The Application Surface</h3>
+
+<p>As mentioned above, all normal drawing in your game is done on
+the <i>application surface</i>, and this surface can be changed and
+manipulated just like a normal surface. However, it is <i>not</i> a
+normal surface and advanced users will find that it enables
+complete control over how and when things are drawn in
+<i>GameMaker: Studio</i>. For more details, as well as specific
+functions for this feature, please see the following section:</p>
+
+<blockquote>
+<ol>
+<li><a href="the%20application%20surface.html">The Application
+Surface</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Reference</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

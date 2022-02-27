@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_livetile_notification_tag</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_livetile_notification_tag.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_notification_tag.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_notification_tag.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_livetile_notification_tag</h1>
+
+<h2 class="studio">Set the "tag" for the Live Tile.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_livetile_notification_tag(tag);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>tag</td>
+<td>The name "tag" of the notification.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>The <b>tag</b> is a string that you assign to the Live tile
+notification as a means to identify it later. Should you need to
+replace a Live Tile, or update it with another template or image,
+you would formulate another notification push (starting with the
+function <a href=
+"win8_livetile_notification_begin.html"><tt>win8_livetile_notification_begin</tt></a>)
+and use the same tag as in this function as that which you wish to
+change/replace.<br>
+<br>
+You must have activated queuing with the function <a href=
+"win8_livetile_queue_enable.html"><tt>win8_livetile_queue_enable</tt></a>
+for this to function to be of any use as without queuing enabled,
+no matter what tag you use, any Live Tile notifications will
+overwrite the current Live tile rather than add a new one to the
+queue or modify an already queued one.<br>
+<br>
+<i><b>NOTE:</b> This function can also apply to Secondary tiles
+when used along with <a href=
+"win8_livetile_notification_secondary_begin.html"><tt>win8_livetile_notification_secondary_begin</tt></a>.</i><br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var expiryTime;<br>
+expiryTime = date_current_datetime();<br>
+expiryTime = date_inc_minute(expiryTime, 5);<br>
+win8_livetile_notification_begin("TileSquarePeekImageAndText01");<br>
+
+win8_livetile_notification_expiry(expiryTime);<br>
+win8_livetile_notification_tag("tag0");<br>
+win8_livetile_notification_text_add("Current Score = " +
+string(score));<br>
+win8_livetile_notification_image_add("ms-appx:///" +
+working_directory + "ScoreTile.png");<br>
+win8_livetile_notification_end();<br></p>
+
+<p>The above code will push a new Live Tile notification through to
+Windows 8, with some text and an image, and the tile will be shown
+for 5 minutes.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_livetile_notification_text_add.html">win8_livetile_notification_text_add</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

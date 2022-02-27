@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The HTML5 Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/html5 tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fhtml5%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fhtml5%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The HTML5 Tab</h1>
+
+<h2 class="studio">This section deals with the HTML5 tab of the
+Global Games Settings Window.</h2>
+
+<p>This HTML5 tab is split into two separate <i>sub-tabs</i>
+(accessible on the left of the window) to make changing and
+updating the information for your game clearer and less
+complicated. These tabs are explained in the following
+sections.</p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="html5_general_tab.png"> At the top of
+the window you can set the <i>File options</i> for your HTML5 game,
+which includes:</p>
+
+<blockquote>
+<ul>
+<li>adding a custom <i>index.html</i> to use instead of the
+pre-defined one that GameMaker: Studio generates by default. This
+can be very useful if you have a website design implemented or want
+to include certain features in all your HTML5 builds.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>choosing a <b>Loading Bar Extension</b>. This should have been
+added in as an extension to the GameMaker: Studio resource tree
+(there is a demo of this included with the program) and will
+override the standard loading bar when selected.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>selecting a new name for the title bar of the tab for your game
+in the browser.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>selecting a new name for the folder where your HTML5 game files
+will be stored (default is "html5game").</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>selecting a new name other than the default "index.html".</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>Once that is done you will need to give your game a
+<b>favicon</b> and a <b>Splash Screen</b>. The icons should be
+authored as an *.ico file and can be 16x16, 32x32, 48x48, or 64x64
+pixels in size, and 8-bit, 24-bit, or 32-bit in colour depth. The
+splash screen should be the size of the canvas that is going to
+hold your game and will override any loading bars if you tick the
+<b>Use Splash Screen</b> option (ie: you can have a loading bar, OR
+a splash screen, but not both). Smaller or larger images are
+permitted but will be scaled to fit.<br>
+<br>
+If you are testing a game <i>locally</i> (ie: clicking on the index
+file from your computer rather than a server - not recommended),
+then you normally get a warning informing you that things won't
+work as you may expect due to browser security for local files. You
+can suppress this warning by un-checking the <b>Display "running
+outside server" alert</b> option.<br>
+<br>
+Should you require the cursor to be disabled while the mouse is
+over the canvas area, you can un-check the option "<b>Display Mouse
+Cursor</b>".<br>
+<br>
+You also have the further options to send all debug output to the
+JS console of your browser, and to prepend the <tt>*.js</tt> output
+with any extra JavaScript necessary for your game. For example, a
+Chrome Store app may require that you add <tt>window.localStorage =
+undefined;</tt> to the output JS, for which you would use this
+option.<br>
+<br></p>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="html5_graphics_tab.png"> Here you can
+change the following details related to how your game will be
+displayed (note that not all browsers will display your game in the
+same way, so test these options on as many browsers as possible to
+make sure that they have the desired effect).</p>
+
+<blockquote>
+<ul>
+<li><b>Allow switching to fullscreen</b> - Checking this will allow
+the user to toggle the game from windowed to fullscreen mode using
+<i>&lt;CTRL&gt; + &lt;CMD&gt; + &lt;F&gt;</i> on Mac and <i>F10</i>
+on Windows.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Interpolate colours between pixels</b> - Turns on
+interpolation, which basically "smooths" pixels. for crisp pixel
+graphics, it should be off, but if you have nice alpha blends and
+smoothed edge graphics it is better left on.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Center the game in the browser</b> - Checking this will
+automatically center the game screen within the browser running the
+game.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use Built In Particle Sprites</b> - This option will export
+the sprites required for the built in particle system along with
+your game. These sprites are stored in individual texture pages,
+meaning that they are not the most efficient method of generating
+particles for this platform, therefore it is recommended that
+(unless using WebGL) you un-check this option and use your own
+particle sprites which will be stored on the main texture pages all
+together for your game.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>WebGL</b> - Choose whether to switch off WebGL support, make
+it optional (auto-detect), or make it a requirement for your game.
+It should be noted that to test performance under all
+circumstances, you should have this as disabled, then normally set
+it to auto-detect for publishing. Making it a requirement may
+reduce considerably the compatibility that your game has with
+different browser types.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Scaling</b> - Your game can be configured to scale the draw
+canvas automatically to maintain the aspect ratio within the
+browser, or you can select to have it stretch to fit. The stretch
+to fit option will not full screen the game in the browser, but
+rather stretch what is drawn to fit the canvas size, as defined by
+the first room of the game.</li>
+</ul>
+</blockquote>
+
+<p>Finally there is the option to set the size of the <b>Texture
+Page</b>. The default (and most compatible) size is 2048x2048, but
+you can choose from anywhere between 256x256 up to a whopping
+8192x8192! There is also a button marked <b>View</b> which will
+generate the texture pages for this platform and then open a window
+so that you can see how they look. This can be very useful if you
+wish to see how the texture pages are structured and to prevent
+having texture pages larger (or smaller) than necessary.<br>
+<br>
+<i><b>NOTE:</b> Be aware that the larger the size of the texture
+page, the less compatible your game will be.</i><br>
+<br></p>
+
+<h3 class="studio">Social</h3>
+
+<p><img class="center" src="html5_social_tab.png"> The social tab
+is used for setting up Facebook communication in your game. If you
+require the Facebook functions, you need to click the "<b>Use
+Facebook</b>" checkbox and then supply the Facebook <b>App ID</b>
+and <b>Facebook App Display Name</b>. Note that all Facebook
+functionality is accessed via an extension, and when you first
+check the Use Facebook box you will be prompted to download and
+install the Facebook extension from the Marketplace.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="android%20tab.html">The
+Android Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

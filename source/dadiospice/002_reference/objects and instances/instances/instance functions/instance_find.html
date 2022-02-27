@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>instance_find</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/objects and instances/instances/instance functions/instance_find.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20functions%2Finstance_find.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20functions%2Finstance_find.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">instance_find</h1>
+
+<h2 class="studio">Returns the id of the (n)th instance of a given
+object.<br></h2>
+
+<h3><b>Syntax:</b>
+</h3>
+
+<p class="code">instance_find(obj, n);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>obj</td>
+<td>The object index of which to find the nth instance</td>
+</tr>
+
+<tr class="alt">
+<td>n</td>
+<td>The number of the instance to find.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> instance id or <b>noone</b></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>All instances have a unique identifier (<a href=
+"../../instances/instance%20properties/id.html"><tt>id</tt></a>)
+which can be used to modify and manipulate them while a game is
+running, but you may not always know what the id for a specific
+instance is and so this function can help as you can use it to
+iterate through all of them to find what you need. You specify the
+object that you want to find the instance of and a number, and if
+there is an instance at that position in the instance list then the
+function returns the id of that instance, and if not it returns the
+special keyword <b>noone</b>. You can also use the keyword
+<b>all</b> to iterate through all the instances in a room, as well
+as a parent object to iterate through all the instances that are
+part of that parent / child hierarchy and you can even specify an
+instance itself (if you have its id) as a check to see if it
+actually exists in the current room. Please note that as instances
+are sorted in an <i>arbitrary</i> manner, there is no specific
+order to how the instances are checked by this function, and any
+instance can be in any position.<br>
+<br>
+The maximum value for "n" in this function would be</p>
+
+<blockquote>
+<ul>
+<li>For the keyword <b>all</b>: <a href=
+"../instance_count.html"><tt>instance_count - 1</tt></a></li>
+
+<li>For an object index: <a href=
+"instance_number.html"><tt>instance_number(OBJ) - 1</tt></a></li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var i;<br>
+for (i = 0; i &lt; instance_number(obj_Enemy); i += 1)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;enemy[i] = instance_find(obj_Enemy,i);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will use a <tt>for</tt> loop to iterate through
+all the instances of "obj_Enemy" and store their <b>id</b> in the
+array "enemy[]".</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Instance
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"instance_furthest.html">instance_furthest</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

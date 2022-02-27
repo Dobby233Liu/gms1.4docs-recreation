@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>3D Projections</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d projections/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20projections%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20projections%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">3D Projections</h1>
+
+<h2 class="studio">This section deals with the 3D projection
+functions.</h2>
+
+<p>Often in 3D games you want to change how you look at the world.
+For example, in a first person shooter you probably want to have
+the camera look from a position a bit above the xy-plane along the
+xy-plane, which, in graphics terms, involves setting the correct
+<i>projection</i>. This projection should be set in an instance
+that is created before all other instances (you can set this from
+the <b>Instance Order</b> window in the <i>Room Editor</i>), and it
+should be at a very low depth so that is drawn before all other
+instances in your room, otherwise you will get issues when drawing.
+<i><b>NOTE</b> When GameMaker starts drawing a room it will set the
+view point back to the default position, so the first thing you
+must do when drawing the scene is set is to the projection you
+want. This must be done in the draw event of an instance!</i></p>
+
+<p>To change the way you look at the 3D world the following
+functions exist:</p>
+
+<blockquote>
+<ol>
+<li><a href="d3d_set_projection.html">d3d_set_projection</a>
+</li>
+
+<li><a href=
+"d3d_set_projection_ext.html">d3d_set_projection_ext</a>
+</li>
+
+<li><a href=
+"d3d_set_projection_ortho.html">d3d_set_projection_ortho</a>
+</li>
+
+<li><a href=
+"d3d_set_projection_perspective.html">d3d_set_projection_perspective</a>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Working With
+3D</a></div>
+
+<div style="float:right">Next: <a href=
+"../3d%20transformations/index.html">3D Transformations</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

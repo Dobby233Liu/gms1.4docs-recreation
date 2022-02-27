@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Addressing Variables in Other Instances</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/401_05_addressing.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_05_addressing.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_05_addressing.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Addressing Variables in Other Instances</h1>
+
+<h2 class="studio">Here you can find various methods for addressing
+variables in other Instances.</h2>
+
+<p>In the sections dedicated to <a href=
+"variables/index.html">variables</a> you found out how to create
+and create and use variables within a single instance, or on a
+global scope, but what happens if you want to one instance to
+access a variable in another, different one? There are many cases
+when you may want to do this, for example in a collision with a
+bullet object, you may want to find out how much damage the bullet
+does by accessing a variable in the bullet, or you might want to
+stop the motion of all the balls in a puzzle , or you might want to
+move the main character to a particular position, or any number of
+other situations you typically come across in any game. Thankfully
+the GameMaker Language comes equipped with mechanisms to achieve
+this.<br>
+<br>
+One of the most common methods for accessing or changing a variable
+in another instance is to use its object name as an identifier and
+then use a point "." to tell <i>GameMaker</i> that the variable
+used after is to be assigned or changed in that object. In practice
+it would look like this:<br>
+<br></p>
+
+<p class="code">obj_ball.speed = 0;<br></p>
+
+<p><br>
+With the above code you are setting the speed of an instance of
+"obj_ball". However if you have more than one instance of the given
+object in the room, then it will apply to ALL of them equally -
+unless you are using one of the <b>JS</b> targets or <b>HTML5</b>,
+in which case it will affect only one, but you have no way of
+knowing which one it will affect - so if you need to access all
+instances of an object, you should be using <a href=
+"401_18_with.html"><tt>with</tt></a>, as that is 100% cross
+platform compatible. In general, this format should only be used
+when you have a single instance of the object in the room, or (as
+you will see in the next part) when you have a specific instance
+ID.<br>
+<br>
+You can also access a single instance of an object when there are
+multiple instances within the room using the <b>instance id</b> to
+tell <i>GameMaker: Studio</i> exactly which instance we wish to
+address. The <b>instance id</b> is the unique identifying number
+that is given to each and every instance created in your game. When
+you put instances in a room in the room editor, this instance id is
+shown at the bottom of the screen when you hover the mouse cursor
+over the instance, but even if you create an instance through code
+it still has its unique id number. These numbers are always larger
+than or equal to 100000, and such a number can also be used as the
+left-hand side of the point.</p>
+
+<blockquote><i><b>Note:</b> The dot will get interpreted as the
+decimal point in a real number normally, so, to avoid this, put
+brackets around it!</i>
+</blockquote>
+
+<p>The following code is an example of how this should be
+written:<br>
+<br></p>
+
+<p class="code">(100012).speed = 0;<br></p>
+
+<p><br>
+Note that you cannot use the special <a href=
+"keywords.html">keyword</a> "<tt>all</tt>" with this method to
+target all instances, but you can use the keywords "<tt>other</tt>"
+and "<tt>self</tt>" without issues. You can also use variables, as
+long as the variable in question has stored a valid <b>instance
+id</b>. The following examples illustrate this...<br>
+<br>
+Using a variable to set an instance value:<br>
+<br></p>
+
+<p class="code">var inst = instance_position(mouse_x, mouse_y,
+all);<br>
+if instance_exists(inst) &nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;inst.speed = 0;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p><br>
+Note that the above code has an <tt>instance_exists()</tt> call in
+the code block. This is because using the point method to access or
+change another instances value will give an error and crash the
+game if the instance does not exist. Therefore if there is the
+possibility that the instance could be destroyed, deactivated, or
+otherwise removed from the room while using this method, you should
+<i>always</i> check before hand using the
+<tt>instance_exists()</tt> function or the
+<tt>instance_number()</tt> function.<br>
+<br>
+These are all perfectly valid ways of reading, changing and setting
+variables in other instances, and work because the point is
+actually an <i>operator</i>. It takes a value as left operand and a
+variable (address) as the right operand, and returns the address of
+this particular variable in the indicated object or instance. All
+the object names, constants, IDs etc... simply represent values and
+these can be dealt with like any other value.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">GML
+Overview</a></div>
+
+<div style="float:right">Next: <a href=
+"keywords.html">Keywords</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The "Continue" Statement</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/401_14_continue.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_14_continue.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_14_continue.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The "Continue" Statement</h1>
+
+<h2 class="studio">This section covers the "continue"
+statement.</h2>
+
+<p>The continue statement has the form:<br>
+<br></p>
+
+<p class="code">continue</p>
+
+<p><br>
+If used inside of a statement that forms a loop (<a href=
+"401_08_repeat.html"><tt>repeat</tt></a>, <a href=
+"401_09_while.html"><tt>while</tt></a>, <a href=
+"401_10_do.html"><tt>do... until</tt></a> or <a href=
+"401_11_for.html"><tt>for</tt></a>), it will immediately jump back
+to the beginning of the loop as if the loop had run through and
+looped back (if used outside of a loop it acts as an exit
+statement, exiting the event). It will also do the same when using
+the <a href="401_18_with.html"><tt>with</tt></a> function, where it
+will cause the code to skip to the next instance and run again.<br>
+<br>
+Below is an example of its use in a "for" loop:</p>
+
+<p class="code">{<br>
+var i;<br>
+for (i = 0; i &lt; 10; i += 1)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;if array[i] = "" continue;<br>
+&nbsp;&nbsp;&nbsp;array[i] = "";<br>
+&nbsp;&nbsp;&nbsp;}<br>
+}<br></p>
+
+<p>The above code will skip back to the beginning of the loop if
+the array[i] value is already an empty string.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">GML
+Overview</a></div>
+
+<div style="float:right">Next: <a href="401_15_exit.html">The
+"Exit" Statement</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Windows UWP Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/winuwp tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fwinuwp%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fwinuwp%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Windows UWP Tab</h1>
+
+<h2 class="studio">This section deals with the Windows UWP tab of
+the Global Games Settings Window.</h2>
+
+<p>In the Global Games Settings of GameMaker: Studio, you can find
+the different setup options related to how your final game will
+look when you create the executable for the target platform. Here
+we will look at the <b>Windows UWP</b> tab. It is split into three
+sub-tabs, each of which is explained in the sections below:<br>
+<br></p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="winuwp_general.png"> This section is
+where you should set up the details of your app like its name and
+any associated graphics. Below is a list of all the available
+options and what they represent:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Display Name</b>: Specifies the friendly name for the app
+that is displayed to users (this string is localizable).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Package Name</b>: This is the name of the package that you
+have created and should match that used for the <b>Developer
+key</b> that you have created for the game (see the <i>Installation
+Sub-Tab, below).</i></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Package Display Name</b>: This is the "short name" of the
+package and should Ideally be the same as the Display Name</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Publisher Display Name</b>: This is the name of your company
+or the person that you wish to associate as the games
+publisher.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Version</b>: The version number of your game.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Orientations</b>: Specifies the orientations in which the
+game would prefer to be shown for the best user experience. The
+available options are:
+
+<dl>
+<dd>Landscape</dd>
+
+<dd>Portrait</dd>
+
+<dd>Landscape-flipped</dd>
+
+<dd>Portrait-flipped</dd>
+</dl>
+On devices that can be rotated, such as tablets, the game won't be
+redrawn for orientations that aren't specified with this property -
+for example, the game won't rotate if the device is rotated to a
+Portrait orientation but the property specifies only Landscape and
+Landscape-flipped orientations. On devices that <i>can't</i> be
+rotated, a game might be shown in that device's default
+orientation, and the game's preferred orientation will be ignored,
+however, your game's preferred rotation <i>will</i> be honored on
+devices on which a rotation lock has been activated. These
+orientation preference choices apply to both the splash screen and
+the game itself every time a new instance is launched.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Splash Screen</b>: This is the screen that will be shown
+when you start your game, and it cannot be larger than 620 x 300
+pixels. Click on the <b>Update</b> button to change it, then select
+set the <b>Background colour</b> for it.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Logos</b>: These are the Windows 10 tile and icon logos that
+your game will use. It is worth noting that these images can be
+transparent <tt>*.png</tt> files, in which case they will be drawn
+over the <b>Background colour</b> specified in the appropriate
+section.<br>
+<br>
+<i><b>NOTE</b>: The background colour specified here also applies
+to the button colour in any app-owned dialog boxes and to the App
+Description page in the Store!</i><br>
+<br>
+
+<dl>
+<dd>- The large square image is the large live tile format and
+should be 310 x 310 pixels. Note that this will <i>only</i> be used
+on the desktop OS.<br>
+<br></dd>
+
+<dd>- The next image is the wide version of the logo image, which
+appears when the tile appears in its wide format and should be 310
+x 150 pixels. If this image isn’t provided, the tile can display
+only in the square format and can’t accept notifications based on
+wide template types. Since the user can decide which format the
+tile uses it is recommended that you include a wide logo image.
+Also note that if a wide logo image is provided, the tile may
+appear initially in its wide format.<br>
+<br></dd>
+
+<dd>- The next square image specifies the smaller logo that appears
+in the tile to identify the game in the normal sized, square tile.
+It should be 150 x 150 pixels.<br>
+<br></dd>
+
+<dd>- The final tile icon is for the small tile and should be a
+71x71 pixel image.<br>
+<br></dd>
+
+<dd>- The smallest icon is the logo image that appears next to the
+App name in the search bar and other areas of the UI.<br>
+<br></dd>
+</dl></li>
+
+<li><b>Store Logo</b>: Sets the icon to be used when shown in the
+Windows Store and it should be an image of 50x50px.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Foreground Text</b>: Sets the value of the text colour
+relative to the background colour on the app’s tile in Windows. The
+value is either “Light” or “Dark”.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="winuwp_graphics.png"> In this section
+you can set the way that your game should react to being scaled in
+any way (either by dragging the window borders or by full screening
+it), and this can either be <b>Keep Aspect Ratio</b> or <b>Fill
+Screen</b>. Next is the option to set the size of the <b>Texture
+Page</b>. The default (and most compatible) size is 1024x1024, but
+you can choose from anywhere between 256x256 up to 8192x8192. There
+is also a button marked <b>Preview</b> which will generate the
+texture pages for this platform and then open a window so that you
+can see how they look. This can be very useful if you wish to see
+how the texture pages are structured and to prevent having texture
+pages larger (or smaller) than necessary.<br>
+<br>
+<i><b>NOTE:</b> Be aware that the larger the size of the texture
+page, the less compatible your game will be.</i><br>
+<br>
+<i><b>WARNING!</b> Switching off the application surface will
+disable all the scaling options set in the Global Game Settings
+until it has been switched back on again. See <a href=
+"../../002_reference/surfaces/the%20application%20surface.html">The
+Application Surface</a> for further details.</i><br>
+<br></p>
+
+<h3 class="studio">Installation</h3>
+
+<p><img class="center" src="winuwp_installation.png"> For your game
+to run on the UWP platform it has to be certified correctly, and
+this is done from the Installation tab. You will first be required
+to give your publisher name, which is formatted as
+<tt>CN=&lt;publisher_name_here&gt;</tt>, and then give a path to
+your <b>Developer Key</b>. <i>GameMaker: Studio</i> supplies a
+default Developer Key for WindowsUWP development, but it is
+recommended that you generate your own and point to it here. To do
+this, create an empty project in <i>Visual Studio Express</i> then
+store somewhere safe a copy of the automatically generated
+<tt>*.pfx</tt> (the developer key) that it will have included in
+the empty project. You should then link that <tt>*.pfx</tt> file
+here.<br>
+<br>
+After linking to the file, you should click on the associated
+<b>Install</b> button and then follow the instructions in the
+command prompt that will open. If you do <i>not</i> do this then
+using the <b>Run/Debug</b> buttons (or hitting F5) will fail and
+your game cannot be tested (however, if you use <b>Create
+Application</b> the certification installation process will
+automatically be launched if the <tt>*.pfx</tt> has yet to be
+registered).<br>
+<br>
+<i><b>NOTE:</b> When it comes to uploading your app to the store
+you will need to get the</i> correct <tt>*.pfx</tt> for your title.
+This is done via associating your app with the Windows Store in
+Visual Studio which causes Visual Studio to generate a new
+<tt>*.pfx</tt> specifically for the app. It is also worth noting
+that you can associate any app with the Windows Store in Visual
+Studio, meaning you can associate a blank project with the Windows
+Store app and simply copy the generated pfx to a safe location
+which can then be used within Global Game Settings.<br>
+<br>
+The final option is to select the CPU architecture to target. You
+can choose between <b>x86&lt;&amp;b&gt;,</b> x64 or <b>ARM</b>.<br>
+<br></p>
+
+<h3 class="studio">Permissions</h3>
+
+<p><img class="center" src="winuwp_permissions.png"> Depending on
+what you want your game to have access to, you may also need to
+check the permissions from the <b>Permissions</b> tab. If your game
+uses (for example) the function <tt>url_open()</tt> then you would
+need to check the "Use Internet" box. The available permissions
+are:</p>
+
+<blockquote>
+<ul>
+<li><b>Use Internet</b>: Marks the game as having access to
+internet.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use Microphone</b>: Marks the game as having access to the
+microphone of the device.</li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="mac%20os%20tab.html">The
+macOS Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Windows 8 Phone</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/windows 8 phone/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwindows%208%20phone%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwindows%208%20phone%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Windows 8 Phone (DEPRECATED)</h1>
+
+<h2 class="studio">These functions are provided specifically for
+the Windows 8 Phone platform.</h2>
+
+<blockquote><b>IMPORTANT!</b> <i>The following pages are for the
+functions specific to Windows Phone 8. Be aware this platform is
+now deprecated in favour of UWP, so these pages are only intended
+as a reference resource for legacy projects.</i></blockquote>
+
+<p><br>
+While the Windows 8 Phone OS looks very similar to the standard
+Windows 8 desktop version, the live tiles and other functions are a
+bit more limited. At the moment <i>GameMaker: Studio</i> permits
+you to use special functions to modify the Live Tiles associated
+with your game, as well as one further function to check your game
+for Trial Play:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"winphone_license_trial_version.html">winphone_license_trial_version</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p>The tile functions are split into three groups (for the three
+different types of tiles that are available) and apart from the
+functions specific to the tile type, there are also two that are
+available for all types:</p>
+
+<blockquote>
+<ol>
+<li><a href="winphone_tile_title.html">winphone_tile_title</a><br>
+</li>
+
+<li><a href="winphone_tile_count.html">winphone_tile_count</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+<i><b>NOTE:</b> As with other mobile target platforms, the</i> Back
+Button on Windows Phone devices can be accessed using the <a href=
+"../../mouse,%20keyboard%20and%20other%20controls/keyboard%20input/index.html">
+<tt>vk_backspace</tt></a> keyboard check.<br>
+<br></p>
+
+<h3 class="studio">Flip Tile</h3>
+
+<p><img class="center" src="phone8_tiles.png"> A <b>Flip Tile</b>
+is one that has a back and a front image and the tile switches (or
+"flips") between them over time.<br>
+<br>
+The following functions are available to help you control their
+visual aspects:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"winphone_tile_front_image.html">winphone_tile_front_image</a><br>
+</li>
+
+<li><a href=
+"winphone_tile_front_image_small.html">winphone_tile_front_image_small</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_front_image_wide.html">winphone_tile_front_image_wide</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_back_title.html">winphone_tile_back_title</a><br>
+</li>
+
+<li><a href=
+"winphone_tile_back_content.html">winphone_tile_back_content</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_back_content_wide.html">winphone_tile_back_content_wide</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_back_image.html">winphone_tile_back_image</a><br>
+</li>
+
+<li><a href=
+"winphone_tile_back_image_wide.html">winphone_tile_back_image_wide</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Iconic Tile</h3>
+
+<p><img class="center" src="phone8_iconic_tile.png"> The <b>Iconic
+Tile</b> is one that uses an "iconic" image in all formats. This
+image will occupy the whole tile for a small and medium tile, but
+will be reduced to a small icon over the chosen background colour
+for the wide tile (normally with some text associated with the tile
+two).<br>
+<br>
+The following functions can be used to set these properties:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"winphone_tile_background_colour.html">winphone_tile_background_colour</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_icon_image.html">winphone_tile_icon_image</a><br>
+</li>
+
+<li><a href=
+"winphone_tile_small_icon_image.html">winphone_tile_small_icon_image</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_wide_content.html">winphone_tile_wide_content</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Cyclic Tile</h3>
+
+<p><img class="center" src="phone8_cyclic_tile.png"> The <b>Cyclic
+Tile</b> is one that uses a number of wide-tile format images and
+cycles between them. If the Live Tile is <i>not</i> a wide tile,
+then only a small image will be shown.<br>
+<br>
+The following functions can be used to set these properties:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"winphone_tile_cycle_images.html">winphone_tile_cycle_images</a><br>
+
+</li>
+
+<li><a href=
+"winphone_tile_small_background_image.html">winphone_tile_small_background_image</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Windows
+8</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

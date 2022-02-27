@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>image_blend</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/objects and instances/instances/instance properties/image_blend.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20properties%2Fimage_blend.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20properties%2Fimage_blend.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">image_blend</h1>
+
+<h2 class="studio">The colour to blend with the instance
+sprite.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">image_blend</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This variable controls the "tinting" of the instance sprite and
+the default value is -1 (but can also be <tt>c_white</tt>). Any
+other value (including internal colour constants like c_red, or
+c_aqua) will blend the specified colour with the original sprite.
+Please note that for changes in this variable to be visible, the
+instance should have either <i>no</i> draw event (and so
+<i>GameMaker: Studio</i> will default draw the sprite) or be drawn
+using one of the extended drawing functions like <a href=
+"../../../drawing/drawing%20sprites%20and%20backgrounds/draw_self.html">
+<tt>draw_self()</tt></a> or <a href=
+"../../../drawing/drawing%20sprites%20and%20backgrounds/draw_sprite_ext.html">
+<tt>draw_sprite_ext()</tt></a>.<br>
+<br>
+<img class="center" src="blend_image.png"></p>
+
+<p>Please note that you should try to limit blending on the HTML5
+platform (unless using WebGL), as each blended sprite has to be
+cached separately and so having many blended sprites may adversely
+affect performance (you can also set the cache size using the
+function <a href=
+"../../../game%20assets/sprites/sprite_set_cache_size.html"><tt>sprite_set_cache_size</tt></a>).<br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">image_blend = make_colour_hsv(255, 255,
+random(255));</p>
+
+<p>The above code will set the image_blend of the sprite defined
+for the instance to a random colour.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Instance
+Properties</a></div>
+
+<div style="float:right">Next: <a href=
+"image_index.html">image_index</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

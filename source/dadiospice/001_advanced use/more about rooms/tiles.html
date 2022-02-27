@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Tiles</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about rooms/tiles.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20rooms%2Ftiles.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20rooms%2Ftiles.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Tiles</h1>
+
+<h2 class="studio">This section deals with tiles and how to use
+them in the room editor.</h2>
+
+<p>In many games you will want to have nice looking backgrounds,
+made up of many details and that are eye-catching and interesting
+to the player. For example, in a maze game, the walls of the maze
+should nicely match up, and in platform games you like to see
+beautifully drawn platforms, trees, etc. However, to create
+hundreds of static backgrounds would take forever, and also not be
+very efficient as they would need a lot more device memory, nor
+would creating hundreds of individual objects with different
+sprites be a very good idea. So, instead, <i>GameMaker: Studio</i>
+allows you to use <i>tiles</i>. <img class="center" src=
+"../../images/form_room_tiles.png"> Tiles are a purely graphical
+resource that have very few properties and none of the overheads
+that accompany an object, and so they are processed and dealt with
+much faster by <i>GameMaker: Studio</i> when the game is run on the
+target device. A simple tile would be one for a wall in a maze,
+where your game has just one wall object with a square sprite
+assigned to it for collisions. This object is then flagged as
+invisible so that when playing the game you can't see it, and you
+would then create some nice tiles that cover the places where the
+wall objects are and make your levels look great.<br>
+<br>
+You can use this technique for any graphic that does not have to
+change its shape or position (you cannot use it when the image must
+be animated - for that you must use an instance), and you can
+create some incredibly beautiful graphics for your game with very
+few resources just by mixing and matching tiles on each level. It
+should be noted that tiles need to be designed properly to work
+without any graphical errors and this subject is covered in the
+section - <a href="../more%20about%20backgrounds/index.html">More
+About Backgrounds</a>.<br>
+<br></p>
+
+<h3 class="studio">The Tiles Tab</h3>
+
+<p><img class="center" src="../../images/form_room_tilestab.png">
+To add tiles to your room you first need to add a background
+resource to your game that has been properly prepared to contains
+the tiles you need, and when adding the background resource
+indicate that it must be used as a tile set in the background
+properties. For more details on how to load a background as a
+tileset, please see the section <a href=
+"../../000_using%20gamemaker/007_backgrounds.html">Using GameMaker:
+Studio: Backgrounds</a>.<br>
+<br>
+If you look at the <b>tiles</b> tab in the room editor (also shown
+above), you can see at the top left the current background being
+used for tiling, but this can be changed by clicking on the menu
+button underneath. A list will be brought up which contains all the
+background resources in your game, and from there you can select
+the one you wish to use. Note, that if you select a background that
+is not flagged as being a tileset in the properties, you can still
+place it as a tile, but it will be the <i>whole</i> image that is
+placed, and not just a part.<br>
+<br>
+Selecting a tile and adding it to the room is a simple matter of
+clicking on the background image itself to select the part you need
+(this will be automatic and depends on the settings of the
+background resource), and then clicking in the room on the right to
+place it. If you have previously placed tiles at the same place (or
+if they over-lap) within the room and at the same depth too, then
+the tile underneath will be removed by default, but this behaviour
+can be switched off by un-checking the <b>Delete Underlying</b>
+box. You can also position the tile using the X/Y input boxes on
+the form.<br>
+<br>
+When placing tiles in the room, you place with the left mouse
+button and delete with the right, but you also have a few extra
+commands:</p>
+
+<blockquote>
+<ul>
+<li>hold the &lt;Shift&gt; key to add multiple tiles one after
+another.</li>
+
+<li>hold the &lt;Ctrl&gt; key and click on a tile to move it to a
+new position.</li>
+
+<li>hold the &lt;Alt&gt; key to temporarily switch off snapping to
+the gird.</li>
+
+<li>use the &lt;Cursor Keys&gt; to shift the selected tile 1 pixel
+in any direction.</li>
+
+<li>use the &lt;Cursor Keys&gt; and hold the &lt;Shift&gt; key to
+move the selected tile 10 pixels in any direction.</li>
+
+<li>use the &lt;Cursor Keys&gt; and hold the &lt;Ctrl&gt; key to
+move the selected tile 5 pixels in any direction.</li>
+
+<li>use the &lt;Cursor Keys&gt; and hold the &lt;Shift&gt; and
+&lt;Ctrl&gt; keys to snap the selected tile to the nearest grid
+position in any direction</li>
+</ul>
+</blockquote>
+
+<p>If you hold down the &lt;Ctrl&gt; key and right click on a tile
+with the mouse, the following menu will open: <img class="center"
+src="tilemenu.png"> The commands available are very similar to
+those that open when you right click an instance and are as
+follows:</p>
+
+<blockquote>
+<ul>
+<li><b>Delete:</b> This will delete the tile at the current
+depth.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Delete All:</b> This will delete all tiles found at this
+position in the room (at the same depth).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Tile Properties:</b> This will open the following window -
+<img class="center" src="tileproperties.png"> which allows you to
+easily change some of the most common tile properties, like scale,
+blending and alpha.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Change Position:</b> Opens a window where you can input
+precise x and y coordinates for the tile.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Snap to Grid:</b> This will snap the tile to the nearest
+grid square as set by the room properties toolbar.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Locked:</b> This locks the tile in position and also
+prevents it from being deleted. You can unlock a tile again by
+re-selecting this option.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Rename Tile Instance:</b> You can use this to set a constant
+which will always point to this tile unless you delete it through
+code or change rooms.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>In some situations you might want to put a part of the
+background tileset in the room that is not <i>exactly</i> the size
+of a standard tile, or that consists of multiple tiles, or even one
+that is offset from the standard tile grid. Well, this can be done
+too! In the top-left background image press the left mouse button
+while holding the &lt;Alt&gt; key. Now you can drag the mouse to
+create rectangular area, which you can then place in the room in
+the same way as any normal tile. If you want the area you create to
+snap to the tiles, then hold the &lt;Shift&gt; key instead when
+dragging (note that this works best when there is no separation
+between the tiles). If you want to select an area that is multiple
+of the room grid size, hold the &lt;Ctrl&gt; key rather than the
+&lt;Shift&gt; key, and it should be noted that you can actually
+change the key you hold during the dragging, which can be very
+useful.<br>
+<br></p>
+
+<h3 class="studio">Tile Depth</h3>
+
+<p>Tiles can be placed in layers at different <i>depths</i>, and if
+you look at the bottom of the tiles tab in the room editor you see
+the current depth you are placing them at. Default for this is
+1000000 which is normally behind all instances (the higher the
+number, the further "behind", and the lower the number the further
+"in front"). You can use the <b>Add</b> button to add new tile
+layers, each with a different depth which you define, and in this
+way you can create different layers of tiles, and even objects if
+you also give the objects different depths so they are between the
+different tile layers. If you press <b>Delete</b> you can delete a
+tile layer together with all its tiles, but you must always have at
+least one layer, so even if you delete the last one, <i>GameMaker:
+Studio</i> will recreate a new, empty one for you again. If you
+press <b>Change</b> you can change the depth of a tile layer, which
+if you have given it the same depth as another layer, will merge
+the two sets of tiles together on the one layer.<br>
+<br>
+Since it can be awkward sometimes to see exactly what you are
+placing in the room when you already have multiple tile layers in
+the room, you can also check the "Hide Other Layers" option, and
+all tile layers will be made invisible except the one that you are
+working on. This is purely for ease of use in the room editor and
+will not affect how the tiles are drawn in your project.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Rooms</a></div>
+
+<div style="float:right">Next: <a href="views.html">Views</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>working_directory</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/file handling/working_directory.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Ffile%20handling%2Fworking_directory.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Ffile%20handling%2Fworking_directory.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">working_directory</h1>
+
+<h2 class="studio">The directory where either the included files
+are stored or you have local storage.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">working_directory</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> String.</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p><tt>Working_directory</tt> can actually return two different
+values depending on what you are using it for. If you are writing a
+file to disk, <a href=
+"../file%20handling/working_directory.html"><tt>working_directory</tt></a>
+points to the area of local storage that is reserved for your game
+on the target device (in windows this is "%LOCALAPPDATA%/gamedir/"
+where the "gamedir" is the directory with the name of your game).
+However, when reading from disk, <tt>working_directory</tt> can be
+<i>either</i> the local storage <i>or</i> the area where the
+included files are stored.</p>
+
+<blockquote><i><b>NOTE:</b> the <tt>working_directory</tt> variable
+wiil return the path <b>including</b> the final backslash.</i>
+</blockquote>
+
+<p>For example, if you have a default <tt>*.txt</tt> file included
+with your game and read it into memory using
+<tt>working_directory</tt>, then that file will be taken from the
+area where the included files are stored. If you then choose to
+write that information to a text file using
+<tt>working_directory</tt>, this will write the file to the target
+platforms local storage, where it will be read from the next time
+unless you instruct <i>GameMaker: Studio</i> to delete the file, in
+which case <tt>working_directory</tt> will once more point to the
+area where the included files are stored.<br>
+<br>
+<br>
+<i><b>WARNING!</b> This function may not work as you expect due to
+GameMaker: Studio being sandboxed! Please see the section on
+<a href="file%20system%20limits.html">File System Limits</a> for
+more information.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">ini_open(working_directory + "temp_ini.ini");</p>
+
+<p>This will open an ini file from the working directory of the
+game (creating it if it does not already exist). This could be the
+local storage, or the area where the included files are depending
+on whether the file being looked for exists in either place.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">File
+Handling</a></div>
+
+<div style="float:right">Next: <a href=
+"program_directory.html">program_directory</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

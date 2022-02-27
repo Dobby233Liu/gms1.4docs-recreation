@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Editing Subimages</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about sprites/editing subimages.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fediting%20subimages.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fediting%20subimages.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Editing Subimages</h1>
+
+<h2><i>GameMaker: Studio</i> has a built-in image editor that can
+be used to edit individual sub-images of sprites and background
+images.</h2>
+
+<p>To aid you in your task of creating a good game, <i>GameMaker:
+Studio</i> provides you with its own editor for editing backgrounds
+and sprites. Both resources share the same editor so although this
+page refers to sprites, the exact same commands are available for
+backgrounds too. To call the editor for a sub-image of a sprite,
+select the sub-image in the sprite editor and choose <b>Edit
+Image</b> from the <b>Image</b> menu (or double click on it, or
+press the "Edit Image" button on the toolbar), and to edit a
+background, open the background properties window and press the
+button labelled <b>Edit Background</b>.<br>
+<br>
+The built-in editor is primarily meant for making changes to
+images, not for creating sprites and backgrounds from scratch, as,
+although the built-in image editor is pretty powerful, it does not
+have all the features of full-blown paint and drawing package. It
+is great for roughing out some place-holder images but for brand
+new sprites and graphics you probably want to use a separate paint
+program, save the images as PNG files, and then load them into
+<i>GameMaker: Studio</i> for further work. Note that you can also
+set an external image editor in the <a href=
+"../../001_advanced%20use/preferences/index.html">Preferences</a>
+and so bypass this section all together.</p>
+
+<p>When you start the image editor it will typically looks as
+follows:</p>
+
+<p><img class="center" src="../../images/form_image_editor.png">
+</p>
+
+<p>As you can see, the image to be edited takes up the space in the
+middle of the screen with the editing tools and menus arrayed
+around it. At the bottom of the screen is the Infobar where you can
+get basic information about the state of the editor, with the
+current mouse x/y position and the percentage of zoom being applied
+shown at all times. It will also show the x/y coordinates of any
+selection along with the maximal width and height of the
+selection.<br>
+<br></p>
+
+<h3 class="studio">Menus</h3>
+
+<p>The drop down menus at the top of the screen are almost exactly
+the same as those found in the <a href=
+"editing%20sprites.html">Sprite Editor</a>, particularly the
+<a href="edit%20menus/edit%20menu.html">Edit Menu</a>, the <a href=
+"edit%20menus/transform%20menu.html">Transform Menu</a>, and the
+<a href="edit%20menus/images%20menu.html">Image Menu</a>. The File
+Menu is similar too, but has a few less options and they work in
+different ways:<br></p>
+
+<blockquote>
+<ul>
+<li><b>New:</b> Creates a new image. This basically wipes the
+current sub-image ready for you to start from scratch, but it does
+not change the size.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Save as PNG file:</b> Saves the current image as a one frame
+*.png file.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Previous Image, Next image:</b> Switches sub-images either
+one frame to the left, or one frame to the right. In this way you
+can edit multiple sub-images, one after another. <i>Note:</i> This
+will effectively save any changes to the current sub-image, so use
+with care as you get no prompt.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Close saving changes:</b> As it says, this will close the
+editor and save any changes to the current image.<br></li>
+</ul>
+</blockquote>
+
+<p>You also have a <a href="edit%20menus/view%20menu.html">View
+Menu</a> for controlling how the image being created is shown in
+the editor.<br>
+<br></p>
+
+<h3 class="studio">Toolbar</h3>
+
+<p>Like the drop down menus, the toolbar features a number of
+commands that are covered in the section dealing with the <a href=
+"editing%20sprites.html">Sprite Editor</a>, however there are a
+couple of new ones at the end which we will cover here:<br></p>
+
+<blockquote>
+<div style="float:left"><img src="zoom_in.png">
+</div>
+<br>
+<b>Zoom In</b><br>
+<br>
+Zoom the image in the editor to see better the individual pixels.
+The mouse wheel can also be used for zoom too.<br>
+<br>
+
+<div style="float:left"><img src="zoom_actual.png">
+</div>
+<br>
+<b>Zoom Reset</b><br>
+<br>
+This resets the zoom to a 1x1 ratio.<br>
+<br>
+
+<div style="float:left"><img src="zoom_out.png">
+</div>
+<br>
+<b>Zoom In</b><br>
+<br>
+Zoom the image in the editor out to see better the overall image.
+The mouse wheel can also be used for zoom too.<br>
+<br>
+
+<div style="float:left"><img src="grid.png">
+</div>
+<br>
+<b>Toggle Pixel Grid</b><br>
+<br>
+You can click this to toggle the pixel grid on or off (the grid is
+only visible when you zoom in).<br>
+<br>
+
+<div style="float:left"><img src="preview.png">
+</div>
+<br>
+<b>Zoom In</b><br>
+<br>
+This will toggle on and off the preview panel (situated below the
+colour tools) so you can see the image at actual size even when
+zoomed in or out.<br>
+<br></blockquote>
+
+<h3 class="studio">Drawing Tools</h3>
+
+<p>The drawing tools permit you to select different brush sizes,
+select regions, draw forms, etc... You can use them by left
+clicking on one and then left clicking in the image being edited.
+The full list of available draw tools can be found from the
+following page:</p>
+
+<blockquote>
+<ol>
+<li><a href="drawing%20tools.html">Drawing Tools</a>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Colour And Blending Tools</h3>
+
+<p>The right hand side of the window is mostly taken up with the
+colour tools. These are simple to use, yet give you great control
+over the colours that you can draw with. At the top you have the
+section labelled <b>colours</b> with two boxes labelled "Left" and
+"Right" which set the colour for the corresponding mouse buttons
+(these boxes also set the colours for certain drawing tools, which
+we cover in the <b>Drawing Tools</b> section below. Beneath that
+you have a basic colour picker which covers a very limited range of
+the most used colours, while beneath that you can find a more
+advanced colour picker for fine-tuning your choice. The
+<b>Opacity</b> setting controls the transparency of what is being
+drawn, with 255 being fully opaque and 0 being fully transparent,
+while the last control, <b>colour Mode</b>, tells <i>GameMaker:
+Studio</i> to draw and blend the alpha channel, or to overwrite it
+using the current alpha.<br>
+<br>
+Note that you can also create custom colour pallets, see the
+section on <a href="advanced%20tools.html">Advanced Drawing
+Tools</a>.<br>
+<br></p>
+
+<h3 class="studio">Image Preview</h3>
+
+<p>The <i>Image Preview</i> shows you an image of the sprite as it
+would appear in the game. If you double click on it, you can switch
+between x1, x2 and x3 scaling, giving you a much clearer picture of
+the sprite and how it looks while editing it in the main window.
+Note that you may need to expand the sprite editor window to see
+this. The preview window can be enabled or disabled from the
+<a href="edit%20menus/view%20menu.html">View Menu</a>.<br>
+<br></p>
+
+<h3 class="studio">Onion-Skinning</h3>
+
+<p>At the bottom right of the window you can see the controls for
+the <i>Onion-Skinning</i> function of the image editor. What
+onion-skinning means is that in a single frame of any sprite
+animation, you can choose to see any of the preceding or succeeding
+four frames as a semi-transparent layer under the image frame you
+are currently working on.<br>
+<br>
+You can choose the alpha value that each frame will be drawn with,
+from 0 to 255, as well as how many of the frames to show. By
+setting the <i>Forward</i> value you can see those frames that come
+after the frame currently being edited and by setting the
+<i>Backwards</i> value, you can see those that come before. You can
+set these to a value from 0 (none) to 4 (all four frames will be
+drawn), permitting you a far greater control over animations and
+positioning than was previously possible.<br>
+<br>
+Note that we suggest using the onion-skinning over a colour-fill
+background rather than a transparent one (you can set this option
+from the <b>View</b> menu of the image editor and selecting <i>Set
+Transparency Background</i>), as it makes the transparencies of the
+various skins easier to see.<br>
+<br></p>
+
+<h3 class="studio">Advanced Drawing Tools</h3>
+
+<p>Apart from those tools listed above, there are also a number of
+advanced options available to you when working with the Image
+Editor. You can find more about these options from the following
+page:</p>
+
+<blockquote>
+<ol>
+<li><a href="advanced%20tools.html">Advanced Tools</a>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"editing%20sprites.html">Editing Sprites</a></div>
+
+<div style="float:right">Next: <a href=
+"editing%20collision%20masks.html">Editing Collision
+Masks</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

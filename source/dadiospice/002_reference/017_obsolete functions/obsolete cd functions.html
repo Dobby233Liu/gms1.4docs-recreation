@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete CD Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete cd functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20cd%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20cd%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete CD Functions</h1>
+
+<h2 class="studio">These functions are for dealing with the Windows
+CD reader.</h2>
+
+<h3 class="studio"><b>Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>cd_init</td>
+<td>Must be called before using the other functions. Should also be
+called when a CD is changed (or simply from time to time).</td>
+</tr>
+
+<tr class="alt">
+<td>cd_present</td>
+<td>Returns whether a CD is present in the default CD drive.</td>
+</tr>
+
+<tr>
+<td>cd_number</td>
+<td>Returns the number of tracks on the CD.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_playing</td>
+<td>Returns whether the CD is playing.</td>
+</tr>
+
+<tr>
+<td>cd_paused</td>
+<td>Returns whether the CD is paused or stopped.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_track</td>
+<td>Returns the number of the current track (1=the first).</td>
+</tr>
+
+<tr>
+<td>cd_length</td>
+<td>Returns the length of the total CD in milliseconds.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_track_length</td>
+<td>Returns the length of track n of the CD in milliseconds.</td>
+</tr>
+
+<tr>
+<td>cd_position</td>
+<td>Returns the current position on the CD in milliseconds.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_track_position</td>
+<td>Returns the current position in the track being played in
+milliseconds.</td>
+</tr>
+
+<tr>
+<td>cd_play</td>
+<td>Tells the CD to play tracks first until last. If you want to
+play the full CD give 1 and 1000 as arguments.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_stop</td>
+<td>Stops playing</td>
+</tr>
+
+<tr>
+<td>cd_pause</td>
+<td>Pauses the playing.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_resume</td>
+<td>Resumes the playing.</td>
+</tr>
+
+<tr>
+<td>cd_set_position</td>
+<td>Sets the position on the CD in milliseconds.</td>
+</tr>
+
+<tr class="alt">
+<td>cd_set_track_position</td>
+<td>Sets the position in the current track in milliseconds.</td>
+</tr>
+
+<tr>
+<td>cd_open_door</td>
+<td>Opens the door of the CD player</td>
+</tr>
+
+<tr class="alt">
+<td>cd_close_door</td>
+<td>Closes the door of the CD player</td>
+</tr>
+</table>
+</div>
+
+<p>The following function has also been removed:</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>MCI_command</td>
+<td>This functions sends the command string to the Windows
+multimedia system using the Media Control Interface (MCI). It
+returns the return string. You can use this to control all sorts of
+multimedia devices. See the Windows documentation for information
+in how to use this command. For example MCI_command('play cdaudio
+from 1') plays a CD (after you have correctly initialized it using
+other commands). This function is only for advanced use!</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>These are Windows only functions and no longer applicable to any
+other device.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20display%20functions.html">Display Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

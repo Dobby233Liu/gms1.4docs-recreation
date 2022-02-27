@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>room_set_persistent</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/rooms/room_set_persistent.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Frooms%2Froom_set_persistent.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Frooms%2Froom_set_persistent.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">room_set_persistent</h1>
+
+<h2 class="studio">Sets whether a given room is persistent or
+not.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">room_set_persistent( ind, val );</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>ind</td>
+<td>The index of the room to set the persistence of.</td>
+</tr>
+
+<tr class="alt">
+<td>val</td>
+<td>Whether the room shall be persistent (true) or not
+(false).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can change (or set) the persistence of
+any room in your game <i>except the current one</i>. A room with
+persistence flagged as <tt>true</tt> it will maintain the state of
+all instances within that room if the player leaves and then
+returns, whereas if persistence is flagged as <tt>false</tt> it
+will be reset to the initial state every time. You should note that
+a persistent room uses considerably more memory than a normal room
+and it is not recommended to have too many of them in your
+game.<br>
+<br>
+<i><b>NOTE:</b> This function will <b>NOT</b> work to switch off
+persistence if the room has already been visited! A persistent
+room, once visited, is held in memory and to switch off persistence
+you should go to that room and set the <a href=
+"room_persistent.html"><tt>room_persistent</tt></a> variable to
+false and then exit the room again.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">global.myroom = room_add();<br>
+room_set_width(global.myroom, 640);<br>
+room_set_height(global.myroom, 480);<br>
+room_set_persistent(global.myroom, true);</p>
+
+<p>This will create a new room and store its index in the variable
+"global.myroom". It will then set its width to 640 pixels, its
+height to 480 pixels, its caption to 'Game Room' and its
+persistence to 'true'.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Rooms</a></div>
+
+<div style="float:right">Next: <a href=
+"room_set_view_enabled.html">room_set_view_enabled</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

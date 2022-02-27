@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Game Assets</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Game Assets</h1>
+
+<h2 class="studio">This section deals with all those functions
+related to the games assets.</h2>
+
+<p>In <i>GameMaker: Studio</i> you can define various types of game
+assets (or resources), like sprites, sounds, fonts and backgrounds
+and each asset type has its own selection of codes for modifying
+them, using them and moving them during your game. Many even have
+functions that permit you to load and save these resources into
+your game while it is running, but be warned though - <b>Changing
+resources easily leads to serious errors in your games!</b> As such
+it is a good idea to follow the following rules when changing
+resources:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li>Don't remove (delete) assets that are being used in the current
+room or being referenced directly in any room.<br>
+<br></li>
+
+<li>If you have changed an included asset of your game (for
+example, you have replaced a sprite with a loaded image), when you
+restart the game using the <a href=
+"../miscellaneous/game_restart.html"><tt>game_restart()</tt></a>
+function, the changed assets are NOT restored to their original
+shape. In general, when you manipulate included assets you can no
+longer use the action or function to restart the game.<br>
+<br></li>
+
+<li>Changing assets from a file can be a relatively slow process,
+so try not to use it mid game, but rather save it for moments in
+which any possible pause will not interrupt the game-play.<br>
+<br></li>
+
+<li>Creating assets during game play (in particular sprites and
+background) easily uses large amount of memory, so be careful with
+this. For example, if you have a 32 frame 128x128 animated sprite
+and you decide to create 36 rotated copies of it you will use up
+36x32x128x128x4 = 72 MB of memory! And, as these resources are
+<i>not</i> included in any of the pre-made texture pages that carry
+your original assets, they involve an extra page swap, which means
+many such assets can really slow things down.<br>
+<br></li>
+
+<li>Make sure you delete the created assets you no longer need,
+otherwise you can end up with a memory leak which will slow down
+and eventually crash your game</li>
+</ul>
+</blockquote>
+
+<p>In general, you should try not to change any resources during
+game play, and it is better create and change the resources at the
+beginning of the game or even at the beginning of a room.<br>
+<br>
+Information on resources can be found in the following pages:</p>
+
+<blockquote>
+<ol>
+<li><a href="sprites/index.html">Sprites</a><br>
+</li>
+
+<li><a href="backgrounds/index.html">Backgrounds</a><br>
+</li>
+
+<li><a href="sounds/index.html">Audio</a><br>
+</li>
+
+<li><a href="fonts/index.html">Fonts</a><br>
+</li>
+
+<li><a href="../paths/index.html">Paths</a><br>
+</li>
+
+<li><a href="../timelines/index.html">Timelines</a><br>
+</li>
+
+<li><a href="../rooms/index.html">Rooms</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>There are two extra functions related to the handling game
+assets. These functions can be used to find the unique index value
+for any given asset and the type of asset that it is, which opens
+the door to dynamically creating game assets from strings (for
+example):</p>
+
+<blockquote>
+<ol>
+<li><a href="asset_get_index.html">asset_get_index</a><br>
+</li>
+
+<li><a href="asset_get_type.html">asset_get_type</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Reference</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Windows 8</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Windows 8</h1>
+
+<h2 class="studio">These functions are provided specifically for
+the Windows 8 platform.</h2>
+
+<p>The Windows 8 module has some functions that are specifically
+designed to be used by the games that target it. These functions
+make the most of the Windows 8 tile system as well as permitting
+you to access and share files from within your game. The following
+functions have been split into the relevant sections to make
+finding the right one for your needs easier. Please note that these
+functions are for the Windows 8 desktop and Surface platforms,
+<i>not</i> Windows 8 Phone. For Windows 8 Phone please see the
+following section:</p>
+
+<blockquote>
+<ol>
+<li><a href="windows%208%20phone/index.html">Windows 8
+Phone</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><i><b>NOTE:</b> The Windows 8 (JS and Native) target won't allow
+multiple instances of the same app to run at a time, and if the
+file is running it can't overwrite it. This means that you will
+have to close the app before saving/testing a new version, and even
+then you may have to wait a short period of time between builds to
+enable Windows to close the app correctly.</i><br>
+<br>
+Windows 8 games can run on devices that may, or may not, have a
+touch screen. This means that your games have to be developed with
+this in mind. To make things easier for you there is a special
+function for detecting whether the device running the game is touch
+enabled or not:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_device_touchscreen_available.html">win8_device_touchscreen_available</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p><i><b>WARNING:</b> If you have <b>any</b> functions in your
+Windows 8 game that require an internet connection, like an open
+URL call for example, then you <b>must</b> have the "<b>Use
+Internet</b>" capability ticked for the game in the Global Game
+Settings. Microsoft also specifies that if you use this capability
+you <b>need to add a link to your Privacy Policy</b> in the
+Settings pane of your Windows 8 game (see <a href=
+"http://msdn.microsoft.com/en-us/library/windows/apps/hh464936.aspx#internet_and_public_networks"
+target="_blank">here</a> as well as the functions for using the
+Settings Charm for further details).</i><br>
+<br>
+</p>
+
+<h3 class="studio">Live Tiles</h3>
+
+<p>With the Windows 8 OS your game (or app) will be associated with
+its own <b>Live Tile</b>. A live tile is a dynamic link to your
+game which updates in real time, meaning that you can "push" images
+and text onto them for the user to see at specific times form your
+game. The following functions are the recommended method for
+creating Live Tile notifications:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_livetile_notification_begin.html">win8_livetile_notification_begin</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_notification_secondary_begin.html">win8_livetile_notification_secondary_begin</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_notification_expiry.html">win8_livetile_notification_expiry</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_notification_tag.html">win8_livetile_notification_tag</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_notification_text_add.html">win8_livetile_notification_text_add</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_notification_image_add.html">win8_livetile_notification_image_add</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_notification_end.html">win8_livetile_notification_end</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p>However, there also exists the following <i>legacy</i> function
+(which should only be used if absolutely necessary):</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_livetile_tile_notification.html">win8_livetile_tile_notification</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p>Apart from pushing notifications to the main tile there are also
+a number of further things that can be done, like adding a badge or
+clearing the tile, using the following functions:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_livetile_tile_clear.html">win8_livetile_tile_clear</a><br>
+</li>
+
+<li><a href=
+"win8_livetile_badge_notification.html">win8_livetile_badge_notification</a><br>
+
+</li>
+
+<li><a href=
+"win8_livetile_badge_clear.html">win8_livetile_badge_clear</a><br>
+</li>
+
+<li><a href=
+"win8_livetile_queue_enable.html">win8_livetile_queue_enable</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p>You also have access to the <i>Secondary</i> Live Tile. This is
+a second type of Live Tile that can be pinned to the main start
+page and used to access a specific section of your game, for
+example a saved game. It can be quite tricky to set up and get
+working as you need to supply certain <i>command line
+parameters</i> which will be parsed later by your game when it is
+called on from the secondary tile (using the <a href=
+"../miscellaneous/parameter_string.html"><tt>parameter_string</tt></a>
+function). The following is a list of all the secondary tile
+functions:<br>
+<br>
+<i><b>NOTE:</b> a Secondary Tile will include all of the mandatory
+properties used to create the standard wide tile</i>.<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_secondarytile_pin.html">win8_secondarytile_pin</a><br>
+</li>
+
+<li><a href=
+"win8_secondarytile_badge_notification.html">win8_secondarytile_badge_notification</a><br>
+
+</li>
+
+<li><a href=
+"win8_secondarytile_delete.html">win8_secondarytile_delete</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>You can find a list of the available <b>Template Strings</b>
+available for some of the Live Tile functions here:</p>
+
+<blockquote>
+<ol>
+<li><a href="windows%208%20live%20tile%20templates.html">Windows 8
+Live Tile Templates</a>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Appbar commands</h3>
+
+<p>The App Bar is a special bar of buttons that can be made to pop
+up by <i>right clicking</i> on your game. These buttons can be
+defined through the following functions and linked to scripts
+within <i>GameMaker: Studio</i> to create pause menus, options
+etc...:</p>
+
+<blockquote>
+<ol>
+<li><a href="win8_appbar_enable.html">win8_appbar_enable</a><br>
+</li>
+
+<li><a href=
+"win8_appbar_add_element.html">win8_appbar_add_element</a><br>
+</li>
+
+<li><a href=
+"win8_appbar_remove_element.html">win8_appbar_remove_element</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Settings Charm</h3>
+
+<p>When in your game, if you move the mouse to the top right (or
+bottom right) of the screen, a side-bar slides out that shows
+different "charms" (icons). These functions give you the ability to
+add custom options to the "Settings" charm, either through internal
+scripts, or external XAML formatted files:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_settingscharm_add_entry.html">win8_settingscharm_add_entry</a><br>
+
+</li>
+
+<li><a href=
+"win8_settingscharm_add_html_entry.html">win8_settingscharm_add_html_entry</a><br>
+
+</li>
+
+<li><a href=
+"win8_settingscharm_add_xaml_entry.html">win8_settingscharm_add_xaml_entry</a><br>
+
+</li>
+
+<li><a href=
+"win8_settingscharm_set_xaml_property.html">win8_settingscharm_set_xaml_property</a><br>
+
+</li>
+
+<li><a href=
+"win8_settingscharm_get_xaml_property.html">win8_settingscharm_get_xaml_property</a><br>
+
+</li>
+
+<li><a href=
+"win8_settingscharm_remove_entry.html">win8_settingscharm_remove_entry</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Share</h3>
+
+<p>These functions are effectively an advanced "Cut and Paste"
+option for Windows 8 and permit you to send information as either
+text, an image, a file or even as a URL:</p>
+
+<blockquote>
+<ol>
+<li><a href="win8_share_image.html">win8_share_image</a><br>
+</li>
+
+<li><a href=
+"win8_share_screenshot.html">win8_share_screenshot</a><br>
+</li>
+
+<li><a href="win8_share_file.html">win8_share_file</a><br>
+</li>
+
+<li><a href="win8_share_url.html">win8_share_url</a><br>
+</li>
+
+<li><a href="win8_share_text.html">win8_share_text</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Search</h3>
+
+<p>Windows 8 can permit your game to search through the system as
+you would any other window. These functions control this:</p>
+
+<blockquote>
+<ol>
+<li><a href="win8_search_enable.html">win8_search_enable</a><br>
+</li>
+
+<li><a href=
+"win8_search_add_suggestions.html">win8_search_add_suggestions</a><br>
+
+</li>
+
+<li><a href="win8_search_disable.html">win8_search_disable</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Trial Play</h3>
+
+<p>The Windows 8 App Store permits your game to be marketed with a
+<i>trial period</i>. This will let people play your game for a
+limited time with (if you choose) limited features and then, at the
+end of the trial period, it will prompt the user to buy the full
+version. The following functions can be used in your games:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"win8_license_trial_version.html">win8_license_trial_version</a><br>
+
+</li>
+
+<li><a href=
+"win8_license_initialize_sandbox.html">win8_license_initialize_sandbox</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Reference</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

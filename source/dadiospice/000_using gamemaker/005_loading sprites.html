@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Loading Sprites</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/005_loading sprites.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F005_loading%20sprites.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F005_loading%20sprites.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Loading Sprites</h1>
+
+<h2 class="studio">In this section of the manual you can learn
+about sprites and how to create them with the <i>GameMaker:
+Studio</i> sprite editor.</h2>
+
+<p>Sprites are generally the visual representations of objects
+within the game you are creating. As such, a sprite is either a
+single image, drawn with any drawing program you like, or a set of
+images that, when played one after another, looks like a looping
+animation. For example, the following 10 images form a sprite for a
+character who is waving his arms while skydiving.<br>
+<br>
+<img class="center" src="../images/sprite.png"></p>
+
+<p>And the actual finished animation would look like this when
+placed in a game:<br>
+<br>
+<img class="center" src="../images/sprites_anim_1.gif"></p>
+
+<p>That looks pretty good, eh? Most games need you to make sprites
+like this for all the things in your game world, from enemies to
+power-ups, from walls to menus, and when you start to make a game
+you normally collect or create a set of nice sprites for the
+objects you are going to use. A considerable number of useful
+sprites can be found on websites such as <a href=
+"http://opengameart.org/" target="_blank">Open Game Art</a>, which
+can be used as "place holders" until you have enough confidence to
+make your own or get together with an artist.<br>
+<br>
+To create a sprite, choose the item <b>Create Sprite</b> from the
+<b>Resources</b> menu, or use the corresponding button on the
+toolbar. Either will cause the following window to open:<br>
+<br>
+<img class="center" src="../images/form_sprite.png"><br>
+<br>
+As you can probably see, the top left of the window has a field for
+the "Name" of the sprite. All sprites (and all other resources)
+must have a name given to them so that you (and <i>GameMaker:
+Studio</i>!) can identify them easily, although you should note
+that the actual name itself is really just a variable which holds a
+number that "points" to the resource, in this case a sprite. It's
+best to give each sprite a descriptive name so that you can
+identify at a glance whether a particular resource is a sprite or
+an object or anything else, and many people do this by prefixing or
+suffixing the resource with the letters "spr". For example, the
+above sky diver sprite could be called <b>spr_SkyDiver</b> or
+<b>SkyDiver_spr</b>. Even though this is not strictly required, you
+are strongly advised to use only letters and digits and the
+underscore symbol (_) in a name of a sprite (and any other
+resource) and to let it start with a letter, not a number as this
+will become very important once you start using code.<br>
+<br>
+To load a sprite, click on the button <b>Load Sprite</b>. A special
+file dialog window opens in which you can choose the sprite you
+want to import into <i>GameMaker: Studio</i>:<br>
+<br>
+<img class="center" src="../images/sprite_dialog.png"><br>
+<br>
+The left part is a fairly standard file selector in which you can
+navigate around your computer and select the sprite that you want
+to import. On the right you have a preview of the sprite image you
+select and some basic information about its size. Here you can also
+indicate a couple of things that you'd like <i>GameMaker:
+Studio</i> to do when you import the sprite, like make opaque
+(remove any transparent parts), remove the background colour (if it
+has one) making it transparent, or whether to smooth the edges of
+the sprite (only if it is transparent), which can greatly improve
+its appearance. When you have found the sprite you need and
+selected the transparency options you like, press <b>Open</b> to
+load the sprite into <i>GameMaker: Studio</i>.<br>
+<br>
+<i>GameMaker: Studio</i> can load many different formats of graphic
+files - with JPG, BMP, PNG and GIF being the most common bitmap
+formats, although you can also import SWF vector sprites and JSON
+skeletal animation sprites (made with <b>Spine</b>). There are a
+couple of things that should be noted when loading the different
+bitmap files:</p>
+
+<blockquote>
+<ul>
+<li>When you load an animated gif, the different images of the
+animation automatically form the sprite subimages.<br>
+<br></li>
+
+<li>When the file name ends with _stripXX, where XX a number, it is
+considered to contain a strip of XX subimages next to each other,
+and <i>GameMaker: Studio</i> will import it as such. For example,
+an image file with the name <tt>ball_strip4.png</tt> is assumed to
+contain 4 subimages and will be split up as such when loaded.<br>
+<br></li>
+
+<li>If you have a sprite strip image that you wish to load into
+<i>GameMaker: Studio</i> which does not have the above-mentioned
+format, this must be done from the <a href=
+"../001_advanced%20use/more%20about%20sprites/edit%20menus/file%20menu.html">
+Sprite Editor File Menu</a>.<br>
+<br></li>
+
+<li>Although JPG images are supported, it is best to avoid using
+this file type as, due to the compression used, the images are
+generally of poorer quality than either PNG or BMP.</li>
+</ul>
+</blockquote>
+
+<p>Once the sprite is loaded you are returned to the sprite
+properties window where the first subimage is shown on the right of
+the screen. When there are multiple subimages, you can cycle
+through them using the arrow buttons that appear beside the part of
+the window labelled "Show", and, should you make any changes to the
+sprite, you can then save it again using the "Save" button.<br>
+<br>
+For a more in-depth look at the sprite editor in <i>GameMaker:
+Studio</i>, as well as details on the SWF and JSON formats, you can
+go to the <a href=
+"../001_advanced%20use/more%20about%20sprites/index.html">Advanced
+Section</a> of this manual.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Using GameMaker:
+Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"006_sounds%20and%20music.html">Sounds And Music</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

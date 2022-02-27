@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>buffer_sha1</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/buffers/buffer_sha1.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fbuffers%2Fbuffer_sha1.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fbuffers%2Fbuffer_sha1.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">buffer_sha1</h1>
+
+<h2 class="studio">Create a sha1 hash for the given buffer.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">buffer_sha1(buffer, offset, size);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>buffer</td>
+<td>The index of the buffer to use.</td>
+</tr>
+
+<tr class="alt">
+<td>offset</td>
+<td>The data offset value.</td>
+</tr>
+
+<tr>
+<td>size</td>
+<td>The size of the buffer.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> String</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>In cryptography, SHA-1 is a cryptographic hash function designed
+by the United States National Security Agency and is employed in
+several widely used applications and protocols like the popular
+<b>Git</b> where it is used to check for file changes. This
+function will take input data from a buffer and returns a 160 bit
+message digest in ASCII format. In this way you can generate a
+secure key which can be stored and used to check the integrity of
+the information being sent to (or received from) an external server
+(for example). When applying this to buffers using this function
+you must specify the buffer id of the buffer to use, then an offset
+value (in bytes) for where to begin, and then a size (again in
+bytes) for the region to be hashed.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">check_string = buffer_sha1(buff, 0,
+buffer_get_size(buff));</p>
+
+<p>The above code will create a sha1 hash for the full data stored
+in the buffer indexed by the variable "buff", and store the
+returned hash in the variable "check_string".</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Buffers</a></div>
+
+<div style="float:right">Next: <a href=
+"buffer_base64_encode.html">buffer_base64_encode</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

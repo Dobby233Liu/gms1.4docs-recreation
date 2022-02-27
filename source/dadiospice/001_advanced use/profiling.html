@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Profiling</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/profiling.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fprofiling.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fprofiling.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Profiling</h1>
+
+<h2 class="studio">This section explains how to use the Profile tab
+in the Debug Module.</h2>
+
+<p>The <a href="the%20debug%20module.html">Debug Module</a> permits
+you to step through your code and find any issues with the code
+base, but sometimes you need to check for subtler details in order
+to properly optimise your games. The <b>Profile</b> option helps to
+do just that by giving you a performance overview, showing the time
+takes to call functions, scripts, and even how long it took a
+specific event to complete. <img class="center" src=
+"profilewindow.png"></p>
+
+<h3 class="studio">Profile Controls</h3>
+
+<p>As you can see form the image above, you set the Profile as a
+window in the Debug Module, and has a button for enabling/disabling
+profiling, the number of steps that have been profiled, as well as
+a two sections which you can use to display the information in
+different ways. <img class="center" src="profileoptions.png"><br>
+<br>
+Clicking the enable/disable button will switch profiling on or off
+for the game being debugged, while the value next to it shows the
+total number of steps that have been profiled. Beside that you can
+also see either the total time taken for the profile, <i>or</i> the
+average time taken per step. Which value you view will depend on
+the button for selecting the format, which also changes the way
+that the <i>Time</i> and <i>Calls</i> data is displayed, with
+"Total" being the total number of calls made to the function,
+script or event and the total time taken (times are in
+microseconds) over the course of the profile. Setting this to
+"Average" will make these columns show the average time taken per
+step for each function, script or event, and the average number of
+times that it was called. You can also click the "Run Game At
+Maximum Room Speed" button to force the debugger to remove the room
+speed clamp and try to run the game at the real FPS.<br>
+<br>
+The other two options are for controlling what exactly you are
+profiling and the data that is shown. The first option is for
+selecting how to view the data, and you can choose from the
+following:</p>
+
+<blockquote>
+<ul>
+<li><b>Tree</b> - This will show the profile from the top down
+(more or less the same as the callstack hierarchy) so it will show
+the event, then the script and then any functions used. Note that
+you can <i>double click</i> on any of the entries to have it open
+in the <b>Source</b> debug window if you have one. If you see a (+)
+icon beside a name then there are further script or function calls
+within that section, and clicking the (+) will expand the tree to
+show them.<br>
+<br></li>
+
+<li><b>Bottom Up</b> - Contrary to the tree view, showing things
+from the bottom up will show all the functions and scripts
+individually, and clicking on the (+) will expand to show what
+actually called them.</li>
+</ul>
+</blockquote>
+
+<p>The second option is for selecting what data is shown, whether
+it should be the event and code data, the engine data, or both. If
+you choose "GML", then you will get the events, functions and codes
+being called each step while the "Engine" view will only show the
+engine calls required by the game, enabling you to see any
+bottlenecks in the way that your game is handling things. If you
+select both, then both sets of data will be displayed, and the
+"Engine" data will be coloured differently to help you
+differentiate it from the functions.<br>
+<br></p>
+
+<h3 class="studio">Profile Data</h3>
+
+<p>The profile data is shown in four columns, and clicking on any
+of them will sort the data according to the column criteria.
+<img class="center" src="profiledata.png"></p>
+
+<blockquote>
+<ul>
+<li><b>Name</b> - This is the name of the event, script or function
+being called, and may have a (+) beside it to denote further calls
+to it or from it (depending on the view you have selected). You can
+<i>double click</i> on any of the names to have it open the code
+block or script within the <b>Source</b> window, assuming you have
+one open. Clicking this column will sort the names in alphabetical
+order.<br>
+<br></li>
+
+<li><b>Time</b> - This will show either the total time that a
+function (or script or event) has taken while profiling, or the
+average time that it has taken each step to be called (depending on
+the view option selected) and it is displayed in
+<b>microseconds</b>.<br>
+<br></li>
+
+<li><b>Calls</b> - Here you can see either the total number of
+calls to the given event, function or script, or the average number
+of calls to it in a single step (again, depending on the view
+options selected).<br>
+<br></li>
+
+<li>Step% - The value shown here is the overall percentage of a
+single step that the call has taken.</li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Exporting Data</h3>
+
+<p>You can export the profile data at any time by <i>right
+clicking</i> on the window and selecting the "<i>Export to
+file</i>" option. This will write the current view (after expanding
+all the nodes) in <tt>.csv</tt> format, which you can then load
+into any spreadsheet, like Excel for example.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"the%20debug%20module.html">The Debug Module</a></div>
+
+<div style="float:right">Next : <a href=
+"011_debugging.html">Debugging</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

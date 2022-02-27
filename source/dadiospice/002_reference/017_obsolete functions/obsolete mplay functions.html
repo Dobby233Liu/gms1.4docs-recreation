@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete mPlay Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete mplay functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20mplay%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20mplay%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete mPlay Functions</h1>
+
+<h2 class="studio">These functions deal with multi player/internet
+information transfer.</h2>
+
+<h3 class="studio"><b>Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>mplay_data_write</td>
+<td>Write value val (string or real) into location ind (ind between
+0 and 1000000).</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_data_read</td>
+<td>Returns the value in location ind (ind between 0 and 1000000).
+Initially all values are 0.</td>
+</tr>
+
+<tr>
+<td>mplay_data_mode</td>
+<td>Sets whether or not to use guaranteed transmission for shared
+data. guar should either be true (the default) or false.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_init_ipx</td>
+<td>Initializes an IPX connection.</td>
+</tr>
+
+<tr>
+<td>mplay_init_tcpip</td>
+<td>Initializes a TCP/IP connection. addr is a string containing
+the web address or IP address, e.g. 'www.gameplay.com' or
+'123.123.123.12', possibly followed by a port number (e.g. ':12').
+Only when joining a session (see below) do you need to provide an
+address. On a local area network no addresses are necessary.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_init_modem</td>
+<td>Initializes a modem connection. initstr is the initialization
+string for the modem (can be empty). phonenr is a string that
+contains the phone number to ring (e.g. '0201234567'). Only when
+joining a session (see below) do you need to provide a phone
+number.</td>
+</tr>
+
+<tr>
+<td>mplay_init_serial</td>
+<td>Initializes a serial connection. portno is the port number
+(1-4). baudrate is the baud rate to be used (100-256K). stopbits
+indicates the number of stopbits (0 = 1 bit, 1 = 1.5 bit, 2 = 2
+bits). parity indicates the parity (0=none, 1=odd, 2=even, 3=mark).
+And flow indicates the type of flow control (0=none, 1=xon/xoff,
+2=rts, 3=dtr, 4=rts and dtr). Returns whether successful. A typical
+call is mplay_init_serial(1,57600,0,0,4). Give 0 as a first
+argument to open a dialog for the user to change the settings.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_connect_status</td>
+<td>Returns the status of the current connection.</td>
+</tr>
+
+<tr>
+<td>mplay_end</td>
+<td>Ends the current connection.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_ipaddress</td>
+<td>Returns the IP address of your machine (e.g. '123.123.123.12')
+as a string.</td>
+</tr>
+
+<tr>
+<td>mplay_message_send</td>
+<td>Sends a message to the indicated player (either an identifier
+or a name; use 0 to send the message to all players). id is an
+integer message identifier and val is the value (either a real or a
+string). The message is sent in non-guaranteed mode. If val
+contains a string the maximal string length allowed is 30000
+characters.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_message_send_guaranteed</td>
+<td>Sends a message to the indicated player (either an identifier
+or a name; use 0 to send the message to all players). id is an
+integer message identifier and val is the value (either a real or a
+string). This is a guaranteed send. If val contains a string the
+maximal string length allowed is 30000 characters.</td>
+</tr>
+
+<tr>
+<td>mplay_message_receive</td>
+<td>Receives the next message from the message queue that came from
+the indicated player (either an identifier or a name). Use 0 for
+messages from any player. The routine returns whether there was
+indeed a new message.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_message_id</td>
+<td>Returns the identifier of the last received message.</td>
+</tr>
+
+<tr>
+<td>mplay_message_value</td>
+<td>Returns the value of the last received message.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_message_player</td>
+<td>Returns the player who sent the last received message.</td>
+</tr>
+
+<tr>
+<td>mplay_message_name</td>
+<td>Returns the name of the player who sent the last received
+message.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_message_count</td>
+<td>Returns the number of messages left in the queue from the
+player (use 0 to count all message).</td>
+</tr>
+
+<tr>
+<td>mplay_message_clear</td>
+<td>Removes all messages left in the queue from the player (use 0
+to remove all message).</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_player_find</td>
+<td>Searches for all players in the current session and returns the
+number of players found.</td>
+</tr>
+
+<tr>
+<td>mplay_player_name</td>
+<td>Returns the name of player number numb (0 is the first player,
+which is always yourself). This routine can only be called after
+calling the previous routine.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_player_id</td>
+<td>Returns the unique id of player number numb (0 is the first
+player, which is always yourself). This routine can only be called
+after calling the first routine. This id is used in sending and
+receiving messages to and from individual players.</td>
+</tr>
+
+<tr>
+<td>mplay_session_create</td>
+<td>Creates a new session on the current connection.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_session_find</td>
+<td>Searches for all sessions that still accept players and returns
+the number of sessions found.</td>
+</tr>
+
+<tr>
+<td>mplay_session_name</td>
+<td>Returns the name of session number numb (0 is the first
+session). This routine can only be called after calling the
+previous routine.</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_session_join</td>
+<td>Makes you join session number numb (0 is the first session).
+playername is your name as a player. Returns whether
+successful.</td>
+</tr>
+
+<tr>
+<td>mplay_session_mode</td>
+<td>Sets whether or not to move the session host to another
+computer when the host ends. move should either be true or false
+(the default).</td>
+</tr>
+
+<tr class="alt">
+<td>mplay_session_status</td>
+<td>Returns the status of the current session.</td>
+</tr>
+
+<tr>
+<td>mplay_session_end</td>
+<td>Ends the session for this player.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>These were Windows only functions and are no longer applicable
+to any other device, and even for Windows they have been superceded
+by much better methods of doing the same thing.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20message%20functions.html">Message Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete Display Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete display functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20display%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20display%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete Display Functions</h1>
+
+<h2 class="studio">These functions are for dealing with aspects of
+how the game is displayed.</h2>
+
+<h3 class="studio"><b>Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>screen_refresh</td>
+<td>Refreshes the screen using the current room image (not
+performing drawing events).</td>
+</tr>
+
+<tr class="alt">
+<td>screen_wait_vsync</td>
+<td>Waits for the next vertical synchronization of the
+monitor.</td>
+</tr>
+
+<tr>
+<td>set_automatic_draw</td>
+<td>Indicates whether to automatically redraw the room (true,
+default) or not (false).</td>
+</tr>
+
+<tr class="alt">
+<td>set_synchronization</td>
+<td>Indicates whether to synchronize the drawing with the refresh
+frequency of the monitor.</td>
+</tr>
+
+<tr>
+<td>display_set_size</td>
+<td>Sets the width and height of the display in pixels. Returns
+whether this was successful. (Realize that only certain
+combinations are allowed.)</td>
+</tr>
+
+<tr class="alt">
+<td>display_set_colourdepth</td>
+<td>Sets the colour depth. In general only 16 and 32 are allowed
+values. Returns whether successful.</td>
+</tr>
+
+<tr>
+<td>display_set_frequency</td>
+<td>Sets the refresh frequency for the display. Only few
+frequencies are allowed. Typically you could set this to 60 with a
+same room speed to get smooth 60 frames per second motion. Returns
+whether successful.</td>
+</tr>
+
+<tr class="alt">
+<td>display_set_all</td>
+<td>Sets all at once. Use -1 for values you do not want to change.
+Returns whether successful.</td>
+</tr>
+
+<tr>
+<td>display_test_all</td>
+<td>Tests whether the indicated settings are allowed. It does not
+change the settings. Use -1 for values you do not want to change.
+Returns whether the settings are allowed.</td>
+</tr>
+
+<tr class="alt">
+<td>window_set_region_size</td>
+<td>Set the width and height of the drawing region in the window.
+adaptwindow indicates whether the window size must be adapted if
+the region does not fit in. The window size will always be adapted
+if you use fixed scaling.</td>
+</tr>
+
+<tr>
+<td>window_set_region_scale</td>
+<td>If the window is larger than the actual room normally the room
+is displayed in a region centered in the window. It is though
+possible to indicate that it must be scaled to fill the whole or
+part of the window. A value of 1 is no scaling. If you use a value
+of 0 the region will be scaled to fill the whole window. If you set
+it to a negative value it will be scaled to the maximal size inside
+the window while maintaining the aspect ratio (this is often what
+you want). adaptwindow indicates whether the window size must be
+adapted if the scaled room does not fit in. Adapting the window is
+only effective when the scale factor is positive.</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_region_scale</td>
+<td>Returns the scale factor for the drawing region.</td>
+</tr>
+
+<tr>
+<td>window_get_region_width</td>
+<td>Returns the current width of the drawing region.</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_region_height</td>
+<td>Returns the current height of the drawing region.</td>
+</tr>
+
+<tr>
+<td>window_set_visible</td>
+<td>Sets whether the game window is visible. Clearly you normally
+want the window to remain visible during the whole game. The
+program will not receive keyboard events when the window is
+invisible.</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_visible</td>
+<td>Returns whether the game window is visible.</td>
+</tr>
+
+<tr>
+<td>window_set_showborder</td>
+<td>Sets whether the border around the window is shown. (In full
+screen mode it is never shown.)</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_showborder</td>
+<td>Returns whether the border around the window is shown in
+windowed mode.</td>
+</tr>
+
+<tr>
+<td>window_set_showicons</td>
+<td>Sets whether the border icons (iconize, maximize, close) are
+shown. (In full screen mode these are never shown.)</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_showicons</td>
+<td>Returns whether the border icons are shown in windowed
+mode.</td>
+</tr>
+
+<tr>
+<td>window_set_stayontop</td>
+<td>Sets whether the window must always stay on top of other
+Windows.</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_stayontop</td>
+<td>Returns whether the window always stays on top of other
+Windows.</td>
+</tr>
+
+<tr>
+<td>window_set_sizeable</td>
+<td>Sets whether the window is sizeable by the player. (The player
+can only size it when the border is shown and the window is not in
+full screen mode.)</td>
+</tr>
+
+<tr class="alt">
+<td>window_get_sizeable</td>
+<td>Returns whether the window is sizeable by the player.</td>
+</tr>
+
+<tr>
+<td>window_default</td>
+<td>Gives the window the default size and position (centered) on
+the screen.</td>
+</tr>
+
+<tr class="alt">
+<td>window_view_mouse_set</td>
+<td>Sets the position of the mouse with respect to the view with
+index id.</td>
+</tr>
+
+<tr>
+<td>window_views_mouse_set</td>
+<td>Sets the position of the mouse with respect to the first view
+that is visible.</td>
+</tr>
+
+<tr class="alt">
+<td>room_set_caption</td>
+<td>Sets the room caption for the given room index.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>These functions are now considered obsolete due to the changes
+in the way that <i>GameMaker: Studio</i> draws things to the
+screen, as well as the fact that some of them are legacy functions
+from quite a while back which are no longer valid for modern
+computers and devices, or that they don't work on any device except
+a Windows machine, and even then they are usually not
+necessary.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20splash%20functions.html">Splash Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

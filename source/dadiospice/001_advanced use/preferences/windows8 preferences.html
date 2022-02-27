@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Windows 8 Preferences</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/preferences/windows8 preferences.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fwindows8%20preferences.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fwindows8%20preferences.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Windows 8 Preferences</h1>
+
+<h2 class="studio">The section details the Windows8 preferences
+tab.</h2>
+
+<p><img class="center" src="win8_prefs.png"> Here you can set up
+the preferences that <i>GameMaker: Studio</i> is going to use with
+your installation of Windows8 for testing games. Before stating to
+use the Windows8 target platform you <i>must</i> have installed the
+<b>Visual Studio Express 2012</b> SDK that supports building
+Windows Store JavaScript applications (this can be found <a href=
+"http://www.microsoft.com/visualstudio/eng/downloads" target=
+"_blank">here</a>). Once that is installed the values for these
+preferences should be automatically generated. If these values are
+incorrect or are not generated automatically for you, you should do
+the following:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li>Make sure that the section titled <b>VS2012 Cross Tool</b>
+points to the "<b>vcvarsall.bat</b>" in your MS Visual Studio
+installation. <i>Without this you won’t be able to successfully
+create Windows Store packages.</i></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>The <b>WinJS API reference</b> and <b>WinJS Api Version</b>
+need to match with the WinJS API that comes with your version of
+Visual Studio. To check this, create a blank Windows Store
+JavaScript app in Visual Studio and, under References, right-click
+the <i>Windows Library for JavaScript</i> reference and select
+<i>Properties</i>. You should see an SDK Identity property that
+tells you all you need to correctly fill out these details.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>You should also note that for <i>GameMaker: Studio</i> to
+generate your app correctly, you will need a <b>Developer Key</b>.
+Please refer to the section <a href=
+"../global%20game%20settings/win8%20tab.html">Global Game Settings
+- Windows8 Tab: Installation</a>.<br>
+<br>
+Next you need to point <i>GameMaker: Studio</i> to the <b>Windows 8
+SDK Tools</b> which you can find in the folder "../Windows
+Kits/8.0/bin/x86". Finally you should click on the <b>Check Native
+SDK</b> button to confirm that your selections are okay and that
+everything works as it should. If you get an error or you are not
+sure that your Developer Licence is correct, you may also click on
+the button labelled <b>Acquire Developer Licence</b> which will
+open up a command prompt and automatically go through the necessary
+steps to get you one.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Preferences</a></div>
+
+<div style="float:right">Next: <a href=
+"windows%20phone%20preferences.html">Windows Phone 8
+Preferences</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

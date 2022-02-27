@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Actions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/actions/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Actions</h1>
+
+<h2 class="studio">This section of the manual outlines what actions
+are and how to use them in <i>GameMaker: Studio</i>.</h2>
+
+<p>One of the things that makes <i>GameMaker: Studio</i> so unique
+is the ease with which simple commands and functions can be made to
+manipulate your game world using <b>actions</b>. These actions come
+in the form of action <i>sets</i>, with each set having a number of
+icons that you can drag and drop into an object event to create
+behaviours for that object (this is commonly called just "DnD", in
+reference to the drag'n'drop aspect). Here are the action sets in
+full: <img class="center" src="full%20action%20sets.png"><br>
+<br>
+All the actions are found in the tabbed pages at the right of the
+object property form, and as you can see there are seven tabs full
+of actions for you to use to help create your games. If you require
+a brief reminder of what each action does while working with
+<i>GameMaker: Studio</i> you can place the mouse over any of them
+and a short descriptive text will pop up, and for a more in-depth
+explanation each tab is explained elsewhere in the manual (see the
+end of this section).</p>
+
+<h3 class="studio">Adding Actions To An Event</h3>
+
+<p>To put an action in an event, just drag it from the tabbed pages
+to the action list in the object as shown in the image below:
+<img class="center" src="../../images/add_action.png"><br>
+<br>
+From there you can then edit the details of the action, change the
+order of actions within the list (by clicking and dragging), copy,
+paste and even delete actions too. You can also select multiple
+actions if need be and they can also be dragged or copied from one
+object's action list to that of another!<br>
+<br>
+Now, as you can see above, when you drop an action in the action
+list, normally a window will pop-up in which you can fill in
+certain parameters for the action, and you can find a description
+of each of these actions and parameters in the sections of the
+manual listed at the end of this page. However, almost all of them
+have a two things in common which we will deal with here, the first
+of them being the box at the top that says "Applies To:". This is
+to tell <i>GameMaker: Studio</i> which instances are to be
+considered as "running" this action and the default is
+<tt>self</tt>, which is the instance of the object that has the
+action in its action list. Most of the time, this is what you want,
+but in the case of a collision event, you can also have an action
+that applies to the other instance involved in the collision, and
+for that you would change "Applies to:" to <tt>other</tt> (this is
+<i>only</i> valid for the collision event). Finally you have
+<tt>object</tt> which means that the action will be applied to
+<i>all</i> instances of a particular object that are active in the
+current room. In this way you could change all obj_red_balls into
+obj_blue_balls, for example.<br>
+<br>
+The consistent part of most actions is the check-box labeled
+<b>Relative</b>. When you check this box you are telling
+<i>GameMaker: Studio</i> that the values you input to the fields of
+the action are to be relative to the original value rather than
+being absolute. Here is an image to further explain what this
+means, and as you will see, checking "relative" can have a big
+influence on the result of the action!<br>
+<br>
+<img class="center" src="action_relative.png"><br>
+<br></p>
+
+<p>Information on the individual actions found in each set can be
+found in the following sections:</p>
+
+<blockquote>
+<ol>
+<li><a href="000_move%20actions.html">Move Actions</a><br>
+</li>
+
+<li><a href="001_main%20actions%20set%201.html">Main Actions, Set
+1</a><br>
+</li>
+
+<li><a href="002_main%20actions%20set%202.html">Main Actions, Set
+2</a><br>
+</li>
+
+<li><a href="003_control%20actions.html">Control Actions</a><br>
+</li>
+
+<li><a href="004_score%20actions.html">Score Actions</a><br>
+</li>
+
+<li><a href="005_extra%20actions.html">Extra Actions</a><br>
+</li>
+
+<li><a href="006_draw%20actions.html">Draw Actions</a><br>
+</li>
+
+<li><a href="007_using%20expressions%20and%20variables.html">Using
+Variables and Expressions in Actions</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Bookmarking Actions</h3>
+
+<p>When you add actions to a chosen event, these are numbered down
+the left hand side of the action list. This is just like when
+working with code, where each line gets its own line number, and is
+designed to make debugging and finding your way around complex
+constructions and action lists. You can "bookmark" a position
+within the action list too so that with the press of a number key
+on your keyboard you are taken directly to the action that was
+previously bookmarked, as long as the object has not been closed
+(closing the object properties will clear all current
+bookmarks).<br>
+<br>
+To bookmark an action, simply click on it once to select it with
+the mouse, then press <i>&lt;CONTROL&gt; + &lt;NUMBER&gt;</i> to
+add a bookmark at that point (The number is from 1 - 9 and is any
+one of the number keys at the top of your keyboard). It should be
+noted that the bookmarks are on a "per object" basis, so each
+object can have ten bookmarks as long as it is open for editing.
+From the moment you create a bookmark onwards, you can simply press
+the number key and you will be taken to the action that the
+bookmark references, and if you wish to remove a bookmark, then you
+can simply press <i>&lt;CONTROL&gt; + &lt;NUMBER&gt;</i> again
+which will clear the number specified.<br>
+<br>
+This functionality can be switched off in the <a href=
+"../../001_advanced%20use/preferences/scripts%20preferences.html">Scripts
+Preferences</a>, but note that doing so will also switch off line
+numbering for code boxes and the script editor.<br>
+<br></p>
+
+<h3 class="studio">Debugging Actions</h3>
+
+<p>Apart from the numbers that you can use for bookmarking the
+actions used, you can also add <b>break-points</b> to your action
+list. Break-points are where you can set the game stop running
+while in debug mode, and the Debug Module will show you details of
+the current action being run, the variables being used and a whole
+host of other details. In this way you can stop your actions from
+being performed and then "step" through them to identify the exact
+source of the error.<br>
+<br>
+<img class="center" src="action_breakpoint.png"> You can add a
+break-point (or multiple break-points) by selecting the action from
+the list and either <i>right click</i> and select <b>toggle
+break-point</b> or by pressing <b>F9</b> (see image above). The
+action will now be marked with a red dot, which means that the
+debug module will stop at that point in your game.<br>
+<br>
+For further information on how to use the debug module, please see
+the section on <a href=
+"../../001_advanced%20use/011_debugging.html">Debugging</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Using
+GameMaker: Studio</a></div>
+
+<div style="float:right">Next: <a href=
+"../rooms/index.html">Creating Rooms</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

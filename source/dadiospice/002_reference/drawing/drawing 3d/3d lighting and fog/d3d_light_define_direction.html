@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>d3d_light_define_direction</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d lighting and fog/d3d_light_define_direction.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20lighting%20and%20fog%2Fd3d_light_define_direction.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20lighting%20and%20fog%2Fd3d_light_define_direction.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">d3d_light_define_direction</h1>
+
+<h2 class="studio">Defines a directed light.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">d3d_light_define_direction(ind, dx, dy, dz,
+col)</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>ind</td>
+<td>The index number of the light.</td>
+</tr>
+
+<tr class="alt">
+<td>dx</td>
+<td>The x component of the light vector.</td>
+</tr>
+
+<tr>
+<td>dy</td>
+<td>The y component of the light vector.</td>
+</tr>
+
+<tr class="alt">
+<td>dz</td>
+<td>The z component of the light vector.</td>
+</tr>
+
+<tr>
+<td>col</td>
+<td>The colour of the light.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>To use lighting you obviously need to define lights. In
+<i>GameMaker: Studio</i> two different lights exist: directional
+lights (like the sun), and positional lights. This function is for
+a directional light, and the direction and intensity are set by the
+values input for the x,y and z unit vector (meaning that they must
+be between -1 and 1, where 1 or -1 is full intensity, and 0 is no
+intensity). The lights can also be given a colour, which will also
+affect the perceived intensity of the light as certain colours
+appear "darker" than others. You must also give the light an index
+number which what will be used in other functions to reference
+it.<br>
+<br>
+<i><b>Note:</b> There are only 8 hardware lights available, so you
+should use these functions to define and manage "active" lights,
+not all lights in the scene.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">d3d_set_lighting(true);<br>
+d3d_light_define_direction(1, 0, 1, 0, c_white);<br>
+d3d_light_enable(1, true);<br></p>
+
+<p>The above code will enable lighting for the whole scene, then
+define a white light and finally turn that light on.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">3D
+Drawing</a></div>
+
+<div style="float:right">Next: <a href=
+"d3d_light_define_point.html">d3d_light_define_point</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

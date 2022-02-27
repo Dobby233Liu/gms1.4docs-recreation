@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Importing Skeletal Animations</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about sprites/importing skeletal animations.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fimporting%20skeletal%20animations.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fimporting%20skeletal%20animations.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Importing Skeletal Animations</h1>
+
+<h2 class="studio">Here you can find information on importing
+skeletal animations into GameMaker: Studio.</h2>
+
+<p>A sprite made using skeletal animation, is one in which a base
+"skeleton" has been created and animated using <i>key-frames</i> to
+move the component parts of the skeleton over time. This skeleton
+is then <i>skinned</i> from a texture atlas and the resulting
+animation exported in one of many file types.
+<i>Gamemaker:Studio</i> permits you to import this type of sprite
+as long as it has been exported as a <tt>*.json</tt> format file
+and has the correctly associated texture atlas file
+(<tt>*.atlas</tt>) and image file (as a <tt>*.png</tt>) in the same
+directory.</p>
+
+<blockquote><i><b>IMPORTANT:</b> GameMaker: Studio only supports a
+single texture atlas per sprite.</i>
+</blockquote>
+
+<blockquote><i><b>NOTE:</b> This feature currently only supports
+files created using the program <a href=
+"http://esotericsoftware.com/" target="_blank">Spine</a>.</i>
+</blockquote>
+
+<p><img class="center" src="spine_example.png"><br>
+<br>
+</p>
+
+<h3 class="studio">How To Import A Skeletal Animation</h3>
+
+<p>Currently <i>GameMaker: Studio</i> can only import vector images
+from <b>JSON format files</b> made by the program <b>Spine</b>,
+however the way to import them into the program is almost identical
+to that for adding a normal bitmap image. To add a skeletal
+animation, you need to create a new sprite, which will bring up the
+standard <a href=
+"../../000_using%20gamemaker/005_loading%20sprites.html">Load
+Sprite dialogue</a>, but make sure that you have selected
+<tt>*.json</tt> from the file filter at the bottom. <img class=
+"center" src="spine_import.png"><br>
+<br>
+Hitting the "load" button will add the skeletal animation to the
+resource tree as a sprite, with a progress bar being shown as the
+file is processed. Note that, depending on the complexity of the
+file, this may take a moment or two. When processing has finished
+you'll be returned to the sprite properties dialogue, which will
+now look like this: <img class="center" src=
+"spine_preview.png"><br>
+<br>
+Once you have imported the animation, you can set the collision
+properties, but note that you are limited here to simply using
+precise collisions or bounding box collisions, and that the
+collision data for a skeletal animation is explicitly taken from
+the data provided. <i>GameMaker: Studio</i> does not generate any
+collision mask if the data is missing from imported file, meaning
+you simply won't get working collisions if the masks are not set
+correctly in the program used to create the image being
+imported.</p>
+
+<blockquote><i><b>NOTE:</b> Due to the complexity of skeletal
+animations, the preview image shown in the sprite editor is not
+intended to accurately represent your animation, but rather give
+you a simple image that represents the animation for visualising in
+the room editor.</i>
+</blockquote>
+
+<p>Unlike bitmap sprites, the imported skeletal animation sprite
+cannot be modified in the editor in any way, but there are a number
+of functions available within the GameMaker Language (GML) which
+can be used to change skins, set properties, and control other
+aspects of the animation.<br>
+<br></p>
+
+<h3 class="studio">Important</h3>
+
+<p>There are a number of things that you should be aware of when
+importing skeleton animation sprites, with the most important being
+that some of the sprite drawing and sprite management functions are
+not supported for technical reasons, particularly those draw
+functions that draw only part of a sprite, or that "skew" the
+position in some way (see the individual <a href=
+"../../002_reference/drawing/drawing%20sprites%20and%20backgrounds/index.html">
+draw_sprite_*()</a> functions for exact details of which). However
+the basic sprite drawing functions are fully supported as are the
+built in <a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/index.html">
+sprite variables</a>. Apart from these functions and variables, you
+can also set and change animation properties using special
+<tt>skeleton_*</tt> functions, which are listed and explained in
+the reference section on <a href=
+"../../002_reference/game%20assets/sprites/skeletal%20animations/index.html">
+Skeletal Animations</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Sprites</a></div>
+
+<div style="float:right">Next: <a href=
+"editing%20sprites.html">Editing Sprites</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

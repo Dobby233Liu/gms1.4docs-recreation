@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Strings</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/strings/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fstrings%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fstrings%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Strings</h1>
+
+<h2 class="studio">The following functions exist that deal with
+Strings.</h2>
+
+<p>At some time when making your game you will need to use text.
+Text in games is dealt with by using the <b>string</b> functions (a
+string is just another way of saying a line of text) and
+<i>GameMaker: Studio</i> has a complete set of functions that
+permit you to manipulate strings in many ways, including the
+insertion of one string in another, the copying of strings and the
+ability to parse strings for the digits or the letters that they
+contain.<br>
+<br>
+It is worth noting that there are certain conventions that you can
+use when creating strings. You can, for example, create a string
+with quotes using the single quotation marks like this: "...and so
+Sam said 'Hi there!'". You can also force a line break using the #
+symbol or by adding a new line in the string creation like
+this:</p>
+
+<p class="code">str = "Hello#World";<br>
+<br>
+// or<br>
+<br>
+str = "Hello<br>
+World";<br></p>
+
+<p>If you need to actually draw the "#" symbol as part of the text,
+you can precede it using the "\" symbol like this:</p>
+
+<p class="code">str = "this will draw the \# symbol";</p>
+
+<p>Another thing to note is that the unicode character 9647 (▯) is
+used to substitute any missing glyphs that you may have in your
+designated font when rendering it in the draw event. So if your
+font doesn't have, for example, the ° symbol, then writing 90° will
+actually produce 90▯.<br>
+<br>
+The following list of functions are all for dealing with
+strings:<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href="ansi_char.html">ansi_char</a><br>
+</li>
+
+<li><a href="chr.html">chr</a><br>
+</li>
+
+<li><a href="ord.html">ord</a><br>
+</li>
+
+<li><a href="real.html">real</a><br>
+</li>
+
+<li><a href=
+"../001_gml%20language%20overview/is_string.html">is_string</a><br>
+</li>
+
+<li><a href="string.html">string</a><br>
+</li>
+
+<li><a href="string_byte_at.html">string_byte_at</a><br>
+</li>
+
+<li><a href="string_byte_length.html">string_byte_length</a><br>
+</li>
+
+<li><a href="string_set_byte_at.html">string_set_byte_at</a><br>
+</li>
+
+<li><a href="string_char_at.html">string_char_at</a><br>
+</li>
+
+<li><a href="string_ord_at.html">string_ord_at</a><br>
+</li>
+
+<li><a href="string_copy.html">string_copy</a><br>
+</li>
+
+<li><a href="string_count.html">string_count</a><br>
+</li>
+
+<li><a href="string_delete.html">string_delete</a><br>
+</li>
+
+<li><a href="string_digits.html">string_digits</a><br>
+</li>
+
+<li><a href="string_format.html">string_format</a><br>
+</li>
+
+<li><a href="string_insert.html">string_insert</a><br>
+</li>
+
+<li><a href="string_length.html">string_length</a><br>
+</li>
+
+<li><a href="string_letters.html">string_letters</a><br>
+</li>
+
+<li><a href=
+"string_lettersdigits.html">string_lettersdigits</a><br>
+</li>
+
+<li><a href="string_lower.html">string_lower</a><br>
+</li>
+
+<li><a href="string_pos.html">string_pos</a><br>
+</li>
+
+<li><a href="string_repeat.html">string_repeat</a><br>
+</li>
+
+<li><a href="string_replace.html">string_replace</a><br>
+</li>
+
+<li><a href="string_replace_all.html">string_replace_all</a><br>
+</li>
+
+<li><a href="string_upper.html">string_upper</a><br>
+</li>
+
+<li><a href="string_height.html">string_height</a><br>
+</li>
+
+<li><a href="string_height_ext.html">string_height_ext</a><br>
+</li>
+
+<li><a href="string_width.html">string_width</a><br>
+</li>
+
+<li><a href="string_width_ext.html">string_width_ext</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>Other than those functions that relate specifically to strings,
+the <b>Windows</b> target also permits you to use access the
+clipboard to get and set text information:</p>
+
+<blockquote>
+<ol>
+<li><a href="clipboard_has_text.html">clipboard_has_text</a><br>
+</li>
+
+<li><a href="clipboard_get_text.html">clipboard_get_text</a><br>
+</li>
+
+<li><a href="clipboard_set_text.html">clipboard_set_text</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Reference</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

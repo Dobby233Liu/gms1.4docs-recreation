@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>iap_event_queue</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/in app purchases/iap_event_queue.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Fiap_event_queue.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Fiap_event_queue.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">iap_event_queue</h1>
+
+<h2 class="studio">Creates a <tt>ds_queue</tt> of purchase
+information.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">iap_event_queue();</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> ds_queue</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p><i><b>WARNING!</b> This function has been deprecated.</i><br>
+<br>
+The purpose of this function is to get all store changes or to
+receive confirmation when a purchase has gone through correctly.
+Note that the confirmation of purchase only means that the payment
+for the in app purchase has succeeded, it does <i>not</i> mean that
+any downloadable content associated with it has been received by
+the game. To check for that you should use the <a href=
+"iap_product_files.html"><tt>iap_product_files</tt></a> or <a href=
+"iap_is_downloaded.html"><tt>iap_is_downloaded</tt></a>
+functions.<br>
+<br>
+This function is <i><b>only available in the <a href=
+"../../001_advanced%20use/more%20about%20async%20events/iap.html">IAP
+Event</a></b></i> and will return a <a href=
+"../data%20structures/ds%20queues/index.html"><tt>ds_queue</tt></a>
+with the following values (where appropriate):</p>
+
+<blockquote>
+<ul>
+<li>-1 indicating that the event was a store state change.</li>
+
+<li>A product index NUMBER. i.e. the value you’d use for <a href=
+"iap_acquire.html"><tt>iap_aquire</tt></a> or <a href=
+"iap_consume.html"><tt>iap_consume</tt></a>.</li>
+</ul>
+</blockquote>
+
+<p><i><b>NOTE:</b> When we talk about the index NUMBER, we are</i>
+not talking about the purchase id, but rather the position in the
+initial list that was used to activate purchases. For example, if
+you have activated 3 different items for purchase, and the player
+buys item number 2, the index number returned by this function
+would be 1 (numbering starts at 0, so product 1 is index 0, product
+2 is index 1 and product 3 is index 2).<br>
+<br>
+<i><b>NOTE:</b> The <tt>ds_queue</tt> created by the function is
+automatically removed by</i> GameMaker: Studio at the end of the
+event, so there is no need for you to manually "clean up" and
+remove it from memory.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var q;<br>
+q = iap_event_queue();<br>
+if !ds_queue_empty(q))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;store_status = ds_queue_dequeue(q);<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will query the returned <tt>ds_queue</tt> to see
+if it contains data and if so, store (and remove from the queue)
+the first value found in the variable "store_status". For an
+extended example of use please see the function <a href=
+"iap_store_status.html"><tt>iap_store_status</tt></a>.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">In App
+Purchases</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

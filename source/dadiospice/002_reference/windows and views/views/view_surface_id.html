@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>view_surface_id</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows and views/views/view_surface_id.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fviews%2Fview_surface_id.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fviews%2Fview_surface_id.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">view_surface_id</h1>
+
+<h2 class="studio">Assign a surface to a view.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">view_surface_id[0...7]</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this variable you can set a given view to draw to a
+surface, or get the current surface id if one has been assigned to
+a view. When working with surfaces, it is often required that you
+draw the <i>whole</i> visible region of the screen to the surface,
+and so you would assign it to a view using this function. This
+means that everything that is shown in the chosen view will now be
+drawn to the assigned surface. The view will now <i>not</i> be
+drawn to the screen, meaning that you will need to do either:</p>
+
+<blockquote>
+<ul>
+<li>Enable a new view and draw the surface only in that view (using
+<a href="view_current.html"><tt>view_current</tt></a> to check
+which view is being drawn)</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Draw the surface in the Draw GUI event of an instance, since
+the GUI layer is independent of views.</li>
+</ul>
+</blockquote>
+
+<p>You can also read this variable to get the index of the surface
+that has been assigned to the chosen view or it will return -1 if
+no surface has been assigned, and generally the surface used for
+this function should be the size of the view itself (not the view
+port). The extended example below shows a basic setup for capturing
+a view and drawing it in the <b>Draw GUI</b> event, and for more
+information on surfaces see the section <a href=
+"../../surfaces/index.html">Reference - Surfaces</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Extended Example:</h3>
+
+<p>In this extended example, we will create a surface and assign it
+to view 0, then draw that to the screen in the Draw GUI event. To
+start with we need to initialise our surface variable in the
+<b>Create Event</b> of a controller instance:</p>
+
+<p class="code">surf = -1;</p>
+
+<p>We set the surface variable to -1, as all surface functions
+should really be used in the <b>Draw</b> events to prevent odd
+errors or undefined behaviours. So, with that done, we would then
+have this in the main <b>Draw</b> event:</p>
+
+<p class="code">if !surface_exists(surf)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;surf = surface_create(view_wview[0],
+view_hview[0]);<br>
+&nbsp;&nbsp;&nbsp;view_surface_id[0] = surf;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>Surfaces are <i>volatile</i> meaning that they could be removed
+from memory at any time due to OS memory management and other
+things, so here we check to see if our surface exists and if it
+doesn't we create it and assign it to the view 0. With that done,
+everything that would appear in view 0 will now be drawn to the
+surface we have created instead. If you do nothing else at this
+point, when you run your game you will simply get a blank screen as
+all drawing is being done on the surface, but the surface itself is
+not being drawn anywhere. Therefore we now need to draw the surface
+to the screen in the <b>Draw GUI</b> event like this:</p>
+
+<p class="code">if surface_exists(surf)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;draw_surface_stretched(surf, 0, 0,
+display_get_gui_width(), display_get_gui_height());<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>This code will now draw the surface that we have created from
+the view stretched to fill the entire GUI layer.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Views</a></div>
+
+<div style="float:right">Next: <a href=
+"window_view_mouse_get_x.html">window_view_mouse_get_x</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

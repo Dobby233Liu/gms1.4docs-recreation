@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Physics</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about rooms/physics.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20rooms%2Fphysics.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20rooms%2Fphysics.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Physics</h1>
+
+<h2 class="studio">This section deals with the use of physics in
+the room editor.</h2>
+
+<p>The addition of physics to <i>GameMaker: Studio</i> means that
+you can add a much greater level of realism to your games, with
+better collisions and movement than ever before. However this is
+not always necessary, nor is it the default behaviour for your
+game. If you do wish to use physics, you must tell <i>GameMaker:
+Studio</i> this and set up some basic parameters, both in your
+object resources (see - <a href=
+"../more%20about%20objects/physics.html">More about Objects:
+Physics</a>) and in your rooms.<br>
+<br></p>
+
+<h3 class="studio">The Physics Tab</h3>
+
+<p><img class="center" src="physics_tab.png"> Before your room can
+use physics you must tick the option at the top of this tab
+labelled <b>Room is Physics World</b>. Once you have done that you
+can then continue on to set up the <b>Physics World Properties</b>,
+which are some basic properties that you must have pre-defined
+before your room will allow physics objects to work as such. For a
+more precise control over the world you can use code (see -
+<a href="../../002_reference/physics/index.html">The Physics
+Functions</a> for more information).<br>
+<br>
+The next thing you must do is set up the <b>Gravity</b> of the
+world, and the strength and direction of this is calculated as a
+<a href=
+"../../002_reference/maths/vector%20functions/vectors.html">vector</a>
+of the x/y position that you set. So, an x of 0 and a y of 1 will
+set the gravity direction as being down with a force of 1 metre per
+second (for a more detailed explanation see - <a href=
+"../../002_reference/physics/the%20physics%20world/physics_world_gravity.html">
+The Physics World: Gravity</a>). Finally you must set the ratio of
+<b>Pixels To Meters</b> for <i>GameMaker: Studio</i> to use as a
+base for all its physics calculations. This is because the physics
+functions work on real-world measurements, which is why we must set
+this value, and you'll want to adjust this setting until the
+average pixel size of the objects you are using translates roughly
+into simulated physics objects of an appropriate size.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Rooms</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

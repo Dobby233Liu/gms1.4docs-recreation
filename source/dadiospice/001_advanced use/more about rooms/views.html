@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Views</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about rooms/views.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20rooms%2Fviews.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20rooms%2Fviews.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Views</h1>
+
+<h2 class="studio">This section deals with views and how to use
+them in the room editor.</h2>
+
+<p>Views give a mechanism for drawing different parts of your room
+at different places on the screen, or for drawing just a part of
+your room to cover the whole screen. For example, in most platform
+games, the view follows the main character, as if you could see the
+<i>whole</i> level on the screen your character would be too small
+to see and there would be no surprises for the player! Views can
+also be used in two-player games, as they permit you to create a
+split-screen setup in which in one part of the screen you see one
+player and in another part you see the other player. A third use is
+in games in which part of the room should scroll (e.g. with the
+main character) while another part is fixed (for example some
+status panel). This can all be easily achieved in <i>GameMaker:
+Studio</i> using views.<br>
+<br></p>
+
+<h3 class="studio">The Views Tab</h3>
+
+<p><img class="center" src="../../images/form_room_views.png"> At
+the top of the views tab there is a box labelled <b>Enable the use
+of Views</b>, and this must be flagged before any of the views can
+be active in a game. The next checkbox is the one that says Clear
+Background with Window colour, which clears the application surface
+with the window colour, and can be unchecked if you know that you
+are drawing to cover the whole surface.<br>
+<br>
+Below this you see the list of available views (you can define a
+maximum of eight) with the information about where these views are
+to be drawn contained in the boxes below. First of all you must
+indicate whether the view should be <b>Visible when the room
+starts</b> by checking the appropriate box, and if you wish to use
+views, make sure at least one view is visible at the start of every
+room. Visible views are shown in bold in the view list above
+this.<br>
+<br></p>
+
+<h3 class="studio">The View and The View Port</h3>
+
+<p>A view is defined by two different sets of values, the view
+itself and the port on the screen. This can sometimes cause
+confusion so let's explain this a bit before explaining how we
+define each of them:</p>
+
+<ul>
+<li>The view is considered as an area of the <i>room</i> that we
+are going to display on the screen.</li>
+
+<li>The port is considered as the area of the <i>display</i> where
+we are going to draw the view.</li>
+</ul>
+
+<p>So, this means that you can have a 640x480 view into your room,
+and then set the port to 320x240, which will display the view
+<i>scaled down</i> to that sized port on the screen, and you can
+also do the same and set the view to a smaller value and the port
+to larger making the image scale <i>up</i> to fit the port size and
+be shown on the screen larger than it is. In this way you can
+maintain a screen (port) size while changing the view and display
+more or less of the room in the same area of the screen.<br>
+<br>
+The view is always defined as a rectangular area in the room, where
+you specify the position of the top-left corner, the width and the
+height of this area. Then you must specify where this area is shown
+in the window on the screen by defining the view port, where again
+you specify the position of the top-left corner and the size (note
+that anything other than 0,0 for the top left corner can give
+strange results). You can have more than one port and they can
+overlap, in which case they are drawn in the indicated order one on
+top of the other. Please realise that the over all screen area is
+always defined as a rectangular area, so your ports, even when
+offset, will form a rectangle, with any empty spaces being filled
+in by the window colour, meaning that in these circumstances you
+should always have <b>Clear Background with Window colour</b>
+checked or else you will get odd artefacts drawn in the spaces
+between ports.<br>
+<br>
+<i><b>NOTE:</b> On Windows SurfaceRT devices, there is a canvas
+limit of 2048x2048, which means the drawing canvas cannot go above
+those dimensions (neither with views, nor by setting the game
+window directly) otherwise your game graphics will be corrupted or
+degraded.</i><br>
+<br></p>
+
+<h3 class="studio">Object Following</h3>
+
+<p>The "Object Following" option is for when you want the view to
+"follow" (ie: maintain the view focused on) a certain object. To do
+this you must click on the menu icon and select an object from the
+list that pops up (if there are multiple instances of this object
+in the room, only one of them is followed by the view). The normal
+behaviour for a view is to only move when the instance being
+followed gets too close to a "buffer" zone that makes an invisible
+boundary around the edge of the view. This zone can be defined by
+you using the <b>Hbor</b> and <b>Vbor</b> values, where <b>Hbor</b>
+is the horizontal border zone, and <b>Vbor</b> is the vertical
+border zone. So, setting these values to, for example, 64, will
+mean that the view will not start to move and follow the character
+until he reaches 64 pixels from the edge of the view.<br>
+<br>
+Finally you can indicate the speed at which the view moves when the
+character has reached the buffer zone, and this has a default value
+of -1. This default value is basically "instantaneous" and means
+that the moment the follow object is outside the Hbor or Vbor
+buffer zone, the view will skip to its current position. Now, this
+is not always what you want and so you can set the vertical and
+horizontal scrolling speed for the view by setting the values for
+<b>Hsp</b> and <b>Vsp</b> to something other than -1. Note that a
+value of 0 will cause the view to not move at all, and any other
+positive value is how many pixels it will move in any step, so
+setting the <b>Hsp</b> to 5 will have the view follow the object at
+5 pixels per step horizontally.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Rooms</a></div>
+
+<div style="float:right">Next: <a href=
+"physics.html">Physics</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

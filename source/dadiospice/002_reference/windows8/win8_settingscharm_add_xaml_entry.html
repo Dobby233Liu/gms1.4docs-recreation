@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_settingscharm_add_xaml_entry</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_settingscharm_add_xaml_entry.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_settingscharm_add_xaml_entry.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_settingscharm_add_xaml_entry.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_settingscharm_add_xaml_entry</h1>
+
+<h2 class="studio">Adds an option to the "Settings" charm based on
+an external XAML file for the Windows 8 Native target module.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_settingscharm_add_xaml_entry(name, xamlPath,
+headerRGB, callback, wide);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>name</td>
+<td>The name of the option to add to the charm.</td>
+</tr>
+
+<tr class="alt">
+<td>xamlPath</td>
+<td>Full path to the XAML file to use</td>
+</tr>
+
+<tr>
+<td>headerRGB</td>
+<td>The header colour of the flyout as a hex string, with the
+format "#RRGGBB".</td>
+</tr>
+
+<tr class="alt">
+<td>callback</td>
+<td>The script to run if pressed.</td>
+</tr>
+
+<tr>
+<td>wide</td>
+<td>Set to <tt>true</tt> for a wide fly-out or <tt>false</tt>
+otherwise.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> String</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function is similar to the <a href=
+"win8_settingscharm_add_entry.html"><tt>win8_settingscharm_add_entry</tt></a>
+only this time you can define your own slide-out menu and options
+from an external XAML formatted file.<br>
+<br>
+You can then give your new options a name (a string) to show on the
+fly-out, then you need to add in the path to get to the XAML file
+(this should be included in the game package as an Included File).
+You can also define the header colour of the fly-out as hex value
+#RRGGBB (for example, #ff40a0) and give a script to be called when
+the setting has been selected. This script <i>must</i> take the
+following arguments:</p>
+
+<ul>
+<li>argument0: The element name, a string, which should be the same
+as that specified as the name in the XAML file.</li>
+
+<li>argument1: The element type, a string, which can be one of the
+following:<br>
+<br>
+
+<ul>
+<li>"TextBox - TextChanged event, and the returned data is text
+content</li>
+
+<li>"Button" - Click event with no data returned</li>
+
+<li>"ToggleSwitch" - Toggled event, where the returned string is
+either "True" or "False"</li>
+
+<li>"RadioButton" - Checked event, where the returned string data
+is either "True" or "False"</li>
+</ul></li>
+
+<li>argument2: The returned value for the named element, as a
+string (see above for details).</li>
+</ul>
+
+<p>The function itself will return the string "OK" if it has
+successfully added the XAML to the Settings Charm, otherwise it
+will return a string with the error details. You can find an
+example of how the XAML should be formatted from the YoYo Games
+Knowledge Base article <a href=
+"http://help.yoyogames.com/entries/27120678-HTML-and-XAML-Examples-For-The-Windows-8-Settings-Charm"
+target="_blank">HTML and XAML Examples For The Windows 8 Settings
+Charm</a>.<br>
+<br></p>
+
+<blockquote><i><b>NOTE:</b> This function is for the Windows 8
+Native target module only. For Windows 8 JavaScript support, please
+see <a href=
+"win8_settingscharm_add_html_entry.html"><tt>win8_settingscharm_add_html_entry</tt></a></i>.</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var result =
+win8_settingscharm_add_xaml_entry("Settings", "xaml2.txt",
+"#ff20a0", scr_SettingsCallback, false);</p>
+
+<p>The above code will create a new option within the Settings
+Charm, taken from the given file, and associate it with the script
+"scr_SettingsCallback".</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_settingscharm_set_xaml_property.html">win8_settingscharm_set_xaml_property</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

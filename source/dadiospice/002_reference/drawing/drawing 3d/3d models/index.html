@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>3D Models</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d models/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20models%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20models%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">3D Models</h1>
+
+<h2 class="studio">This section details all the functions available
+to you for using and creating 3D models.</h2>
+
+<p>When you need to draw large models it is rather expensive to
+call all the different drawing functions again and again in every
+step, so to avoid this you can create models. A model consists of a
+number of primitives and shapes that are all drawn together as a
+whole. Once a model is created you can draw it at different places
+with just one function call, models can also be loaded or saved to
+a file. Using models can considerable speed up the graphics in your
+3D games and you should use them whenever you can.<br>
+<br>
+Before giving the different functions available there is one
+important point: the handling of textures. Textures are taken from
+sprites and backgrounds using the functions found in the section on
+<a href="../../drawing%20primitives/index.html">2D Primitives</a>.
+The indices of the textures can be different at different moments,
+and as a result models do not contain any texture information. This
+means that only when you draw a model do you provide the texture,
+so you can only use one texture in a model. If you need more
+textures you must either combine them in one (and carefully deal
+with the texture coordinates) or you must use multiple models. The
+advantage of this is that you can draw the same model easily with
+different textures.<br>
+<br>
+For creating, loading, saving, and drawing models, the following
+functions exist:<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href="d3d_model_create.html">d3d_model_create</a>
+</li>
+
+<li><a href="d3d_model_destroy.html">d3d_model_destroy</a>
+</li>
+
+<li><a href="d3d_model_clear.html">d3d_model_clear</a>
+</li>
+
+<li><a href="d3d_model_save.html">d3d_model_save</a>
+</li>
+
+<li><a href="d3d_model_load.html">d3d_model_load</a>
+</li>
+
+<li><a href="d3d_model_draw.html">d3d_model_draw</a>
+</li>
+</ol>
+</blockquote>
+
+<p>For each primitive function there is an equivalent to add it to
+a model. The functions have the same arguments as the 2D primitive
+functions, or the 3D normal equivalents, except that each has as a
+first argument the index of the model, and no texture information
+is provided.<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href=
+"d3d_model_primitive_begin.html">d3d_model_primitive_begin</a>
+</li>
+
+<li><a href="d3d_model_vertex.html">d3d_model_vertex</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_colour.html">d3d_model_vertex_colour</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_texture.html">d3d_model_vertex_texture</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_texture_colour.html">d3d_model_vertex_texture_colour</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_normal.html">d3d_model_vertex_normal</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_normal_colour.html">d3d_model_vertex_normal_colour</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_normal_texture.html">d3d_model_vertex_normal_texture</a>
+</li>
+
+<li><a href=
+"d3d_model_vertex_normal_texture_colour.html">d3d_model_vertex_normal_texture_colour</a>
+</li>
+
+<li><a href=
+"d3d_model_primitive_end.html">d3d_model_primitive_end</a>
+</li>
+</ol>
+</blockquote>
+
+<p>Besides primitives you can also add basic shapes to the models.
+Again the functions look almost the same as the drawing functions
+found in the <a href="../3d%20drawing/index.html">3D drawing</a>
+section, but with a model index and without texture
+information:<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href="d3d_model_block.html">d3d_model_block</a>
+</li>
+
+<li><a href="d3d_model_cylinder.html">d3d_model_cylinder</a>
+</li>
+
+<li><a href="d3d_model_cone.html">d3d_model_cone</a>
+</li>
+
+<li><a href="d3d_model_ellipsoid.html">d3d_model_ellipsoid</a>
+</li>
+
+<li><a href="d3d_model_wall.html">d3d_model_wall</a>
+</li>
+
+<li><a href="d3d_model_floor.html">d3d_model_floor</a>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Working With
+3D</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Setting Up GameMaker: Studio For Source Control
+Management</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/source control/setting up gm for source control.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fsource%20control%2Fsetting%20up%20gm%20for%20source%20control.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fsource%20control%2Fsetting%20up%20gm%20for%20source%20control.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Setting Up <i>GameMaker: Studio</i> For Source
+Control Management</h1>
+
+<h2 class="studio">Once you have your repository created and your
+SCM solution installed, you need to tell <i>GameMaker: Studio</i>
+to activate Source Control Management for your projects.</h2>
+
+<p>When you have prepared your computer with the necessary SCM
+applications, you have to tell <i>GameMaker: Studio</i> to add your
+projects into the SCM repository. This can be done for new projects
+as well as projects that have been started previously but never
+versioned. The steps to follow in either case are outlined
+below.<br>
+<br></p>
+
+<h3 class="studio">Preferences</h3>
+
+<p>By default the <i>GameMaker: Studio</i> <a href=
+"../preferences/index.html">Preferences</a> will be set to use the
+latest version of SVN that is bundled along with the program, but
+should you wish to use a different version or another type of SCM
+solution, you will need to open the <a href=
+"../preferences/source%20control%20preferences.html">Source Control
+Preferences Tab</a> to point to the installed solution that you
+wish to use.<br>
+<br>
+If you select a "Custom" solution, then you will also need to set
+the two file paths to point to the correct binary executable for
+the solution (for example <tt>C:\Program Files
+(x86)\Git\bin\git.exe</tt>) and then the location of the
+configuration file for the solution. If you do not have a config
+file, you will need to create one, which is explained in more
+detail from the <a href=
+"../preferences/source%20control%20preferences.html">Source Control
+Preferences Tab</a> page of this manual. Note that if you are using
+Mercurial, the final option in the preferences "No Folder Commits",
+should be checked (but <i>only</i> for Mercurial).<br>
+<br></p>
+
+<h3 class="studio">Adding Source Control To A New Project</h3>
+
+<p>When you create a new project, you can tell <i>GameMaker:
+Studio</i> to add it directly into Source Control so that all
+further work done on this project can be versioned. To do this, you
+must first create the project and make sure that you have selected
+"Use source control" from the new project form, like this (note
+that if you have disabled source control in the Preferences, you
+will <i>not</i> see this):<br>
+<br>
+<img class="center" src="new_project_sc_dialogue_1.png"> You would
+then click on the "Create" button as normal, but before you can
+actually start working on your new project you are presented with
+another form where you can enter your username and password
+(whoever administers the system will have given you this, otherwise
+just leave it blank), as well as point <i>GameMaker: Studio</i> to
+the location where you created your repository:<br>
+<br>
+<img class="center" src="new_project_sc_dialogue_2.png"> Once you
+have done that, just click "OK", and now you are ready to work on
+your project with source control keeping track of all the changes
+that you make. Note that this dialogue also has a "Checkout"
+button, which enables you to pull down an existing repository
+(based on the settings the user has typed into the form) to use as
+a base, rather than a blank new project.<br>
+<br></p>
+
+<h3 class="studio">Adding Source Control To An Existing
+Project</h3>
+
+<p>If you have been working on a project <i>without</i> having it
+configured for source control, it's still not too late and you can
+actually version it too and have it protected the same as any new
+file. To do this, you have to go to the <b>Global Game Settings</b>
+and select the Source Control tab, then fill in the relevant
+details. It should look something like this:<br>
+<br>
+<img class="center" src=
+"../global%20game%20settings/source_tab.png"> The <i>Username</i>
+and <i>Password</i> fields should be filled in with the name and
+password proportioned to you by whoever administers the system (if
+you have none, or don't know them, then just leave it blank) and
+the URL should point <i>GameMaker: Studio</i> to the location where
+you created your repository. Finally, click on the "import Project
+to repository" button to version your current project and add it to
+the source control repository. Note, that this only needs to be
+done <i>once</i> for any project and you should never need to do
+this again. Make sure to tick the "Use Source Control" checkbox at
+the bottom before closing the window and saving the settings.<br>
+<br></p>
+
+<h3 class="studio">Summary</h3>
+
+<p>Whether you choose to start a new project or add a previously
+started one into your source control repository, it is essential
+that you understand what is happening and how this system should
+work from now on. Basically, you now have two copies of your
+project - a local one stored on your own computer and a versioned
+one stored in the repository. All changes you make to your project
+from this point onwards will be made to your <i>local</i> copy,
+<b>not</b> the copy stored in your repository.<br>
+<br>
+When you have worked on your project and are happy with the changes
+you have made, this project is then <i>committed</i> to the
+repository along with a short comment about what you have done, and
+it is given a version number. What this means is that you can go
+ahead and make changes to your project safe in the knowledge that
+at any time you can "turn the clock back" and recover a previous
+version from your repository... you can even go back several
+versions if it is necessary! This also means that several people
+can work on the same project knowing that should someone make an
+error, it can be easily fixed and doesn't need to negatively affect
+the other people in the team.<br>
+<br>
+For a more detailed explanation of how to add and commit files to
+your repository, please continue to the next section "<a href=
+"using%20source%20control.html">Using Source Control</a>".<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Source Control
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"using%20source%20control.html">Using Source Control
+Management</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+This is a recreation of the contents in https://docs.yoyogames.com, made with chm2web 2.85, the exact generator that is used to generate that site.

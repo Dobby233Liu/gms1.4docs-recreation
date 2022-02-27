@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Including Files</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/002_including files.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F002_including%20files.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2F002_including%20files.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Including Files</h1>
+
+<h2 class="studio">This section deals with including external files
+in your game.</h2>
+
+<p><i>GameMaker: Studio</i> is not just limited to the resources
+that you create within the program as it has a special section on
+the resource tree of the main window for <b>Included Files</b>.
+Here you can load different file types (and even create
+sub-directories for them) into <i>GameMaker: Studio</i> and they
+will then be included in the final game as part of the final
+package for the target platform. So, for example, in a windows game
+they will be bundled within the <tt>*.exe</tt> and exported when
+run, or in HTML5 they will be included in the <tt>html5_game</tt>
+folder and stored on the server.<br>
+<br>
+To add a file to your resources you must right-click on the
+<b>Included Files</b> section of the resource tree and select
+<b>Create Included File</b> or, if you want to create a
+sub-directory to store other files, <b>Create Group</b>. This will
+then prompt you to add a file, or files if your select more than
+one, to the list. Once it has been added you can right-click on it
+and select "<b>Properties</b>" to edit the properties of the file:
+<img class="center" src="../images/form_datafile.png"> Here you can
+rename the file if you choose by changing the <b>File Name</b>.
+Beneath the file name there are also a series of options for the
+target platform that this included file should be copied to. If you
+wish it to be <i>only</i> exported when you run the game in a
+browser, then you would only tick the "HTML5" box, and if you want
+it to be exported only to Android and iOS targets you would tick
+those, and so on. If you choose not to tick <i>any</i> targets then
+that file will not be exported at all. This option is especially
+useful for those that wish to make use of the <a href=
+"007_configurations.html">Configurations Manager</a> to store
+certain configurations and export specific files depending on them.
+Note that you can select all targets or none of them simply by
+clicking the buttons in the properties window.<br>
+<br>
+Once you click on "OK" the file will be stored with your current
+project in its own folder called <b>data-files</b> found in the
+project <tt>*.gmx</tt> directory. If you have chosen to change the
+name of the file when you added it to the resource tree, then the
+file will now be stored with that new name. Please note that from
+now on you should edit the files stored in this folder and
+<i>not</i> the original files (unless you plan on including them
+again, but generally there is no need).<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Advanced Use
+Index</a></div>
+
+<div style="float:right">Next: <a href=
+"extensions/index.html">Extension Packages</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

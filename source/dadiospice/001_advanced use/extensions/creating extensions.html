@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Creating Extensions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/extensions/creating extensions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fextensions%2Fcreating%20extensions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fextensions%2Fcreating%20extensions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Creating Extensions</h1>
+
+<h2 class="studio">This section details how to create an extension
+in <i>GameMaker: Studio</i>.</h2>
+
+<p>To create an extension (no matter what format file you are
+using) you must first start by right clicking on the Extension
+resource in the resource tree and selecting <b>Create Extension</b>
+which will open the following window: <img class="center" src=
+"extension_properties.png"> This window is where you place the
+basic information that is required to create the GMEZ extension
+package. You can give it a name and a version number, and also
+supply a <b>Package ID</b>. If you only wish to use the extension
+in this one project you can leave the package ID blank, but if you
+want to export the extension as a GMEZ file, or if you want to
+upload it to Markeplace, then you will need to give this
+information too. The Package ID should be unique to this extension
+and be in reverse URL format
+<i><tt>com.&lt;company&gt;.&lt;extension_name&gt;</tt></i>. If your
+extension package is for iOS or for Android, then you should mark
+the appropriate check boxes in this window too.<br>
+<br>
+When you are happy that the information is correct you should click
+the "Next" button to continue. If you have not chosen iOS or
+Android as part of the extension, your next step will be to flag
+any of the project resources as being part of this new extension in
+the following tab: <img class="center" src=
+"extension_package_resources.png"> You can select resources to add
+into the extension package from the left side of the window, and
+clicking the "<b>----&gt;</b>" button will add them to the resource
+list on the right. You can select individual assets, or you can
+select a group folder from the resources and add that (adding
+everything it contains). If your GMEZ is to be a template or a
+framework, you can click the "<b>Add All</b>" button to add
+everything in the current project to the extension. If you make a
+mistake, select the resource or group folder and press
+"<b>Remove</b>".<br>
+<br>
+Once everything is correct you can click <b>Create</b> and your new
+extension package will be made. You can still edit the package by
+double clicking on it, or by right-clicking and selecting the
+<b>Properties</b> option. This will enable you to edit the
+extension package properties. If the extension contains resources,
+you will also see that there is an extra tab available to you for
+Importing those resources into the current project: <img class=
+"center" src="extension_package_import.png"> As with exporting
+resources to an extension, tis tab has various buttons for adding
+the package resources to your project. the available resources are
+shown on the right, while the current project resources are shown
+on the left. Clicking the <b>&lt;---</b> button will add the
+selected resource, or folder of resources, to the project resource
+tree, or you can click <b>Import All</b> to add everything from the
+package. If you make a mistake while adding resources, you can
+select them from the resource tree on the left and click
+<b>Remove</b> to remove them again.<br>
+<br></p>
+
+<h3 class="studio">Android and iOS</h3>
+
+<p>When you create your extension package for iOS or Android, there
+are a couple of extra steps required by you to create the final
+extension package. These are detailed in the following pages of the
+manual:</p>
+
+<blockquote>
+<ol>
+<li><a href="ios%20extensions.html">iOS Extensions</a>
+</li>
+
+<li><a href="android%20extensions.html">Android Extensions</a>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Adding Files</h3>
+
+<p>Once your basic extension package has been created, you can then
+go ahead and add files, functions and constants to make it work.
+This is done by right clicking on the extension and selecting
+<b>Add File</b>. The choice of file greatly influences how
+<i>GameMaker: Studio</i> will use the extension as different file
+types are required for the different target platforms that can be
+used when you compile your game, and not all platforms require a
+"real" file either (in which case you would use the <b>Add
+Placeholder</b> option instead of <b>Add File</b>). The relevant
+files needed per target are listed below:</p>
+
+<blockquote>
+<ul>
+<li><b>GML:</b> This is an extension made only with the GameMaker
+Language and is compatible with all platforms.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>.js:</b> This is a JavaScript extension and is only
+compatible with the JS target modules (HTML5).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>.dll:</b> This a dynamic-link library extension and is only
+compatible with the Windows and Xbox One targets (each target will
+need a different *.dll file compatible with its
+specifications).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>.so:</b> This is the Linux equivalent of a DLL and is only
+compatible with the Ubuntu (Linux) target.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>.prx:</b> This is a file for adding functionality to the PS3
+and PS4 targets (each target will need a different *.prx file
+compatible with its specifications).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>.suprx:</b> This is for adding functionality to the PSVita
+target.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>.dylib:</b> This is the Mac equivalent of a DLL and is only
+compatible with Mac target (<i>not</i> iOS).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>placeholder</b>: This is a file that can be of any type,
+except those given above and <tt>.gmez</tt>, and will not be used
+except as a "linker" file to connect a set of functions or
+constants with the given extension (generally only for use with iOS
+and Android extensions).</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>If the extension package is for iOS or Android platforms, you
+will also see some extra options for adding files to the package.
+These are explained in the pages linked to above for those
+platforms.<br>
+<br></p>
+
+<h3 class="studio">File Properties</h3>
+
+<p>As you can see, not all extensions are compatible with all
+target platforms, so you should first open up the extensions
+resource tree and select for each of the installed extensions a
+target from their <b>Extension File Properties</b>. This can be
+achieved by double clicking on the extension file (<i>NOT</i> the
+package itself), or by right clicking and selecting "Extension
+Properties" from the pop up menu. Either action will open up the
+following window: <img class="center" src=
+"extension_file_properties.png"> In this window you can re-name the
+file that is to be used as the extension (this file is then saved
+with the gmx project and any changes should be made in the project
+file, and <i>not</i> to the original) and you can define the
+<b>Init Function</b> and the <b>Final Function</b>. These functions
+are the ones that the included file or the source file (which will
+depend on the target platform) needs to have called to set them up
+for use with <i>GameMaker: Studio</i> and to free them again when
+the game closes. They are called automatically, with no arguments,
+and you should note that these are not always necessary so you
+should check the documentation for the file you wish to use as an
+extension first to see if these functions are necessary or can be
+left blank (if in doubt, leave them blank).<br>
+<br>
+If you are developing for multiple platforms and wish the same
+extension to be used on all of them, you can create <b>Proxy
+Files</b> for each target and add them to your extension too.
+Simply place the proxy file in the same folder as the extension
+(you can find this by <i>right-clicking</i> on the extension and
+selecting "Open in Explorer". Note that the naming of these files
+is <b>very</b> important and you can find a full list of the
+available platforms and conventions from the following page:</p>
+
+<blockquote>
+<ol>
+<li><a href="proxy%20files.html">Proxy Files</a>
+</li>
+</ol>
+</blockquote>
+
+<p>The final section is labelled <b>Copies To</b>. Here you can see
+a list of target platforms which you can tick (or un-tick) as
+appropriate for your extension. In this way, you can have (for
+example) two hi-score extensions, one *.dll and one *.js that have
+the same functionality but work for different target platforms. You
+would tick ONLY the Windows check-box for the *.dll and ONLY the
+HTML5 check-box for the *.js and then <i>GameMaker</i> will know to
+use only the appropriate one for the target platform. You can
+<i>also</i> set up different configurations and tick/un-tick
+options as necessary depending on the current configuration chosen
+(for more information see <a href=
+"../007_configurations.html">Advanced Use: Configurations</a>).
+Note that adding proxy files will automatically tick the
+appropriate target platform.<br>
+<br></p>
+
+<h3 class="studio">Adding Functions and Constants</h3>
+
+<p>Now you have added the necessary files to the extension, it is
+time for you to add the functions and constants that you wish the
+extension to use. This is done by right-clicking on the file and
+selecting either <b>Add Function</b> or <b>Add Constant</b>. For a
+constant, it is simply a case of giving it a name (only letters
+from A-Z, numbers and the under-bar "_" symbol are permitted, and
+the name <i>must not</i> start with a number) and a value and then
+clicking on the "Okay" button. If you choose to add a function,
+then the following window will open: <img class="center" src=
+"empty_function.png"> The different options presented here are:</p>
+
+<blockquote>
+<ul>
+<li><b>Name</b> - This is the GML name of the function (only
+letters from A-Z, numbers and the under-bar "_" symbol are
+permitted, and the name <i>must not</i> start with a number).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>External Name</b> - Here you must put the name of the
+original function as it is recognised by the extension, even if the
+<b>Name</b> is the same.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Help</b> - This is the text that will appear at the bottom
+of the script editor and should be a correct form of the function
+syntax with the format <i>function(argument0,argument1)</i>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Return Type</b> - What the function returns. This can be
+either a string (text) or a double (real number).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Type (dll only)</b> - The calling convention used to call
+the function.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Arguments</b> - Here you can list all the arguments that
+your function can take as well as the type (string or double). This
+is limited to a maximum of sixteen arguments, and note that for
+functions with 4 or more arguments, all of them <i>must</i> be of
+type <tt>double</tt>.</li>
+</ul>
+</blockquote>
+
+<p>Once you have defined all your constants and functions, the
+extension is almost ready to be used and distributed as a
+<tt>*.gmez</tt>. To create a <tt>*.gmez</tt>, simply right-click on
+the extension name and select <b>Export</b>, which will open a save
+dialogue where you can say where to save the final <tt>*.gmez</tt>
+file to. Once this is done you can then use the same GMEZ file in
+other projects, or distribute it for others to use.</p>
+
+<blockquote><b><i>NOTE:</i> A saved <tt>*.gmez</tt> does</b> not
+save the configuration options, and those will have to be set
+whenever you load a created gmez into a new project.</blockquote>
+
+<h3 class="studio">Additional Documentation</h3>
+
+<p>You can find additional documentation on extension packages from
+the <b>YoYo Games Knowledge Base</b>:</p>
+
+<blockquote>
+<ol>
+<li><a href="http://help.yoyogames.com/forums/22971648" target=
+"_blank">Extensions</a>
+</li>
+</ol>
+</blockquote>
+
+<p>You can also find additional information about the <i>GameMaker:
+Studio Marketplace</i> from the following section of the
+<b>Knowledge Base</b>:</p>
+
+<blockquote>
+<ol>
+<li><a href="http://help.yoyogames.com/forums/23024928" target=
+"_blank">Marketplace FAQs</a>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Extension
+Packages</a></div>
+
+<div style="float:right">Next: <a href=
+"legacy%20extensions.html">Legacy Extensions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

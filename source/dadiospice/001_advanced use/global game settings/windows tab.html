@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Windows Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/windows tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fwindows%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fwindows%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Windows Tab</h1>
+
+<h2 class="studio">This section deals with the Windows tab of the
+Global Games Settings Window.</h2>
+
+<p>This Windows tab is split into three separate <i>sub-tabs</i>
+(accessible on the left of the window) to make changing and
+updating the information for your game clearer and less
+complicated. These tabs are explained in the following
+sections.</p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="windows_general_tab.png"> The
+<b>General</b> tab for Windows games is where you should supply the
+necessary information for Windows to display when your game has
+been installed and is running. This information goes in the
+<i>Version Information</i> section, and should be filled out
+completely.<br>
+<br>
+The other two sections of this tab are related to the way your
+final game is shown once started, with the <i>Splash Screen</i>
+being the graphic that is shown while your game is loading, which
+can be enabled or disabled using the appropriate check-box, and the
+<i>Options</i> controlling whether you should display the standard
+Windows cursor or not and the icon that your game should show. You
+may also choose where the game bundle is to be installed to, either
+the "%localappdata%" or "%appdata%" folders.</p>
+
+<blockquote><i><b>NOTE:</b> Being able to change or enable/disable
+the splash screen is a <b>Pro Only</b> feature.</i>
+</blockquote>
+
+<p>The final option is for setting the <b>Windows Sleep Margin</b>.
+This option is related to reducing stuttering when running your
+game on specific systems. Basically, if your game is running faster
+than your room speed <i>GameMaker: Studio</i> will "sleep" for the
+remaining time, but this sleep can be quite inaccurate and you can
+often end of sleeping for longer than necessary, causing your frame
+to take longer which causes stuttering. To get around this we can
+sleep for less time, then sit in a tight loop for the remainder of
+the time to make it more accurate - although the problem with
+sitting in a loop is that it causes CPU usage to increase, which in
+turn can cause your CPU temperatures to rise and your fan to run
+faster. By default, this value is set to 1, and in 99.99% of the
+cases you'll be fine with this, but for low end machines or for
+machines with a lot of background processes running this may not be
+an ideal solution and a value of 5 or 10 may be required. Note
+though that this is very much a system specific configuration and
+what works on your build machine may not be appropriate for another
+user, and as such <i>if in doubt leave it set to 1</i>.<br>
+<br></p>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="windows_graphics_tab.png"> The graphics
+options are those that you should configure to determine how your
+game will use the graphics card of your target Windows PC. The
+following options are included for you to modify:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>Start in fullscreen mode</b> - If this is checked, the game
+will start in fullscreen mode.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Interpolate colours between pixels</b> - Turns on
+interpolation, which basically "smooths" pixels. for crisp pixel
+graphics, it should be off, but if you have nice alpha blends and
+smoothed edge graphics it is better left on.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Force software vertex processing</b> - This forces
+GameMaker: Studio to use the CPU for all graphics and is only
+recommended if there are compatibility issues with older
+machines.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use synchronization to avoid tearing</b> - This toggles
+v-sync on or off. Note, that if you have a game with a room speed
+of 120 and the player has a monitor with a refresh rate of 60,
+turning this option on will lock your game speed to 60 too. There
+is an alternative v-sync mode available should the game still have
+issues like stuttering or tearing even with v-sync on - see
+<b>alternative synchronisation method</b> below.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Allow the player to resize the game window</b> - Checking
+this permits the user to change the size of the game window.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Scaling</b> - Here you can choose to maintain aspect ratio
+(so a 4:3 room will be "letter boxed" on a 16:9) or to scale fully
+(stretching the image to fit the full screen).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Allow Switching To Fullscreen</b> - With this ticked the
+user can switch from fullscreen to windowed and back again using
+the standard Windows shortcuts.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Borderless Window</b> - Checking this will make your game
+run with a borderless window, removing the normal minimise,
+maximise and close buttons as well as the game title.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>The following are considered advanced options for rendering to
+the Windows target module and should generally be left at their
+default values. However should you be experiencing graphics issues,
+in particular with older machines, then you may benefit from
+changing these:</p>
+
+<blockquote>
+<ul>
+<li><b>Create Textures on Demand</b> - Checking this will make the
+windows target work like all the other targets, ie: texture pages
+will be loaded into memory on demand and can be flushed again when
+required. This can cause a few milliseconds of pause in your game
+as the texture pages are loaded, and so should be optimised such
+that the textures required for a level are loaded at the start of
+the room to minimise impact.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Vertex Buffer Method</b> - This option can be used to change
+the way that the game geometry uses the vertex buffer. The options
+are:<br>
+<br>
+
+<ul>
+<li>fast - This is the default method and is the one recommended by
+Nvidia - it should give the highest performance.</li>
+
+<li>compatible - This is the deprecated method that GameMaker:
+Studio used to use before adopting the fast method - poorer
+performance on newer machines</li>
+
+<li>most compatible - This is the legacy method that was used in
+previous versions of GameMaker - performance is poorer than the
+other two, but it should be compatible with almost any
+machine.</li>
+</ul></li>
+
+<li><b>Alternative Synchronisation Method</b> - Change the way that
+vertical synchronisation works to improve compatibility and resolve
+any issues with stuttering or tearing that the regular v-sync may
+show on older machines.</li>
+</ul>
+</blockquote>
+
+<blockquote><i><b>WARNING!</b> Switching off the application
+surface will disable all the scaling options set in the Global Game
+Settings until it has been switched back on again. See <a href=
+"../../002_reference/surfaces/the%20application%20surface.html">The
+Application Surface</a> for further details.</i>
+</blockquote>
+
+<p>Finally there is the option to set the size of the <b>Texture
+Page</b>. The default (and most compatible) size is 2048x2048, but
+you can choose from anywhere between 256x256 up to a whopping
+8192x8192! There is also a button marked <b>View</b> which will
+generate the texture pages for this platform and then open a window
+so that you can see how they look. This can be very useful if you
+wish to see how the texture pages are structured and to prevent
+having texture pages larger (or smaller) than necessary.</p>
+
+<blockquote><i><b>NOTE:</b> Be aware that the larger the size of
+the texture page, the less compatible your game will be.</i>
+</blockquote>
+
+<h3 class="studio">Installer</h3>
+
+<p><img class="center" src="windows_installer_tab.png"> Windows
+games are created with an installer (previous versions of GameMaker
+just made an *.exe) and here you can define the various settings
+and graphics that GameMaker: Studio will use when creating it.
+First of all we have the graphical options which will define the
+look of the installer itself:</p>
+
+<blockquote>
+<ul>
+<li><b>Finished</b> - The graphic that appears on the "Finished"
+page of the installer. <i>Must be in *.bmp format and measure
+164x314px.</i></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Header</b> - The graphic that appears while the installer is
+running. <i>Must be in *.bmp format and measure 150x57px.</i></li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>You can also point to a specific <b>License Agreement</b> (an
+example is supplied with GameMaker: Studio) and a custom NSI script
+(details <a href="http://nsis.sourceforge.net/Main_Page">here</a>)
+should you need one.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="winuwp%20tab.html">The
+Windows UWP Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

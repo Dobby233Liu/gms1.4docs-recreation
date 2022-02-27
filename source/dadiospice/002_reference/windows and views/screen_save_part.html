@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>screen_save_part</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows and views/screen_save_part.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fscreen_save_part.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fscreen_save_part.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">screen_save_part</h1>
+
+<h2 class="studio">Saves a screenshot of a defined area of the game
+window as a .png to a given filename.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">screen_save_part(fname,x,y,w,h);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>fname</td>
+<td>The filename for the screenshot to save</td>
+</tr>
+
+<tr>
+<td>x</td>
+<td>The x coordinate of the top left corner of the area of the
+screen to capture</td>
+</tr>
+
+<tr>
+<td>y</td>
+<td>The y coordinate of the top left corner of the area of the
+screen to capture</td>
+</tr>
+
+<tr>
+<td>w</td>
+<td>The width of the area of the screen to capture</td>
+</tr>
+
+<tr>
+<td>h</td>
+<td>The height of the area of the screen to capture</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can save a screenshot of a part of the
+game as it currently appears in the game window or browser. The
+selection coordinates are based on the <i>absolute</i> size of the
+display, so (0,0) is always the top left hand corner of the screen.
+Below is an image that shows how this function works: <img class=
+"center" src="screen_save.png"> The file will be saved to the
+<a href="../file%20handling/working_directory.html">working
+directory</a> of the game.<br>
+<br>
+<i><b>NOTE:</b> This function does not work on the HTML5
+target.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if keyboard_check_pressed(ord("S"))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;screen_save_part(working_directory +
+"\Screens\Screen_"+string(num)+".png", 0, 0, 100, 100)<br>
+&nbsp;&nbsp;&nbsp;num += 1;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code takes a screenshot of a part of the game screen
+that is 100 pixels square when the user presses the "S" key. This
+screen shot is saved to a specific directory and numbered using a
+variable which is then incremented.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows and
+Views</a></div>
+
+<div style="float:right">Next: <a href=
+"display_reset.html">display_reset</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>instance_place</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/objects and instances/instances/instance functions/instance_place.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20functions%2Finstance_place.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Finstance%20functions%2Finstance_place.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">instance_place</h1>
+
+<h2 class="studio">Checks for a collision with the specified object
+and returns its id.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">instance_place(x, y, obj);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>x</td>
+<td>The x position to check for instances.</td>
+</tr>
+
+<tr class="alt">
+<td>y</td>
+<td>The y position to check for instances.</td>
+</tr>
+
+<tr>
+<td>obj</td>
+<td>The object to check for instances of.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can check a position for a collision with
+another instance or all instances of an object using the collision
+mask of the instance that runs the code for the check. When you use
+this you are effectively asking <i>GameMaker: Studio</i> to move
+the instance to the new position, check for a collision, move back
+and tell you if a collision was found or not. This will work for
+precise collisions, but only if both the instance and the object
+being checked for have precise collision masks selected otherwise
+only bounding box collisions are applied. this function will return
+the unique instance <a href=
+"../../instances/instance%20properties/id.html"><tt>id</tt></a> of
+the object being collided, but if that is not needed it is slightly
+faster to use the function <a href=
+"../../../movement%20and%20collisions/collisions/place_meeting.html">
+<tt>place_meeting</tt></a>. This function also accepts the special
+keywords <b>all</b> and <b>other</b> and will return the keyword
+<b>noone</b> if no collision occurs.<br>
+<br>
+Note that the given x/y coordinates will be rounded to the nearest
+integer before the check is performed, so if this is <i>not</i>
+what you require (or you have been using a legacy GameMaker
+product), you should <tt>floor</tt> the coordinates in the check:
+<tt>instance_place(floor(x), floor(y), obj_Enemy)</tt>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<p><b>Example:</b>
+</p>
+
+<p class="code">var inst;<br>
+inst = instance_place(x, y, obj_Enemy);<br>
+if inst != noone<br>
+&nbsp;&nbsp;&nbsp;{ &nbsp;&nbsp;&nbsp;hp -= inst.dmg;<br>
+&nbsp;&nbsp;&nbsp;with (inst) instance_destroy();<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will check for a collision with instances of
+"obj_Enemy" and if there is one, it will reduce the "hp" variable
+by the amount stored in the colliding instance's "dmg" variable and
+then destroy the colliding instance.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Instance
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"instance_position.html">instance_position</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

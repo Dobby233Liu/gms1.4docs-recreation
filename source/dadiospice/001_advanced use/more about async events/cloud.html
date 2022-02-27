@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Cloud Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/cloud.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fcloud.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fcloud.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Cloud Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any of the cloud functions.</h2>
+
+<p>The Cloud Event is one that is triggered by the call back from
+one of the <a href=
+"../../002_reference/cloud%20services/index.html"><tt>cloud_</tt>
+functions</a>, like <a href=
+"../../002_reference/cloud%20services/cloud_synchronise.html"><tt>cloud_synchronise</tt></a>.
+It actually generates a ds_map (more commonly known as a
+"dictionary") that is exclusive to this event and is stored in the
+special variable <b>async_load</b> (please see the individual
+functions for code examples that explain the use of this event in
+further detail). This ds_map has the following structure:</p>
+
+<blockquote>
+<ol>
+<li><b>"status":</b> This holds the status code, where a negative
+value denotes an error, a description of which will be contained in
+the “errorString”. A value of 0 (or a positive value) indicates a
+success(see below for exact values), and the “resultString” will
+contain the returned data or a success message.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"id":</b> The id which was returned from the called
+function. If you fire off a series of <tt>cloud_</tt> requests then
+you need to know which one you are getting the reply to, and so you
+would use this value to compare to the value you stored when you
+originally sent the request to find the right one.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"description":</b> The description of the last uploaded
+file.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"resultString":</b> This holds a string which is the data
+blob returned from the cloud.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"errorString":</b> returns an Error String for any
+error.</li>
+</ol>
+</blockquote>
+
+<p>The exact meaning of the returned "status" map entry is
+explained in the following table:</p>
+
+<div class="compat">
+<table class="compat">
+<tr>
+<th>Status Value</th>
+<th>errorString / resultString</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>-1</td>
+<td>errorString = "Not logged in to &lt;SERVICE&gt;"</td>
+<td>You have not successfully logged in to the given Cloud
+Service</td>
+</tr>
+
+<tr class="alt">
+<td>0</td>
+<td>resultString = recovered data</td>
+<td>New game data downloaded from the cloud (following a
+cloud_synchronise call)</td>
+</tr>
+
+<tr>
+<td>1</td>
+<td>resultString = "AlreadySynchronized"</td>
+<td>No new data since you last called cloud_synchronise</td>
+</tr>
+
+<tr class="alt">
+<td>2</td>
+<td>resultString = "ConflictDeferral"</td>
+<td>A conflict was encountered, but the gamer chose to ignore
+it</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>resultString = "GameUploadSuccess"</td>
+<td>data from <a href=
+"../../002_reference/cloud%20services/cloud_string_save.html"><tt>cloud_string_save</tt></a>
+or <a href=
+"../../002_reference/cloud%20services/cloud_file_save.html"><tt>cloud_file_save</tt></a>
+was successfully uploaded to the cloud</td>
+</tr>
+
+<tr class="alt">
+<td>-n</td>
+<td>errorString = Description of error</td>
+<td>Any other negative number means a synchronisation failure</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+<br>
+<i><b>NOTE:</b> The variable <tt>async_load</tt> is only valid in
+these events, as the ds_map that is points to is created at the
+start of the event, then deleted again at the end, with this
+variable being reset to a value of -1.</i><br>
+<br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="networking.html">Networking
+Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

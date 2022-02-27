@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>skeleton_get_minmax</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/sprites/skeletal animations/skeleton_get_minmax.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsprites%2Fskeletal%20animations%2Fskeleton_get_minmax.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsprites%2Fskeletal%20animations%2Fskeleton_get_minmax.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">skeleton_get_minmax</h1>
+
+<h2 class="studio">Get the total bounding box position for the
+sprite</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">skeleton_get_minmax();</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Array (4 elements: xMin, yMin, xMax, yMax)</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will return an array with the total bounding box
+value for all the individual bounding boxes assigned to a skeleton
+animation sprite. The returned array will have 4 elements:</p>
+
+<ul>
+<li>[0] - the minimum x position for all bounding boxes</li>
+
+<li>[1] - the minimum y position for all bounding boxes</li>
+
+<li>[2] - the maximum x position for all bounding boxes</li>
+
+<li>[3] - the maximum y position for all bounding boxes</li>
+</ul>
+
+<blockquote><i><b>IMPORTANT:</b> Spine integration in GameMaker:
+Studio is a Pro licence feature and will not work in the
+Free/Standard versions.</i>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var frame = skeleton_animation_get_frame(0);<br>
+if frame &gt; 0 &amp;&amp; frame &lt; 2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var box = skeleton_get_minmax();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var ww = (box[2] - box[0]) / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;var hh = (box[3] - box[1]) / 2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;part_particles_create(global.p_sys, box[0]
++ ww, box[1] + hh, global.Stars, 10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will check the current frame of the animation
+assigned to track 0 and then burst some particles from a point in
+the middle of the total bounding box for the sprite.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Skeletal
+Animations</a></div>
+
+<div style="float:right">Next: <a href=
+"skeleton_get_num_bounds.html">skeleton_get_num_bounds</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

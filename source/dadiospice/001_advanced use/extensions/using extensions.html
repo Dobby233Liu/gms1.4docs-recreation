@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Using Extensions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/extensions/using extensions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fextensions%2Fusing%20extensions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fextensions%2Fusing%20extensions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Using Extensions</h1>
+
+<h2 class="studio">This section details how to use pre-made
+extensions in <i>GameMaker: Studio</i>.</h2>
+
+<p>As you can see from the following screen, <i>GameMaker:
+Studio</i> can use various types of extension: <img class="center"
+src="extension_resources.png"> The type of extension that you use
+will very much depend on the target platform - the list below shows
+what each target requires:<br>
+<br></p>
+
+<ul>
+<li><b>All targets</b> - GML extensions. These are extensions made
+using the GameMaker Language (GML) and are compatible with all
+target platforms.<br>
+<br></li>
+
+<li><b>Windows (Standard)</b> - You can use windows DLL files
+(Dynamic Link Libraries), except in those games destined for the
+Steam Workshop (which prohibits their use).<br>
+<br></li>
+
+<li><b>Mac OSX</b> - The mac OSX target can use the standard DyLib
+files for extensions.<br>
+<br></li>
+
+<li><b>HTML5 - This platform can use JavaScript extensions.<br>
+<br></b>
+</li>
+
+<li><b>Android/Fire - This platform requires extension written in
+Java or an Android Framework SDK.<br>
+<br></b>
+</li>
+
+<li><b>iOS</b> - Extensions for this platform are written in
+Objective C and require a *.mm and a *.h file, or if using any
+Frameworks, a pre-compiled *.a native file.<br>
+<br></li>
+</ul>
+
+<p>The extensions resource tree follows the format of
+<i>Extension</i> &gt;&gt;&gt; <i>Included/Dummy File</i>
+&gt;&gt;&gt; <i>Functions and Constants</i> and after you have
+added an extension you should <i>double click</i> on the
+included/dummy file that accompanies it to bring up the
+<b>Extension File Properties Dialogue</b> where you can select the
+target platform to which it should be associated: <img class=
+"center" src="extension_file_properties.png"> You can select no
+targets (the extension will not be used) or one or more depending
+on what type of file it is and the support for it from the
+available platforms. Please note that this selection can also be
+linked to change through the use of <a href=
+"../007_configurations.html">Configurations</a>.<br>
+<br></p>
+
+<h3 class="studio">Functions</h3>
+
+<div style="float:left"><img src="function_icon.png">
+</div>
+
+<p>The icon on the left is the <b>Function</b> icon and it shows us
+that the extension we are using has a function that can be called
+using GML from an object or a script in our game. These functions
+can take arguments, return values and act just like any other GML
+function, only they use the extension to do the work and not
+<i>GameMaker: Studio</i>. You can right-click on a function and
+select <b>Properties</b> (or simply double click on it) and you
+will get the function properties window which looks like this:
+<img class="center" src="function_properties.png"> The <b>Name</b>
+is the name of the function in GML, and the <b>External Name</b> is
+the name of the function as the external SDK or file sees it. This
+part cannot be left blank, and must be filled in correctly, even if
+the function name is the same as the <b>Name</b> you have supplied
+previously. Below that is the <b>Help</b> section, where you would
+put in the correct syntax for the function which will then be shown
+in the script and code windows at the bottom of the screen. The
+<b>Return Type</b> is what the function returns, either a double
+(number) or a string (text) and if you are using a dll, you will
+also get a <b>Type</b> section which defines the calling convention
+used. Finally you have a list of the arguments that the function
+takes and whether they are doubles or strings.<br>
+<br>
+Note that at the bottom you have a checkbox labelled "<b>Variable
+length arguments</b>". If the extension function is to have any
+optional arguments (ie: if you can provide 4 or 5 or 6 arguments)
+then you should tick this option.<br>
+<br></p>
+
+<h3 class="studio">Constants</h3>
+
+<div style="float:left"><img src="constant_icon.png">
+</div>
+
+<p>An extension can also contain <b>Constants</b>, which are
+basically named values you can use rather than having to type the
+same text or numbers every time you wish to have a certain value.
+For example, the GML constant <tt>c_blue</tt> is a constant for the
+value $0048ff and is certainly much easier to remember than the
+hexadecimal value! If you right-click on a constant and select
+<b>Properties</b> (or simply double click on it), the following
+window comes up: <img class="center" src="constant_properties.png">
+Here you can simply change the name of the constant (be aware that
+this may affect how the extension works) and the value that it
+represents. Note that you can mark the <b>Hidden</b> check-box to
+have the constant excluded from the intellisense of the code
+editor, meaning that it will not be highlighted nor shown in the
+constants list from the <i>Scripts</i> drop down menu. This does
+not affect how the game runs, however, and the constant will still
+be recognised as such when the game is run.<br>
+<br></p>
+
+<h3 class="studio">Using Extension Functions And Constants</h3>
+
+<p>Once you have installed your extension, you can use the
+functions and constants for it just as you would the built in
+functions and constants used in the GameMaker Language. If your
+game is cross-platform (for example, it is designed to run on both
+Windows and Android targets), then you should do an OS check before
+calling extension specific functions to prevent issues, for
+example:</p>
+
+<p class="code">switch(os_type)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;case os_android:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call_android_extension_function(x,
+y, z);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;case os_windows:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;call_windows_extension_function(x,
+y, z);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>Note that for different platforms your extensions can share
+function names, so if you have two extensions to (for example) pop
+up a message for Windows and for Android, both extensions can share
+the same function name as long as they are both set to export only
+to their respective platforms.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Extension
+Packages</a></div>
+
+<div style="float:right">Next: <a href=
+"creating%20extensions.html">Creating Extensions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

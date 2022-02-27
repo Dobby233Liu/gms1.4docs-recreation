@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Variables And Variable Scope</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/variables/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2Fvariables%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Variables And Variable Scope</h1>
+
+<h2 class="studio">Here you can learn about the different types of
+variables in <i>GameMaker: Studio</i>.</h2>
+
+<p>Like any programming language GML uses variables as the basic
+unit for most programming operations. Variables are used to store
+information in the devices memory for later (or instant) use, and
+they are given a name so that you can refer to them in functions
+and programs. A variable in GML can store either a real number
+(like 100, 2.456575, -56 etc...) or a string (like "Hello
+world!").<br>
+<br>
+A variable is something that we use to store a value for use in one
+or more operations or functions. Think of "pi", for example... it
+is a real world variable that holds the value 3.14159265(etc...).
+Why? Well, it's much easier to say to someone "pi" than "three
+point one four one five nine two six five"! So, naming things make
+life a lot simpler and it also means that should the value of that
+variable ever change, we don't have to change the number everywhere
+as the variable <i>name</i> is still the same. In <b>GML</b> a
+variable has a name that must start with a letter and can contain
+only letters, numbers, and the underscore symbol '_' with a maximum
+length of 64 symbols. So, valid variables are things like
+<tt>fish</tt>, <tt>foo_bar</tt>, <tt>num1</tt>, and invalid
+variables would be <tt>6fish</tt>, <tt>foo bar</tt>, or
+<tt>*num</tt>. Now, In many programing languages you need to
+"declare" a variable before you can use it. This basically means
+that you tell the computer the name you wish to use so that it can
+assign a place in memory to store whatever value you decide to hold
+in that variable. With <b>GML</b>, that is not always necessary as
+it depends on the <i>scope</i> of the variable. There are four main
+variable categories when you program with <i>GameMaker: Studio</i>
+and each has its own <i>scope</i> (which is can be considered as
+its area of operation, or reach). These variables and their scope
+are outlined below:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li><b>instance</b>: these are the most common variables and are
+defined within an instance. These are unique to that instance and
+can be used in any event and any function within that instance.<br>
+<br></li>
+
+<li><b>local</b>: these variables must be declared using the "var"
+function. A local variable is only valid for the event or script
+resource in which it is created. So <i>GameMaker: Studio</i> will
+create the variable, use it for the duration of the event and then
+"forget" it again, meaning that if you try to use it later you will
+get an "unknown variable" error.<br>
+<br></li>
+
+<li><b>global</b>: a global variable is one that belongs to the
+game world itself and not to any one instance. It has to be
+declared as global first, but after that any instance can check or
+change the variable and the value will always reflect the last
+operation done on it, no matter what instance or code box has
+performed the operation.<br>
+<br></li>
+
+<li><b>built in variables</b>: these are special variables that are
+"built into" the objects and the rooms in the game world and they
+can be instance only or global in scope (but <i>never</i> local)
+.<br></li>
+</ul>
+</blockquote>
+
+<p>More details can be found for these variable types on the
+following pages:<br>
+<br></p>
+
+<blockquote>
+<ol>
+<li><a href="instance%20variables.html">Instance Variables</a><br>
+</li>
+
+<li><a href="local%20variables.html">Local Variables</a><br>
+</li>
+
+<li><a href="global%20variables.html">Global Variables</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>There are a few functions designed to help you when dealing with
+instance variables and global variables, although these are
+generally more associated with debugging than anything else:</p>
+
+<ul>
+<li><a href=
+"variable_instance_exists.html">variable_instance_exists</a>
+</li>
+
+<li><a href=
+"variable_instance_get_names.html">variable_instance_get_names</a>
+</li>
+
+<li><a href="variable_instance_get.html">variable_instance_get</a>
+</li>
+
+<li><a href="variable_instance_set.html">variable_instance_set</a>
+</li>
+
+<li><a href=
+"variable_global_exists.html">variable_global_exists</a>
+</li>
+
+<li><a href="variable_global_get.html">variable_global_get</a>
+</li>
+
+<li><a href="variable_global_set.html">variable_global_set</a>
+</li>
+</ul>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">GML
+Overview</a></div>
+
+<div style="float:right">Next: <a href=
+"../401_05_addressing.html">Addressing Variables in Other
+Instances</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Audio</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/sounds/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsounds%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsounds%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Audio</h1>
+
+<h2 class="studio">This section contains the functions necessary to
+use the <i>GameMaker: Studio</i> audio API</h2>
+
+<p><i>GameMaker: Studio</i> has a re-vamped audio engine that is
+based on the <tt>*.ogg</tt> sound format. You must still load your
+sounds into the IDE as either <tt>*.wav</tt> or <tt>*.mp3</tt> but
+you can select <b>compressed</b> audio from the <a href=
+"../../../000_using%20gamemaker/006_sounds%20and%20music.html">Audio
+Editor</a> and <i>GameMaker: Studio</i> will convert the sounds to
+<tt>*.ogg</tt> (Ogg Vorbis) format when your finished game is
+compiled. In this way you can keep the final file size of your game
+to a minimum while ensuring maximum quality. The added benefit of
+the new GM:S Audio engine is that you now have access to full audio
+streaming as well as 3D sound with the ability to place a
+"listener" for all sounds as well as different sound "emitters" to
+create some stunning special audio effects!<br>
+<br>
+Please note that for compatibility with older projects,
+<i>GameMaker: Studio</i> still has some legacy audio functionality.
+However, you <i>cannot</i> have both the new audio engine
+<i>and</i> the legacy engine active at the same time. For old games
+created with other versions of <i>GameMaker</i> or for those games
+started before the new audio engine was added, the Legacy Audio
+will be used as default, while for all new games <i>GameMaker:
+Studio</i> will default to the new audio engine. This behaviour can
+be changed from the <a href=
+"../../../001_advanced%20use/global%20game%20settings/general%20tab.html">
+Global Game Settings - General Tab</a>.<br>
+<br></p>
+
+<h3 class="studio">Basic Audio Functions</h3>
+
+<p>The following functions are for dealing with audio in the most
+straightforward and simple way possible, avoiding the use of
+emitters and permitting the user to generate sounds and play music
+easily as these sounds are always generated at the <i>listener
+position</i> (see below for more details on the <i>listener</i>)
+and so are generally not affected by any changes to the
+<i>listener</i>:</p>
+
+<blockquote>
+<ol>
+<li><a href="audio_exists.html">audio_exists</a><br>
+</li>
+
+<li><a href="audio_get_name.html">audio_get_name</a><br>
+</li>
+
+<li><a href="audio_get_type.html">audio_get_type</a><br>
+</li>
+
+<li><a href="audio_play_sound.html">audio_play_sound</a><br>
+</li>
+
+<li><a href="audio_play_sound_at.html">audio_play_sound_at</a><br>
+</li>
+
+<li><a href="audio_pause_sound.html">audio_pause_sound</a><br>
+</li>
+
+<li><a href="audio_pause_all.html">audio_pause_all</a><br>
+</li>
+
+<li><a href="audio_resume_sound.html">audio_resume_sound</a><br>
+</li>
+
+<li><a href="audio_resume_all.html">audio_resume_all</a><br>
+</li>
+
+<li><a href="audio_stop_sound.html">audio_stop_sound</a><br>
+</li>
+
+<li><a href="audio_stop_all.html">audio_stop_all</a><br>
+</li>
+
+<li><a href="audio_is_playing.html">audio_is_playing</a><br>
+</li>
+
+<li><a href="audio_is_paused.html">audio_is_paused</a><br>
+</li>
+
+<li><a href="audio_create_stream.html">audio_create_stream</a><br>
+</li>
+
+<li><a href=
+"audio_destroy_stream.html">audio_destroy_stream</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Advanced Audio Functions</h3>
+
+<p>The following functions are designed to give more control over
+how the audio engine works, and how the sounds played through it
+will be "heard" by the listener. As such it is recommended that you
+have a good working knowledge of how the rest of the <i>GameMaker:
+Studio</i> audio engine works before using any of the following
+functions:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"audio_sound_set_track_position.html">audio_sound_set_track_position</a><br>
+
+</li>
+
+<li><a href=
+"audio_sound_get_track_position.html">audio_sound_get_track_position</a><br>
+
+</li>
+
+<li><a href="audio_sound_length.html">audio_sound_length</a><br>
+</li>
+
+<li><a href="audio_sound_pitch.html">audio_sound_pitch</a><br>
+</li>
+
+<li><a href=
+"audio_sound_get_pitch.html">audio_sound_get_pitch</a><br>
+</li>
+
+<li><a href=
+"audio_falloff_set_model.html">audio_falloff_set_model</a><br>
+</li>
+
+<li><a href="audio_sound_gain.html">audio_sound_gain</a><br>
+</li>
+
+<li><a href=
+"audio_sound_get_gain.html">audio_sound_get_gain</a><br>
+</li>
+
+<li><a href="audio_master_gain.html">audio_master_gain</a><br>
+</li>
+
+<li><a href=
+"audio_set_master_gain.html">audio_set_master_gain</a><br>
+</li>
+
+<li><a href=
+"audio_get_master_gain.html">audio_get_master_gain</a><br>
+</li>
+
+<li><a href="audio_channel_num.html">audio_channel_num</a><br>
+</li>
+
+<li><a href="audio_debug.html">audio_debug</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>Further advanced functionality, like setting listeners,
+recording audio, or synchronising multiple audio tracks over time
+can all be found from the sub-sections listed below:</p>
+
+<blockquote>
+<ol>
+<li><a href="audio%20emitters.html">Audio Emitters</a><br>
+</li>
+
+<li><a href="audio%20listeners.html">Audio Listeners</a><br>
+</li>
+
+<li><a href="audio%20groups.html">Audio Groups</a><br>
+</li>
+
+<li><a href="audio%20buffers.html">Audio Buffers</a><br>
+</li>
+
+<li><a href="audio%20synchronisation.html">Audio
+Synchronisation</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Legacy Sound</h3>
+
+<p>The following section also contains information on the Legacy
+Sound System, provided for compatibility with previous versions of
+<i>GameMaker</i> and also still of use when dealing with HTML5 and
+JS games:</p>
+
+<blockquote>
+<ol>
+<li><a href="legacy%20sound/index.html">Legacy Sound</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>The legacy functions are still valid and available due to the
+fact that certain browsers for HTML5 games do not support the newer
+sound system. This means that you may wish to check in-game which
+sound system is actually being used and change the functions being
+used as appropriate. To that end there is a special function
+available:</p>
+
+<blockquote>
+<ol>
+<li><a href="audio_system.html">audio_system</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Obsolete Functions</h3>
+
+<p>There are also some obsolete audio functions which were designed
+specifically for music. These functions no longer work and will
+give an unknown function or script error when they have been used,
+and you should update any legacy projects that use these functions
+to use the standard <tt>audio_*()</tt> functions instead:</p>
+
+<blockquote>
+<ol>
+<li><a href="audio_play_music.html">audio_play_music</a><br>
+</li>
+
+<li><a href="audio_pause_music.html">audio_pause_music</a><br>
+</li>
+
+<li><a href="audio_resume_music.html">audio_resume_music</a><br>
+</li>
+
+<li><a href="audio_stop_music.html">audio_stop_music</a><br>
+</li>
+
+<li><a href=
+"audio_music_is_playing.html">audio_music_is_playing</a><br>
+</li>
+
+<li><a href="audio_music_gain.html">audio_music_gain</a><br>
+</li>
+
+<li><a href="audio_get_type.html">audio_get_type</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Game
+Assets</a></div>
+
+<div style="float:right">Next: <a href=
+"../fonts/index.html">Fonts</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

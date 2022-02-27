@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>d3d_set_culling</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d setup/d3d_set_culling.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20setup%2Fd3d_set_culling.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20setup%2Fd3d_set_culling.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">d3d_set_culling</h1>
+
+<h2 class="studio">Sets whether back face culling should be enabled
+or disabled.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">d3d_set_culling(enable)</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>enable</td>
+<td>Switches on (true) or off (false) back-face culling</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>A 3D triangle has a front and a back side. The <i>front</i> side
+is said to be the side where the vertices are defined in
+counter-clockwise order. Now, normally <i>both</i> sides are drawn,
+but if you make a closed shape then this is a waste of processing
+power because the back side of the triangle can never be seen. It's
+in these cases that you can switch on backface culling. This saves
+about half the amount of drawing time but it means you have the
+task of defining your polygons in the correct way to prevent
+issues.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">d3d_set_culling(true);<br>
+d3d_primitive_begin(pr_trianglelist);<br>
+d3d_vertex(100, 100, 0);<br>
+d3d_vertex(100, 200, 0);<br>
+d3d_vertex(150, 150, 200);<br>
+d3d_vertex(100, 200, 0);<br>
+d3d_vertex(200, 200, 0);<br>
+d3d_vertex(150, 150, 200);<br>
+d3d_vertex(200, 200, 0);<br>
+d3d_vertex(100, 100, 0);<br>
+d3d_vertex(150, 150, 200);<br>
+d3d_vertex(100, 100, 0);<br>
+d3d_vertex(100, 200, 0);<br>
+d3d_vertex(200, 200, 0);<br>
+d3d_primitive_end();<br></p>
+
+<p>The above code will draw a pyramid with the back faces (interior
+faces) being culled (not drawn).</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">3D
+Setup</a></div>
+
+<div style="float:right">Next: <a href=
+"d3d_set_zwriteenable.html">d3d_set_zwriteenable</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

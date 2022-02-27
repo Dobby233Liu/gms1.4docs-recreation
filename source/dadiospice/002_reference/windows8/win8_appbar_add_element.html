@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_appbar_add_element</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_appbar_add_element.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_appbar_add_element.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_appbar_add_element.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_appbar_add_element</h1>
+
+<h2 class="studio">Add an element to the slide-out App Bar at the
+bottom of your game.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_appbar_add_element(type, icon, label, section,
+tooltip, callback);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>type</td>
+<td>The type of element to add, either "button" or
+"separator".</td>
+</tr>
+
+<tr class="alt">
+<td>icon</td>
+<td>The icon name.</td>
+</tr>
+
+<tr>
+<td>label</td>
+<td>The icon label.</td>
+</tr>
+
+<tr class="alt">
+<td>section</td>
+<td>The section of the App Bar to add the element too. Either
+"selection" or "global".</td>
+</tr>
+
+<tr>
+<td>tooltip</td>
+<td>the tool-tip string to explain the button on hover</td>
+</tr>
+
+<tr class="alt">
+<td>callback</td>
+<td>The script to call when the element is used (-1 for no
+callback).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> string</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will add an element to the App Bar for your game
+(the App Bar is accessed by <i>right clicking</i> on your game, but
+will only appear if you have enabled it using the function <a href=
+"win8_appbar_enable.html"><tt>win8_appbar_enable</tt></a>). The
+function will return a unique identifier as a string that you can
+store to use in other functions later.<br>
+<br>
+You must first choose whether to add a "button" or a "separator",
+and then pick an icon for it if it is a button (for a separator you
+should use an empty string "" for this). For a complete list of all
+icons available for the App Bar please see <a href=
+"http://msdn.microsoft.com/en-us/library/windows/apps/hh770557.aspx"
+target="_blank">here</a>.<br>
+<br>
+Next you have the <b>label</b> which is a short name that will be
+placed beneath the icon (this can be an empty string "" if you
+wish), and then you should set the <b>section</b> of the App Bar
+that you want the element to be added to. The <b>section</b> string
+"global" maps to the right of the App Bar and "selection" maps to
+left in LTR (left-to-right) layouts (the opposite is true in RTL
+(right-to-left) layouts).<br>
+<br>
+Finally you have to give it a <b>tooltip</b> so that when your
+player hovers the mouse over it they can get some information on
+what it does, and a <b>callback</b> script. The callback script
+will be run whenever the button is pressed (if it is a separator,
+or you do not wish to do anything, you can set this to -1).<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">win8_appbar_enable(true);<br>
+elementId[0] = win8_appbar_add_element("button", "repair", "Game
+Settings", "selection", "Change the global game settings",
+scr_Settings);<br>
+elementId[1] = win8_appbar_add_element("button", "pause",
+"Pause/Unpause", "selection", "Pause or unpause the game",
+scr_PauseGame);<br>
+elementId[2] = win8_appbar_add_element("button", "clear", "Quit",
+"global", "Quit to desktop", scr_QuitGame);<br></p>
+
+<p>The above code will switch on the App Bar, then add three
+buttons to it. The first two are on the left and will run a script
+to change the game settings or pause/unpause the game, while the
+third will run a script to end the game. All three have their
+unique id stored in an array in case we need to access them
+later.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_appbar_remove_element.html">win8_appbar_remove_element</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

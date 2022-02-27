@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>HTTP Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/http.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fhttp.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fhttp.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">HTTP Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any http call-backs received.</h2>
+
+<p>The HTTP Event is one that is triggered by the call back from
+one of the <a href=
+"../../002_reference/asynchronous%20functions/index.html"><tt>http_</tt>
+functions</a>, like <a href=
+"../../002_reference/asynchronous%20functions/http_post_string.html">
+<tt>http_post_string</tt></a>. It actually generates a ds_map (more
+commonly known as a "dictionary") that is exclusive to this event
+and is stored in the special variable <b>async_load</b> (please see
+the individual functions for code examples that explain the use of
+this event in further detail). This ds_map has the following
+structure:</p>
+
+<blockquote>
+<ol>
+<li><b>"id":</b> The id which was returned from the command. If you
+fire off a series of <tt>http_</tt> requests then you need to know
+which one you are getting the reply to, and so you would use this
+value to compare to the value you stored when you originally sent
+the request to find the right one.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"status":</b> Returns a value of less than 0 for an error, 0
+for success and 1 if content is being downloaded.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"result":</b> The data received (string only), or the path
+to the file downloaded if you have used <a href=
+"../../002_reference/asynchronous%20functions/http_get_file.html"><tt>
+http_get_file()</tt></a>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"url":</b> The complete URL you requested.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"http_status":</b> The raw http status code (if available).
+This returns the standard web status code for most browsers, eg:
+304 for "Not Modified" or 204 for "No Content", etc...</li>
+
+<li style="list-style: none"><br>
+</li>
+</ol>
+</blockquote>
+
+<p>That is for when you use the <tt>http_post_string()</tt>
+function, but each of the <tt>http_</tt> functions may return a
+slightly different map, so please refer to the manual entry for
+each function to find out the precise data that is returned for
+it.<br>
+<br></p>
+
+<p><i><b>NOTE:</b> The variable <tt>async_load</tt> is only valid
+in these events, as the ds_map that is points to is created at the
+start of the event, then deleted again at the end, with this
+variable being reset to a value of -1.</i><br>
+<br>
+<i><b>NOTE:</b> As <tt>async_load</tt> creates a <a href=
+"../../002_reference/data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>,
+these functions are particularly useful when coupled with the
+<a href=
+"../../002_reference/file%20handling/json_encode.html"><tt>json_encode</tt></a>
+and <a href=
+"../../002_reference/file%20handling/json_decode.html"><tt>json_decode</tt></a>
+functions.</i><br>
+<br>
+</p>
+
+<h3 class="studio">Downloading Files</h3>
+
+<p>There could also be additional data supplied by this map if you
+have requested files for downloading. In this case, the "status"
+will have a value of 1 and the ds_map will hold these extra
+keys:</p>
+
+<blockquote>
+<ol>
+<li><b>"contentLength":</b> This is the size of file that the web
+server has said you should expect to receive (may be -1 if the
+server does not return this data).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>"sizeDownloaded":</b> The size of the data that has already
+been downloaded.</li>
+</ol>
+</blockquote>
+
+<p>Note that the event will <i>not</i> be triggered for every
+single data packet that is received, but will rather update at any
+time during the download within the main game loop. Also note that
+currently this functionality is only available for regular
+<i>Windows</i> target platforms.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="dialogs.html">Dialogues
+Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

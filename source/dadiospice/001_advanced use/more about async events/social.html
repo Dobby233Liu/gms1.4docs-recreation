@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Social Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/social.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fsocial.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fsocial.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Social Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any Social API callbacks received.</h2>
+
+<p>This event can only be triggered by the various specific
+<a href="../../002_reference/social%20gaming/index.html">Social
+Functions</a> and will return a <a href=
+"../../002_reference/data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+stored in the variable <tt>async_load</tt>, containing different
+key/value pairs depending on the callback from the function that
+has triggered the event.<br>
+<br>
+The ds_map will contain a number of keys, the most important of
+which is the "<i>id</i>" key. This will return a <b>constant</b>
+which can then be checked in code to determine which of the many
+callbacks the event has received. Once you have parsed this key and
+compared the value returned with the available constants, you can
+then continue to extract the rest of the information from the
+map.<br>
+<br></p>
+
+<h3 class="studio">Achievements And Leaderboards</h3>
+
+<p>The function pages on <a href=
+"../../002_reference/social%20gaming/achievements%20and%20leaderboards/index.html">
+Social Gaming - Achievements and Leaderboards</a> in the Reference
+section detail the functions and callbacks as well as the constants
+used to trigger this event, but there are also certain
+circumstances in which it will be triggered without a function call
+from the game that is running:</p>
+
+<blockquote>
+<ul>
+<li>when your game is launched from the OS dashboard</li>
+
+<li>when you complete a challenge</li>
+
+<li>when another player completes a challenge</li>
+
+<li>when the game is started from the OS dashboard by selecting a
+challenge</li>
+</ul>
+</blockquote>
+
+<p>Any of the above callbacks will trigger the <b>Social Event</b>
+and an <tt>async_load</tt> map will be generated with the following
+details (note that there is a different "id" key value to define
+each of the different reasons that the event was called, but all
+other contents of the map are the same):</p>
+
+<blockquote>
+<ol>
+<li>"<b>id</b>" - The value of this key will depend on the type of
+callback triggering the event. it can be one of these
+constants:<br>
+
+<ul>
+<li><b><tt>achievement_challenge_received</tt></b> - A challenge
+has been received<br></li>
+
+<li><b><tt>achievement_challenge_completed</tt></b> - A challenge
+has been completed.<br></li>
+
+<li><b><tt>achievement_challenge_completed_by_remote</tt></b> - A
+challenge has been completed by the other player.<br></li>
+
+<li><b><tt>achievement_challenge_launched</tt></b> - The game was
+launched from the OS dashboard with the given challenge.<br></li>
+</ul></li>
+
+<li>"<b>playerid</b>" - The player id for the challenge.<br>
+<br></li>
+
+<li>"<b>issuerid</b>" - The id of the person that issued the
+challenge.<br>
+<br></li>
+
+<li>"<b>state</b>" - The state of the challenge, which will have a
+value of 0 - 3 (as a string) for <i>invalid</i>, <i>pending</i>,
+<i>completed</i> or <i>declined</i>.<br>
+<br></li>
+
+<li>"<b>message</b>" - The text message for challenge.<br>
+<br></li>
+
+<li>"<b>issueddate</b>" - The issue date for challenge<br>
+<br></li>
+
+<li>"<b>completeddate</b>" - The completion date for challenge.<br>
+<br></li>
+
+<li>"<b>type</b>" - The type of challenge given. Can be one of two
+constants:<br>
+
+<ul>
+<li><b><tt>achievement_type_score_challenge</tt></b> - A challenge
+based on the score value.<br></li>
+
+<li><b><tt>achievement_type_achievement_challenge</tt></b> - A
+challenge based on an achievement.<br></li>
+</ul></li>
+
+<li>"<b>identifier</b>" - The identifying string for the
+challenge.<br>
+<br></li>
+
+<li>"<b>score</b>" - The score tied in with the challenge.</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var ident = ds_map_find_value(async_load, "id"
+);<br>
+if ident == achievement_challenge_completed;<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;player_id = ds_map_find_value(async_load,
+"playerid");<br>
+&nbsp;&nbsp;&nbsp;issuer_id = ds_map_find_value(async_load,
+"issuerid");<br>
+&nbsp;&nbsp;&nbsp;state = ds_map_find_value(async_load,
+"state");<br>
+&nbsp;&nbsp;&nbsp;date_completed = ds_map_find_value(async_load,
+"completeddate");<br>
+&nbsp;&nbsp;&nbsp;date_issued = ds_map_find_value(async_load,
+"issueddate");<br>
+&nbsp;&nbsp;&nbsp;ach_type = ds_map_find_value(async_load,
+"type");<br>
+&nbsp;&nbsp;&nbsp;ach_ident = ds_map_find_value(async_load,
+"identifier");<br>
+&nbsp;&nbsp;&nbsp;ach_score = ds_map_find_value(async_load,
+"score");<br>
+&nbsp;&nbsp;&nbsp;}</p>
+
+<p><br>
+</p>
+
+<p><i><b>NOTE:</b> The variable <tt>async_load</tt> is only valid
+in the asynchronous events, as the <tt>ds_map</tt> that is points
+to is created at the start of the event, then deleted again at the
+end, with this variable being reset to a value of -1. However, all
+further data-structures created from the event <b>must be cleaned
+up using the appropriate functions</b>.</i><br>
+<br>
+</p>
+
+<h3 class="studio">Facebook</h3>
+
+<p>Some of the <a href=
+"../../002_reference/social%20gaming/facebook/index.html">Facebook
+functions</a> will trigger a social asynchronous event and create a
+<tt>ds_map</tt> with some specific information. The information
+returned will depend on the "type" of event that has been called.
+You can check this by reading the "type" key from the ds_map, which
+will be the following string for a Facebook event:</p>
+
+<blockquote>
+<ol>
+<li>"<b>facebook_permission_request</b>"</li>
+</ol>
+</blockquote>
+
+<p>When the event is triggered and is of this type, there will also
+be additional keys that can be checked:</p>
+
+<blockquote>
+<ol>
+<li>"<b>requestId</b>" - The request ID value returned by the
+<tt>facebook_request_xxx_permission()</tt> function that triggered
+the event</li>
+
+<li>"<b>result</b>" - This will be one of the following strings:
+
+<ul>
+<li>"<b>granted</b>" â€“ permission(s) were accepted by the
+user</li>
+
+<li>"<b>denied</b>" â€“ one or more permissions were not accepted
+by user</li>
+
+<li>"<b>error</b>" â€“ an error occurred</li>
+</ul></li>
+
+<li><b>"error</b>" - This will contain a description of the error,
+but is <i>only</i> present when "<b>result</b>" =
+"<b>error</b>".</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="push.html">Push
+Notification Events</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

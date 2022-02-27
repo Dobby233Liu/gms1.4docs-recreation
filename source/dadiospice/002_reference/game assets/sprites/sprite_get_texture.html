@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>sprite_get_texture</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/sprites/sprite_get_texture.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsprites%2Fsprite_get_texture.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsprites%2Fsprite_get_texture.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">sprite_get_texture</h1>
+
+<h2 class="studio">Returns the texture id for the given sprite and
+sub-image.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">sprite_get_texture(spr, subimg);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>spr</td>
+<td>The index of the sprite to use.</td>
+</tr>
+
+<tr>
+<td>subimg</td>
+<td>The sub-image of the sprite to use.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> pointer</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function returns a special <i>pointer</i> for the sprite
+texture page. This value can then be used in other draw functions,
+particularly in general <a href=
+"../../drawing/drawing%203d/index.html">3D</a> and some of the
+<a href="../../drawing/drawing%20primitives/index.html">2D
+primitive</a> functions, as well as the <a href=
+"../../shaders/index.html">Shader</a> functions. You can get more
+information about the returned texture page using the different
+<tt>texture_</tt> functions found <a href=
+"../../drawing/index.html">here</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var tex;<br>
+tex = sprite_get_texture(spr_Wall, 0);<br>
+draw_primitive_begin_texture(pr_trianglestrip, tex);<br>
+draw_vertex_texture(0, 0, 0, 0);<br>
+draw_vertex_texture(480, 0, 1, 0);<br>
+draw_vertex_texture(480, 640, 1, 1);<br>
+draw_vertex_texture(0, 640, 0, 1);<br>
+draw_primitive_end();<br></p>
+
+<p>The above code will draw a 4 vertex triangle strip textured with
+the texture held in the "tex" variable.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Sprites</a></div>
+
+<div style="float:right">Next: <a href=
+"sprite_get_uvs.html">sprite_get_uvs</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

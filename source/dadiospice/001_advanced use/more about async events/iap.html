@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>IAP Event</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about async events/iap.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fiap.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20async%20events%2Fiap.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">IAP Event</h1>
+
+<h2 class="studio">This is the sub event that will be triggered by
+any IAP call-backs received.</h2>
+
+<p>This event can only be triggered when you have activated
+<a href="../../002_reference/in%20app%20purchases/index.html">In
+App Purchases</a> for your game. If you have this functionality
+added, then the event will be triggered under the following
+circumstances:</p>
+
+<blockquote>
+<ol>
+<li>The store state changes.</li>
+
+<li>A product (or products) have been activated.</li>
+
+<li>The product and purchases have been restored.</li>
+
+<li>A product has been purchased.</li>
+
+<li>A product has been consumed.</li>
+</ol>
+</blockquote>
+
+<p>The event will always create a special <a href=
+"../../002_reference/data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+with an index ID stored in the built in variable
+<tt><b>iap_data</b></tt>. This map will <i>always</i> contain the
+key "<b>type</b>", which will hold one of the following constant
+values:<br>
+<br></p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>iap_ev_storeload</td>
+<td>This is triggered when a change is detected in the target
+platform store.</td>
+</tr>
+
+<tr class="alt">
+<td>iap_ev_product</td>
+<td>This event is triggered when a product is activated and will
+contain additional information about the product.</td>
+</tr>
+
+<tr>
+<td>iap_ev_restore</td>
+<td>This event is only triggered when you use the <a href=
+"../../002_reference/in%20app%20purchases/iap_restore_all.html"><tt>
+iap_restore_all</tt></a> function.</td>
+</tr>
+
+<tr class="alt">
+<td>iap_ev_purchase</td>
+<td>When a purchase has been completed, this event is
+triggered.</td>
+</tr>
+
+<tr>
+<td>iap_ev_consume</td>
+<td>When you use the function <a href=
+"../../002_reference/in%20app%20purchases/iap_consume.html"><tt>iap_consume</tt></a>
+it triggers this event.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+<br>
+Each of these possible event "types" will add extra keys to the
+<tt>iap_data</tt> ds_map, which can then be parsed to get the
+purchase or product information necessary. The exact contents of
+the <tt>iap_data</tt> map are listed below for each event
+"type".<br>
+<br></p>
+
+<h3 class="studio">iap_ev_storeload</h3>
+
+<p>When you activate your purchases, your game will try to contact
+the target store, triggering this event in the process. The
+<tt>iap_data</tt> map will then have an addition key
+"<b>status"</b>, which will have one of the following constants as
+it's value:<br>
+<br></p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Constant</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>iap_storeload_ok</td>
+<td>The store has been contacted and the connection is good.</td>
+</tr>
+
+<tr class="alt">
+<td>iap_storeload_failed</td>
+<td>There has been a connection error or for some reason the store
+is unavailable.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<h3 class="studio">iap_ev_product</h3>
+
+<p>All activated purchases will trigger this event "type", but only
+once per purchase, so if you have activated ten products you should
+expect this event to trigger ten times. If you have received this
+event, the <tt>iap_data</tt> ds_map will hold the additional key
+"<b>index</b>" which holds the unique <b>product ID string</b> for
+the product being activated. You can then use the function <a href=
+"../../002_reference/in%20app%20purchases/iap_product_details.html">
+<tt>iap_product_details</tt></a> along with this product ID to get
+further information.<br>
+<br>
+<i><b>NOTE:</b> Google Play (Android) can only request details for
+products 20 at a time which can lead to quite long load times for
+applications with a significant number of products.</i><br>
+<br></p>
+
+<h3 class="studio">iap_ev_restore</h3>
+
+<p>When you call the function <a href=
+"../../002_reference/in%20app%20purchases/iap_restore_all.html"><tt>
+iap_restore_all</tt></a> it will trigger this event, adding a
+"<b>result</b>" key to the <tt>iap_data</tt> ds_map. This key will
+hold either <tt>true</tt> or <tt>false</tt> to indicate whether the
+purchase data has been successfully restored from the target
+store.<br>
+<br></p>
+
+<h3 class="studio">iap_ev_purchase</h3>
+
+<p>On requesting a purchase using the function <a href=
+"../../002_reference/in%20app%20purchases/iap_acquire.html"><tt>iap_acquire</tt></a>
+this event type will be triggered. The <tt>iap_data</tt> ds_map
+will have the additional key "<b>index</b>" which holds the unique
+<b>purchase ID</b> value for the product being purchased. You can
+then use the function <a href=
+"../../002_reference/in%20app%20purchases/iap_purchase_details.html">
+<tt>iap_purchase_details</tt></a> along with this purchase ID to
+get further information.<br>
+<br>
+<i><b>NOTE:</b> If the product purchased is consumable then it
+<b>must be used</b> using <tt>iap_consume</tt> before a further
+purchase can be made.</i><br>
+<br></p>
+
+<h3 class="studio">iap_ev_consume</h3>
+
+<p>When using the function <a href=
+"../../002_reference/in%20app%20purchases/iap_consume.html"><tt>iap_consume</tt></a>
+this event type will be triggered. The <tt>iap_data</tt> ds_map
+will have the additional key "<b>product</b>" which holds the
+unique <b>product ID</b> string for the product being consumed.<br>
+<br></p>
+
+<p><br>
+<br>
+<i><b>NOTE:</b> The <tt>iap_data</tt> ds_map created for the in app
+purchase event is <b>only valid in this event</b> and should not be
+accessed anywhere else in your game.</i><br>
+<br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About Async
+Events</a></div>
+
+<div style="float:right">Next: <a href="cloud.html">Cloud
+Events</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

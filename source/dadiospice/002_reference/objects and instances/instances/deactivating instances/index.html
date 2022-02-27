@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Deactivating Instances</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/objects and instances/instances/deactivating instances/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Fdeactivating%20instances%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Finstances%2Fdeactivating%20instances%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Deactivating Instances</h1>
+
+<h2 class="studio">This section deals with instance
+deactivation.</h2>
+
+<p><i>GameMaker: Studio</i> offers you the possibility to "switch
+off" instances so that they are no longer processed in any way.
+Technically they don't really exist anymore, except as a pointer
+within the deactivation process itself, which means that a
+deactivated instance cannot be manipulated or changed in any way at
+all until it is re-activated again. So, these functions should be
+used with great care as they can cause problems when not used
+properly, particularly with persistent objects, as a persistent
+object that has been deactivated <i>will not be moved to the next
+room</i> unless it is re-activated first (effectively deleting it
+from the game).<br>
+<br>
+It is normally not necessary to deactivate instances every step of
+your game and this can actually cause your game to lag and runs
+slow. Instead it is recommended that you only run these functions
+every few steps in an alarm (for example), or if the view has
+changed position, and it is especially important that you do
+<i>not</i> use these functions in the draw event as this can lead
+to serious errors in your game.<br>
+<br>
+A deactivated instance effectively ceases to exist in the game, but
+<i>individual</i> instances can still have their variables
+accessed. You cannot use <tt>with(object)</tt> or
+<tt>with(instance)</tt> however, but rather you must access the
+instance <i>directly</i> using it's unique <a href=
+"../instance%20properties/id.html"><tt>id</tt></a> in the following
+form:</p>
+
+<p class="code">val = inst.variable;</p>
+
+<p>In the above example, "inst" would be a variable that holds the
+<tt>id</tt> of the deactivated instance, and this is the
+<i>only</i> way that a deactivated instance can be referenced
+without it being activated previously.<br>
+<br></p>
+
+<blockquote><i><b>NOTE:</b> If you deactivate an instance on room
+start (ie:from the room creation code, or from an instance create
+event of an instance within the room) all instances that are placed
+within the room from the room editor <b>will still run their create
+event</b> before being deactivated.</i><br>
+<br>
+<i><b>WARNING:</b> Deactivating instances that have physics enabled
+will <b>NOT</b> stop their fixtures from interacting within the
+physics simulation. For that you should set their <a href=
+"../../../physics/physics%20variables/phy_active.html"><tt>phy_active</tt></a>
+variable to <tt>true</tt> or <tt>false</tt> as you
+activate/deactivate the instances.</i><br>
+<br>
+</blockquote>
+
+<p><br>
+<br>
+The following functions exist for deactivating instances:</p>
+
+<blockquote>
+<ol>
+<li><a href=
+"instance_activate_all.html">instance_activate_all</a><br>
+</li>
+
+<li><a href=
+"instance_activate_object.html">instance_activate_object</a><br>
+</li>
+
+<li><a href=
+"instance_activate_region.html">instance_activate_region</a><br>
+</li>
+
+<li><a href=
+"instance_deactivate_all.html">instance_deactivate_all</a><br>
+</li>
+
+<li><a href=
+"instance_deactivate_object.html">instance_deactivate_object</a><br>
+
+</li>
+
+<li><a href=
+"instance_deactivate_region.html">instance_deactivate_region</a><br>
+
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Instances</a></div>
+
+<div style="float:right">Next: <a href=
+"../instance%20properties/index.html">Instance Properties</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

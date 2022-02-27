@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Distributing Your Game</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../style.css" type="text/css" media=
+"screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/009_distributing your game.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F009_distributing%20your%20game.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2F009_distributing%20your%20game.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Distributing Your Game</h1>
+
+<h2 class="studio">Here we talk about how you can distribute your
+finished game.</h2>
+
+<p>With the information in the preceding sections of this manual
+you can begin to create your games, but when your game is finished
+you obviously want other people to play it. You can of course
+export a *.gmz file and let them use <i>GameMaker: Studio</i> to
+play it but this is normally not what you want! First of all, you
+don't want others to be able to change the game or get access to
+all your hard work, and secondly you also want people to play the
+game even if they do not have a copy of <i>GameMaker: Studio</i>.
+So you would like to create a stand-alone application or package of
+your game, or upload it as HTML5 to a site on the internet so that
+everyone can play it!<br>
+<br></p>
+
+<h3 class="studio">Creating Your Stand Alone Game</h3>
+
+<p>Creating stand-alone applications is very easy with
+<i>GameMaker: Studio</i>. First you have to choose the "target" for
+the files to be made which means choosing whether you wish to
+create an *.exe for Windows, generate JavaScript and HTML for use
+in a browser, or create a package for one of the other target
+modules. Each of the individual targets has their own settings and
+you must ensure that they are correctly configured in the <a href=
+"../001_advanced%20use/global%20game%20settings/index.html">Global
+Game Settings</a> and <a href=
+"../001_advanced%20use/preferences/index.html">Preferences</a>
+before you continue.<br>
+<br>
+Once everything is correct, you then go into the <b>File</b> menu
+and select the item <b>Create Executable</b> or you can press the
+following button, found on the main IDE toolbar beside the Play and
+Debug buttons:<br>
+<img src="../images/createexe.png" align="left"> <b>Create
+Executable For Target</b><br>
+Either option will open a save window where you can give the final
+name that you wish to use for your game file. Once you have done
+this, the necessary files will be generated so that you can
+distribute it as you wish.</p>
+
+<blockquote><i><b>NOTE:</b> Before doing a final build of your
+project for release, you should always clear the Asset Compiler
+Cache (using the green "broom" icon at the top of the IDE) to
+ensure that all cached files are recreated and no stale files
+corrupt your final game.</i>
+</blockquote>
+
+<h3 class="studio">Target Platform Formats</h3>
+
+<p>Each target option saves to a platform specific format:</p>
+
+<blockquote>
+<ul>
+<li>If you have the setting as "Windows" in the main <i>GameMaker:
+Studio</i> window, then <b>only</b> a Windows compatible file will
+be made. This can be an installer, a stand-alone <tt>*.exe</tt> or
+a <tt>*.zip</tt>. The export file type is chosen from a drop-down
+menu within the "Save" dialogue itself, as shown by the image
+below: <img class="center" src="windows_export.png"> Please note
+that the "Single Runtime Exe" is designed for use only for quick
+testing and should <i>not</i> be used for distribution (use the Zip
+or Installer options). When creating a single EXE you can get
+issues when saving files and it may not run on certain machine
+conficurations.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>If you have chosen to build HTML5, then an index.html (default
+name, but you can give your own name too) along with a folder
+containing your game's files will be created and saved to the
+specified location. For your game to work you will need <b>both</b>
+of these to be uploaded to a server. The index.html can also be
+customised to show your game with a different background colour, or
+at a different position etc... but a knowledge of the HTML language
+is necessary for this (see the <a href=
+"../001_advanced%20use/global%20game%20settings/html5%20tab.html">HTML5
+Tab</a> of the <a href=
+"../001_advanced%20use/global%20game%20settings/index.html">Global
+Game Settings</a>).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>For Android devices, a *.apk file will be generated which can
+be used directly on any Android devices or uploaded to the Google
+Play or Amazon stores (or any other site that accepts Android
+apps).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>For an iOS or Mac build you will need all the appropriate
+developer permissions and an Apple Mac computer. <i>GameMaker:
+Studio</i> will create a *.dish file which you will then need to
+prepare in the <b>Application Oven</b> app on a Mac. This will then
+generate your iOS or Mac app for you.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>If you have bought <i>GameMaker: Studio</i> through
+<b>Steam</b> then you can also compile to the <b>Steam
+Workshop</b>. For more information see <a href=
+"steam%20workshop.html">here</a>.</li>
+</ul>
+</blockquote>
+
+<p><i><b>Please note:</b> GameMaker: Studio uses a C++ runner to
+create all final games and apps. The previous GameMaker versions
+used Delphi, so this means that any game imported from previous
+versions <b>may not work</b> without certain changes.</i><br>
+<br>
+For further information on how to compile a final game for your
+target platform, and for details on how to upload these to the
+various app stores available, please see the <a href=
+"http://help.yoyogames.com/home" target="_blank">YoYo Knowledge
+Base</a>.<br>
+<br></p>
+
+<h3 class="studio">Distribution</h3>
+
+<p>Once you have created a stand-alone application or package for
+your game you can then give the file to other people or place it on
+your website to download. You can also upload these files to the
+different hosting services for individual distribution or to online
+stores (like Google Play, iTunes or the MS Store) for general
+distribution and retail.<br>
+<br>
+Further information on these formats and file creation can be found
+on the <a href="http://help.yoyogames.com/categories/20060442"
+target="_blank">YoYo Knowledge Base</a>.<br>
+<br>
+You are free to distribute the games you create with <i>GameMaker:
+Studio</i> in any way you like, and this means that you can even
+sell them! Of course, this assumes that the sprites, images, and
+sounds you used to make it can be distributed or sold as well and
+that you have the legal rights to all assets. See the enclosed
+license agreement for more information on this (available on the
+<a href="004_the%20graphical%20user%20interface.html">Licences
+Tab</a>).<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Using GameMaker:
+Studio</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

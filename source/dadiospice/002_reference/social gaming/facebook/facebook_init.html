@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>facebook_init</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/social gaming/facebook/facebook_init.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fsocial%20gaming%2Ffacebook%2Ffacebook_init.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fsocial%20gaming%2Ffacebook%2Ffacebook_init.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">facebook_init</h1>
+
+<h2 class="studio">This code initialises Facebook.</h2>
+
+<h3><b>Syntax:</b>
+</h3>
+
+<p class="code">facebook_init(appKey)</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>Before using any of the Facebook functions you <i>must</i> call
+this function to initialize the Facebook API and tell <i>GameMaker:
+Studio</i> that you are going to be using the Facebook specific
+functions. This should be done <i>only once</i> in the game and can
+be done at any time, but it is recommended that you call this
+function right at the start before anything else. Note too, that
+even if you use <a href=
+"facebook_logout.html"><tt>facebook_logout</tt></a> at some point
+in your game you will not need to use this function again to log
+in.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio"><b>Example:</b>
+</h3>
+
+<p class="code">facebook_init();<br>
+var permissions = ds_list_create();<br>
+ds_list_add(permissions,"public_profile", "user_friends");<br>
+facebook_login(permissions);<br>
+ds_list_destroy(permissions);<br></p>
+
+<p>The above code initialises Facebook, then creates a
+<tt>ds_list</tt> to hold the specific permissions that you wish to
+request, and finally logs in using these permissions.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Facebook</a></div>
+
+<div style="float:right">Next: <a href=
+"facebook_login.html">facebook_login</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

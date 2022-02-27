@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Parents</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about objects/parents.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20objects%2Fparents.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20objects%2Fparents.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Parents</h1>
+
+<h2 class="studio">Parents are objects that form part of a
+hierarchy, grouping multiple "child" objects together.</h2>
+
+<p>One of the most powerful options within the object properties is
+the ability to assign a parent. Every object in the game can have a
+parent object, but what does this mean? Well, when an object has a
+parent, it can share code, actions and events with that parent.
+This is called "inheritance" and an object that has a parent is
+called a "child". But that's not all! You can also do checks and
+run code on parent objects which automatically include the child
+objects too which saves a lot of time and energy. Another way to
+look at a parent object is as a way to "group" objects together
+under the same umbrella and have them share certain things without
+loosing their own identity. Now, this may seem a bit complicated to
+understand so let's give some examples:<br>
+<br>
+Say you have a player object and four different enemy objects. Now,
+you want the player to die if he touches any of these four objects
+and this would normally entail four collision events with four sets
+of actions or code, one for each of the enemy objects. BUT if we
+make a parent object for all the enemies, then we can create
+<b>one</b> collision event with the parent object only and it will
+trigger no matter which one of the four "child" enemy objects touch
+the player. Handy stuff! In the actual <i>GameMaker: Studio</i>
+object you would see something like this:</p>
+
+<center>
+<p><img src="parent_image_1.png"><img src="parent_image_2.png">
+</p>
+</center>
+
+<p>Another example would be if you have a game where you want to
+create 10 different objects and have them behave in the same way.
+Well you would create one parent object and in that have all your
+behaviour actions or code, and then you would create your ten
+objects with no actions or code, but different sprites, and assign
+them your parent object. Now, when you place these instances in a
+room they will all behave the same, but look different.<br>
+<br>
+Finally you can use parenting to "mix and match" events and
+behaviours. Say you want two monsters: one that moves up and down,
+while another that move left and right, but you also want the two
+of them to have the same health and shoot at the player. In this
+case you can see that almost all events should have the same
+actions except for one or two that govern movement. So, again, we
+can make one object the parent of the other, but in this case we
+also define certain events for the child object. These events
+"override" the parent events, meaning that whenever an event for
+the child object contains actions, these are executed instead of
+the actions contained in the event of the parent. If you also want
+to execute the parent event you can call the so-called "inherited"
+event using the appropriate action or code.<br>
+<br>
+As indicated, wherever you use a parent object, this also implies
+the descendants (or "children"). This happens when, in an action,
+you indicate that the action must be applied to instances of a
+certain object. It also happens when you use the <tt>with()</tt>
+statement in code (see further on in the manual), and it works when
+you call code functions like <tt>instance_position</tt>,
+<tt>instance_number</tt>, etc... Finally, it works when you refer
+to variables in other objects too, like, in the above monster
+example, if I set the monster 1 speed to 10, then the monster 2
+speed will also go to ten as it is a child object of monster 1.<br>
+<br>
+It is actually good practice in most cases to create one base
+parent object and have this base object contain all the default
+behavior but <i>never</i> use it in the game. Rather use all the
+children objects and only use the parent in situations like those I
+have outlined above. You should also realise that parents can have
+parents too! Obviously you can't create a cycle of "parent1 is
+child of parent 2 is child of parent 1" but you can create what is
+called "object hierarchy" where "parent1 is child of parent2 is
+child of parent3". This is extremely useful to keep your game
+structured and you are strongly advised to learn to use this
+mechanism.<br>
+<br>
+Now you can see why parenting can really save a lot of time and
+work, and why it is one of the most useful tools in the GameMaker
+arsenal. So take your time to get to know this function as it will
+really help you in the long run!<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Objects</a></div>
+
+<div style="float:right">Next: <a href="physics.html">Object
+Physics Properties</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>script_execute</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/miscellaneous/script_execute.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmiscellaneous%2Fscript_execute.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmiscellaneous%2Fscript_execute.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">script_execute</h1>
+
+<h2 class="studio">Execute the script with index scr with the given
+arguments</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">script_execute(scr, arg0, arg1, arg2, ...);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>scr</td>
+<td>the name of the script that you want to call</td>
+</tr>
+
+<tr class="alt">
+<td>arg0 ... arg14</td>
+<td>The different arguments that you want to pass through to the
+script</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Will depend on the return value from the script
+being called.</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>There are times that you may want to pass a script to an
+instance in a dynamic way, and for these cases we provide the
+<tt>script_execute</tt> function. It will run a user created script
+resource and pass up to 15 arguments to that script. For more
+information about scripts, see <a href=
+"../../001_advanced%20use/006_scripts.html">Advanced Use:
+Scripts</a>. If the script has a return value, then this function
+will also return that value when called.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">script_execute(choose(scr_Up, scr_Down, scr_Left,
+scr_Right), irandom(5));<br></p>
+
+<p>The above example code will use <tt>script_execute</tt> to
+choose one of four user created script resources (in this case
+related to movement) and pass a random integer to it as
+argument0.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Miscellaneous</a></div>
+
+<div style="float:right">Next: <a href=
+"gml_release_mode.html">gml_release_mode</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Pre And Post Draw Events</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/events/pre and post draw event.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fpre%20and%20post%20draw%20event.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Fevents%2Fpre%20and%20post%20draw%20event.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Pre And Post Draw Events</h1>
+
+<h2 class="studio">The Pre Draw and Post Draw event are two of the
+many events that can be triggered in an instance that may contain
+code or actions.</h2>
+
+<p><b><img src="../../images/event_draw.png" align="left">Draw GUI
+Event</b><br>
+The <b>Pre Draw</b> and <b>Post Draw</b> events are part of the
+<a href="draw%20event.html">Draw Event</a> category. However,
+unlike the other Draw events these draw <i>directly</i> to the
+screen buffer, which will be the size of the combined screen space
+for all views currently visible, or the window size if only using
+one view or none at all. The image below illustrates this:
+<img class="center" src="predraw.png"><br>
+<br>
+So, if you are using the Pre or Post draw event, you are drawing to
+the full screen render target which will have the same size as the
+window to which all views are made to fit. If you have no views
+active, this is instead set to the size of the window itself.</p>
+
+<h3 class="studio">The Pre Draw Event</h3>
+
+<p>The <b>Pre Draw</b> event is triggered before any other draw
+event, and in it you can set values, set draw properties and even
+draw things without worrying about the views or the size of the GUI
+layer (the GUI layer size may be the same as the screen buffer, but
+it may not since you can set the GUI resolution in code).<br>
+<br>
+It is worth noting that this event happens <i>before the screen
+buffer is cleared</i> meaning that if you do not <a href=
+"../../001_advanced%20use/more%20about%20rooms/views.html">switch
+off view clearing</a> in the room editor then nothing that is drawn
+in the Pre Draw event will be seen, as the first view will clear
+it. If you want to be able to see through the views themselves, or
+you are <i>not</i> using views at all, then you should also have
+set the background colour to not be drawn in the <a href=
+"../rooms/backgrounds%20tab.html">appropriate room editor tab</a>
+too.<br>
+<br></p>
+
+<blockquote><i><b>NOTE:</b> If you switch off these options, you
+may notice unwanted artefacts being drawn on the screen when the
+game is tested (like "trails" from instances). This is because you
+are drawing directly over the previous frame of the draw buffer
+without it being cleared. However you can use <a href=
+"../../002_reference/drawing/colour%20and%20blending/draw_clear_alpha.html">
+<tt>draw_clear_alpha</tt></a></i>.</blockquote>
+
+<h3 class="studio">The Post Draw Event</h3>
+
+<p>The <b>Post Draw</b> event is triggered <i>after</i> the
+standard draw events, but <i>before</i> the Draw GUI events. Like
+the Pre Draw event, it is based on the size of the screen buffer
+size, and is placed before the Draw GUI events to enable you to
+perform post-processing effects and other things on a full screen
+basis simply and easily without interfering with any HUD/GUI
+elements that you may have in your game.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Events</a></div>
+
+<div style="float:right">Next: <a href="resize%20event.html">The
+Resize Event</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

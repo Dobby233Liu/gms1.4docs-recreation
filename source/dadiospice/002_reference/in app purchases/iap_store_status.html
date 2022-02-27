@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>iap_store_status</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/in app purchases/iap_store_status.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Fiap_store_status.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fin%20app%20purchases%2Fiap_store_status.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">iap_store_status</h1>
+
+<h2 class="studio">Allows you to quickly check the store status of
+the IAP system.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">iap_store_status();</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> String</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p><i><b>WARNING!</b> This function has been deprecated.</i><br>
+<br>
+This function is similar to the <a href=
+"iap_status.html"><tt>iap_status</tt></a> function, but instead of
+a <tt>ds_map</tt> with detailed information, this function returns
+a string with the current status of the store being used by your
+game. The following text can be returned by this function:</p>
+
+<blockquote>
+<ul>
+<li>"Not Enabled"</li>
+
+<li>"Not Available"</li>
+
+<li>"Loading"</li>
+
+<li>"Available"</li>
+
+<li>"Processing Order"</li>
+
+<li>"Error" (This means that something went wrong with the
+transaction itself.)</li>
+
+<li>"Failed" (This means that the attempt to retrieve the
+content_url went wrong.)</li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Extended Example:</h3>
+
+<p>We can use this function to draw the store status in real-time
+using the data returned from the function <a href=
+"iap_event_queue.html"><tt>iap_event_queue</tt></a> which you would
+use in the special asynchronous <a href=
+"../../001_advanced%20use/more%20about%20async%20events/iap.html">IAP
+Event</a>. In the Create Event of the instance you would prepare a
+variable to store the returned value of this function and then in
+the IAP event have:</p>
+
+<p class="code">var q;<br>
+q = iap_event_queue();<br>
+if !ds_queue_empty(q))<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;store_status = ds_queue_dequeue(q);<br>
+&nbsp;&nbsp;&nbsp;}<br>
+else<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;store_status = 0;<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>This will catch any store changes and set a variable to the
+value returned, and this variable can then be used in the Draw
+Event:</p>
+
+<p class="code">if store_status == -1<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;draw_text(32, 32, "Store status updated: " +
+iap_store_status());<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code will now use the <tt>iap_store_status</tt>
+function to display to the user the current state of the store.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">In App
+Purchases</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

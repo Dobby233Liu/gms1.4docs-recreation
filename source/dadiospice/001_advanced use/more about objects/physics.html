@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Object Physics Properties</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about objects/physics.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20objects%2Fphysics.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20objects%2Fphysics.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Object Physics Properties</h1>
+
+<h2 class="studio">You can set a number of physical properties for
+an object that will set how it behaves when placed in a physics
+world.</h2>
+
+<p>When you first create a new object resource, there is a checkbox
+at the bottom on the left marked <b>Uses Physics</b>, which is
+normally not checked. Selecting this option will radically change
+the behaviour of your object when an instance of it is placed in a
+room, as this switches on the object's physical properties and
+means that its "traditional" movement and collision functions are
+no longer valid (but only when the room it is placed on is also
+marked as being a physics room. See - <a href=
+"../more%20about%20rooms/physics.html">More About Rooms:
+Physics</a>). When you check this, the object resource window
+expands to show the following: <img class="center" src=
+"physicsproperties.png"></p>
+
+<h3 class="studio">Collision Shape</h3>
+
+<p>With the normal collision system you had your collisions based
+off of the mask of the sprite assigned to the object, but with the
+physics switched on, this is no longer the case. We need to assign
+a mask to the object ourselves (actually, this is really a
+"fixture", see <a href="../../002_reference/physics/index.html">The
+Physics Functions</a> for more information), which can either be a
+circle, a rectangle or a polygon shape that you yourself define.
+Once you have selected the shape you can then click on the
+<b>Modify Collision Shape</b> button which will open the following
+window: <img class="center" src="physics_shape.png"> This looks
+similar to the <a href="../004_paths.html">Path Editor</a>, and
+functions in much the same way, however, depending on the mask you
+have chosen, it can be rather more restrictive:</p>
+
+<blockquote>
+<ul>
+<li>If you have a circular mask, then you can only pull any of the
+path points to make the circle diameter larger or smaller</li>
+
+<li>If you have rectangular mask, then you can move any of the four
+corners, but the corresponding ones will adjust position
+automatically to always maintain a rectangle</li>
+
+<li>If you have a custom mask, it <i>must</i> have a minimum of 3
+and a maximum of 8 points to it, and it <i>must</i> be convex (see
+image below).</li>
+</ul>
+</blockquote>
+
+<p><img class="center" src="convexconcave.png">
+</p>
+
+<h3 class="studio">Physics Properties</h3>
+
+<p>Once you have set up your shape, you then need to define the
+basic physical properties that your object is to have. These are
+configured by changing the following parameters:</p>
+
+<blockquote>
+<ul>
+<li><b>Density:</b> The density of something is defined as its mass
+per unit volume, which basically means how much mass is crammed
+into the space it takes up in the world. So, a balloon would have a
+low density as it has little mass that occupies a large space,
+while a lead bar would have a high density as it has a great mass,
+yet occupies little space. In the GameMaker: Studio 2D physics
+world mass is calculated automatically for you from the values you
+input for the density and by the surface area of the shape you
+define for the fixture. This will have a direct impact on how much
+inertia a fixture has as well as how it reacts to collisions and
+forces, so if you make a small shape with a high density it will
+have a very large mass (like a bar of lead), but if you define a
+large shape with a low density it will have a much smaller mass
+(like a ballon).<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Restitution:</b> In physics, restitution is defined as "the
+return of an object or system to its original state after elastic
+deformation", but as the fixtures in the GameMaker: Studio are
+really rigid bodies and cannot be deformed, restitution is really a
+way of saying how "bouncy" the fixture is. This setting will affect
+how much an object "bounces" when it collides with other objects
+and is co-dependant on other forces that act on the instance like
+gravity and friction.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Collision Group:</b> By default, the collision group for all
+physics objects is 0, and this means that they will interact as
+normal, which means they <i>must</i> have a collision event to
+interact (a simple comment will do to trigger the collision)
+otherwise no collision will be registered. However, you can also
+specify that an object should belong to a specific <i>collision
+group</i>. Now, by assigning objects to a <b>positive</b> collision
+group (ie: three objects are all in group "2") you are telling
+<i>GameMaker: Studio</i> that instances of these objects should
+<i>always</i> collide, even if they have nothing in their collision
+event, obeying the physical properties that you have assigned them
+and the room they are in. Conversely, if you have objects with a
+<b>negative</b> collision group (ie: four objects assigned "-1"),
+you are telling <i>GameMaker: Studio</i> that these should
+<i>never</i> collide, and any collision events between them will be
+ignored. <i><b>Note:</b></i> Using collision groups dramatically
+increases the processing required by the physics system and should
+be used only when absolutely necessary, and you should have as few
+groups as possible!<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Linear Damping:</b> Damping is used to reduce the physics
+world velocity of an instance, and differs from friction in that
+friction only occurs when two instances with collision shapes
+(fixtures) are in contact. Damping is also much cheaper to simulate
+than friction, but please note that damping is not a replacement
+for friction; the two effects can, and should, be used
+together.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Angular Damping:</b> If you think about any rotating object
+in the "real world", unless it has a motor or is in space, it slows
+down over time due to the influence of external forces (like
+friction with the air around it). We can use set this option to
+simulate this effect and reduce the velocity of rotation of
+instances in the physics world, as, without it, any rotating
+instance would continue to rotate infinitely.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Friction:</b> Friction is the force that resists the
+relative motion of material elements sliding against each other,
+which in the GameMaker: Studio physics world, translates as the
+loss of momentum caused by the collision of two instances with
+fixtures bound to them. So, when two instances collide, their
+motion is affected by this value, with a high friction causing a
+larger loss of momentum than a lower value.<br></li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>Finally there are three extra options that can flagged as on or
+off for your fixture, <b>Sensor</b>, <b>Start Awake</b> and
+<b>Kinematic</b>. Each of these flags will change the behaviour of
+your fixture in the following ways:</p>
+
+<blockquote>
+<ul>
+<li><b>Sensor</b> - By checking this box, you are telling
+<i>GameMaker: Studio</i> to basically "ignore" the physical
+properties of the object, but still return a collision event with
+the objects around it. in this way you can have an instance with no
+physical presence in the room, but which can react to the collision
+of another instance, like the player, and do something in turn,
+like open a door, or trigger some sort of action in another place
+in the room.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Start Awake</b> - This is checked by default and represents
+the initial "state" of the fixture at the start of the room it has
+been placed in. Normally you want it to be <i>awake</i> (ie:
+participating in the physics world) right from the start, but
+sometimes this can lead to certain instabilities and unwanted
+effects due to the abrupt start of the physics simulation. To avoid
+these effects, you can un-check this flag and the instance will be
+created with the fixture <i>asleep</i>, and it will not participate
+in the physics simulation unless something acts upon it.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Kinematic</b> - There will be certain instances in a physics
+based game which you want to move around but do not wish to be
+acted on by forces such as gravity, nor forces incurred by
+collisions with dynamic objects (think of moving platforms in a
+platform game, for example). For such objects simply setting the
+density of the fixture to 0 will mean that the physics will assume
+that the object is intended to be <i>static</i> and it will not
+react at all to anything. However, checking this box will make a
+static object <i>kinematic</i> and although it will be unaffected
+by collisions and gravity, it can still be moved around or rotated
+using the appropriate variables.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p><i><b>NOTE:</b> A sensor fixture will fire off the collision
+event when the collision <b>first occurs only</b>, meaning you
+don't get a stream of collision events as the two bodies continue
+to overlap (which is what would traditionally occur). If they stop
+overlapping and overlap subsequently there will be another
+collision event triggered.</i><br>
+<br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Objects</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_livetile_notification_end</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_livetile_notification_end.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_notification_end.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_notification_end.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_livetile_notification_end</h1>
+
+<h2 class="studio">End the definition of a Live Tile
+notification.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_livetile_notification_end();</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function must be called after defining a Live Tile
+notification to "push" it onto the Windows UI Live Tile for your
+game. The notification will be shown on the Live Tile for your game
+unless you have previously enabled queuing (using, <a href=
+"win8_livetile_queue_enable.html"><tt>win8_livetile_queue_enable</tt></a>),
+in which case it will be added onto the notification queue and will
+be shown after all previous notifications have been shown. This
+function requires you to have previously selected a Live tile
+template using <a href=
+"win8_livetile_notification_begin.html"><tt>win8_livetile_notification_begin</tt></a>,
+and set up the necessary text, images and tags using the
+appropriate Windows 8 functions.<br>
+<br>
+<i><b>NOTE:</b> This function is also used to push notifications to
+Secondary tiles when used along with <a href=
+"win8_livetile_notification_secondary_begin.html"><tt>win8_livetile_notification_secondary_begin</tt></a>.</i><br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var expiryTime;<br>
+expiryTime = date_current_datetime();<br>
+expiryTime = date_inc_minute(expiryTime, 5);<br>
+win8_livetile_notification_begin("TileSquarePeekImageAndText01");<br>
+
+win8_livetile_notification_expiry(expiryTime);<br>
+win8_livetile_notification_tag("tag0");<br>
+win8_livetile_notification_text_add("Current Score = " +
+string(score));<br>
+win8_livetile_notification_image_add("ms-appx:///" +
+working_directory + "ScoreTile.png");<br>
+win8_livetile_notification_end();<br></p>
+
+<p>The above code will push a new Live Tile notification through to
+Windows 8, with some text and an image, and the tile will be shown
+for 5 minutes.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_livetile_tile_notification.html">win8_livetile_tile_notification</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>colour And Blending</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/colour and blending/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fcolour%20and%20blending%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fcolour%20and%20blending%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Colour And Blending</h1>
+
+<h2 class="studio">This section deals with the functions related to
+colour, alpha and blending.</h2>
+
+<p><i>GameMaker: Studio</i> has a comprehensive selection of
+functions to manipulate the colour, alpha and blending of what is
+drawn on the screen. Using these functions you can separate colours
+into their component parts, create new colours, manipulate the draw
+alpha and also play with blend modes to change how different things
+in your game are drawn together. Apart from these functions, there
+are also a number of constants that can be used as base colours in
+these (and other) functions:</p>
+
+<div class="compat">
+<table class="compat">
+<tr>
+<th>Constant</th>
+<th>Colour</th>
+<th>Value</th>
+</tr>
+
+<tr>
+<td>c_aqua</td>
+<td><img src="c_aqua.png">
+</td>
+<td>16776960</td>
+</tr>
+
+<tr class="alt">
+<td>c_black</td>
+<td><img src="c_black.png">
+</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>c_blue</td>
+<td><img src="c_blue.png">
+</td>
+<td>16711680</td>
+</tr>
+
+<tr class="alt">
+<td>c_dkgray</td>
+<td><img src="c_dkgray.png">
+</td>
+<td>4210752</td>
+</tr>
+
+<tr>
+<td>c_fuchsia</td>
+<td><img src="c_fuchsia.png">
+</td>
+<td>16711935</td>
+</tr>
+
+<tr class="alt">
+<td>c_gray</td>
+<td><img src="c_gray.png">
+</td>
+<td>8421504</td>
+</tr>
+
+<tr>
+<td>c_green</td>
+<td><img src="c_green.png">
+</td>
+<td>32768</td>
+</tr>
+
+<tr class="alt">
+<td>c_lime</td>
+<td><img src="c_lime.png">
+</td>
+<td>65280</td>
+</tr>
+
+<tr>
+<td>c_ltgray</td>
+<td><img src="c_ltgray.png">
+</td>
+<td>12632256</td>
+</tr>
+
+<tr class="alt">
+<td>c_maroon</td>
+<td><img src="c_maroon.png">
+</td>
+<td>128</td>
+</tr>
+
+<tr>
+<td>c_navy</td>
+<td><img src="c_navy.png">
+</td>
+<td>8388608</td>
+</tr>
+
+<tr class="alt">
+<td>c_olive</td>
+<td><img src="c_olive.png">
+</td>
+<td>32896</td>
+</tr>
+
+<tr>
+<td>c_orange</td>
+<td><img src="c_orange.png">
+</td>
+<td>4235519</td>
+</tr>
+
+<tr class="alt">
+<td>c_purple</td>
+<td><img src="c_purple.png">
+</td>
+<td>8388736</td>
+</tr>
+
+<tr>
+<td>c_red</td>
+<td><img src="c_red.png">
+</td>
+<td>255</td>
+</tr>
+
+<tr class="alt">
+<td>c_silver</td>
+<td><img src="c_silver.png">
+</td>
+<td>12632256</td>
+</tr>
+
+<tr>
+<td>c_teal</td>
+<td><img src="c_teal.png">
+</td>
+<td>8421376</td>
+</tr>
+
+<tr class="alt">
+<td>c_white</td>
+<td><img src="c_white.png">
+</td>
+<td>16777215</td>
+</tr>
+
+<tr>
+<td>c_yellow</td>
+<td><img src="c_yellow.png">
+</td>
+<td>65535</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio">Getting colour and Alpha Values</h3>
+
+<p>The following functions can be used to get the component hues,
+compound hue, saturation and luminosity of a selected colour as
+well as the alpha and other properties:</p>
+
+<blockquote>
+<ol>
+<li><a href="colour_get_blue.html">colour_get_blue</a><br>
+</li>
+
+<li><a href="colour_get_green.html">colour_get_green</a><br>
+</li>
+
+<li><a href="colour_get_red.html">colour_get_red</a><br>
+</li>
+
+<li><a href="colour_get_hue.html">colour_get_hue</a><br>
+</li>
+
+<li><a href=
+"colour_get_saturation.html">colour_get_saturation</a><br>
+</li>
+
+<li><a href="colour_get_value.html">colour_get_value</a><br>
+</li>
+
+<li><a href="draw_getpixel.html">draw_getpixel</a><br>
+</li>
+
+<li><a href="draw_getpixel_ext.html">draw_getpixel_ext</a><br>
+</li>
+
+<li><a href="draw_get_colour.html">draw_get_colour</a><br>
+</li>
+
+<li><a href="draw_get_alpha.html">draw_get_alpha</a><br>
+</li>
+</ol>
+</blockquote>
+
+<h3 class="studio">Creating colours</h3>
+
+<p>These functions can be used to create colours from raw input
+values for colour components:</p>
+
+<blockquote>
+<ol>
+<li><a href="make_colour_hsv.html">make_colour_hsv</a><br>
+</li>
+
+<li><a href="make_colour_rgb.html">make_colour_rgb</a><br>
+</li>
+
+<li><a href="merge_colour.html">merge_colour</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p>Note that you can also create colours from their hexadecimal
+value using the "$" symbol beforehand, and these values can also be
+used in the colour functions to get component hues or for mixing,
+etc... The hexadecimal value for these colours is split into three
+parts with the format Blue - Green - Red so, for example, to define
+a purple colour you could use:</p>
+
+<p class="code">col = $983c95<br></p>
+
+<p>Where 98 is the blue component, 3c is the green component and 95
+is the red component.<br>
+<br></p>
+
+<h3 class="studio">Setting colour, Alpha and Blending</h3>
+
+<p>The following functions can be used to set the various different
+options for drawing to the screen, including alpha, colour and
+blending:</p>
+
+<blockquote>
+<ol>
+<li><a href="draw_clear.html">draw_clear</a><br>
+</li>
+
+<li><a href="draw_clear_alpha.html">draw_clear_alpha</a><br>
+</li>
+
+<li><a href="draw_set_alpha.html">draw_set_alpha</a><br>
+</li>
+
+<li><a href="draw_set_colour.html">draw_set_colour</a><br>
+</li>
+
+<li><a href=
+"draw_set_colour_write_enable.html">draw_set_colour_write_enable</a><br>
+
+</li>
+
+<li><a href="draw_set_blend_mode.html">draw_set_blend_mode</a><br>
+</li>
+
+<li><a href=
+"draw_set_blend_mode_ext.html">draw_set_blend_mode_ext</a><br>
+</li>
+
+<li><a href="draw_set_alpha_test.html">draw_set_alpha_test</a><br>
+</li>
+
+<li><a href=
+"draw_set_alpha_test_ref_value.html">draw_set_alpha_test_ref_value</a><br>
+
+</li>
+
+<li><a href="draw_get_alpha_test.html">draw_get_alpha_test</a><br>
+</li>
+
+<li><a href=
+"draw_get_alpha_test_ref_value.html">draw_get_alpha_test_ref_value</a><br>
+
+</li>
+
+<li><a href=
+"draw_enable_alphablend.html">draw_enable_alphablend</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"../index.html">Drawing</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

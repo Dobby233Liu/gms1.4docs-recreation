@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>skeleton_animation_get_frames</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/sprites/skeletal animations/skeleton_animation_get_frames.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsprites%2Fskeletal%20animations%2Fskeleton_animation_get_frames.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fsprites%2Fskeletal%20animations%2Fskeleton_animation_get_frames.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">skeleton_animation_get_frames</h1>
+
+<h2 class="studio">Returns the total number of frames for the
+specified animation.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">skeleton_animation_get_frames(anim_name);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>anim_name</td>
+<td>The animation name to get the frames of.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Integer</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function can be used to retrieve the number of frames that
+any given skeleton animation has. You supply the skeleton animation
+name (as a string, as defined in the program used to make the
+animation, or as returned by using the function <a href=
+"skeleton_animation_get.html"><tt>skeleton_animation_get</tt></a>,
+and the function returns the frames that it has as an integer
+value. The function will return 0 if the specified animation does
+not exist.</p>
+
+<blockquote><i><b>IMPORTANT:</b> Spine integration in GameMaker:
+Studio is a Pro licence feature and will not work in the
+Free/Standard versions.</i>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var num =
+skeleton_animation_get_frames(skeleton_animation_get());<br>
+image_index = num -1;<br>
+image_speed = 0;<br></p>
+
+<p>The above code will get the number of frames in the animation
+and then set the sprite to the last frame and stop animating.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Skeletal
+Animations</a></div>
+
+<div style="float:right">Next: <a href=
+"skeleton_animation_get_frame.html">skeleton_animation_get_frame</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>object_set_solid</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/objects and instances/objects/object_set_solid.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Fobjects%2Fobject_set_solid.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fobjects%20and%20instances%2Fobjects%2Fobject_set_solid.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">object_set_solid</h1>
+
+<h2 class="studio">Sets the solidity of the given object.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">object_set_solid( index, solid );</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>index</td>
+<td>The index of the object to change.</td>
+</tr>
+
+<tr class="alt">
+<td>solid</td>
+<td>The new solidity of the object (true=solid, false=not
+solid).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can flag a specific object as being solid
+or not (for more information on the "solid" flag see <a href=
+"../../../000_using%20gamemaker/008_defining%20objects.html">Defining
+Objects</a>). This means that all instances of this object that are
+created <i>after solid has been changed</i> will be created with
+this new state, while instances that are already in the room may
+not be affected.<br>
+<br>
+Please note that this is not an instance function! You can set the
+solid flag of individual instances using the <a href=
+"../instances/instance%20properties/solid.html"><tt>solid</tt></a>
+variable and so have ten instances all flagged as solid even though
+the object in question has the flag set to false in the IDE, and
+even if you change the solid flag of the object to true using this
+function, all instances that currently in the room will remain as
+they were, and only instances created after calling the function
+will start with solid flagged as true.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">if !object_get_solid(obj_Block)
+object_set_solid(obj_Block, true);</p>
+
+<p>The above code checks the solid flag of the object "obj_Block"
+and if it is false then it is changed to be flagged as true.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Objects</a></div>
+
+<div style="float:right">Next: <a href=
+"object_set_sprite.html">object_set_sprite</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

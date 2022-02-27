@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>background_replace</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/game assets/backgrounds/background_replace.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fbackgrounds%2Fbackground_replace.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fgame%20assets%2Fbackgrounds%2Fbackground_replace.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">background_replace</h1>
+
+<h2 class="studio">Replace a background resource with another
+one.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">background_replace(ind, fname);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>ind</td>
+<td>The index of the background to permanently replace.</td>
+</tr>
+
+<tr class="alt">
+<td>fname</td>
+<td>The filename of the image to make the new background.</td>
+</tr>
+
+<tr>
+<td>removeback</td>
+<td>Indicates whether to make all pixels with the same colour
+(left-bottom pixel) transparent.</td>
+</tr>
+
+<tr class="alt">
+<td>smooth</td>
+<td>Indicates whether to smooth the edges.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function works in almost the exact same manner as <a href=
+"background_add.html"><tt>background_add</tt></a>, only instead of
+returning the index of the background you are importing, it
+overwrites a previously created background index. The background
+index to be replaces is one that has been created and stored in a
+variable using other functions like <a href=
+"background_add.html"><tt>background_add</tt></a> or <a href=
+"background_create_from_surface.html"><tt>background_create_from_surface</tt></a>.
+You can <i>not</i> use one from the resource tree as you cannot
+replace built-in assets.<br>
+<br>
+<i><b>NOTE:</b> Depending on the target platform that is chosen you
+are limited as to where you can save and load files from. See
+<a href="../../file%20handling/index.html">Reference - Files</a>
+for more information.</i><br>
+<br>
+<i><b>NOTE:</b> You should be aware that if you are using this
+function in your HTML5 target game to load resources from an
+external server, then, due to XSS protection in browsers, attempts
+to load resources from across domains can be blocked and may appear
+to return blank results.</i><br>
+<br>
+<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">background_replace(bck_Sky, "Sky_5.png");</p>
+
+<p>The above code will replace the image asset indexed in "spr_Sky"
+with another one loaded from an external source.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Backgrounds</a></div>
+
+<div style="float:right">Next: <a href=
+"background_duplicate.html">background_duplicate</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

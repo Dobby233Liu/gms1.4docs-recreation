@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete Message Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete message functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20message%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20message%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete Message Functions</h1>
+
+<h2 class="studio">These functions deal with pop up messages and
+Windows captions.</h2>
+
+<h3 class="studio"><b>Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>show_message_ext</td>
+<td>Displays a dialog box with the string as a message and up to
+three buttons. But1, but2 and but3 contain the button text. An
+empty string means that the button is not shown. In the texts you
+can use the &amp; symbol to indicate that the next character should
+be used as the keyboard shortcut for this button. The function
+returns the number of the button pressed (0 if the user presses the
+Esc key).</td>
+</tr>
+
+<tr class="alt">
+<td>message_background</td>
+<td>Sets the background image for the pop-up box for any of the
+functions above. back must be one of the backgrounds defined in the
+game. Unfortunately, alpha values are not taken into account.
+However, if the left-bottom pixel has an alpha value of 0, all
+pixels with that colour will be considered transparent.</td>
+</tr>
+
+<tr>
+<td>message_alpha</td>
+<td>Sets the alpha translucence for the pop-up box for any of the
+functions above. alpha must lie between 0 (completely translucent)
+and 1 (not translucent) (only for Windows 2000 or later).</td>
+</tr>
+
+<tr class="alt">
+<td>message_button</td>
+<td>Sets the sprite used for the buttons in the pop-up box. spr
+must be a sprite consisting of three images, the first indicates
+the button when it is not pressed and the mouse is far away, the
+second indicates the button when the mouse is above it but not
+pressed and the third is the button when it is pressed.
+Unfortunately, alpha values are not taken into account. However, if
+the left-bottom pixel has an alpha value of 0, all pixels with that
+colour will be considered transparent.</td>
+</tr>
+
+<tr>
+<td>message_text_font</td>
+<td>Sets the font for the text in the pop-up box.</td>
+</tr>
+
+<tr class="alt">
+<td>message_button_font</td>
+<td>Sets the font for the buttons in the pop-up box.</td>
+</tr>
+
+<tr>
+<td>message_input_font</td>
+<td>Sets the font for the input field in the pop-up box.</td>
+</tr>
+
+<tr class="alt">
+<td>message_text_charset</td>
+<td>This function allows you to specify which character set the
+dialogs will use.</td>
+</tr>
+
+<tr>
+<td>message_mouse_colour</td>
+<td>Sets the colour of the font for the buttons in the pop-up box
+when the mouse is above it.</td>
+</tr>
+
+<tr class="alt">
+<td>message_input_colour</td>
+<td>Sets the colour for the background of the input filed in the
+pop-up box.</td>
+</tr>
+
+<tr>
+<td>message_caption</td>
+<td>Sets the caption for the pop-up box. Indicates whether a border
+must be shown (1) or not (0) and str indicates the caption when the
+border is shown.</td>
+</tr>
+
+<tr class="alt">
+<td>message_position</td>
+<td>Sets the position of the pop-up box on the screen. Use -1, -1
+to center the box.</td>
+</tr>
+
+<tr>
+<td>message_size</td>
+<td>Fixes the size of the pop-up box on the screen. If you choose
+-1 for the width the width of the image is used. If you choose -1
+for the height the height is calculated based on the number of
+lines in the message.</td>
+</tr>
+
+<tr class="alt">
+<td>show_menu</td>
+<td>Shows a popup menu. str indicates the menu text. This consists
+of the different menu items with a vertical bar between them. For
+example, str = 'menu0|menu1|menu2'. When the first item is selected
+a 0 is returned, etc. When the player selects no item, the default
+value def is returned.</td>
+</tr>
+
+<tr>
+<td>show_menu_pos</td>
+<td>Shows a popup menu as in the previous function but at position
+x,y on the screen.</td>
+</tr>
+
+<tr class="alt">
+<td>get_colour</td>
+<td>Asks the player for a colour. defcol is the default colour. If
+the user presses Cancel the value -1 is returned.</td>
+</tr>
+
+<tr>
+<td>get_directory</td>
+<td>Asks for a directory. dname is the default name. If the user
+presses Cancel an empty string is returned.</td>
+</tr>
+
+<tr class="alt">
+<td>get_directory_alt</td>
+<td>An alternative way to ask for a directory. Capt is the caption
+to be show. root is the root of the directory tree to be shown. Use
+the empty string to show the whole tree. If the user presses Cancel
+an empty string is returned.</td>
+</tr>
+
+<tr>
+<td>show_score</td>
+<td>Whether to show the score in the window caption.</td>
+</tr>
+
+<tr class="alt">
+<td>show_lives</td>
+<td>Whether to show the number of lives in the window caption.</td>
+</tr>
+
+<tr>
+<td>show_health</td>
+<td>Whether to show the health in the window caption.</td>
+</tr>
+
+<tr class="alt">
+<td>caption_score</td>
+<td>The caption used for the score.</td>
+</tr>
+
+<tr>
+<td>caption_lives</td>
+<td>The caption used for the lives.</td>
+</tr>
+
+<tr class="alt">
+<td>caption_health</td>
+<td>The caption used for the health.</td>
+</tr>
+
+<tr>
+<td>highscore_show</td>
+<td>Shows the highscore table. numb is the new score. If this score
+is good enough to be added to the list, the player can input a
+name.</td>
+</tr>
+
+<tr class="alt">
+<td>highscore_set_background</td>
+<td>Sets the background image to use. back must be the index of one
+of the background resources.</td>
+</tr>
+
+<tr>
+<td>highscore_set_border</td>
+<td>Sets whether the highscore form must have a border or not.</td>
+</tr>
+
+<tr class="alt">
+<td>highscore_set_font</td>
+<td>Sets the font used for the text in the table.</td>
+</tr>
+
+<tr>
+<td>highscore_set_colours</td>
+<td>Sets the colours used for the background, the new entry in the
+table, and the other entries.</td>
+</tr>
+
+<tr class="alt">
+<td>highscore_set_strings</td>
+<td>Changes the different default strings used when showing the
+highscore table.</td>
+</tr>
+
+<tr>
+<td>highscore_show_ext</td>
+<td>Shows the highscore table with a number of options (can also be
+achieved by using a number of the previous functions).</td>
+</tr>
+
+<tr class="alt">
+<td>highscore_add_current</td>
+<td>Adds the current score to the highscore list. The player is
+asked to provide a name.</td>
+</tr>
+</table>
+</div>
+
+<p>The following constants have also been removed:</p>
+
+<blockquote>
+<ul>
+<li><b>text_type</b>
+</li>
+
+<li><b>button_type</b>
+</li>
+
+<li><b>input_type</b>
+</li>
+</ul>
+</blockquote>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>These are Windows only functions and no longer applicable to any
+other device, especially since most of them block the runner to
+show the message boxes.<br>
+<br>
+<i><b>Note:</b> While the highscore display functions are now
+obsolete, the internal highscores do still exists and can be
+used... You will just have to display them yourself through your
+own code.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20dynamic%20functions.html">Dynamic Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

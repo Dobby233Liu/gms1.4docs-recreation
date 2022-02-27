@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>get_login_async</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/asynchronous functions/get_login_async.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fasynchronous%20functions%2Fget_login_async.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fasynchronous%20functions%2Fget_login_async.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">get_login_async</h1>
+
+<h2 class="studio">An asynchronous function that returns the
+username and password.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">get_login_async(name, password);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>username</td>
+<td>The default user name</td>
+</tr>
+
+<tr class="alt">
+<td>password</td>
+<td>The default password</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function opens a window that asks the user to input a
+username and password. These arguments can be set as an empty
+string or you can store previously entered values to use if you
+wish. This is an asynchronous function, and as such <i>GameMaker:
+Studio</i> does <i>not</i> block the device it is being run on
+while waiting for answer, but rather keeps on running events as
+normal. Once the user has input the details and pressed the "Okay"
+button, an asynchronous <b>User Interaction</b> event is triggered
+which, for the duration of that event <i>only</i>, will have a
+ds_map stored in the variable <tt>async_load</tt>.<br>
+<br>
+This map will contain the two keys, "username" and "password", with
+the corresponding user input stored in each. As it is a <a href=
+"../data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+that has been created, this can then be used, for example, by the
+<a href=
+"../file%20handling/json_encode.html"><tt>json_encode</tt></a>
+function ready to be sent to a server or written to a file on the
+chosen device.<br>
+<br>
+It is worth noting that this function will return an index number
+for the ds_map created which can then be checked in the
+corresponding event so that you can "target" a specific ds_map
+should you be expecting more than one async map to be returned
+(perhaps from some other function). Outside of the asynchronous
+events, the async_load ds_map will return an "id" value of -1.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Extended Example:</h3>
+
+<p>The <b>create event</b> (for example) of the object that is
+controlling the login of our user would have the following
+code:</p>
+
+<p class="code">ini_open("Profile.ini");<br>
+u = ini_read_string("User","0","");<br>
+p = ini_read_string("User","1","");<br>
+ini_close();<br>
+login = get_login_async(u,p);<br></p>
+
+<p>The above code opens an ini file (or creates one if it doesn't
+exist) and gets the name and password stored in that file. If they
+do not exist, then the default of an empty string ("") is returned.
+These values are then used in <tt>get_login_async()</tt> to ask the
+user for their username and password details, with the request
+index being stored in the variable "login". Note that while waiting
+for the user to give the necessary information the game and its
+events will continue to run as normal.<br>
+<br>
+Now that the asynchronous code has been fired off, we need to check
+for the return value in the <a href=
+"../../001_advanced%20use/more%20about%20async%20events/dialogs.html">
+asynchronous event for Dialogs</a> in the following way:</p>
+
+<p class="code">if ds_map_find_value(async_load, "id") == login<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;u = ds_map_find_value(async_load,
+"username");<br>
+&nbsp;&nbsp;&nbsp;p = ds_map_find_value(async_load,
+"password");<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code checks the "id" key of the async_load ds_map and
+if it holds the same value as that stored in the "login" variable,
+the map details are then read into the corresponding variables
+which you can then store or use to check against database values
+etc...</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Asynchronous
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"show_message_async.html">show_message_async</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

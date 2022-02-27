@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>d3d_start</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/drawing/drawing 3d/3d setup/d3d_start.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20setup%2Fd3d_start.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fdrawing%2Fdrawing%203d%2F3d%20setup%2Fd3d_start.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">d3d_start</h1>
+
+<h2 class="studio">Tells <i>GameMaker: Studio</i> that all further
+drawing is to be done in 3D mode.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">d3d_start()</p>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Real</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can tell <i>GameMaker: Studio</i> that
+all further drawing should be done in 3D mode. This function can be
+called in any event, but will affect <i>all drawing</i> done after,
+so if your game is not completely done in 3D you may need to switch
+it off using <a href="d3d_end.html"><tt>d3d_end</tt></a> to draw
+certain parts (and then use this function again to switch 3D mode
+back on).<br>
+<br>
+Starting 3D mode will result in the following changes:</p>
+
+<blockquote>
+<ul>
+<li>First of all depth testing (also known as Z Buffering) is
+switched on (using a 24-bit z-buffer). This means that for each
+pixel on the screen only the drawing with the smallest z-value (=
+depth value) is drawn. If instances have the same depth then you
+will get what is known as Z-fighting. This occurs as the 2
+instances attempt to draw at the same level, and inaccuracies in
+the rendering due to very close Z value cause ugly effects. To
+avoid this, try and make sure instances that might overlap do not
+have the same depth value!</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Secondly, the normal orthographic projection is replaced by a
+perspective one. This means the following. Normally the size of
+instances on the screen is independent on its depth. With a
+perspective projection instances that have a greater depth will
+appear smaller. When the depth is 0 it is equal to the old size
+(unless you change the projection). The viewpoint for the camera is
+placed at a distance above the room. (This distance is equal to the
+width of the room; that gives a reasonable default projection.)
+Only instances in front of the camera are drawn. So don't use
+instances with a depth smaller than 0 (or at least not smaller than
+-w where w is the width of the room or the view).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Thirdly, the vertical y-coordinate is reversed. While normally
+the (0,0) position is at the top-left of the view, in 3D mode the
+(0,0) position is at the bottom-left position, as is normal for
+3-dimensional views.</li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">d3d_start();</p>
+
+<p>This code has been placed in the create event of an instance to
+tell <i>GameMaker: Studio</i> that all further drawing should be
+done in 3D mode.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">3D
+Setup</a></div>
+
+<div style="float:right">Next: <a href=
+"d3d_end.html">d3d_end</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

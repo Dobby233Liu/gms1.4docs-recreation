@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>File System Limits</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/file handling/file system limits.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Ffile%20handling%2Ffile%20system%20limits.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Ffile%20handling%2Ffile%20system%20limits.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">File System Limits</h1>
+
+<h2 class="studio">Here you can find information on how the file
+system works and its limits.</h2>
+
+<p>When using the file system functions included with <i>GameMaker:
+Studio</i> it is vitally important to know exactly how everything
+works and what things are going on behind the scenes. To that end,
+this section is designed to explain and clarify exactly how things
+are stored, where they are stored and what possible limits or
+workarounds there may be to this system.<br>
+<br></p>
+
+<h3 class="studio">Sandboxing</h3>
+
+<p>The first (and most important) thing to note about the file
+functions is that they are limited (in general) to the
+<i>sandbox</i>. What this means is that <i>GameMaker: Studio</i>
+cannot save or load files from anywhere that is not part of the
+game bundle or the local storage for the device without
+<i>explicit</i> input from the user, and even then this input is
+limited to <b>only</b> Windows and Mac target platforms.<br>
+<br>
+To understand the sandbox first of all you need to understand that
+there are two distinct areas for files:</p>
+
+<blockquote>
+<ol>
+<li><b>The File Bundle</b> - this is where all the files that are
+packaged with the executable game are stored, including the files
+that you have added to the <i>Included Files</i> resource list from
+the <i>GameMaker: Studio</i> IDE (which are the external files that
+you want packaged with the game).<br>
+<br></li>
+
+<li><b>The Save Area</b> - this is an area of device storage that
+can be safely written to by the game and the game is guaranteed
+that this is a writable area.</li>
+</ol>
+</blockquote>
+
+<p>The following diagram may help you to visualise this better:
+<img class="center" src="file_diagram.png"></p>
+
+<p><i><b>NOTE:</b> You can <b>never</b> write to the File Bundle
+directory.</i><br>
+<br>
+</p>
+
+<h3 class="studio">Using the File Functions</h3>
+
+<p>The two target areas (Bundle directory and the local storage
+area) are available on each target platform, but on each one they
+work slightly differently. However <i>GameMaker: Studio</i> has
+abstracted out the main essence of what can and can't be done,
+making it easier to re-target games to multiple environments.<br>
+<br>
+To start with, you should understand what is meant when we talk of
+the <a href=
+"working_directory.html"><tt>working_directory</tt></a>. This is a
+synonym for the two possible save locations (as illustrated by the
+diagram above) and when you use that directory it will do one of
+two things depending on whether you are reading or writing, and
+whether the file you are reading from has been changed or not:</p>
+
+<blockquote>
+<ol>
+<li><b>Reading Operations</b> - <tt>working_directory</tt> will
+first check the save area to see if the file being accessed is
+there, and if it is uses that. However if the file does not exists
+in the save area, it then checks the file bundle area and uses that
+(if the file being looked for is an included file with your
+game).</li>
+
+<li><b>Writing Operations</b> - This can only happen in the save
+area.</li>
+</ol>
+</blockquote>
+
+<p>Using these two simple rules we can now see how the following
+functions work (these are examples to help you to visualise the
+process for the different functions available):</p>
+
+<blockquote>
+<ul>
+<li><a href="directory_create.html"><tt>directory_create</tt></a>
+(and the other directory functions) will only work in the save
+area.</li>
+
+<li>the <a href="file%20system/index.html">file system</a>
+functions will return information on files from <i>both</i> the
+bundle and the save area, but will only write to the save
+area.</li>
+
+<li>the functions for writing text, binary or ini files will create
+a new file in the save area if one does not already exist, copying
+over any information from the <i>original</i> files included with
+the game bundle should they exist.</li>
+</ul>
+</blockquote>
+
+<h4 class="studio">Saving And Loading Outside The Sandbox</h4>
+
+<p>On the Windows platform there is one way to save and load files
+from outside of the sandbox and that is using the functions
+<a href="file%20system/get_open_filename.html"><tt>get_open_filename</tt></a>
+and <a href=
+"file%20system/get_save_filename.html"><tt>get_save_filename</tt></a>.
+Both of these functions will require that the user select an area
+for loading and saving and the return string can then be used in
+the rest of the file functions to bypass the sandbox.<br>
+<br></p>
+
+<h3 class="studio">Platform Specific Saving/Loading</h3>
+
+<p>When working with <i>GameMaker: Studio</i>, you should know that
+each target platform has its own save area where files and
+directories can be written to and read from. Below is a list of
+those areas for each target:</p>
+
+<blockquote>
+<ul>
+<li><b>Windows</b> - Windows has all files in the
+<tt>%localappdata%\&lt;Game Name&gt;</tt> directory (on Windows 7
+this is the <tt>/Users/&lt;User Name&gt;/AppData/Local/&lt;Game
+Name&gt;</tt> directory).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Mac OS</b> - Storage will depend on whether the application
+is sandboxed or not (following Apples rules, with the path usually
+being <tt>~/Library/Application Support/&lt;Game
+Name&gt;</tt>).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Ubuntu (Linux)</b> - Files are stored in the
+<tt>Home/.config/gamename</tt> where "Home" is the users home
+directory - <tt>/home/&lt;username&gt;</tt></li>
+
+<li><b>HTML5</b> - Everything is done through the local
+storage.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>iOS</b> - Storage is the standard location (as viewed
+through iTunes).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Android</b> - Files are in the standard location (which is
+invisible unless the device is rooted) <tt>/data/data/&lt;package
+name&gt;</tt>.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p>While on some platforms you can use the file name on its own to
+access included files, it is worth noting that on devices (Android,
+iOS) you <i>must</i> use the prefix of the
+<tt>working_directory</tt> to access stored files as using just the
+relative path will not work. It is also worth noting that the HTML5
+target module has a limit on local storage (which can be between
+1MB and 5MB depending on the browser) meaning that you will not be
+permitted to save large sprites, screenshots etc....<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">The File
+System</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

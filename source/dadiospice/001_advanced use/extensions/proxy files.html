@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Proxy Files</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/extensions/proxy files.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fextensions%2Fproxy%20files.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fextensions%2Fproxy%20files.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Proxy Files</h1>
+
+<h2 class="studio">This section explains how to add proxy files and
+their naming conventions.</h2>
+
+<p>When working with multiple target platforms, it is worth noting
+that you can create a single extension with only one set of
+functions which will work on <i>all</i> platforms. This is achieved
+by adding only one of the link libraries to your game as an
+extension and placing the other in the to the list of <i>Proxy
+Files</i> from the <b>File Properties</b> window. <img class=
+"center" src="extension_file_properties.png"> For example, say you
+have a Windows extension with the dll "<tt>Haggis.dll</tt>". You
+would simply replicate this dll as a Mac DyLib, naming it
+"<tt>libHaggis.dylib</tt>" and making sure that the internal
+function names match those of the original Windows dll. This DyLib
+would then be added into the <i>Proxy Files</i> and set to export
+when the game is run on the Mac target, and <i>GameMaker:
+Studio</i> will automatically use it when the extension functions
+are called.<br>
+<br>
+To add a proxy file, simply click the (+) button in the <b>File
+Properties</b> window for the extension and browse to the file
+location. Once it is added you may need to change the extension
+target to the appropriate module, and when you next run your game
+it will be included as proxy for that platform. You can remove
+proxy files too by clicking the (-) button, which will remove the
+last one in the list each press.<br>
+<br>
+Once you have added your proxy files they will be stored in the GMX
+of your game, in the <i>Extensions</i> folder (you can find them
+easily by right-clicking on the extension and selecting "Open in
+Explorer"), so if you need to edit them, you should edit the copied
+files that are bundled with the game and not the originals, as
+<i>GameMaker: Studio</i> will be using the ones in the GMX for
+compiling your game.<br>
+<br></p>
+
+<h3 class="studio">Naming Proxy Files</h3>
+
+<p>It is very important that your proxy files follow the naming
+conventions listed below, as <i>GameMaker: Studio</i> will parse
+these names and assign the target module for the file according to
+its extension and name and will automatically link the files for
+you. If you do not follow these conventions your game may not work
+at runtime, as <i>GameMaker: Studio</i> will not be able to work
+out which file to use or it will not load the file properly.<br>
+<br>
+The naming conventions for each target platform are given
+below:</p>
+
+<div class="compat">
+<table>
+<tr>
+<th>Platform</th>
+<th>Names</th>
+</tr>
+
+<tr>
+<td>Windows</td>
+<td><i>&lt;Name&gt;</i>.dll</td>
+</tr>
+
+<tr>
+<td>Linux</td>
+<td><i>&lt;Name&gt;</i>.so, lib<i>&lt;Name&gt;</i>.so,
+<i>&lt;Name&gt;</i>_linux.so, lib<i>&lt;Name&gt;</i>_linux.so</td>
+</tr>
+
+<tr>
+<td>Mac</td>
+<td><i>&lt;Name&gt;</i>.dylib, lib<i>&lt;Name&gt;</i>.dylib</td>
+</tr>
+
+<tr>
+<td>PS4</td>
+<td><i>&lt;Name&gt;</i>.prx, lib<i>&lt;Name&gt;</i>.prx,
+<i>&lt;Name&gt;</i>_ps4.prx, lib<i>&lt;Name&gt;</i>_ps4.prx</td>
+</tr>
+
+<tr>
+<td>PSVita</td>
+<td><i>&lt;Name&gt;</i>.suprx, lib<i>&lt;Name&gt;</i>.suprx,
+<i>&lt;Name&gt;</i>_vita.suprx, lib<i>&lt;Name&gt;</i>_vita.suprx,
+<i>&lt;Name&gt;</i>_psvita.suprx,
+lib<i>&lt;Name&gt;</i>_psvita.suprx</td>
+</tr>
+
+<tr>
+<td>Xbox One</td>
+<td><i>&lt;Name&gt;</i>_xboxone.dll</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+Using the conventions above, you would swap out the
+<i>&lt;Name&gt;</i> part for the name of the base file that you are
+adding the proxy files for.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Extension
+Packages</a></div>
+
+<div style="float:right">Next: <a href=
+"using%20extensions.html">Using Extensions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Importing Vector Images</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about sprites/importing vector images.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fimporting%20vector%20images.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20sprites%2Fimporting%20vector%20images.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Importing Vector Images</h1>
+
+<h2 class="studio">Here you can find information on importing
+vector based images and animations into GameMaker: Studio.</h2>
+
+<p>GameMaker: Studio has limited support for vector sprites.
+Generally all sprites in GameMaker use bitmaps which, while
+flexible in terms of content, place limitations on both the size
+and number of frames possible in a sprite before memory usage can
+become prohibitive. Vector sprites work around these limitations by
+storing and drawing their contents differently - instead of a grid
+of pixels, which can become blocky or fuzzy when scaled, they are
+drawn as triangles which can be scaled up without losing
+definition, as illustrated in the image below:<br>
+<br>
+<img class="center" src="vector_compare.png"><br>
+<br>
+To help you visualise how this is done, the image below is of the
+same vector Fireman sprite only now we can see the polygons that
+are used to make the image within GameMaker: Studio:<br>
+<br>
+<img class="center" src="vector_polys.png"><br>
+<br>
+However, nothing is ever for free when it comes to programming
+games, and the tradeoff here with vector sprites is that they are
+more expensive to draw than bitmap sprites and this speed
+difference increases as the complexity of the animation being
+imported increases. Also, their memory usage is affected by their
+<i>visual complexity</i>, unlike bitmap sprites. Baring that in
+mind, they do make it possible to add large animated graphics in
+ways that would be impossible using traditional bitmapped
+sprites.<br>
+<br>
+On the flipside of the performance equation, because vector sprites
+only draw the pixels absolutely required (unlike bitmap sprites
+which also "draw" the empty space around the image) they can be
+cheaper from a GPU perspective. Also, in general vector sprites are
+much smaller than their bitmap equivalents - for the fireman
+example above the sizes of the various sprite types are as
+follows:<br>
+<br></p>
+
+<blockquote><tt>Bitmap at 70x68 = 4x70x68 bytes x 12 frames =
+223k<br>
+Vector = 54k</tt><br>
+<br>
+</blockquote>
+
+<p>If you quadruple the resolution of the sprite:<br>
+<br></p>
+
+<blockquote><tt>Bitmap at 280x272 = 4x280x272 bytes x 12 frames =
+3570k<br>
+Vector = 54k</tt><br>
+<br>
+</blockquote>
+
+<p>So as you can see a lot of memory can potentially be saved by
+using vector sprites, and we still have a lot of potential for
+future space savings.<br>
+<br></p>
+
+<h3 class="studio">How To Import Vector Images</h3>
+
+<p>Currently <i>GameMaker: Studio</i> can only import vector images
+from <b>SWF format files</b>, and the way of importing them into
+the program is almost identical to that for adding a normal bitmap
+image. To add a vector sprite, create a new sprite, which will
+bring up the standard <a href=
+"../../000_using%20gamemaker/005_loading%20sprites.html">Load
+Sprite dialogue</a>, but make sure that you have selected *.swf
+from the file filter at the bottom.<br>
+<br>
+<img class="center" src="import_vector.png"><br>
+<br>
+Hitting the "load" button will add the vector image or animation to
+the resource tree, with a progress bar being shown as the file is
+processed. Note that, depending on the complexity of the file, this
+can take a while (up to a minute for more complex animations). When
+processing has finished you'll be returned to the sprite properties
+dialogue, which will now look like this:<br>
+<br>
+<img class="center" src="vector_sprite_properties.png"><br>
+<br>
+As you can see it looks like the normal sprite dialogue, with the
+first frame of the vector file shown in the image preview window on
+the right. There are a couple of changes from a normal sprite
+dialogue though. Firstly, the <i>Edit Sprite</i> button has gone
+since there aren't any bitmaps to edit in this sort of sprite, and
+secondly, a new <i>Show Sprite</i> button has been added. This
+button will open the vector file in whatever application is
+associated with it. This would normally default to your web
+browser, but if you do not have a program associated with the file,
+then nothing will happen and as the button is disabled (you can
+resolve this by opening <b>Windows Explorer</b> and
+<i>right-clicking</i> on a vector file, then using "<b>open
+with</b>" to choose the program to associate with these files). You
+can also associate a viewer for these sprites in the <a href=
+"../preferences/editor%20preferences.html">Editor Preferences</a>
+within <i>GameMaker: Studio</i> and the <i>Show Sprite</i> button
+will open that instead of the default viewer.</p>
+
+<blockquote><i><b>NOTE:</b> How the image looks in your chosen
+preview editor will <b>not</b> be the same as how it looks in your
+game, nor how it looks in the preview window of the sprite editor.
+The vector image will be imported at the size it was created at,
+which is not necessarily the size that the preview is shown at
+(browsers will normally scale the image to fit, for example).</i>
+</blockquote>
+
+<p>You can also set the <i>quality</i> of the vector sprite when
+drawn. This will simply reduce or increase the number of triangles
+used to generate the sprite, with the default quality value of 50
+being sufficient normally for most games, however you should
+experiment with this value if you are using extreme scaling, or are
+having performance issues. From this point the other parts of the
+editor should function the same as they do for bitmap sprites.<br>
+<br></p>
+
+<h3 class="studio">Important Things To Note</h3>
+
+<p>There are a number of things that you should be aware of when
+importing vector sprites, with the most important being that some
+of the sprite drawing and sprite management functions are not
+supported for technical reasons, particularly those draw functions
+that draw only part of a sprite, or that "skew" the position in
+some way (see the individual <a href=
+"../../002_reference/drawing/drawing%20sprites%20and%20backgrounds/index.html">
+draw_sprite_*()</a> functions for exact details of which). However
+the basic sprite drawing functions are fully supported as are the
+built in <a href=
+"../../002_reference/objects%20and%20instances/instances/instance%20properties/index.html">
+sprite variables</a>. You can also set different
+<i>anti-aliasing</i> (AA) values for the SWF sprites being drawn
+using the functions found here: <a href=
+"../../002_reference/drawing/drawing%20sprites%20and%20backgrounds/index.html">
+Drawing Sprites and Backgrounds</a>.<br>
+<br>
+You should also be aware of the following:<br>
+<br></p>
+
+<blockquote>
+<ul>
+<li>When importing a *.SWF file, Actionscript <i>is <b>not</b></i>
+supported, so if your SWF relies on it to work correctly then it
+probably won't turn out right. Similarly, any embedded movie clips
+that have their own timeline will only have their first frame shown
+throughout the animation - all animation must be on the main
+timeline.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>If your vector file has particularly fine detail you may
+occasionally find that holes or strange triangles will appear in
+the resulting sprites. This is because at small scales geometry can
+sometimes collapse together to create shapes that just don't
+triangulate well. In this case you have two options - you can scale
+up the contents of the vector file which will give the importer
+more room to play with, or you can try to reduce the level of
+detail in the object that is breaking.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><i>GameMaker: Studio</i> uses the <b>stage size</b> of the SWF
+as the bounds of the resulting sprite. However, if you have
+anything on the stage outside these bounds <i>it is still
+drawn</i>. This means that you should either try to avoid putting
+anything outside your stage bounds if you don't want it to be
+shown, or use a mask layer to limit drawing to this area.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>The stage size also affects the size of any collision masks
+that are generated, therefore if you have a large stage size and a
+lot of frames in your animation you can potentially eat up a lot of
+memory. So, <b>only use precise collision masks if you really need
+it</b>.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>As a SWF file is created from multiple layers, some of which
+potentially overlap, alpha doesn't work quite the way it does with
+bitmap sprites - overlapping areas will not look as transparent as
+other parts of the sprite, as the pixels there are being drawn over
+multiple times.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Bitmap fills <i>are</i> supported though if you use tiled
+bitmap fills as part of your SWF file you need to make sure the
+bitmap is a power-of-two in size, otherwise it won't tile properly.
+Text rendering is also supported, but you need to embed the font in
+your SWF file for it to show up in the resulting sprite. Also,
+currently only <i>left-aligned single line text is
+supported</i>.<br></li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Sprites</a></div>
+
+<div style="float:right">Next: <a href=
+"editing%20sprites.html">Editing Sprites</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

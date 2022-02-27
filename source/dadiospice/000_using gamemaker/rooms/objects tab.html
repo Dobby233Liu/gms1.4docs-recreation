@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Objects</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/rooms/objects tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Frooms%2Fobjects%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Frooms%2Fobjects%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Objects</h1>
+
+<h2 class="studio">This section discusses the objects tab in the
+room editor.</h2>
+
+<p><img class="center" src="../../images/form_room_objects.png">
+The objects tab is where you can select an object and then place an
+instance of that object into the selected room.<br>
+<br>
+First you must decide which object from your resource tree you wish
+to add, and this can be done by clicking on the <b>Object to add
+with left mouse</b> menu button, or by clicking the large area
+above where the object sprite is normally shown. If the object has
+no sprite, this box will be blank, but if it does, the sprite will
+be shown on a chequered background along with its x/y origin which
+indicates how the instance will be aligned with the grid once
+placed in the room editor.<br>
+<br></p>
+
+<h3 class="studio">Instance properties</h3>
+
+<p>Once you have selected the correct object, you can now place
+instances of it within the room by clicking anywhere, with the
+instance being snapped to the grid (if you have the snap values
+other than 0). There are a number of additional options which will
+be made available to the right of the object image that you can
+then change for the instance that you have just placed within the
+room. These are:</p>
+
+<blockquote>
+<ul>
+<li><b>PositionX</b> - With this you can set the position in the
+room along the x-axis (note that negative values are accepted and
+you can set values to outside the defined room boundary).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>PositionY</b> - With this you can set the position in the
+room along the y-axis (note that negative values are accepted and
+you can set values to outside the defined room boundary).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>ScaleX</b> - With this you can set the scale along the
+x-axis of the instance. 1 is the default value, and you can use
+negative values too to "mirror" the instance.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>ScaleY</b> - With this you can set the scale along the
+y-axis of the instance. 1 is the default value, and you can use
+negative values too to "flip" the instance.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Rotation</b> - Rotates the instance around its x/y origin by
+the given number of degrees. You can use any real number for this
+value.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Alpha</b> - With this you can set the alpha value for the
+instance from 0 to 255, where the default value of 255 is
+completely opaque, and 0 is completely transparent.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>colour</b> - This option sets the colour to be blended with
+the current instance sprite. White is the default colour (which
+means that the instance will be drawn "as is" with no
+blending).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Flip X</b> - Flagging this will mirror the instance sprite
+along the horizontal (the same can be achieved by setting the
+ScaleX value to -1).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Flip Y</b> - Flagging this will mirror the instance sprite
+along the vertical (the same can be achieved by setting the ScaleY
+value to -1).</li>
+</ul>
+</blockquote>
+
+<p>You should note that a selected instance can also be scaled by
+clicking on one of the corner "nodes" that mark the bounding box of
+the instance when you select it in the room editor. By clicking the
+node and dragging the mouse, you can change the image scale, and
+these changes will be reflected in the values of the above
+mentioned areas. You can also use the cursor keys to move an
+instance of an object placed in the room and so "fine-tune" the
+position easier. By default this is a shift of 1 pixel at a time,
+however you can modify this behaviour using the following keys:</p>
+
+<blockquote>
+<ul>
+<li><b>&lt;<i>Shift</i>&gt; + cursor keys</b> - Move the instance
+10 pixels in the direction of the cursor key.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>&lt;<i>Control</i>&gt; + cursor keys</b> - Move the instance
+5 pixels in the direction of the cursor key.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>&lt;<i>Shift</i>&gt; + &lt;<i>Control</i>&gt; + cursor
+keys</b> - Snap the instance to the next nearest grid position in
+the direction of the cursor key.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<h3 class="studio">Delete Underlying</h3>
+
+<p>The normal behaviour for placing instances within the room is
+that if you place an instance on top of another one, the original
+instance is overlapped by the new one. Generally this is what you
+want to happen, but not always, and so there is a check-box at the
+bottom of the objects tab which you can flag to make any new
+instances delete those that were place before in the same position.
+The "hitbox" used to calculate whether an instance is over another
+one or not is the bounding box taken from the collision mask
+defined for the sprite that the instance uses. if the instance has
+no sprite, then only those that have been previously placed at the
+same position will de removed.<br>
+<br></p>
+
+<h3 class="studio">Shortcuts</h3>
+
+<p>There are also a number of keyboard shortcuts that can be used
+to make your life easier when placing instances (you can open the
+following window that shows them all from the toolbar at the top of
+the room editor): <img class="center" src=
+"../../images/form_room_controls.png"></p>
+
+<blockquote>
+<ul>
+<li>Clicking with the <i>left mouse button</i> in the room will
+place an instance of the currently selected object, and clicking an
+instance will permit you to move it around the room.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Alt&gt;</i> key while placing the instance
+will make ignore the grid snapping and be placed exactly where you
+release the mouse button.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Shift&gt;</i> key while clicking the <i>left
+mouse button</i> on an instance will add it to the selected group.
+In this way you can select multiple instances which can then be
+moved together by clicking and dragging the bounding box, or they
+can be copied and pasted, even into other rooms.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Control&gt;</i> key while clicking the
+<i>left mouse button</i> will add a new instance on top of
+previously placed ones.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Shift&gt;</i> key and the
+<i>&lt;Control&gt;</i> while clicking the <i>left mouse button</i>
+will add multiple instances like a "brush" when you drag the mouse
+around.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Space&gt;</i>key while clicking and dragging
+with the <i>left mouse button</i> (or simply clicking and holding
+the <i>middle mouse button</i>) permits you to scroll around the
+room.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><i>Right click</i> on an individual instance will bring up a
+special menu with further options (more information on this can be
+found here - <a href=
+"../../001_advanced%20use/more%20about%20rooms/index.html">Advanced
+Use: More About Rooms</a>).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>To remove an instance from the room, hold the
+<i>&lt;Control&gt;</i> key and then <i>right click</i> the
+instance.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>To remove all instances at the mouse position, hold
+<i>&lt;Shift&gt;</i> key and then <i>right click</i> the
+position.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Control&gt;</i> key and pressing the "C"
+keyboard key will copy the selected instance or instances.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Holding the <i>&lt;Control&gt;</i> key and pressing the "V"
+keyboard key will paste the selected instance or instances, even in
+a different room from that in which they were copied.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li>Using the <i>mouse wheel</i> permits you to zoom in and out of
+the room editor.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Creating
+Rooms</a></div>
+
+<div style="float:right">Next: <a href=
+"settings%20tab.html">Settings</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

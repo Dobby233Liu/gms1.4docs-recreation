@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Backgrounds</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/rooms/backgrounds tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Frooms%2Fbackgrounds%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Frooms%2Fbackgrounds%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Backgrounds</h1>
+Within the tab <b>backgrounds</b> you can set the background images
+for the room.
+
+<p><img class="center" src=
+"../../images/form_room_backgrounds.png">
+</p>
+
+<p>This tab is where you can define the backgrounds of your room. A
+background can be made up of a single colour, an image, or a
+combination of colour and transparent images. The following options
+are available:<br>
+<br></p>
+
+<h3 class="studio">Draw Background colour</h3>
+
+<p>When you tick this option, you are telling <i>GameMaker:
+Studio</i> to draw a background colour below everything else in
+your room. This colour can be selected by clicking on the colour
+box which will open the following standard colour picker:
+<img class="center" src="../../images/colour_picker.png"> The
+background colour is only useful if you don't use a background
+image that covers the whole room, or if that image is partially
+transparent, otherwise it is best to un-check the box labeled
+<b>Draw background colour</b> as this will save some processing
+time.<br>
+<br>
+It is worth mentioning that for the HTML5 module, switching this
+option off and unticking "Clear Background with Window colour" in
+the <a href=
+"../../001_advanced%20use/more%20about%20rooms/views.html">Views
+Tab</a> permits you to use the special function <a href=
+"../../002_reference/drawing/colour%20and%20blending/draw_clear_alpha.html">
+<tt>draw_clear_alpha</tt></a> to clear the canvas alpha, making
+your game "transparent" and so showing any background images that
+you may have on the host web-page HTML.<br>
+<br>
+<i><b>Warning!</b> Having a room with no background colour and no
+background image will result in "artifacts" being left behind by
+all moving instances within the room on most of the target
+platforms (which can give some interesting results!)</i><br>
+<br></p>
+
+<h3 class="studio">Background Number</h3>
+
+<p>Underneath the colour picker, you can see a list of eight
+backgrounds numbered from 0 to 7. These can all be defined for one
+room, and you can have all eight active at any one time if you
+wish. When you select one, all the options beneath will then refer
+to that background only, and in this way you can define the
+properties for all eight independently. The rest of the options on
+this page are applied to each individual background that you
+select.<br>
+<br></p>
+
+<h3 class="studio">Visible When Room Starts</h3>
+
+<p>This toggles the background when the room starts between being
+visible or not. You may have a game where only one of the
+backgrounds is visible at the start of the game, but later you wish
+to set another up as visible. So, you set up the two backgrounds in
+the room editor and then in a later event within an instance, you
+can toggle between them. Another thing you may want is several
+backgrounds visible at the same time, especially if you wish to
+have semi transparent parts, different sizes or even parallax
+scrolling, so you can toggle this to have various visible at
+once.<br>
+<br></p>
+
+<h3 class="studio">Foreground Image</h3>
+
+<p>Toggling this converts the background into a foreground, which
+basically means that instead of being drawn below everything it is
+drawn on top of everything.<br>
+<br></p>
+
+<h3 class="studio">Background Select</h3>
+
+<p>If you click on this box, you will be presented with a list of
+all the background resources available and you may select one of
+them to be used as the background image for the currently selected
+background.<br>
+<br></p>
+
+<h3 class="studio">Tile Horizontally And Vertically</h3>
+
+<p>By checking these options you are telling <i>GameMaker:
+Studio</i> to tile the background in the chosen direction
+infinitely. You can choose the position within the room for the
+coordinates of the top left hand corner of the background and the
+room will be tiled from this point, or, if tiling is not activated,
+the background will be drawn at that point.<br>
+<br></p>
+
+<h3 class="studio">Stretch</h3>
+
+<p>This option will stretch the background to cover the whole room.
+Bear in mind that this option will make backgrounds that are
+smaller than the room larger to fit <i>and</i> make backgrounds
+that are larger than the room smaller to fit too. Note that the
+ratio of the image will <i>not</i> be maintained, so some
+distortion may occur when using this option.<br>
+<br></p>
+
+<h3 class="studio">Horizontal And Vertical Speed</h3>
+
+<p>These options allow you to set the background image to scroll
+through the room at a given speed. You can have positive or
+negative values, where a positive value for the horizontal scroll
+would be to the right (negative to the left) and a positive value
+for the vertical scroll would be to the bottom (negative to the
+top). The speed is calculated in pixels per step, so a horizontal
+speed of 5 will move the selected background through the room 5
+pixels to the right every step. This can be particularly useful for
+top down shooter games, where you can have a scrolling tiled
+background to give the illusion of movement and make the room seem
+infinite even when it is really small. Be careful using these
+options with stretched backgrounds as the result can sometimes be
+rather ugly.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Creating
+Rooms</a></div>
+
+<div style="float:right">Next: <a href=
+"objects%20tab.html">Objects</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The "Switch" Statement</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/001_gml language overview/401_12_switch.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_12_switch.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F001_gml%20language%20overview%2F401_12_switch.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The "Switch" Statement</h1>
+
+<h2 class="studio">This section deals with the uses of "switch" in
+<i>GameMaker: Studio</i>.</h2>
+
+<p>In a number of situations you want to let your instances
+complete an action depending on a particular value. You can do this
+using a number of consecutive <a href="401_07_if.html">"if"</a>
+statements but when the possible choices gets above two or three it
+is usually easier to use the "switch" statement. A switch statement
+has the following form:<br>
+<br></p>
+
+<p class="code">switch (&lt;expression&gt;)<br>
+{<br>
+case &lt;expression1&gt;: &lt;statement1&gt;; ... ; break;<br>
+case &lt;expression2&gt;: &lt;statement2&gt;; ... ; break;<br>
+...<br>
+default: &lt;statement&gt;;<br>
+}<br></p>
+
+<p><br>
+This works as follows:</p>
+
+<ul>
+<li>First the expression is executed.</li>
+
+<li>Next it is compared with the results of the different
+expressions after each of the case statements.</li>
+
+<li>The execution continues after the first case statement with the
+correct value, <i>until a break statement is encountered</i>.</li>
+
+<li>If no case statement has the right value, execution is
+continued after the default statement (it is not required to have a
+default statement, in which case no action will be taken).</li>
+</ul>
+
+<p>Note that multiple case statements can be placed for the same
+statement. Also, the break is not required, and if there is no
+break statement the execution simply continues with the code for
+the next case statement. This means that you can create a hierarchy
+"switch" in which different sections of code are run depending on
+the input value. here is an example of a typical "switch" from a
+game:<br>
+<br></p>
+
+<p class="code">{<br>
+switch (keyboard_key)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;case vk_left:<br>
+&nbsp;&nbsp;&nbsp;case ord("A"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x -= 4;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;case vk_right:<br>
+&nbsp;&nbsp;&nbsp;case ord("D"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x += 4;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;case vk_up:<br>
+&nbsp;&nbsp;&nbsp;case ord("W"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y -= 4;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;case vk_down:<br>
+&nbsp;&nbsp;&nbsp;case ord("S"):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y += 4;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+&nbsp;&nbsp;&nbsp;}<br>
+}<br></p>
+
+<p><br>
+The above code uses "switch" to check for a keyboard event and then
+compares that to the cases listed. If it meets any of the required
+values then the corresponding code is executed. Note how in the
+code we have used the way that "switch" can check multiple cases
+and continue if no break is encountered to permit various keys to
+be used to get the same result. This is just one of the ways that
+you can permit multiple configurations for movement in your
+games.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">GML
+Overview</a></div>
+
+<div style="float:right">Next: <a href="401_13_break.html">The
+"Break" Statement</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

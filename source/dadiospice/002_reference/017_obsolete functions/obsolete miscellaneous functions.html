@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete Miscellaneous Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete miscellaneous functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20miscellaneous%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20miscellaneous%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete Miscellaneous Functions</h1>
+
+<h2 class="studio">These functions are general ones related to
+previous versions of <i>GameMaker</i>.</h2>
+
+<h3 class="studio"><b>Variable Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>secure_mode</td>
+<td>Returns whether the game is running in secure mode or not.</td>
+</tr>
+
+<tr class="alt">
+<td>set_program_priority</td>
+<td>Sets the priority for the program. You can indicate a value
+between -3 and +3. A value of -3 means that the program will only
+run if no other process on the computer requires processing time,
+or stated differently, when all other processes are idle. Values of
+-2 and -1 are below normal, so other processes will get priority. 0
+is the normal value. +1 and +2 give a higher priority, resulting
+possibly in higher speed and smoother game flow. But other
+processes will get much less processing time. +3 indicates
+real-time mode. In real-time mode basically all time is allotted to
+the game. This can lead to serious problems with any other
+applications running on the computer. Also keyboard events and e.g.
+the pressing of the close box might no longer be recorded by
+Windows. So only use this if you want all the processor time. Also
+better check carefully before using it and save the game before
+running.</td>
+</tr>
+
+<tr>
+<td>set_application_title</td>
+<td>Sets the title of the application to the given string. The
+title is for example shown in the task bar.</td>
+</tr>
+
+<tr class="alt">
+<td>export_include_file</td>
+<td>Exports the included file with the name fname. This must be a
+string variable, so don't forget the quotes.</td>
+</tr>
+
+<tr>
+<td>export_include_file_location</td>
+<td>Exports the included file with the name fname to the given
+location. Location must contain the path and the filename.</td>
+</tr>
+
+<tr class="alt">
+<td>discard_include_file</td>
+<td>Discard the included file with the name fname, freeing the
+memory used. This must be a string variable, so don't forget the
+quotes.</td>
+</tr>
+
+<tr>
+<td>gamemaker_pro</td>
+<td>Indicates whether the game is created with the Pro version or
+not.</td>
+</tr>
+
+<tr class="alt">
+<td>gamemaker_registered</td>
+<td>Same as gamemaker_pro.</td>
+</tr>
+
+<tr>
+<td>gamemaker_version</td>
+<td>The version of GameMaker. This is an integer. For version 8.0
+this can be anything between 800 and 809. For version 8.1 this will
+be something between 810 and 819, etc. so never check a particular
+version but better check for a range. This variable is not
+available in version before 800.</td>
+</tr>
+
+<tr class="alt">
+<td>error_last</td>
+<td>String indicating the last error message.</td>
+</tr>
+
+<tr>
+<td>error_occurred</td>
+<td>Indicates whether an error has occurred.</td>
+</tr>
+
+<tr class="alt">
+<td>sleep</td>
+<td>Sleeps numb milliseconds.</td>
+</tr>
+
+<tr>
+<td>io_handle</td>
+<td>Update the input state from mouse or keyboard.</td>
+</tr>
+
+<tr class="alt">
+<td>keyboard_wait</td>
+<td>Waits till the user presses a key on the keyboard.</td>
+</tr>
+
+<tr>
+<td>mouse_wait</td>
+<td>Waits till the user presses a mouse button.</td>
+</tr>
+
+<tr class="alt">
+<td>disk_size</td>
+<td>Returns the size of the indicated drive in bytes.</td>
+</tr>
+
+<tr>
+<td>disk_free</td>
+<td>Returns the amount of free space on the indicated drive in
+bytes.</td>
+</tr>
+
+<tr class="alt">
+<td>date_current_date</td>
+<td>Returns the date corresponding to the current moment.</td>
+</tr>
+
+<tr>
+<td>date_current_time</td>
+<td>Returns the time corresponding to the current moment.</td>
+</tr>
+
+<tr class="alt">
+<td>date_create_date</td>
+<td>Creates a date-time value corresponding to the indicated
+date.</td>
+</tr>
+
+<tr>
+<td>date_create_time</td>
+<td>Creates a date-time value corresponding to the indicated
+time.</td>
+</tr>
+
+<tr class="alt">
+<td>date_valid_date</td>
+<td>Returns whether the indicated date is valid.</td>
+</tr>
+
+<tr>
+<td>date_valid_time</td>
+<td>Returns whether the indicated time is valid.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>These functions cannot be used any more due to changes in the
+underlying runner that <i>GameMaker: Studio</i> uses and the fact
+that most of them are no longer relevant to any other device except
+Windows.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

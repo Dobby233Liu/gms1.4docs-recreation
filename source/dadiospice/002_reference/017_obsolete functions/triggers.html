@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Trigger Events</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/triggers.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Ftriggers.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Ftriggers.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Trigger Events</h1>
+<br>
+<b>Trigger events are special events that will only "trigger" when
+the requirements that <i>you</i> specify in code have been
+met.</b><br>
+<br>
+
+<h3 class="studio">Why This Is Obsolete</h3>
+
+<p>Triggers, as implemented by previous versions of
+<i>GameMaker</i>, were in-efficient, very little used by the
+majority of people, and only seemed to break up the game-logic and
+make tracking complex games far more difficult than necessary. For
+those that used them, the same functionality can easily be achieved
+by creating a script and calling it in either the <tt>begin step
+event</tt>, the <tt>step event</tt> or the <tt>end step event</tt>
+of an object.<br>
+<br>
+As you may have an older file made with previous versions of
+<i>GameMaker</i> that uses triggers, you can find an outline of
+what the trigger event was and how it was used below for use as a
+reference:<br>
+<br>
+<br>
+<br></p>
+
+<h3 class="studio">The Trigger Event</h3>
+
+<p>To define trigger events you chose <b>Define Triggers</b> from
+the <b>Resources</b> menu at the top of the main GameMaker window,
+or you can select to add a trigger event from within the object and
+then select "Add/Modify Triggers". Either method will open the
+following form where you define your trigger with a short code
+function. The form shown below contains an example of how this may
+be written.</p>
+
+<p><img class="center" src="../../images/form_trigger.png">
+</p>
+
+<p>At the left you see a list of all triggers that have so far been
+defined by you (obviously empty if you haven't yet created any!).
+Below there are some buttons which have the following
+functions:</p>
+
+<ul>
+<li><b>Add</b>. Use this button to add a new trigger event to the
+list. The form will then change to display the new empty trigger
+ready to add the necessary code and name.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Delete</b>. Deletes the currently selected trigger event
+selected on the list. <i>Be careful to never delete a trigger event
+that is used in an object!</i> This will lead to unexpected results
+and will most certainly cause your problems in your project.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Load</b>. Loads a collection of triggers from a file. Such a
+file must have the extension <b>.gmtrg</b>. The triggers from the
+file are added to the list of triggers on the left of the form and
+can then be used or modified as normal.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Save</b>. Saves the collection of triggers to a file. This
+file should have the extension <b>.gmtrg</b>. In this way you can
+create your own library of triggers which can then be loaded into
+any further projects for use, and so saving you time.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Clear</b>. Completely clears the list of all triggers. <i>Be
+careful to only use this when no object uses any trigger event!</i>
+As with <b>Delete</b> using <b>Clear</b> when an object is using a
+trigger event can have unwanted side-effects that may cause serious
+problems when running your project.</li>
+</ul>
+
+<p>Once you are finished you must press the <b>OK</b> button to
+save the changes and be able to use the trigger event within an
+object. If you do <i>not</i> want to save the changes, simply close
+the form by clicking on the cross at the top right corner and
+indicate that you do not want to save changes in the dialogue box
+that will pop up.<br>
+<br></p>
+
+<h3 class="studio">Defining A Trigger</h3>
+
+<p>Once you have created a trigger you must fill in its properties,
+normally starting with giving it a name. This name can be anything
+you wish, as long as you use permitted characters (see further down
+for information about naming the trigger as a <b>constant</b>), but
+it should always be something descriptive so that you know
+instantly what it does when you select it to use in an object. This
+name will appear in the menu with available triggers <i>and</i> in
+the event lists for objects. The next you must do is specify the
+condition that will "trigger" the trigger event! This is done by
+writing a piece of GML code into the window on the right which
+returns either a true or false value when run. In this way a
+trigger will only fire when the return value is <b>true</b>.<br>
+<br></p>
+
+<h3 class="studio">Examples Of Use</h3>
+
+<p>Assume you want to create an event that happens when the player
+presses both the <i>Control</i> key and the <i>A</i> key. For this
+you could write the following condition script:<br>
+<br></p>
+
+<p class="code">{<br>
+<b>return</b> keyboard_check(ord('A')) &amp;&amp;
+keyboard_check(vk_control);<br>
+}<br></p>
+
+<p><br>
+As you can see this condition script will return false
+<i>unless</i> both the <i>Control</i> key and the <i>A</i> key are
+pressed together.<br>
+<br>
+You can actually put some quite complex and complete scripts as the
+condition, as long as somewhere in there you have a return
+statement that evaluates as true or false. For example, to have an
+event happen only when the number of instances (in this case
+"obj_ball") is between 3 and 5, you can use the following condition
+script:<br>
+<br></p>
+
+<p class="code">{<br>
+<b>var</b> n;<br>
+n = instance_number(obj_ball);<br>
+<b>return</b> (n &gt;= 3) &amp;&amp; (n &lt;= 5);<br>
+}</p>
+
+<p><br>
+You may find that sometimes the code you need to define the
+condition is too long for the code window within the trigger form,
+so you might want to edit it in the actual code editor instead. To
+that end press the button <b>Use code editor</b> to open that
+window and keep working as normal, clicking on the tick in the top
+left corner to save your changes to the trigger.</p>
+
+<p>You can create many other type of trigger events. For example,
+events that check whether you are near to an enemy, events to check
+whether you collected enough money or have a high score, events to
+spawn an object at a certain place... The possibilities are endless
+which makes using triggers a very handy way to organise your game,
+and re-use scripts that are helpful in other projects.</p>
+
+<p>After you have specified the condition script, you should
+specify <i>when</i> the condition is to be tested. There are three
+options for this, all related to the step event:<br></p>
+
+<ul>
+<li>You can test the condition at the beginning of a step (just
+before the begin step event).</li>
+
+<li>You can test the condition in the middle of a step(just before
+the normal step event).</li>
+
+<li>Or you can test the condition at the end (just before the end
+step event).</li>
+</ul>
+
+<p>Most of the time the default middle position is fine, but in
+certain cases you need the other moments, particularly if the
+outcome of the trigger affects the next part of the step, or relies
+on something that has been done previously.<br>
+<br></p>
+
+<h3 class="studio">Naming a Constant</h3>
+
+<p>Finally, you may even create a constant with which to call the
+specified trigger event from code. To do this you must give it a
+name which must <b>not</b> contain spaces, nor unauthorized
+characters, and be easy to remember. If you look at the image
+above, you can see that we have used "tr_Near_Wall" to define the
+constant for that trigger. This follows the naming rules, is
+descriptive and easy to understand and will allow the trigger to be
+called from any other event in code. It should be noted that a
+trigger used in code does not evaluate to true or false, but it may
+still be used to set variables and other things. A sample of the
+code use would be:<br>
+<br></p>
+
+<p class="code">event_perform(ev_trigger, tr_Near_Wall);<br></p>
+
+<h3><br>
+Using a trigger</h3>
+
+<p>Once you have defined your triggers you can use them when
+defining objects. To do this you would click on the <b>Add
+Event</b>, and then select <b>Trigger</b> events.</p>
+
+<p><img class="center" src="../../images/form_event_selector.png">
+</p>
+
+<p>A pop-up will give you a list of the triggers you have created
+or loaded and you can select from there the one you wish to use. It
+will then be added to the event list as normal.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20registry%20functions.html">Registry Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

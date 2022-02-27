@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>string_replace_all</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/strings/string_replace_all.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fstrings%2Fstring_replace_all.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fstrings%2Fstring_replace_all.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">string_replace_all</h1>
+
+<h2 class="studio">Returns a copy of a string with all instances of
+a given substring replaced with a new substring.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">string_replace_all(str, substr, newstr);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>str</td>
+<td>The string to be copied.</td>
+</tr>
+
+<tr class="alt">
+<td>substr</td>
+<td>The substring within the string to be replaced in all
+instances.</td>
+</tr>
+
+<tr>
+<td>newstr</td>
+<td>The new substring to replace the previous one(s).</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> String</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>You can use this function to parse a string looking for specific
+parts, which can then be replaced by the new string that you have
+specified in all places that they occur.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3><b>Example:</b>
+</h3>
+
+<p class="code">str1 = 'Hexxo Worxd';<br>
+str2 = string_replace_all(str1, 'x', 'l');</p>
+
+<p>This will set str2 to str1, but with its instances of 'x'
+replaced with 'l', resulting in str2 being 'Hello World'.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Strings</a></div>
+
+<div style="float:right">Next: <a href=
+"string_upper.html">string_upper</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>point_in_triangle</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/movement and collisions/collisions/point_in_triangle.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fcollisions%2Fpoint_in_triangle.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fmovement%20and%20collisions%2Fcollisions%2Fpoint_in_triangle.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">point_in_triangle</h1>
+
+<h2 class="studio">Checks to see whether a given point falls within
+the defined triangular area.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">point_in_triangle(px, py, x1, y1, x2, y2, x3,
+y3);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>px</td>
+<td>The x coordinate of the point to check.</td>
+</tr>
+
+<tr>
+<td>py</td>
+<td>The y coordinate of the point to check.</td>
+</tr>
+
+<tr>
+<td>x1</td>
+<td>The x coordinate of the first corner of the triangle to
+check.</td>
+</tr>
+
+<tr>
+<td>y1</td>
+<td>The y coordinate of the first corner of the triangle to
+check.</td>
+</tr>
+
+<tr>
+<td>x2</td>
+<td>The x coordinate of the second corner of the triangle to
+check.</td>
+</tr>
+
+<tr class="alt">
+<td>y2</td>
+<td>The y coordinate of the second corner of the triangle to
+check.</td>
+</tr>
+
+<tr>
+<td>x3</td>
+<td>The x coordinate of the third corner of the triangle to
+check.</td>
+</tr>
+
+<tr class="alt">
+<td>y3</td>
+<td>The y coordinate of the third corner of the triangle to
+check.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Boolean</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>When using this function, you define a triangular area and
+GameMaker: Studio will work out whether the given point falls
+within its bounds or not. If the point falls within the defined
+triangle the function will return <tt>true</tt> otherwise the
+function will return <tt>false</tt>.<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var inst = instance_nearest(x, y, obj_Player);<br>
+if instance_exists(inst)<br>
+&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;var x1 = x + lengthdir_x(100, image_angle -
+45);<br>
+&nbsp;&nbsp;&nbsp;var y1 = y + lengthdir_y(100, image_angle -
+45);<br>
+&nbsp;&nbsp;&nbsp;var x2 = x + lengthdir_x(100, image_angle +
+45);<br>
+&nbsp;&nbsp;&nbsp;var y2 = y + lengthdir_y(100, image_angle +
+45);<br>
+&nbsp;&nbsp;&nbsp;if point_in_triangle(inst.x, inst.y, x, y, x1,
+y1, x2, y2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;can_see = true;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;}<br></p>
+
+<p>The above code uses the <tt>point_in_triangle</tt> function as a
+"cone of vision" to check for an instance of "obj_player", setting
+a variable to <tt>true</tt> should the objects x/y position fall
+within the defined triangle.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Collision
+Checking</a></div>
+
+<div style="float:right">Next: <a href=
+"point_in_circle.html">point_in_circle</a></div>
+</div>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

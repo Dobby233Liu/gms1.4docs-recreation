@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>The Mac OS Tab</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/global game settings/mac os tab.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fmac%20os%20tab.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fglobal%20game%20settings%2Fmac%20os%20tab.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">The Mac OS Tab</h1>
+
+<h2 class="studio">This section deals with the Mac OS tab of the
+Global Games Settings Window.</h2>
+
+<p>This MacOS tab is split into three separate <i>sub-tabs</i>
+(accessible on the left of the window) to make changing and
+updating the information for your game clearer and less
+complicated. These tabs are explained in the following
+sections.</p>
+
+<h3 class="studio">General</h3>
+
+<p><img class="center" src="mac_general_tab.png"> The first thing
+to do is fill in the <b>Display Name</b> of your game then go down
+to the <i>Product Information</i> section and fill in its
+<b>Version Number</b>, <b>App id</b>, <b>App Output</b> file and
+the <b>Copyright</b> details. The <b>App Output</b> is the location
+to which your game installation files go to on your Mac. When you
+create your <tt>.app.zip</tt>, that file can go anywhere (the
+location you specify when doing the save dialogue is not the only
+copy made of that .app.zip), but the .pkg and other files are left
+in this folder, permitting you to test local installations via
+Terminal in such a way as to simulate Mac Store purchasing,
+etc...<br>
+<br>
+Once that is done you will need to give your game <b>Icons</b> and
+a <b>Splash Screen</b>. The icons should be authored as a single
+*.png file with a size of 1024x1024px. The splash screen should be
+the size of the first room in your game as this is what will
+briefly be shown while the game assets are being loaded. Smaller or
+larger images are permitted but will be scaled to fit.<br>
+<br>
+Once you have configured the game details and presentation
+graphics, you should configure the two following options:</p>
+
+<blockquote>
+<ul>
+<li><b>Allow menu and dock in fullscreen</b> - When checked, this
+option will show the OS menu and dock if the game is in fullscreen
+mode.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Display the cursor</b> - This toggles the mouse cursor
+visibility in your game.</li>
+</ul>
+</blockquote>
+
+<p>Finally we have the option to give a <b>Team Identifier</b>. You
+can leave this blank to use the default Team Identifier as set in
+the <a href="../preferences/mac%20preferences.html">Mac OS
+Preferences</a>.<br>
+<br></p>
+
+<h3 class="studio">Graphics</h3>
+
+<p><img class="center" src="mac_graphics_tab.png"> The graphics
+options will determine how your game is displayed when run and
+affect the way things like scaling and interpolation are handled.
+The following options exist:</p>
+
+<blockquote>
+<ul>
+<li><b>Start in fullscreen mode</b> - If this is checked, the game
+will start in fullscreen mode.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Interpolate colours between pixels</b> - Turns on
+interpolation, which basically "smooths" pixels. for crisp pixel
+graphics, it should be off, but if you have nice alpha blends and
+smoothed edge graphics it is better left on.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Use synchronization to avoid tearing</b> - This toggles
+v-sync on or off. Note, that if you have a game with a room speed
+of 120 and the player has a monitor with a refresh rate of 60,
+turning this option on will lock your game speed to 60 too.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Allow the player to resize the game window</b> - Checking
+this permits the user to change the size of the game window.</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Scaling</b> - Here you can choose to maintain aspect ratio
+(so a 4:3 room will be "letter boxed" on a 16:9) or to scale fully
+(stretching the image to fit the full screen).</li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Allow switching to fullscreen</b> - Checking this will allow
+the user to toggle the game from windowed to fullscreen mode using
+<i>&lt;CTRL&gt; + &lt;CMD&gt; + &lt;F&gt;</i>.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul>
+</blockquote>
+
+<p><i><b>WARNING!</b> Switching off the application surface will
+disable all the scaling options set in the Global Game Settings
+until it has been switched back on again. See <a href=
+"../../002_reference/surfaces/the%20application%20surface.html">The
+Application Surface</a> for further details.</i><br>
+<br>
+Finally there is the option to set the size of the <b>Texture
+Page</b>. The default (and most compatible) size is 2048x2048, but
+you can choose from anywhere between 256x256 up to a whopping
+8192x8192! There is also a button marked <b>View</b> which will
+generate the texture pages for this platform and then open a window
+so that you can see how they look. This can be very useful if you
+wish to see how the texture pages are structured and to prevent
+having texture pages larger (or smaller) than necessary.<br>
+<br>
+<i><b>NOTE:</b> Be aware that the larger the size of the texture
+page, the less compatible your game will be.</i><br>
+<br></p>
+
+<h3 class="studio">AppStore</h3>
+
+<p><img class="center" src="mac_appstore_tab.png"> If you wish the
+finished game to be <i>App Store Ready</i> then you need to check
+the <b>Build for Mac App Store</b> option, but be aware that this
+will only function if you are a registered Developer and have the
+necessary certificates. Under that are two sub-options that you
+should <i>only check if they are true</i> as Apple can reject your
+app if they are checked when they are not needed or vice-versa.
+These options simply permit your game to use the <a href=
+"../../002_reference/asynchronous%20functions/http_get.html"><tt>http_</tt></a>
+and <a href=
+"../../002_reference/html5/url_open.html"><tt>url_</tt></a>
+functions. It is worth noting that if you wish to support GamePads
+in your game then the option to create an App Store ready package
+should be <i>off</i>.<br>
+<br>
+Finally, you need to select its <b>App Category</b> (for more
+information, see <a href=
+"https://developer.apple.com/library/mac/releasenotes/General/SubmittingToMacAppStore/#//apple_ref/doc/uid/TP40010572-CH16-SW8">
+here</a>).<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Global Game
+Settings</a></div>
+
+<div style="float:right">Next: <a href="linux%20tab.html">The Linux
+(Ubuntu) Tab</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

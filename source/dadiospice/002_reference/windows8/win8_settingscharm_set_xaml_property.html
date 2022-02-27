@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_settingscharm_set_xaml_property</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_settingscharm_set_xaml_property.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_settingscharm_set_xaml_property.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_settingscharm_set_xaml_property.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_settingscharm_set_xaml_property</h1>
+
+<h2 class="studio">Set a Settings Charm property element from a
+custom XAML file to a new value.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_settingscharm_set_xaml_property(entryName,
+elementName, propertyName, newValue);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>entryName</td>
+<td>The name of the option in the settings charm.</td>
+</tr>
+
+<tr class="alt">
+<td>elementName</td>
+<td>The name of an element in the xaml.</td>
+</tr>
+
+<tr>
+<td>propertyName</td>
+<td>The property name of the element.</td>
+</tr>
+
+<tr class="alt">
+<td>newValue</td>
+<td>The new value for the element.</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> Boolean</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>With this function you can set a given element property in your
+custom Settings Charm fly-out. The <i>entryName</i> is the name of
+the option in the Settings Charm, as specified by the first
+argument of the function <a href=
+"win8_settingscharm_add_xaml_entry.html"><tt>win8_settingscharm_add_xaml_entry</tt></a>,
+while the <i>elementName</i> is the name of the element to set the
+value of as defined in the XAML file. The <i>propertyName</i> must
+be a string and is defined in the XAML file, following the
+Microsoft guidelines found <a href=
+"http://msdn.microsoft.com/en-us/library/windows/apps/hh465351.aspx"
+target="_blank">here</a>, whiole the <i>newValue</i> is the value
+that you wish to give the element.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var text =
+win8_settingscharm_get_xaml_property("Settings", "IntroText",
+"Text" );<br>
+win8_settingscharm_set_xaml_property("Settings", "IntroText",
+"Text", "MacSweeney Games Is Best");<br></p>
+
+<p>The above code will get the "text" value of the XAML property
+"IntroText" and then change it to something else.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_settingscharm_get_xaml_property.html">win8_settingscharm_get_xaml_property</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

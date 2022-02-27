@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Draw Actions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/000_using gamemaker/actions/006_draw actions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2F006_draw%20actions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F000_using%20gamemaker%2Factions%2F006_draw%20actions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Draw Actions</h1>
+
+<h2 class="studio">The draw actions are actions which draw things
+to the screen.</h2>
+
+<p>The following actions are all related to the act of drawing
+things to the screen. As such, most of them can only be used in the
+draw event of an object, and even then they will not be performed
+if the object has been flagged as invisible through code or through
+the object properties "visible" setting being un-checked.<br>
+<br></p>
+
+<h3 class="studio">Drawing</h3>
+
+<p><img src="../../images/drawself.png" align="left"> <b>Draw
+Self</b><br>
+When you add any type of action or code to the draw event of an
+object, you are telling <i>GameMaker: Studio</i> that you are
+taking over the draw event and that you will tell it what to draw
+from now on. This means that any assigned sprite will no longer be
+drawn unless you explicitly say so, which when you would use this
+action. This simply draws the assigned sprite for the object with
+any transforms that may have been set in previous events (like
+scaling, blending or changes in alpha) at the current
+sub-image.<br>
+<br>
+<img src="../../images/draw_sprite.png" align="left"> <b>Draw
+Sprite</b><br>
+This will draw a sprite somewhere in the room. You specify the
+sprite, the position (either absolute or relative to the current
+instance position) and the subimage of the sprite (The subimages
+are numbered from 0 upwards). If you have an animated sprite and
+you want it to draw the subimages as normal, use number -1. This
+action will not draw the sprite transformed, even if you have
+changed the image blend or scale.<br>
+<br>
+<img src="../../images/draw_background.png" align="left"> <b>Draw
+Background</b><br>
+This will draw a background resource somewhere within the room. You
+indicate the background image, the position (absolute or relative)
+and whether the image should be tiled all over the room or not.<br>
+<br>
+<img src="../../images/draw_text.png" align="left"> <b>Draw
+Text</b><br>
+With this action you can draw text anywhere in the room. You
+specify the text and the position to draw, but please note that
+there are certain conventions to follow when drawing text:</p>
+
+<blockquote>
+<ul>
+<li>A <b>#</b> symbol in the text is interpreted as going to a new
+line, so typing this - <i>Hello world!#Nice day</i> - would draw
+the text over two lines.</li>
+
+<li>If you need to draw the # symbol itself, use \# ie - <i>this is
+foobar \#3.</i></li>
+
+<li>You can mix text and expressions to draw values of variables.
+The text you want to draw must be in quotes (either ' or ") and the
+variable to draw must use the <tt>string()</tt> function. For
+example, if you wish to draw the value of the in-built object
+variable <tt>direction</tt>, you would have this - <i>'Current
+Direction = ' + string(direction)</i></li>
+</ul>
+</blockquote>
+
+<p><img src="../../images/draw_text_scaled.png" align="left">
+<b>Draw Scaled Text</b><br>
+This action is similar to the previous action but this time you can
+also specify a horizontal and vertical scaling factor to change the
+size of the text and you can also specify an angle to rotate
+it.<br>
+<br>
+<img src="../../images/draw_rectangle.png" align="left"> <b>Draw
+Rectangle</b><br>
+You specify the coordinates of the two opposite corners of the
+rectangle, either absolute or relative to the current instance
+position, and you can tell <i>GameMaker: Studio</i> to draw either
+a solid filled rectangle, or just the outline. The colour of the
+rectangle depends on the currently selected draw colour (see the
+<b>Set colour</b> action below).<br>
+<br>
+<img src="../../images/draw_gradient_hor.png" align="left">
+<b>Horizontal Gradient</b><br>
+This action also draws a rectangle but this time using a colour
+gradient that changes from left to right. You can specify the size
+and position of the rectangle, either absolute or relative to the
+current instance position, and the two colours to use in the
+gradient.<br>
+<br>
+<img src="../../images/draw_gradient_vert.png" align="left">
+<b>Vertical Gradient</b><br>
+This action also draws a rectangle but this time using a colour
+gradient that changes from top to bottom. You can specify the size
+and position of the rectangle, either absolute or relative to the
+current instance position, and the two colours to use in the
+gradient.<br>
+<br>
+<img src="../../images/draw_ellipse.png" align="left"> <b>Draw
+Ellipse</b><br>
+With this action you can draw an ellipse. You specify the
+coordinates of the two opposite corners of the rectangle that would
+border the ellipse, either absolute or relative to the current
+instance position, and you can tell <i>GameMaker: Studio</i> to
+draw either a solid filled ellipse, or just the outline. The colour
+of the ellipse depends on the currently selected draw colour (see
+the <b>Set colour</b> action below).<br>
+<br>
+<img src="../../images/draw_ellipse_gradient.png" align="left">
+<b>Gradient Ellipse</b><br>
+As above, you draw an ellipse, but this time you can select a
+gradient of two colours to fill it from the center out to the
+border.<br>
+<br>
+<img src="../../images/draw_line.png" align="left"> <b>Draw
+Line</b><br>
+This simply draws a line between the two points that you specify in
+the action, either absolute or relative to the current instance
+position. The colour of the line depends on the currently selected
+draw colour (see the <b>Set colour</b> action below).<br>
+<br>
+<img src="../../images/draw_arrow.png" align="left"> <b>Draw
+Arrow</b><br>
+With this action you can draw a simple arrow. Much like the <b>Draw
+Line</b> action, you specify the coordinates of the two endpoints
+of the arrow, either absolute or relative to the current instance
+position, and the size of the arrow tip. The size is in pixels and
+is measured backwards from the end of the line, so that the point
+of the arrow adds nothing to the overall length. The colour of the
+line depends on the currently selected draw colour (see the <b>Set
+colour</b> action below).<br>
+<br></p>
+
+<h3 class="studio">Settings</h3>
+
+<p>The following actions do <i>not</i> need to be called from the
+draw event, and are usually only called once in a specific event
+(like the <b>create event</b> or a <b>mouse event</b>) due to the
+fact that they only need to set their action once in a game.<br>
+<br>
+<img src="../../images/set_colour.png" align="left"> <b>Set
+colour</b><br>
+Lets you set the colour used for drawing shapes, lines, and text.
+This does not influence in any way sprites and backgrounds are
+drawn.<br>
+<br>
+<img src="../../images/set_font.png" align="left"> <b>Set
+Font</b><br>
+You can set the font that is from this moment on used for drawing
+text, but this must be one of the font resources you have defined
+previously in the resource tree. If you choose No Font a default 12
+point Arial font is used.<br>
+<br>
+<img src="../../images/fullscreen.png" align="left"> <b>Set Full
+Screen</b><br>
+With this action you can change the screen mode from windowed to
+fullscreen and back. You can indicate whether to toggle the mode or
+whether to go to windowed or fullscreen mode, making it an ideal
+action for use in any kind of options menu for your game.<br>
+<br></p>
+
+<h3 class="studio">Other</h3>
+
+<p>The following actions do <i>not</i> need to be called from the
+draw event.<br>
+<br>
+<img src="../../images/snapshot.png" align="left"> <b>Take
+Snapshot</b><br>
+With this action you can take a snapshot image of the game while it
+is being played and store it in a .png file, the name of which you
+specify in the action.<br>
+<br>
+<img src="../../images/explosion.png" align="left"> <b>Create
+Effect</b><br>
+With this action you can create all sorts of basic effects in a
+very simple way. You specify the type of effect, e.g. an explosion
+or smoke, its position, its size and its colour and whether it
+should be shown below the objects (at a depth of 100000) or on top
+of them (at a depth of -100000). The rest is done automatically for
+you by the in-built <i>GameMaker: Studio</i> particle system (for
+more information on particles see - <a href=
+"005_extra%20actions.html">Extra Actions</a> and <a href=
+"../../002_reference/particles/index.html">Reference:
+Particles</a>). Note that for rain and snow the position is
+irrelevant as it always falls down from the top of the screen and
+that to get continuous rain you should create it in each step.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Actions</a></div>
+
+<div style="float:right">Next: <a href=
+"007_using%20expressions%20and%20variables.html">Using Expressions
+And Variables In Actions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

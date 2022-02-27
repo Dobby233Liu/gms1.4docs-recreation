@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Obsolete Dynamic Functions</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/017_obsolete functions/obsolete dynamic functions.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20dynamic%20functions.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2F017_obsolete%20functions%2Fobsolete%20dynamic%20functions.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Obsolete Dynamic Functions</h1>
+
+<h2 class="studio">These functions deal with the generation of
+resources at run time.</h2>
+
+<h3 class="studio"><b>Object Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>object_add</td>
+<td>Adds a new object. It returns the index of the object. You can
+now use this index in the routines above to set certain properties
+of the object and then you can use the index to create instances of
+the object.</td>
+</tr>
+
+<tr class="alt">
+<td>object_delete</td>
+<td>Deletes the object with the given index. Make sure no instances
+of the object exist in any of the rooms.</td>
+</tr>
+
+<tr>
+<td>object_event_add</td>
+<td>To give the object a behavior we must define events for the
+object. You can only add code actions to events. You need to
+specify the object, the event type, the event number (use the
+constants that have been specified before for the event_perform()
+function). Finally you provide the code string that must be
+executed. You can add multiple code actions to each event.</td>
+</tr>
+
+<tr class="alt">
+<td>object_event_clear</td>
+<td>You can use this function to clear all the actions for a
+particular event.</td>
+</tr>
+
+<tr>
+<td>object_set_parent</td>
+<td>Set the <i>parent</i>for an object.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Variable Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>variable_global_exists</td>
+<td>Returns whether a global variable with the given name (a
+string) exists.</td>
+</tr>
+
+<tr class="alt">
+<td>variable_local_exists</td>
+<td>Returns whether an instance variable with the given name (a
+string) exists for the current instance.</td>
+</tr>
+
+<tr>
+<td>variable_global_get</td>
+<td>Returns the value of the global variable with the given name (a
+string).</td>
+</tr>
+
+<tr class="alt">
+<td>variable_global_array_get</td>
+<td>Returns the value of index ind of the global array variable
+with the given name (a string).</td>
+</tr>
+
+<tr>
+<td>variable_global_array2_get</td>
+<td>Returns the value of index ind1,ind2 of the global
+2-dimensional array variable with the given name (a string).</td>
+</tr>
+
+<tr class="alt">
+<td>variable_local_get</td>
+<td>Returns the value of an instance variable with the given name
+(a string).</td>
+</tr>
+
+<tr>
+<td>variable_local_array_get</td>
+<td>Returns the value of index ind of an instance array variable
+with the given name (a string).</td>
+</tr>
+
+<tr class="alt">
+<td>variable_local_array2_get</td>
+<td>Returns the value of index ind1,ind2 of an instance
+2-dimensional array variable with the given name (a string).</td>
+</tr>
+
+<tr>
+<td>variable_global_set</td>
+<td>Sets the global variable with the given name (a string) to the
+given value</td>
+</tr>
+
+<tr class="alt">
+<td>variable_global_array_set</td>
+<td>Sets the index ind in the global array variable with the given
+name (a string) to the given value.</td>
+</tr>
+
+<tr>
+<td>variable_global_array2_set</td>
+<td>Sets the index ind1,ind2 in the global 2-dimensional array
+variable with the given name (a string) to the given value.</td>
+</tr>
+
+<tr class="alt">
+<td>variable_local_set</td>
+<td>Sets an instance variable with the given name (a string) to the
+given value.</td>
+</tr>
+
+<tr>
+<td>variable_local_array_set</td>
+<td>Sets the index ind in an instance array variable with the given
+name (a string) to the given value.</td>
+</tr>
+
+<tr class="alt">
+<td>variable_local_array2_set</td>
+<td>Sets the index ind1,ind2 in an instance 2-dimensional array
+variable with the given name (a string) to the given value.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Resource Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>sprite_add_sprite</td>
+<td>Adds the sprite stored the file fname to the set of sprite
+resources. The file must be a .gmspr file that is saved in the
+sprite property form in GameMaker.</td>
+</tr>
+
+<tr class="alt">
+<td>background_add_background</td>
+<td>Adds the background stored the file fname to the set of
+background resources. The file must be a .gmbck file that is saved
+in the background property form in GameMaker.</td>
+</tr>
+
+<tr>
+<td>sprite_add_sprite</td>
+<td>Adds the sprite stored the file fname to the set of sprite
+resources. The file must be a .gmspr file that is saved in the
+sprite property form in GameMaker.</td>
+</tr>
+
+<tr class="alt">
+<td>background_add_background</td>
+<td>Adds the background stored the file fname to the set of
+background resources. The file must be a .gmbck file that is saved
+in the background property form in GameMaker.</td>
+</tr>
+
+<tr>
+<td>sprite_create_from_screen</td>
+<td>Creates a sprite by copying the given area from the
+screen.</td>
+</tr>
+
+<tr class="alt">
+<td>sprite_add_from_screen</td>
+<td>Adds an area of the screen as a next subimage to the sprite
+with index ind.</td>
+</tr>
+
+<tr>
+<td>background_create_from_screen</td>
+<td>Creates a background by copying the given area from the
+screen.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Miscellaneous Function List:</b>
+</h3>
+
+<div class="param">
+<table>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>room_set_code</td>
+<td>Sets the initialization code string for the room with the
+indicated index.</td>
+</tr>
+
+<tr class="alt">
+<td>script_get_text</td>
+<td>Returns the text string of the script with the given
+index.</td>
+</tr>
+
+<tr>
+<td>execute_string</td>
+<td>Execute the piece of code in the string str with the indicated
+arguments.</td>
+</tr>
+
+<tr class="alt">
+<td>execute_file</td>
+<td>Execute the piece of code in the file with the indicated
+arguments.</td>
+</tr>
+
+<tr>
+<td>execute_program</td>
+<td>Executes program "prog" with arguments "arg". "wait" indicates
+whether to wait for finishing.</td>
+</tr>
+
+<tr class="alt">
+<td>execute_shell</td>
+<td>Executes the program (or file) in the shell.</td>
+</tr>
+
+<tr>
+<td>timeline_moment_add</td>
+<td>Adds a code action to the time line at moment step. If the step
+does not exist it is created. So you can add multiple code actions
+for the same moment.</td>
+</tr>
+</table>
+</div>
+
+<h3 class="studio"><b>Why These Are Obsolete</b>
+</h3>
+
+<p>These functions cannot be used any more due to changes in the
+underlying runner that <i>GameMaker: Studio</i> uses to generate
+the device specific packages making it impossible to generate
+objects, images or code "on the fly" as was done before.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Obsolete
+Functions</a></div>
+
+<div style="float:right">Next: <a href=
+"obsolete%20transition%20functions.html">Transition
+Functions</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Views</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../../files/helpindex.css"
+type="text/css">
+
+<script type="text/JavaScript" src="../../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows and views/views/index.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fviews%2Findex.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows%20and%20views%2Fviews%2Findex.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Views</h1>
+
+<h2 class="studio">This section deals with the functions for
+defining view properties.</h2>
+
+<p>Views are one of the most important of the display properties
+that you can manipulate with <i>GameMaker: Studio</i>. They are,
+basically, little windows into your game world that enable you to
+show the player parts of a room, either scaled or 1:1, and as such
+they are essential when your game room is larger than the display
+size. For information on how views can be set up without code
+directly from the room editor, please see the section <a href=
+"../../../001_advanced%20use/more%20about%20rooms/views.html">More
+About Rooms - Views</a>.<br>
+<br>
+<i>GameMaker: Studio</i> permits you 8 independent views (numbered
+from 0 - 7), all of which can be active at any one time, and all of
+which can show different parts of the same room. This means that
+you can use views to draw HUD elements or to have split screen
+effects for example. Each view also has its own associated <i>view
+port</i>. If the view is a section of the room that the player can
+see, the port is the area of the screen on which this view is
+drawn, and as such you can distort and scale the view if it is a
+size other than the view port.<br>
+<br>
+Something to note about views and view ports is that the <i>total
+area</i> of the bounding box for all active view ports in the first
+room of the game is what defines the background canvas size (or
+window size for MacOS, Ubuntu (Linux) and Windows), as illustrated
+by the image below: <img class="center" src="viewport_canvas.png">
+Finally, you should take care when using multiple views as the draw
+event for <i>all</i> instances is called once for each view, so if
+you have three views active in one room, the draw event will be run
+three times every step (basically doing three times the work) which
+can be a cause for slowdown if the game is large or complex. The
+<a href="view_current.html"><tt>view_current</tt></a> variable can
+be used to help limit these draw calls however.<br>
+<br>
+The following functions exist that deal with views:</p>
+
+<blockquote>
+<ol>
+<li><a href="view_enabled.html">view_enabled</a><br>
+</li>
+
+<li><a href="view_current.html">view_current</a><br>
+</li>
+
+<li><a href="view_visible.html">view_visible</a><br>
+</li>
+
+<li><a href="view_object.html">view_object</a><br>
+</li>
+
+<li><a href="view_angle.html">view_angle</a><br>
+</li>
+
+<li><a href="view_xview.html">view_xview</a><br>
+</li>
+
+<li><a href="view_yview.html">view_yview</a><br>
+</li>
+
+<li><a href="view_hview.html">view_hview</a><br>
+</li>
+
+<li><a href="view_wview.html">view_wview</a><br>
+</li>
+
+<li><a href="view_hborder.html">view_hborder</a><br>
+</li>
+
+<li><a href="view_vborder.html">view_vborder</a><br>
+</li>
+
+<li><a href="view_hspeed.html">view_hspeed</a><br>
+</li>
+
+<li><a href="view_vspeed.html">view_vspeed</a><br>
+</li>
+
+<li><a href="view_xport.html">view_xport</a><br>
+</li>
+
+<li><a href="view_yport.html">view_yport</a><br>
+</li>
+
+<li><a href="view_hport.html">view_hport</a><br>
+</li>
+
+<li><a href="view_wport.html">view_wport</a><br>
+</li>
+
+<li><a href="view_surface_id.html">view_surface_id</a><br>
+</li>
+
+<li><a href=
+"window_view_mouse_get_x.html">window_view_mouse_get_x</a><br>
+</li>
+
+<li><a href=
+"window_view_mouse_get_y.html">window_view_mouse_get_y</a><br>
+</li>
+
+<li><a href=
+"window_views_mouse_get_x.html">window_views_mouse_get_x</a><br>
+</li>
+
+<li><a href=
+"window_views_mouse_get_y.html">window_views_mouse_get_y</a><br>
+</li>
+</ol>
+</blockquote>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="../index.html">Windows and
+Views</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

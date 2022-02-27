@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>win8_livetile_tile_notification</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/002_reference/windows8/win8_livetile_tile_notification.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_tile_notification.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F002_reference%2Fwindows8%2Fwin8_livetile_tile_notification.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">win8_livetile_tile_notification</h1>
+
+<h2 class="studio">Send a notification to the game's live
+tile.</h2>
+
+<h3 class="studio">Syntax:</h3>
+
+<p class="code">win8_livetile_tile_notification(template, ds_map,
+expiry, tag);</p>
+
+<p><br>
+</p>
+
+<div class="param">
+<table>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+
+<tr>
+<td>template</td>
+<td>The template that the live tile notification should take (see
+below)</td>
+</tr>
+
+<tr class="alt">
+<td>ds_map</td>
+<td>A ds_map that contains the information for the
+notification</td>
+</tr>
+
+<tr>
+<td>expiry</td>
+<td>How long the notification should be shown</td>
+</tr>
+
+<tr class="alt">
+<td>tag</td>
+<td>The name "tag" of the notification</td>
+</tr>
+</table>
+</div>
+
+<p><br>
+</p>
+
+<p><b>Returns:</b> N/A</p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Description</h3>
+
+<p>This function will "push" a notification through to the live
+tile associated with your game. What exact information is sent will
+depend greatly on the template that you choose to use (you can find
+a complete list of the available templates <a href=
+"windows%208%20live%20tile%20templates.html">here</a>), as each
+template requires a different combination of text and/or
+images.<br>
+<br>
+The <a href=
+"../data%20structures/ds%20maps/index.html"><tt>ds_map</tt></a>
+that is sent along with the template, must contains the appropriate
+key-value pairs for that template, so for each entry the key should
+refer to the tag name of an element and the value (which can be
+either a single value or an array of multiple entries, in which
+case you should add them into a <a href=
+"../data%20structures/ds%20lists/index.html"><tt>ds_list</tt></a>,
+then embed the ds_list into the ds_map). The <i>tag names</i>
+themselves can only be either "<b>image</b>" or "text", and the
+image can be either from a local source (in which case the
+directory to get the file from <i>must</i> be proceeded by
+<tt>ms-appx:///</tt>. See the examples given below.) or from a
+given URL.<br>
+<br>
+The expiry is the time that the notification should be removed at
+and is best calculated using the <i>GameMaker: Studio</i> <a href=
+"../date%20and%20time/index.html">Date and Time functions</a>, as
+shown in the functions below (setting this to -1 will show the
+notification indefinitely until you use the <a href=
+"win8_livetile_tile_clear.html"><tt>win8_livetile_tile_clear</tt></a>.<br>
+
+<br>
+Finally you have the queue "tag". This is a string that you assign
+to the notification as a means to identify it later, should you
+need to replace it or update it with another one. in this case you
+would formulate another notification push with this function and
+use the same tag as that which you wish to change/replace.<br>
+<br>
+<br>
+<br>
+<i><b>NOTE:</b> You can only queue up to 5 Live Tile notifications,
+and you must have activated queuing with the function <a href=
+"win8_livetile_queue_enable.html"><tt>win8_livetile_queue_enable</tt></a>.</i><br>
+
+<br></p>
+
+<p><br>
+</p>
+
+<h3 class="studio">Example:</h3>
+
+<p class="code">var expiryTime, tileText, tileImage, tileData;<br>
+expiryTime = date_current_datetime();<br>
+expiryTime = date_inc_minute(expiryTime, 5);<br>
+tileText = ds_list_create();<br>
+ds_list_add(tileText, "C.T.H.");<br>
+ds_list_add(tileText, "This game is paused and awaiting your
+return!");<br>
+tileImage = ds_list_create();<br>
+ds_list_add(tileImage, "ms-appx:///" + working_directory +
+"WideTile_Screenshot.png");<br>
+ds_list_add(tileImage, "ms-appx:///" + working_directory +
+"MiniLogo.png");<br>
+tileData = ds_map_create();<br>
+ds_map_add(tileData, "text", tileText);<br>
+ds_map_add(tileData, "image", tileImage);<br>
+win8_livetile_tile_notification("tileWidePeekImage05", tileData,
+expiryTime, "Paused");<br>
+ds_list_destroy(tileText);<br>
+ds_list_destroy(tileImage);<br>
+ds_map_destroy(tileData);<br></p>
+
+<p>The above code is for a wide tile, and it needs two lines of
+text (a header, and one line of long text), and two images (one
+large one for the whole tile, and one smaller one for beside the
+text), as this template will switch between the main image and the
+image/text combination. You need to add the text into a
+<tt>ds_list</tt>, with the first entry being the header, and then
+add the images into another, separate, <tt>ds_list</tt>, again,
+with the first image being the larger. Finally you add the text and
+the image lists into the <tt>ds_map</tt>, assigning them the
+appropriate key, and then use the function to send them to the live
+tile.</p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">Windows
+8</a></div>
+
+<div style="float:right">Next: <a href=
+"win8_livetile_tile_clear.html">win8_livetile_tile_clear</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

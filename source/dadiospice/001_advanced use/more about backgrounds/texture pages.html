@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Texture Pages</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/more about backgrounds/texture pages.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20backgrounds%2Ftexture%20pages.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fmore%20about%20backgrounds%2Ftexture%20pages.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Texture Pages</h1>
+
+<h2 class="studio">This section deals with how <i>GameMaker:
+Studio</i> creates texture pages.</h2>
+
+<p>When you create a game with <i>GameMaker: Studio</i>, you will
+surely have created graphics to go along with it. These graphics
+are stored on <b>Texture Pages</b> which <i>GameMaker: Studio</i>
+builds for you from all the image resources (backgrounds, tiles and
+sprites) that your game contains. Below is an example of a
+completed texture page: <img class="center" src="texturepage.png">
+As you can see, the game graphics are all jumbled up together in
+such a way that they all fit on a power of 2 sized page, eg
+512x512, 1024x512 etc... up to a maximum size of 2048x2048 pixels
+page. Please note, that even if you have a resource that is larger
+than 2048px in size, this will be scaled <i>down</i> by <b>half</b>
+(and half again if necessary) until it fits on the maximum page
+size, it will <i>not</i> be split into sections over various
+texture pages. The section below details the options available to
+you for defining how your image resources are stored on these
+texture pages.<br>
+<br>
+<i><b>NOTE:</b> This functionality is limited to the <a href=
+"../../000_using%20gamemaker/versions.html">Professional
+Version</a> of</i> GameMaker: Studio.<br>
+<br></p>
+
+<h3 class="studio">Texture Settings</h3>
+
+<p>The sprite resource window and the background resource window
+both have a section titled <b>Texture Settings</b>, shown below:
+<img class="center" src="texture_settings.png"> Here you can define
+how the image is to be stored on the texture page as well as
+whether it is an image specifically for use with a 3D object and
+which texture page (if any) it has to be assigned to. The first two
+options, <b>Tile Horizontal</b> and <b>Tile Vertical</b> relate to
+how the edges of the image will be created when placed on the
+texture page. An image that is to be tiled will have the edges
+(horizontal or vertical) added to by the edges from the opposite
+side, while if no tiling is selected the sprite will be clamped and
+the edges pixels will be repeated. The following image illustrates
+this: <img class="center" src="clamptile_image.png"> Underneath
+those settings is the <b>Used for 3D</b> setting. This option is
+only available if the image size is a power of 2 (eg: 128x128 or
+512x512) and it will force <i>GameMaker: Studio</i> to place this
+image on its own unique texture page ready for use as a texture in
+your 3D world. There are no options associated with this as the
+tiling or clamping is controlled directly through code.
+<b>Note:</b> Take care when using this option as you can quickly
+use up all the available texture memory, especially on mobile
+devices, if you have too many texture pages.<br>
+<br>
+Now, when your game is large with a lot of artistic resources, it
+may be that the way <i>GameMaker: Studio</i> automatically creates
+these pages is not the optimum for getting the most out of the
+target device, due to the fact that if a room in your game needs
+resources from 4 different texture pages, the device will have to
+swap these pages into (and out of) memory constantly, which may
+cause a loss in performance. To that end, you have the option to
+tell <i>GameMaker: Studio</i> what images are to placed on any
+specific texture page, with the final aim being to minimise the
+number of swaps being done in a game at any one time (texture pages
+can added from the <a href=
+"../global%20game%20settings/texture%20groups%20tab.html">Global
+Game Settings: Texture Groups</a> tab). It is also worth noting
+that in the individual platform tabs that can be found in the
+<a href="../global%20game%20settings/index.html">Global Game
+Settings</a> there is a button that permits you to view the texture
+pages that you have defined, as they would be created for each
+target.<br>
+<br>
+It is worth noting that should you have a texture in your game that
+is <i>larger</i> than the texture page size, this image will be
+automatically scaled down by <i>GameMaker: Studio</i> to make it
+fit within the texture page. This means that when you test your
+game on Windows, Ubuntu (Linux) or MacOSX the game may look fine as
+you are using larger texture pages, but on iOS (or any of the other
+targets that require a smaller texture page size for optimal
+performance) the texture may look blurred or have artifacts. It is
+essential that you make sure your images are all able to fit on the
+smallest of the texture page sizes that your game will use, and if
+not then you should split them into smaller images and then draw
+them together in your game to give the illusion of one large,
+complete, image.<br>
+<br>
+<i><b>Note:</b> Before you go off splitting up your graphics over
+various texture pages, you should be aware that this is not always
+necessary, nor is it always the most efficient way to work. Some
+games may be more CPU bound than GPU bound (see <a href=
+"../011_debugging.html">Advanced Use: Debugging</a>) and those
+games will not benefit greatly from this optimisation, and you
+should also consider whether it would not be better to have all
+your images on two texture pages and swap between them rather than
+spread out over several, with each one having a lot of empty space
+that is just wasting memory.</i><br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href="index.html">More About
+Backgrounds</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>

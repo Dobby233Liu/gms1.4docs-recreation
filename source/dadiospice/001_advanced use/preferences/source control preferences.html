@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="online documentation, web online help, web help, chm2web" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="generator" content="chm2web Pro 2.85 (unicode)" />
+<title>Source Control Preferences</title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<link rel="stylesheet" href="../../style.css" type="text/css"
+media="screen" title="style" charset="utf-8">
+<link rel="stylesheet" href="../../../../files/helpindex.css" type=
+"text/css">
+
+<script type="text/JavaScript" src="../../../../files/supply.js"></script>
+<script type="text/JavaScript">
+chmtop.c2wtopf.pageid = "dadiospice/001_advanced use/preferences/source control preferences.html";
+</script>
+
+</head>
+<body><script type="text/JavaScript"> 
+if (window.name != "content") 
+  document.write(" <table width=\"100%\" bgcolor=\"#e1e1e1\"cellspacing=\"2\" cellpadding=\"0\" style=\"border-collapse: collapse; font-family: sans-serif; font-size: 14px; color: #000000; text-decoration: none;  \"> <tr> <td align=\"center\" style=\"border-bottom: 2px solid gray\" > <br>&nbsp;Click <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fsource%20control%20preferences.html\">here</a> to show toolbars of the Web Online Help System: <a href=\"../../../../index.html?page=source%2Fdadiospice%2F001_advanced%20use%2Fpreferences%2Fsource%20control%20preferences.html\">show toolbars</a><br>&nbsp;</td></tr></table><br> "); 
+</script>
+<!-- !chm2web! -->
+
+<h1 class="studio">Source Control Preferences</h1>
+
+<h2 class="studio">The section details the source control
+preferences tab.</h2>
+
+<p><img class="center" src="sourcecontrol_prefs.png"> From this tab
+you can point <i>GameMaker: Studio</i> to the version of <a href=
+"https://subversion.apache.org/" target="_blank">SVN</a> that you
+wish to use for Source Control Management (SCM), or choose a custom
+SCM solution. By default this points to the latest version of SV
+that is bundled with the program and we recommend that you always
+use this version as <i>GameMaker: Studio</i> has been optimised for
+it. However, you may have installed a different SCM solution, like
+GIT or Mercurial (or wish to use a different solution altogether),
+in which case you would need to set the two file paths to point to
+the correct binary executable for the solution (for example
+<tt>C:\Program Files (x86)\Git\bin\git.exe</tt>) and then the
+location of the configuration file for the solution.<br>
+<br>
+If you do not have a config file, you will need to create one and
+include all the commands that you require GameMaker: Studio to use.
+These will then be added as part of a context menu that pops up for
+SCM in the <i>GameMaker: Studio</i> IDE. You can find out how to
+make configurations for Mercurial and GIT from the <a href=
+"http://help.yoyogames.com/forums/22669697-Tutorials-Tips-and-Tricks/entries/search?utf8=%E2%9C%93&amp;query=source-control&amp;forum_id=22669697-Tutorials-Tips-and-Tricks&amp;for_search=1&amp;commit=Search"
+target="_blank">Source Control Tutorials</a> available from the
+YoYo Games Knowledge base, although below you can find a general
+outline of the procedure for all SCM solutions.<br>
+<br>
+You can also choose to have the SCM solution output to the
+<b>Compiler Message</b> window <i>Source Control</i> tab. Ticking
+this will show the log of actions, and should generally be left on.
+The next option "<b>No Folder Commits</b>" is designed specifically
+for the Mercurial SCM solution, and should not be ticked for either
+SVN or GIT. All this does is not commit the SCM solution. So, for
+example, if you have this: <tt>C:\FolderA\FileA.txt</tt>. SVN
+assumes you'll add <i>and</i> commit FolderA and then FileA - and
+will tell at you if you don't. Git doesn't really care, but it is
+best to follow the same as SVN anyway for consistency. However
+Mercurial assumes you'll <i>only</i> add and commit FileA - and
+will error if you attempt to add and commit FolderA as well. So,
+tick this option for Mercurial (or any other SCM solution with a
+similar behaviour).<br>
+<br>
+If you are using anything except the built-in SVN tools, then you
+should also select the <b>Enable Advanced SCM Options</b> check-box
+here. This will give further options when defining your SCM config
+file for the chosen tools.<br>
+<br>
+If you do not wish to use any of the built-in SCM options, then you
+can disable it completely by ticking the check-box "<b>Disable SCM
+Usage</b>" and then restarting GMS. Note that this will remove all
+SCM options from the user interface, so if you wish to add source
+control to a new project later, you must first enable it here
+again.<br>
+<br>
+Finally, you can choose to have the Conflicts Editor use colour
+coded conflicts or not (default is on).<br>
+<br></p>
+
+<h3 class="studio">Custom Configurations</h3>
+
+<p>Since there are a wealth of commands and possibilities open to
+you and each SCM solution has a slightly different way of doing
+things, all the SCM tools in <i>Gamemaker: Studio</i> are taken
+from a configuration file. This file is generated automatically for
+you for SVN, but for GIT, Mercurial or any other solution, you will
+have to set this up yourself (as mentioned above, there are
+tutorials available from the YoYo Games Knowledge Base).<br>
+<br>
+To create a new SCM configuration you need to click the button
+marked "<b>Create SCM Config</b>" which will open the following
+window: <img class="center" src="sourcecontrol_confignew.png"> As
+you can see this window has three tabs, and each tab is split into
+it's own sub-sections. Each tab relates to a specifc aspect of SCM
+and can be set to suit your own SCM solution based on the
+documentation that is provided with it. When you create a new SCM
+config, it is created pre-populated with the default values for
+SVN, so be sure to revise and change these to what you require.<br>
+<br>
+The tabs are:</p>
+
+<blockquote>
+<ol>
+<li><b>General</b>: The General tab deals with the Common SCM
+commands and External SCM Tools (which currently only covers the
+merge tool to use). Each command as a pre- and post- stage, and is
+split across the top two windows. The windows available in this tab
+are:<br>
+<br>
+
+<ul>
+<li>The first window (top left) describes a common key and the
+command value to run.</li>
+
+<li>The second window (top right) describes any parameters to be
+sent. For example, in the default SVN config, the <tt>Add</tt>
+command has the parameters "<tt>$FILE --parents --force</tt>".</li>
+
+<li>The third window (bottom left) describes the external tools to
+use.</li>
+
+<li>The fourth (bottom right) is for defining the SCM
+parameters.</li>
+</ul></li>
+
+<li style="list-style: none"><br>
+</li>
+
+<li><b>Status Log</b>: The Status Log tab helps GameMaker:Studio
+understand the log structure of the SCM solution. This is split
+into three windows:<br>
+<br>
+
+<ul>
+<li>The first window (top left) describes the log header names. In
+the case of the default SVN config, this would include status,
+props, locked, history, switched, lock-info, tree-conflict,
+out-of-date and filepath.</li>
+
+<li>The second window (top right) describes the values that each of
+these fields support. For example, in the default SVN config,
+status supports ' <tt>,A,D,M,R,C,X,I,?,!,~</tt>'. The filepath key
+can also use a special <tt>$STRING</tt> named <tt>$PROJECTPATH</tt>
+which ensures that the files in the list only belong to the current
+project's path (note that the asterisk '<tt>*</tt>' can be used to
+denote "accept anything").</li>
+
+<li>The third window (bottom left) describes what the status
+symbols mean, in a common format. For example, SVN's ' ' ( space )
+is generally meant to mean unmodified in the status log.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul></li>
+
+<li><b>Functions</b>: The Functions tab allows you to define the
+Source Control <i>right-click</i> menu in the <b>Resource Tree</b>,
+as well as add additional functions to the menu that not every SCM
+solution has - such as lock/unlock, or push/pull. This is also
+split into three windows:<br>
+<br>
+
+<ul>
+<li>The first window (top left) describes the common functions to
+be displayed in the right-click menu. New functions can be added by
+clicking the <i>Add Function</i> button. Clicking on a cell in the
+Command column will bring up a drop down box with the available
+commands to choose from. The Title is what will be displayed on the
+menu.</li>
+
+<li>The second and third windows (bottom left and bottom right,
+respectively) are similar to the previous tabs, in that the left
+one describes the commands, and the right one describes the
+arguments. Again, both Command columns must match up - the Title
+column describes what will be displayed on the menu, and the
+Options column can contain the $FILE string.</li>
+
+<li style="list-style: none"><br>
+</li>
+</ul></li>
+</ol>
+</blockquote>
+
+<p>At any time you can reset a tab to it's default values by
+clicking the button labelled "<b>Set To Defaults</b>", and you can
+also save any configuration to a specific place for safe-keeping by
+clicking the button "<b>Save As"</b>. these can then be loaded
+again at any time from the file path selector of the Preferences
+(as mentioned above).<br>
+<br>
+You can find further information on Source Control Management from
+the pages on <a href="../source%20control/index.html">Source
+Control</a> and there are additional articles that cover how to set
+up <i>GameMaker: Studio</i> to work with GIT (for example) from the
+<a href=
+"http://help.yoyogames.com/forums/22669697-Tutorials-Tips-and-Tricks/entries/search?utf8=%E2%9C%93&amp;query=source-control&amp;forum_id=22669697-Tutorials-Tips-and-Tricks&amp;for_search=1&amp;commit=Search"
+target="_blank">YoYo Games Knowledge Base</a>.<br>
+<br></p>
+
+<p><br>
+</p>
+
+<div class="clear">
+<div style="float:left">Back: <a href=
+"index.html">Preferences</a></div>
+
+<div style="float:right">Next: <a href=
+"steam%20preferences.html">Steam Preferences</a></div>
+</div>
+
+<h5>© Copyright YoYo Games Ltd. 2018 All Rights Reserved</h5>
+
+<script type="text/JavaScript">
+var fe = FindFrame("toc", top);
+if ((fe != null) && (chmtop.c2wtopf.jstree != null)) {
+  if (chmtop.c2wtopf.FITEMS[chmtop.c2wtopf.pagenum] != chmtop.c2wtopf.pageid)
+    chmtop.c2wtopf.jstree.OpenTreeNode("source/" + chmtop.c2wtopf.pageid);
+}
+</script>
+</body>
+</html>
